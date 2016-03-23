@@ -1,13 +1,16 @@
 ﻿using System.IO;
+using System.Runtime.CompilerServices;
 using Config.Parser.Tokens;
+
+[assembly: InternalsVisibleTo("Test")]
 
 namespace Config.Parser
 {
-    class Parser
+    class TokenParser
     {
         private readonly StreamReader _reader;
 
-        public Parser(StreamReader reader)
+        public TokenParser(StreamReader reader)
         {
             _reader = reader;
         }
@@ -23,6 +26,12 @@ namespace Config.Parser
             while (isWhiteSpace(c))
             {
                 _reader.Read();
+                c = _reader.Peek();
+            }
+
+            if (_reader.EndOfStream)
+            {
+                return null;
             }
 
             switch (c)

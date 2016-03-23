@@ -43,7 +43,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="Parser\Tokens\CommentToken.cs" />
     <Compile Include="Parser\Tokens\ItemToken.cs" />
-    <Compile Include="Parser\Parser.cs" />
+    <Compile Include="Parser\TokenParser.cs" />
     <Compile Include="Parser\Tokens\NewLineToken.cs" />
     <Compile Include="Parser\Tokens\SectionHeaderToken.cs" />
     <Compile Include="Parser\Tokens\Token.cs" />

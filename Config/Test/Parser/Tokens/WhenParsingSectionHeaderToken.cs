@@ -16,19 +16,19 @@ namespace Test.Parser.Tokens
         {
             SectionHeaderToken token;
 
-            token = new SectionHeaderToken(StreamReaderFromString("[foo]"));
+            token = TokenFromString("[foo]");
             token.Name.ShouldBeEquivalentTo("foo");
 
-            token = new SectionHeaderToken(StreamReaderFromString("foo]"));
+            token = TokenFromString("foo]");
             token.Name.ShouldBeEquivalentTo("foo");
 
-            token = new SectionHeaderToken(StreamReaderFromString("[foo bar]]"));
+            token = TokenFromString("[foo bar]]");
             token.Name.ShouldBeEquivalentTo("foo bar");
 
-            token = new SectionHeaderToken(StreamReaderFromString("[foo]\n123 = 123"));
+            token = TokenFromString("[foo]\n123 = 123");
             token.Name.ShouldBeEquivalentTo("foo");
 
-            token = new SectionHeaderToken(StreamReaderFromString("[foo]  [bar]"));
+            token = TokenFromString("[foo]  [bar]");
             token.Name.ShouldBeEquivalentTo("foo");
         }
 
@@ -37,10 +37,10 @@ namespace Test.Parser.Tokens
         {
             SectionHeaderToken token;
 
-            token = new SectionHeaderToken(StreamReaderFromString("[foo]; commentary"));
+            token = TokenFromString("[foo]; commentary");
             token.Name.ShouldBeEquivalentTo("foo");
 
-            token = new SectionHeaderToken(StreamReaderFromString("[foo] ; commentary ; ;"));
+            token = TokenFromString("[foo] ; commentary ; ;");
             token.Name.ShouldBeEquivalentTo("foo");
         }
 
@@ -48,20 +48,21 @@ namespace Test.Parser.Tokens
         [ExpectedException(typeof(FormatException))]
         public void UnmatchedBracketShouldNotBeParsedOk()
         {
-            new SectionHeaderToken(StreamReaderFromString("[foo bar\n123 = 456"));
+            TokenFromString("[foo bar\n123 = 456");
         }
 
         [TestMethod]
         [ExpectedException(typeof(FormatException))]
         public void EmptyNameShouldNotBeParsedOk()
         {
-            new SectionHeaderToken(StreamReaderFromString("[]"));
+            TokenFromString("[]");
         }
 
-        private static StreamReader StreamReaderFromString(string s)
+        private static SectionHeaderToken TokenFromString(string s)
         {
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(s ?? ""));
-            return new StreamReader(stream);
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(s ?? ""));
+            var sr = new StreamReader(ms);
+            return new SectionHeaderToken(sr);
         }
     }
 }

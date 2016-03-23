@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Parser\Tokens\WhenParsingSectionHeaderToken.cs" />
     <Compile Include="Parser\Tokens\WhenParsingItemToken.cs" />
+    <Compile Include="Parser\WhenParsingFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

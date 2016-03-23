@@ -16,19 +16,19 @@ namespace Test.Parser.Tokens
         {
             ItemToken token;
 
-            token = new ItemToken(StreamReaderFromString("foo=bar"));
+            token = ItemTokenFromString("foo=bar");
             token.Name.ShouldBeEquivalentTo("foo");
             token.Value.ShouldBeEquivalentTo("bar");
 
-            token = new ItemToken(StreamReaderFromString("foo  = bar"));
+            token = ItemTokenFromString("foo  = bar");
             token.Name.ShouldBeEquivalentTo("foo");
             token.Value.ShouldBeEquivalentTo("bar");
 
-            token = new ItemToken(StreamReaderFromString("foo  = bar\n123 = 123"));
+            token = ItemTokenFromString("foo  = bar\n123 = 123");
             token.Name.ShouldBeEquivalentTo("foo");
             token.Value.ShouldBeEquivalentTo("bar");
 
-            token = new ItemToken(StreamReaderFromString("foo  = =bar="));
+            token = ItemTokenFromString("foo  = =bar=");
             token.Name.ShouldBeEquivalentTo("foo");
             token.Value.ShouldBeEquivalentTo("=bar=");
         }
@@ -38,11 +38,11 @@ namespace Test.Parser.Tokens
         {
             ItemToken token;
 
-            token = new ItemToken(StreamReaderFromString("foo=bar; commentary"));
+            token = ItemTokenFromString("foo=bar; commentary");
             token.Name.ShouldBeEquivalentTo("foo");
             token.Value.ShouldBeEquivalentTo("bar");
 
-            token = new ItemToken(StreamReaderFromString("foo  = bar ; commentary ; ;"));
+            token = ItemTokenFromString("foo  = bar ; commentary ; ;");
             token.Name.ShouldBeEquivalentTo("foo");
             token.Value.ShouldBeEquivalentTo("bar");
         }
@@ -51,7 +51,7 @@ namespace Test.Parser.Tokens
         [ExpectedException(typeof (FormatException))]
         public void InValidValuesShouldNotBeParsedOk()
         {
-            new ItemToken(StreamReaderFromString("foo"));
+            ItemTokenFromString("foo");
         }
 
         [TestMethod]
@@ -59,16 +59,17 @@ namespace Test.Parser.Tokens
         {
             ItemToken token;
 
-            token = new ItemToken(StreamReaderFromString("foo=bar \\ "));
+            token = ItemTokenFromString("foo=bar \\ ");
             token.Name.ShouldBeEquivalentTo("foo");
             // TODO: maybe \\ should be gone?
             token.Value.ShouldBeEquivalentTo("bar \\ ");
         }
 
-        private static StreamReader StreamReaderFromString(string s)
+        private static ItemToken ItemTokenFromString(string s)
         {
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(s ?? ""));
-            return new StreamReader(stream);
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(s ?? ""));
+            var sr = new StreamReader(ms);
+            return new ItemToken(sr);
         }
     }
 }
