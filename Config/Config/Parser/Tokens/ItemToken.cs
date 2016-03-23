@@ -16,7 +16,7 @@ namespace Config.Parser.Tokens
 
         public ItemToken(StreamReader reader)
         {
-            string line = reader.ReadLine().Trim();
+            string line = reader.ReadLine();
 
             if (!line.Contains("="))
             {
@@ -24,25 +24,29 @@ namespace Config.Parser.Tokens
             }
 
             string[] parts = line.Split(new []{ '=' }, 2);
-            string value = parts[1].Trim();
+            string value = TrimEndEscaped(parts[1].TrimStart());
 
             // Comment after value
             // foo = bar ; comment
             if (value.Contains(";"))
             {
-                value = value
-                    .Substring(0, value.IndexOf(';'))
-                    .Trim();
-            }
-
-            // Escaped spaces at the end
-            if (value.EndsWith("\\"))
-            {
-                value += ' ';
+                value = value.Substring(0, value.IndexOf(';'));
+                value = TrimEndEscaped(value);
             }
 
             Name = parts[0].Trim();
-            Value = value;
+            Value = value.Replace("\\ ", " ");
+        }
+
+        private string TrimEndEscaped(string s)
+        {
+            if (char.IsWhiteSpace(s[s.Length - 1]))
+            {
+                s = s.TrimEnd();
+                return s.EndsWith("\\") ? s + ' ' : s;
+            }
+
+            return s;
         }
     }
 }

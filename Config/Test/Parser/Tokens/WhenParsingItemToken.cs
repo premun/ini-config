@@ -59,10 +59,25 @@ namespace Test.Parser.Tokens
         {
             ItemToken token;
 
-            token = ItemTokenFromString("foo=bar \\ ");
+            token = ItemTokenFromString(@"foo=bar \ ");
             token.Name.ShouldBeEquivalentTo("foo");
-            // TODO: maybe \\ should be gone?
-            token.Value.ShouldBeEquivalentTo("bar \\ ");
+            token.Value.ShouldBeEquivalentTo("bar  ");
+
+            token = ItemTokenFromString(@"foo=bar \ \ ");
+            token.Name.ShouldBeEquivalentTo("foo");
+            token.Value.ShouldBeEquivalentTo("bar   ");
+
+            token = ItemTokenFromString(@"foo=bar \ \  ; commentary");
+            token.Name.ShouldBeEquivalentTo("foo");
+            token.Value.ShouldBeEquivalentTo("bar   ");
+            
+            token = ItemTokenFromString(@"foo=bar \ \");
+            token.Name.ShouldBeEquivalentTo("foo");
+            token.Value.ShouldBeEquivalentTo(@"bar  \");
+
+            token = ItemTokenFromString(@"foo=bar \ \;commenteray ");
+            token.Name.ShouldBeEquivalentTo("foo");
+            token.Value.ShouldBeEquivalentTo(@"bar  \");
         }
 
         private static ItemToken ItemTokenFromString(string s)
