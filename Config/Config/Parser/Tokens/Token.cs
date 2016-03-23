@@ -4,7 +4,7 @@
 
 namespace Config.Parser.Tokens
 {
-    abstract class Token
+    internal abstract class Token
     {
     }
 }

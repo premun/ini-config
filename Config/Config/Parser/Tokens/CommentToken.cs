@@ -5,7 +5,10 @@ using System.Runtime.CompilerServices;
 
 namespace Config.Parser.Tokens
 {
-    class CommentToken : Token
+    /// <summary>
+    /// Represents a commented section that the parser read.
+    /// </summary>
+    internal class CommentToken : Token
     {
         public string Content { get; private set; }
 

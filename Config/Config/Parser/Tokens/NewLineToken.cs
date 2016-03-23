@@ -1,6 +1,9 @@
 ﻿namespace Config.Parser.Tokens
 {
-    class NewLineToken : Token
+    /// <summary>
+    /// Represents a new line that the parser read.
+    /// </summary>
+    internal class NewLineToken : Token
     {
     }
 }

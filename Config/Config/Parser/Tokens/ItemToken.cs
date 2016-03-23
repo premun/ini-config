@@ -6,7 +6,10 @@ using System.Runtime.CompilerServices;
 
 namespace Config.Parser.Tokens
 {
-    class ItemToken : Token
+    /// <summary>
+    /// Represents a config key=value item that the parser read.
+    /// </summary>
+    internal class ItemToken : Token
     {
         public string Name { get; private set; }
         public string Value { get; private set; }

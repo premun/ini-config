@@ -7,6 +7,9 @@ using System.Runtime.CompilerServices;
 
 namespace Config.Parser.Tokens
 {
+    /// <summary>
+    /// Represents a config file section [Header] that the parser read.
+    /// </summary>
     class SectionHeaderToken : Token
     {
         public string Name { get; private set; }

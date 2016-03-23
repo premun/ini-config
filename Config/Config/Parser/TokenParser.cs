@@ -6,6 +6,9 @@ using Config.Parser.Tokens;
 
 namespace Config.Parser
 {
+    /// <summary>
+    /// Parses stream into tokens and returns them one by one.
+    /// </summary>
     class TokenParser
     {
         private readonly StreamReader _reader;
@@ -15,6 +18,10 @@ namespace Config.Parser
             _reader = reader;
         }
 
+        /// <summary>
+        /// Reads new token from stream.
+        /// </summary>
+        /// <returns>Next token or null if file at the end.</returns>
         public Token GetNextToken()
         {
             if (_reader.EndOfStream)
@@ -22,6 +29,7 @@ namespace Config.Parser
                 return null;
             }
 
+            // Let's skip empty beginnings of lines
             int c = _reader.Peek();
             while (isWhiteSpace(c))
             {
@@ -29,6 +37,7 @@ namespace Config.Parser
                 c = _reader.Peek();
             }
 
+            // File ended with whitespaces / new lines
             if (_reader.EndOfStream)
             {
                 return null;
