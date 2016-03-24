@@ -1,18 +1,50 @@
 ﻿using System.Collections.Generic;
-using Config.Format;
 
 namespace Config
 {
+    /// <summary>
+    /// Interface represents main data structure, where configuration is held through runtime.
+    /// </summary>
     public interface IConfig
     {
-        IConfigSection this[string key] { get; }
-	    IConfigSection GetSection(string key);
+        /// <summary>
+        /// Retreive config section by its name.
+        /// </summary>
+        /// <param name="sectionName">Section name</param>
+        /// <returns>Section, if found, null otherwise.</returns>
+        IConfigSection this[string sectionName] { get; }
 
+        /// <summary>
+        /// Retreive config section by its name.
+        /// </summary>
+        /// <param name="sectionName">Section name</param>
+        /// <returns>Section, if found, null otherwise.</returns>
+        IConfigSection GetSection(string sectionName);
+
+        /// <summary>
+        /// Returns a collection of all registered config sections.
+        /// </summary>
 		IEnumerable<IConfigSection> Sections { get; }
-		bool AddSection(IConfigSection section);
-		bool RemoveSection(IConfigSection section);
-		bool RemoveSection(string name);
 
-		void Save(string path = null);
+        /// <summary>
+        /// Ads a config sections, effectively overwriting an old one when their Name matches.
+        /// </summary>
+        /// <param name="section">Section to be added</param>
+        /// <returns>True, if some old section with the same name was overwritten.</returns>
+		bool AddSection(IConfigSection section);
+
+        /// <summary>
+        /// Removes given config sections.
+        /// </summary>
+        /// <param name="section">Section to be removed</param>
+        /// <returns>True, if section was present.</returns>
+		bool RemoveSection(IConfigSection section);
+
+        /// <summary>
+        /// Removes given config sections.
+        /// </summary>
+        /// <param name="sectionName">Section's name</param>
+        /// <returns>True, if section was present.</returns>
+        bool RemoveSection(string sectionName);
     }
 }

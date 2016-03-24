@@ -1,6 +1,6 @@
 ﻿namespace Config
 {
-	public enum Mode
+	public enum BuildMode
 	{
 		Strict = 0,
 		Relaxed
