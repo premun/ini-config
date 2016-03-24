@@ -10,15 +10,12 @@ namespace Config
 	{
         /// <summary>
         /// Builds an IConfig instance. Depending on supplied format requirements and build mode generates exception.
-        /// TODO: throws [SomeConcreteConfig]Exception
         /// </summary>
         /// <param name="formatSpecifier">Specification of desired config structure</param>
         /// <param name="buildMode">Should an exception be raised when format doesn't correspond with the specified structure?</param>
         /// <returns>Built IConfig filled with data</returns>
+        /// <exception cref="ConfigFormatException">Thrown when config format does not correspond with supplied specification.</exception>
 		IConfig Build(IFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed);
-
-        // TODO: Nemelo by byt nejake GetErrors(), ktery vypise varku erroru z posledniho Build? 
-        //       Jakoze Relaxed treba neda vyjjimku, ale muzes stejne ty errory ziskat?
 
         /// <summary>
         /// Generates an empty config that can be filled with values manually.

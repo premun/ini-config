@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildMode.cs" />
-    <Compile Include="Format\Errors\Error.cs" />
-    <Compile Include="Format\IFormatValidator.cs" />
+    <Compile Include="Format\ConfigFormatException.cs" />
+    <Compile Include="Format\Errors\ConfigFormatError.cs" />
     <Compile Include="Format\RequirementType.cs" />
     <Compile Include="IConfig.cs" />
     <Compile Include="IConfigBuilder.cs" />
