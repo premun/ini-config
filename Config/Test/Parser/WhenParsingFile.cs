@@ -18,28 +18,39 @@ namespace Test.Parser
             string content = "[foo]\n" +
                              "bar = 123 ; commentary\n" +
                              "  xyz =456 \n" +
-                             "; another commentary\n" +
+							 "[foo 2]\n" +
+							 " abc =   def;\n" +
+                             "; another=commentary\n" +
                              "\n";
 
             TokenParser parser = TokenParserFromString(content);
 
-            var token = parser.GetNextToken();
-            token.Should().BeOfType<SectionHeaderToken>();
-            token.As<SectionHeaderToken>().Name.ShouldBeEquivalentTo("foo");
+			var token = parser.GetNextToken();
+			token.Should().BeOfType<SectionHeaderToken>();
+			token.As<SectionHeaderToken>().Name.ShouldBeEquivalentTo("foo");
 
-            token = parser.GetNextToken();
-            token.Should().BeOfType<ItemToken>();
-            token.As<ItemToken>().Name.ShouldBeEquivalentTo("bar");
-            token.As<ItemToken>().Value.ShouldBeEquivalentTo("123");
+			token = parser.GetNextToken();
+			token.Should().BeOfType<ItemToken>();
+			token.As<ItemToken>().Name.ShouldBeEquivalentTo("bar");
+			token.As<ItemToken>().Value.ShouldBeEquivalentTo("123");
 
             token = parser.GetNextToken();
             token.Should().BeOfType<ItemToken>();
             token.As<ItemToken>().Name.ShouldBeEquivalentTo("xyz");
-            token.As<ItemToken>().Value.ShouldBeEquivalentTo("456");
+			token.As<ItemToken>().Value.ShouldBeEquivalentTo("456");
+			
+			token = parser.GetNextToken();
+			token.Should().BeOfType<SectionHeaderToken>();
+			token.As<SectionHeaderToken>().Name.ShouldBeEquivalentTo("foo 2");
+
+			token = parser.GetNextToken();
+			token.Should().BeOfType<ItemToken>();
+			token.As<ItemToken>().Name.ShouldBeEquivalentTo("abc");
+			token.As<ItemToken>().Value.ShouldBeEquivalentTo("def");
 
             token = parser.GetNextToken();
             token.Should().BeOfType<CommentToken>();
-            token.As<CommentToken>().Content.ShouldBeEquivalentTo("; another commentary");
+            token.As<CommentToken>().Content.ShouldBeEquivalentTo("; another=commentary");
 
             Assert.IsNull(parser.GetNextToken());
             Assert.IsNull(parser.GetNextToken());
