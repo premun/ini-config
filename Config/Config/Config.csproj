@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
     <Compile Include="ConfigSection.cs" />
+    <Compile Include="Format\Requirement.cs" />
     <Compile Include="IConfig.cs" />
+    <Compile Include="IConfigBuilder.cs" />
+    <Compile Include="IConfigSaver.cs" />
     <Compile Include="IConfigSection.cs" />
+    <Compile Include="Format\IFormatSpecifier.cs" />
+    <Compile Include="Mode.cs" />
     <Compile Include="Parser\ITokenParser.cs" />
     <Compile Include="Parser\Tokens\CommentToken.cs" />
     <Compile Include="Parser\Tokens\ItemToken.cs" />

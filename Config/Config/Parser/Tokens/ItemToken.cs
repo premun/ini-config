@@ -11,8 +11,8 @@ namespace Config.Parser.Tokens
     /// </summary>
     internal class ItemToken : Token
     {
-        public string Name { get; private set; }
-        public string Value { get; private set; }
+		public string Name { get; private set; }
+		public string Value { get; private set; }
 
 	    public ItemToken(StreamReader reader)
         {
