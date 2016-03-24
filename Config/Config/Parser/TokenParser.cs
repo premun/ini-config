@@ -9,7 +9,7 @@ namespace Config.Parser
     /// <summary>
     /// Parses stream into tokens and returns them one by one.
     /// </summary>
-    class TokenParser
+    internal class TokenParser : ITokenParser
     {
         private readonly StreamReader _reader;
 
