@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildMode.cs" />
+    <Compile Include="Format\Errors\Error.cs" />
+    <Compile Include="Format\IFormatValidator.cs" />
     <Compile Include="Format\RequirementType.cs" />
     <Compile Include="IConfig.cs" />
     <Compile Include="IConfigBuilder.cs" />
     <Compile Include="IConfigSaver.cs" />
     <Compile Include="IConfigSection.cs" />
     <Compile Include="Format\IFormatSpecifier.cs" />
-    <Compile Include="Mode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
