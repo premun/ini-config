@@ -28,17 +28,32 @@ namespace Config.Parser.Tokens
 
             // Comment after value
             // foo = bar ; comment
-            if (value.Contains(";"))
+	        int commentStartPosition = FindCommentStartPosition(value);
+            if (commentStartPosition != -1)
             {
-                value = value.Substring(0, value.IndexOf(';'));
+                value = value.Substring(0, commentStartPosition);
                 value = TrimEndEscaped(value);
             }
 
+			value = value.Replace("\\ ", " ");
+			value = value.Replace("\\;", ";");
+
             Name = parts[0].Trim();
-            Value = value.Replace("\\ ", " ");
+            Value = value;
         }
 
-        private string TrimEndEscaped(string s)
+	    private static int FindCommentStartPosition(string s)
+	    {
+		    int pos = s.IndexOf(';');
+			while (pos > 0 && s[pos - 1] == '\\')
+			{
+				pos = s.IndexOf(';', pos + 1);
+			}
+
+		    return pos;
+	    }
+
+        private static string TrimEndEscaped(string s)
         {
             if (char.IsWhiteSpace(s[s.Length - 1]))
             {

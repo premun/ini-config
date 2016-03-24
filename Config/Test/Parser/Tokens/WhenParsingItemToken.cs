@@ -54,31 +54,45 @@ namespace Test.Parser.Tokens
             ItemTokenFromString("foo");
         }
 
-        [TestMethod]
-        public void EscapedSpaceShouldBeParsedOk()
-        {
-            ItemToken token;
+		[TestMethod]
+		public void EscapedSpaceShouldBeParsedOk()
+		{
+			ItemToken token;
 
-            token = ItemTokenFromString(@"foo=bar \ ");
-            token.Name.ShouldBeEquivalentTo("foo");
-            token.Value.ShouldBeEquivalentTo("bar  ");
+			token = ItemTokenFromString(@"foo=bar \ ");
+			token.Name.ShouldBeEquivalentTo("foo");
+			token.Value.ShouldBeEquivalentTo("bar  ");
 
-            token = ItemTokenFromString(@"foo=bar \ \ ");
-            token.Name.ShouldBeEquivalentTo("foo");
-            token.Value.ShouldBeEquivalentTo("bar   ");
+			token = ItemTokenFromString(@"foo=bar \ ");
+			token.Name.ShouldBeEquivalentTo("foo");
+			token.Value.ShouldBeEquivalentTo("bar  ");
 
-            token = ItemTokenFromString(@"foo=bar \ \  ; commentary");
-            token.Name.ShouldBeEquivalentTo("foo");
-            token.Value.ShouldBeEquivalentTo("bar   ");
-            
-            token = ItemTokenFromString(@"foo=bar \ \");
-            token.Name.ShouldBeEquivalentTo("foo");
-            token.Value.ShouldBeEquivalentTo(@"bar  \");
+			token = ItemTokenFromString(@"foo= \ bar \ \ ");
+			token.Name.ShouldBeEquivalentTo("foo");
+			token.Value.ShouldBeEquivalentTo(" bar   ");
 
-            token = ItemTokenFromString(@"foo=bar \ \;commenteray ");
-            token.Name.ShouldBeEquivalentTo("foo");
-            token.Value.ShouldBeEquivalentTo(@"bar  \");
-        }
+			token = ItemTokenFromString(@"foo= bar \ \  ; commentary");
+			token.Name.ShouldBeEquivalentTo("foo");
+			token.Value.ShouldBeEquivalentTo("bar   ");
+
+			token = ItemTokenFromString(@"foo=  bar \ \");
+			token.Name.ShouldBeEquivalentTo("foo");
+			token.Value.ShouldBeEquivalentTo(@"bar  \");
+		}
+
+		[TestMethod]
+		public void EscapedSemicolonShouldBeParsedOk()
+		{
+			ItemToken token;
+
+			token = ItemTokenFromString(@"foo=ba\;\;r\; \ ");
+			token.Name.ShouldBeEquivalentTo("foo");
+			token.Value.ShouldBeEquivalentTo("ba;;r;  ");
+
+			token = ItemTokenFromString(@"foo= \ \ bar \ \;commenteray ");
+			token.Name.ShouldBeEquivalentTo("foo");
+			token.Value.ShouldBeEquivalentTo(@"  bar  ;commenteray");
+		}
 
         private static ItemToken ItemTokenFromString(string s)
         {
