@@ -10,7 +10,9 @@ namespace Config.Parser.Tokens
     /// </summary>
     internal class CommentToken : Token
     {
-        public string Content { get; private set; }
+		public string Content { get; private set; }
+
+		public static readonly char CommentSymbol = ';';
 
         public CommentToken(StreamReader reader)
         {

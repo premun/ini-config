@@ -14,7 +14,7 @@ namespace Config.Parser.Tokens
         public string Name { get; private set; }
         public string Value { get; private set; }
 
-        public ItemToken(StreamReader reader)
+	    public ItemToken(StreamReader reader)
         {
             string line = reader.ReadLine();
 
@@ -36,7 +36,7 @@ namespace Config.Parser.Tokens
             }
 
 			value = value.Replace("\\ ", " ");
-			value = value.Replace("\\;", ";");
+			value = value.Replace("\\" + CommentToken.CommentSymbol, CommentToken.CommentSymbol + "");
 
             Name = parts[0].Trim();
             Value = value;
@@ -44,10 +44,10 @@ namespace Config.Parser.Tokens
 
 	    private static int FindCommentStartPosition(string s)
 	    {
-		    int pos = s.IndexOf(';');
+			int pos = s.IndexOf(CommentToken.CommentSymbol);
 			while (pos > 0 && s[pos - 1] == '\\')
 			{
-				pos = s.IndexOf(';', pos + 1);
+				pos = s.IndexOf(CommentToken.CommentSymbol, pos + 1);
 			}
 
 		    return pos;
