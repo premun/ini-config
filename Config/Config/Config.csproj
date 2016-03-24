@@ -41,21 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigSection.cs" />
-    <Compile Include="Format\Requirement.cs" />
+    <Compile Include="Format\RequirementType.cs" />
     <Compile Include="IConfig.cs" />
     <Compile Include="IConfigBuilder.cs" />
     <Compile Include="IConfigSaver.cs" />
     <Compile Include="IConfigSection.cs" />
     <Compile Include="Format\IFormatSpecifier.cs" />
     <Compile Include="Mode.cs" />
-    <Compile Include="Parser\ITokenParser.cs" />
-    <Compile Include="Parser\Tokens\CommentToken.cs" />
-    <Compile Include="Parser\Tokens\ItemToken.cs" />
-    <Compile Include="Parser\TokenParser.cs" />
-    <Compile Include="Parser\Tokens\NewLineToken.cs" />
-    <Compile Include="Parser\Tokens\SectionHeaderToken.cs" />
-    <Compile Include="Parser\Tokens\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

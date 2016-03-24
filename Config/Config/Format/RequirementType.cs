@@ -1,6 +1,6 @@
 ﻿namespace Config.Format
 {
-	public enum Requirement
+	public enum RequirementType
 	{
 		Optional = 0,
 		Required
