@@ -1,6 +1,6 @@
 ﻿namespace Config
 {
-    public class Config : IConfig
+    public interface IConfigSection
     {
     }
 }
