@@ -27,7 +27,7 @@ namespace Config
 		IEnumerable<IConfigSection> Sections { get; }
 
         /// <summary>
-        /// Ads a config sections, effectively overwriting an old one when their Name matches.
+        /// Adds a config sections, effectively overwriting an old one when their Name matches.
         /// </summary>
         /// <param name="section">Section to be added</param>
         /// <returns>True, if some old section with the same name was overwritten.</returns>

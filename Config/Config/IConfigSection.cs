@@ -6,13 +6,25 @@ namespace Config
     /// Represents data of one config section (list of key-value items).
     /// Also behaves like a collection of items.
     /// </summary>
-    /// TODO: To uz je skoro mozna IList?
-    public interface IConfigSection : IEnumerable<KeyValuePair<string, object>>
+    /// TODO: Name a Required bych dal readonly setovane v constructoru.
+    public interface IConfigSection : IDictionary<string, IConfigOption>
     {
         /// <summary>
-        /// Unique name of the config sections, used for identification.
+        /// Unique name of the config section, used for identification.
         /// </summary>
-        string Name { get; set; }
+        /// <value>
+        /// The name.
+        /// </value>
+        string Name { get; }
+
+
+        /// <summary>
+        /// Gets or sets the description of the section about its options.
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
+        string Description { get; set; }
 
         /// <summary>
         /// TODO: exception type to doc
@@ -41,6 +53,7 @@ namespace Config
         /// <returns>True, when item was overwritten, false otherwise.</returns>
         bool Set(string key, object value);
 
+        /* TODO todle jsou default vlastnosti IDict/IList vseho...
         /// <summary>
         /// Removes an item saved with given key.
         /// </summary>
@@ -51,6 +64,7 @@ namespace Config
         /// <summary>
         /// Removes all items in section.
         /// </summary>
-        void Clear();
+        new void Clear();
+         * */
     }
 }
