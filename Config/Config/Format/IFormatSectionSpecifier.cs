@@ -6,6 +6,8 @@ namespace Config.Format
     {
         string Name { get; set; }
 
-        void SetOption(string name, bool required);
+        void SetOptional(IConfigOption option);
+
+        void SetRequired(IConfigOption option);
     }
 }

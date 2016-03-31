@@ -7,7 +7,9 @@ namespace Config.Format
     /// </summary>
     public interface IFormatSpecifier : IList<IFormatSectionSpecifier>
     {
-        void SetSection(IFormatSectionSpecifier section, bool required = true);
+        void SetRequired(IFormatSectionSpecifier section);
+
+        void SetOptional(IFormatSectionSpecifier section);
 
         /*
         void SetOptional(string sectionName);
