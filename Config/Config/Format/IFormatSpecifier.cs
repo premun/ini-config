@@ -5,11 +5,11 @@ namespace Config.Format
     /// <summary>
     /// Enables user to specify the format 
     /// </summary>
-    public interface IFormatSpecifier : IList<IFormatSectionSpecifier>
+    public interface IFormatSpecifier
     {
-        void SetRequired(IFormatSectionSpecifier section);
+        List<FormatSectionSpecifier> RequiredSections { get; }
 
-        void SetOptional(IFormatSectionSpecifier section);
+        List<FormatSectionSpecifier> OptionalSections { get; }
 
         /*
         void SetOptional(string sectionName);

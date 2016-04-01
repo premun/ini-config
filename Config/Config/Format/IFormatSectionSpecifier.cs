@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace Config.Format
 {
@@ -6,8 +7,9 @@ namespace Config.Format
     {
         string Name { get; set; }
 
-        void SetOptional(IConfigOption option);
+        List<IFormatOption> RequiredOptions { get; }
 
-        void SetRequired(IConfigOption option);
+        // TODO lepsi nazev
+        List<IFormatOption> OptionalOption { get; }
     }
 }
