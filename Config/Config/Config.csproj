@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildMode.cs" />
-    <Compile Include="Examples.cs" />
     <Compile Include="Format\ConfigFormatException.cs" />
     <Compile Include="Format\Errors\ConfigFormatError.cs" />
     <Compile Include="Format\FormatOption.cs" />

@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Config.Format;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Config
+namespace UnitTestProject1
 {
-    public class Examples
+    [TestClass]
+    public class UnitTest1
     {
-        public void TestFormater()
+        [TestMethod]
+        public void TestMethod1()
         {
             var formater = new FormatSpecifier
             {
@@ -43,6 +47,7 @@ namespace Config
                 }
             };
 
+            Console.WriteLine(formater);
         }
     }
 }
