@@ -8,6 +8,12 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
+        enum DummyEnum
+        {
+            One,
+            Two
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -19,19 +25,19 @@ namespace UnitTestProject1
                     {
                         RequiredOptions = new List<IFormatOption>
                         {
-                            new FormatOption("Option1"),
-                            new FormatOption("Option2")
+                            new FormatOption<string>("Option1"),
+                            new FormatOption<int>("Option2")
                         }
                     },
                     new FormatSectionSpecifier("Section2")
                     {
                         RequiredOptions = new List<IFormatOption>
                         {
-                            new FormatOption("Opt1")
+                            new FormatListOption<int>("Opt1")
                         },
                         OptionalOption = new List<IFormatOption>
                         {
-                            new FormatOption("Optional1")
+                            new FormatOption<bool>("Optional1")
                         }
                     }
                 },
@@ -41,7 +47,8 @@ namespace UnitTestProject1
                     {
                         RequiredOptions = new List<IFormatOption>
                         {
-                            new FormatOption("ReqInOpt1")
+                            new FormatOption<double>("ReqInOpt1"),
+                            new FormatEnumOption<DummyEnum>("EnumOpt")
                         }
                     }
                 }

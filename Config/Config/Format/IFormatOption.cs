@@ -1,7 +1,11 @@
 ﻿namespace Config.Format
 {
-    public class IFormatOption
+    public interface IFormatOption
     {
-        public string Name { get; set; }
+        string Name { get; set; }
+    }
+
+    public interface IFormatOption<T> : IFormatOption
+    {
     }
 }
