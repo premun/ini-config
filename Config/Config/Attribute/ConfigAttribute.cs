@@ -10,11 +10,13 @@ namespace Config.Attribute
     public class ConfigAttribute : System.Attribute
     {
         private string _file;
-        private readonly IFormatSpecifier _formatSpecifier;
+        private IFormatSpecifier _formatSpecifier;
+        private BuildMode _mode;
 
-        public ConfigAttribute(string file, Type formatSpecifier)
+        public ConfigAttribute(string file, Type formatSpecifier, BuildMode mode)
         {
             _file = file;
+            _mode = mode;
 
             if (!typeof(IFormatSpecifier).IsAssignableFrom(formatSpecifier) )
             {

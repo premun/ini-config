@@ -3,6 +3,7 @@ using Config;
 using Config.Attribute;
 using Config.Format;
 using Config.Values;
+using Config = Config.Attribute.Config;
 
 namespace Examples
 {
@@ -48,10 +49,13 @@ namespace Examples
 		{
 			var config = configBuilder.Build(FormatSpecifier, BuildMode.Strict);
 			config["foo"]["bar"].Get<int>();
+
+            // Attribute class initialization
+            global::Config.Attribute.Config.Init();
 		}
 	}
 
-    [Config("c:/testCongig.ini", typeof(ExampleFormater))]
+    [Config("c:/testCongig.ini", typeof(ExampleFormater), BuildMode.Relaxed)]
     public class AttributeExample
     {
         [ConfigOption("First", "testString")]
