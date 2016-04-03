@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Config.Format
 {
-    public interface IFormatSectionSpecifier
+	/// <summary>
+	/// Enables user to specify the format of a config section.
+	/// </summary>
+	public interface IFormatSectionSpecifier
     {
         string Name { get; set; }
 
         List<IFormatOption> RequiredOptions { get; }
-
-        // TODO lepsi nazev
-        List<IFormatOption> OptionalOption { get; }
+		
+        List<IFormatOption> OptionalOptions { get; }
     }
 }

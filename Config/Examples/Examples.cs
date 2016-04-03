@@ -25,7 +25,7 @@ namespace Examples
 					{
 						new FormatListOption<int>("Opt1")
 					},
-					OptionalOption = new List<IFormatOption>
+					OptionalOptions = new List<IFormatOption>
 					{
 						new FormatOption<bool>("Optional1")
 					}

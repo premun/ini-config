@@ -51,10 +51,16 @@
     <Compile Include="Format\IFormatSectionSpecifier.cs" />
     <Compile Include="IConfig.cs" />
     <Compile Include="IConfigBuilder.cs" />
+    <Compile Include="Values\FloatConfigValue.cs" />
     <Compile Include="Values\ConfigValue.cs" />
     <Compile Include="IConfigSaver.cs" />
     <Compile Include="IConfigSection.cs" />
     <Compile Include="Format\IFormatSpecifier.cs" />
+    <Compile Include="Values\BoolConfigValue.cs" />
+    <Compile Include="Values\EnumConfigValue.cs" />
+    <Compile Include="Values\UnsignedConfigValue.cs" />
+    <Compile Include="Values\SignedConfigValue.cs" />
+    <Compile Include="Values\StringConfigValue.cs" />
     <Compile Include="Values\IntConfigValue.cs" />
     <Compile Include="Values\ListConfigValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

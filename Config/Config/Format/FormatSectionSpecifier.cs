@@ -8,14 +8,14 @@ namespace Config.Format
         {
             Name = name;
             RequiredOptions = new List<IFormatOption>();
-            OptionalOption = new List<IFormatOption>();
+            OptionalOptions = new List<IFormatOption>();
         }
 
         #region Implementation of IFormatSectionSpecifier
 
         public string Name { get; set; }
         public List<IFormatOption> RequiredOptions { get; set; }
-        public List<IFormatOption> OptionalOption { get; set; }
+        public List<IFormatOption> OptionalOptions { get; set; }
 
         #endregion
     }
