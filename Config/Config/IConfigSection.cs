@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Config.Values;
 
 namespace Config
 {
@@ -7,7 +8,7 @@ namespace Config
     /// Also behaves like a collection of items.
     /// </summary>
     /// TODO: Name a Required bych dal readonly setovane v constructoru.
-    public interface IConfigSection : IDictionary<string, IConfigOption>
+    public interface IConfigSection : IDictionary<string, ConfigValue>
     {
         /// <summary>
         /// Unique name of the config section, used for identification.
@@ -16,7 +17,6 @@ namespace Config
         /// The name.
         /// </value>
         string Name { get; }
-
 
         /// <summary>
         /// Gets or sets the description of the section about its options.
