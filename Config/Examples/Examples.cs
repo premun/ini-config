@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Config;
+using Config.Attribute;
 using Config.Format;
 using Config.Values;
 
@@ -49,4 +50,14 @@ namespace Examples
 			config["foo"]["bar"].Get<int>();
 		}
 	}
+
+    [Config("c:/testCongig.ini")]
+    public class AttributeExample
+    {
+        [ConfigOption("First", "testString")]
+        private string _testString;
+
+        [ConfigOption("First", "testBool")]
+        private bool _testBool;
+    }
 }
