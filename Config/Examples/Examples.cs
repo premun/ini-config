@@ -3,12 +3,18 @@ using Config;
 using Config.Attribute;
 using Config.Format;
 using Config.Values;
-using Config = Config.Attribute.Config;
 
 namespace Examples
 {
     public class Examples
     {
+        static void Main(string[] args)
+        {
+            // Display the number of command line arguments:
+            var example = new AttributeExample();
+            Config.Attribute.Config.Save(example);
+        }
+
         public static readonly FormatSpecifier FormatSpecifier = new FormatSpecifier
         {
             RequiredSections = new List<FormatSectionSpecifier>
@@ -51,18 +57,20 @@ namespace Examples
 			config["foo"]["bar"].Get<int>();
 
             // Attribute class initialization
-            global::Config.Attribute.Config.Init();
+            Config.Attribute.Config.Init();
 		}
 	}
+
+
 
     [Config("c:/testCongig.ini", typeof(ExampleFormater), BuildMode.Relaxed)]
     public class AttributeExample
     {
         [ConfigOption("First", "testString")]
-        private string _testString;
+        private readonly string _testString;
 
         [ConfigOption("First", "testBool")]
-        private bool _testBool;
+        private readonly bool _testBool;
     }
 
     public class ExampleFormater : IFormatSpecifier
