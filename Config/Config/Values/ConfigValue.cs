@@ -6,12 +6,17 @@
 
 		public string Description { get; set; }
 
-	    public T Get<T>()
-	    {
-		    return (T) Value;
-	    }
+		public T Get<T>()
+		{
+			return (T) Value;
+		}
 
-	    public virtual string Serialize()
+		public T As<T>()
+		{
+			return Get<T>();
+		}
+
+		public virtual string Serialize()
 	    {
 		    return Value.ToString();
 	    }

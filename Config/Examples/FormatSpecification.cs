@@ -8,13 +8,13 @@ namespace Examples
 {
     public class FormatSpecification
     {
-		/// <summary>
+	    /// <summary>
 		/// Example of how a config file format can be specified.
 		/// 
 		/// There are two required sections (Server, HTTP) and one optional (Paths).
 		/// </summary>
 		/// <param name="configBuilder"></param>
-	    private void ExampleUsage(IConfigBuilder configBuilder)
+		private void ExampleUsage(IConfigBuilder configBuilder)
 	    {
 		    var formatSpecifier = new FormatSpecifier
 		    {
@@ -58,7 +58,7 @@ namespace Examples
 		    };
 
 		    var config = configBuilder.Build(formatSpecifier, BuildMode.Strict);
-			var hostname = config["Server"]["hostname"].Get<string>();
+			var hostname = config["Server"]["hostname"].As<string>();
 
 		    string path = null;
 		    var section = config["Extensions"];
@@ -66,7 +66,7 @@ namespace Examples
 		    {
 			    foreach (var pathOption in section.Values)
 			    {
-				    path = pathOption.Get<string>();
+				    path = pathOption.As<string>();
 			    }
 		    }
 	    }
