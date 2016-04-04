@@ -5,14 +5,18 @@ namespace Examples
 {
 	/// <summary>
 	/// Example usage of config attributes.
+	/// Class will load its values from specified config file.
 	/// </summary>
 	[Config("/www/mywebsite/config.ini", typeof (MySqlFormater), BuildMode.Strict)]
 	public class MySqlConnector
 	{
-		[ConfigOption("MySQL", "hostname")]
+		/// <summary>
+		/// First attribute parameter is section, second is option name, third says, if option is required.
+		/// </summary>
+		[ConfigOption("MySQL", "hostname", true)]
 		public string Hostname;
 
-		[ConfigOption("MySQL", "username")]
+		[ConfigOption("MySQL", "username", true)]
 		public string Username;
 
 		[ConfigOption("MySQL", "password")]

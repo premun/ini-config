@@ -9,6 +9,6 @@
         /// Saves given IConfig data. Target is dependent on implementation (ini file, database...).
         /// </summary>
         /// <param name="config">Config data object</param>
-		void Save(IConfig config);
+		void SaveConfig(IConfig config);
 	}
 }

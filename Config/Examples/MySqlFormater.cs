@@ -4,6 +4,10 @@ using Config.Values;
 
 namespace Examples
 {
+	/// <summary>
+	/// Helper format specification used in other examples.
+	/// Specification of a made up MySQL config ini file that is.
+	/// </summary>
 	public class MySqlFormater : IFormatSpecifier
 	{
 		#region Implementation of IFormatSpecifier

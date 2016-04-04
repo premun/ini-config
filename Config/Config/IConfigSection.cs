@@ -8,6 +8,8 @@ namespace Config
     /// Also behaves like a collection of items.
     /// </summary>
     /// TODO: Name a Required bych dal readonly setovane v constructoru.
+    /// TODO: Zrusit IDictionary? Protoze napriklad moc nechceme mit setter na indexeru.
+    /// TODO: Minimalne setter musime prepsat, aby do nej sly ukladat vsechny mozny hodnoty a ono to z nich delalo ConfigValue.
     public interface IConfigSection : IDictionary<string, ConfigValue>
     {
         /// <summary>
@@ -50,7 +52,7 @@ namespace Config
         /// </summary>
         /// <param name="key">Item key</param>
         /// <param name="value">Item value</param>
-        /// <returns>True, when item was overwritten, false otherwise.</returns>
-        bool Set(string key, object value);
+        /// <returns>Itself for better chaining.</returns>
+        IConfigSection Set(string key, object value);
     }
 }

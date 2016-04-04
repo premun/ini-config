@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Config;
 using Config.Format;
 using Config.Values;
 
 namespace Examples
 {
-    public class FormatSpecification
+	/// <summary>
+	/// Example of how a config file format can be specified.
+	/// There are two required sections (Server, HTTP) and one optional (Paths).
+	/// </summary>
+	public class FormatSpecification
     {
 	    public readonly IFormatSpecifier FormatSpecifier = new FormatSpecifier
 		{
@@ -48,16 +50,5 @@ namespace Examples
 					}
 				}
 		};
-
-		/// <summary>
-		/// Example of how a config file format can be specified.
-		/// 
-		/// There are two required sections (Server, HTTP) and one optional (Paths).
-		/// </summary>
-		/// <param name="configBuilder"></param>
-		private void ExampleUsage(IConfigBuilder configBuilder)
-	    {
-		    var config = configBuilder.Build(FormatSpecifier, BuildMode.Strict);
-	    }
     }
 }

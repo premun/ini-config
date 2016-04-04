@@ -19,7 +19,7 @@ namespace Config.Attribute
                 throw new InvalidDataException();
             }
 
-            // Save config
+            // SaveConfig config
         }
     }
 }

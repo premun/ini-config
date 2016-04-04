@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Linq;
 using Config;
 using Config.Format;
 
 namespace Examples
 {
+	/// <summary>
+	/// Example of how a config will be read from an ini file and then used.
+	/// </summary>
 	public class BasicUsage
 	{
 		public void ConfigBuilder()
 		{
 			IConfig config;
-			using (IniFileConfigBuilder builder = new IniFileConfigBuilder("/www/mywebsite/config.ini"))
+			using (var builder = new IniFileConfigBuilder("/www/mywebsite/config.ini"))
 			{
 				try
 				{
@@ -17,22 +21,50 @@ namespace Examples
 				}
 				catch (ConfigFormatException e)
 				{
-					Console.WriteLine("Cannot build config:");
+					Console.WriteLine("Cannot build config. Encountered following errors:");
 
-					foreach (var error in e.ErrorList)
-					{
-						Console.WriteLine("  - " + error);
-					}
+					e.ErrorList
+						.ToList()
+						.ForEach(error => Console.WriteLine("  - " + error));
 
 					throw;
 				}
 			}
 
-			// Use config
-			var hostname = config["MySQL"]["hostname"].As<string>();
-			var port = config["MySQL"]["port"].As<int>();
-			
-			// ...
+			// Get config values
+			// Either directly
+			string hostname = config["MySQL"]["hostname"].As<string>();
+
+			// Or through section
+			var mysqlSection = config["MySQL"];
+			int port = mysqlSection["port"].As<int>();
+
+			// Set new values (notice method chaining)
+			config["MySQL"]
+				.Set("foo", 3.14f)
+				.Set("bar", 0x45);
+
+			// Get specific section that was not required
+			var httpSection = config["HTTP"];
+			if (httpSection != null)
+			{
+				bool secure = httpSection["use_https"].As<bool>();
+				int timeout = httpSection["timeout"].As<int>();
+			}
+
+			// Add new section
+			var newSection = config.AddSection("New section");
+
+			// Add new values
+			newSection
+				.Set("foo", 123)
+				.Set("bar", false);
+
+			// Save changed config into a new file
+			using (var configSaver = new IniFileConfigSaver("/www/mywebsite/config.local.ini"))
+			{
+				configSaver.SaveConfig(config);
+			}
 		} 
 	}
 }

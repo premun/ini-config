@@ -58,6 +58,7 @@
     <Compile Include="IConfig.cs" />
     <Compile Include="IConfigBuilder.cs" />
     <Compile Include="IniFileConfigBuilder.cs" />
+    <Compile Include="IniFileConfigSaver.cs" />
     <Compile Include="Values\FloatConfigValue.cs" />
     <Compile Include="Values\ConfigValue.cs" />
     <Compile Include="IConfigSaver.cs" />

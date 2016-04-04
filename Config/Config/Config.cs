@@ -21,6 +21,11 @@ namespace Config
 			throw new System.NotImplementedException();
 		}
 
+		public IConfigSection AddSection(string name)
+		{
+			throw new System.NotImplementedException();
+		}
+
 		public bool RemoveSection(IConfigSection section)
 		{
 			throw new System.NotImplementedException();

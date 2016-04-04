@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttributesUsage.cs" />
+    <Compile Include="AttributeUsage.cs" />
     <Compile Include="BasicUsage.cs" />
     <Compile Include="FormatSpecification.cs" />
     <Compile Include="MySqlFormater.cs" />
