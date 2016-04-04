@@ -5,9 +5,12 @@ namespace Config
 {
 	public class Config : IConfig
 	{
-		public IFormatSpecifier FormatSpecifier { get; }
+		public IFormatSpecifier FormatSpecifier
+		{
+		    get { throw new System.NotImplementedException(); }
+		}
 
-		public IConfigSection this[string sectionName]
+	    public IConfigSection this[string sectionName]
 		{
 			get { throw new System.NotImplementedException(); }
 		}
@@ -17,9 +20,12 @@ namespace Config
 			throw new System.NotImplementedException();
 		}
 
-		public IEnumerable<IConfigSection> Sections { get; }
+		public IEnumerable<IConfigSection> Sections
+		{
+		    get { throw new System.NotImplementedException(); }
+		}
 
-		public bool AddSection(IConfigSection section)
+	    public bool AddSection(IConfigSection section)
 		{
 			throw new System.NotImplementedException();
 		}
