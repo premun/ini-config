@@ -6,14 +6,15 @@ namespace Config.Format
     {
         public FormatSpecifier()
         {
-            RequiredSections = new List<FormatSectionSpecifier>();
-            OptionalSections = new List<FormatSectionSpecifier>();
+            RequiredSections = new List<IFormatSectionSpecifier>();
+            OptionalSections = new List<IFormatSectionSpecifier>();
         }
 
         #region Implementation of IFormatSpecifier
 
-        public List<FormatSectionSpecifier> RequiredSections { get; set; }
-        public List<FormatSectionSpecifier> OptionalSections { get; set; }
+        public List<IFormatSectionSpecifier> RequiredSections { get; set; }
+
+        public List<IFormatSectionSpecifier> OptionalSections { get; set; }
 
         #endregion
     }

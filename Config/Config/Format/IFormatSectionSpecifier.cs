@@ -3,7 +3,8 @@
 namespace Config.Format
 {
 	/// <summary>
-	/// Enables user to specify the format of a config section.
+	/// Class that helps with defining of config file structure.
+	/// Represents a set of options that can occur inside a config section.
 	/// </summary>
 	public interface IFormatSectionSpecifier
     {

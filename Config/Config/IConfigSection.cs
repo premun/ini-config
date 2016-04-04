@@ -52,19 +52,5 @@ namespace Config
         /// <param name="value">Item value</param>
         /// <returns>True, when item was overwritten, false otherwise.</returns>
         bool Set(string key, object value);
-
-        /* TODO todle jsou default vlastnosti IDict/IList vseho...
-        /// <summary>
-        /// Removes an item saved with given key.
-        /// </summary>
-        /// <param name="key">Item key</param>
-        /// <returns>True, when item was present, false otherwise.</returns>
-        bool Remove(string key);
-
-        /// <summary>
-        /// Removes all items in section.
-        /// </summary>
-        new void Clear();
-         * */
     }
 }
