@@ -6,5 +6,10 @@
 		{
 			Value = value;
 		}
+
+		public static implicit operator FloatConfigValue(float f)
+		{
+			return new FloatConfigValue(f);
+		}
 	}
 }

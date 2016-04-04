@@ -6,5 +6,10 @@
 		{
 			Value = value;
 		}
+
+		public static implicit operator UnsignedConfigValue(ulong l)
+		{
+			return new UnsignedConfigValue(l);
+		}
 	}
 }

@@ -53,5 +53,10 @@ namespace Config.Values
 			Value = FromString(value);
 			_textValue = value;
 		}
+
+		public static implicit operator BoolConfigValue(bool b)
+		{
+			return new BoolConfigValue(b);
+		}
 	}
 }

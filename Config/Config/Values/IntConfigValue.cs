@@ -6,5 +6,10 @@
 		{
 			Value = value;
 		}
+
+		public static implicit operator IntConfigValue(int i)
+		{
+			return new IntConfigValue(i);
+		}
 	}
 }

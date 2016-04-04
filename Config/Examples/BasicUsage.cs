@@ -2,6 +2,7 @@
 using System.Linq;
 using Config;
 using Config.Format;
+using Config.Values;
 
 namespace Examples
 {
@@ -44,6 +45,9 @@ namespace Examples
 				.Set("foo", 3.14f)
 				.Set("bar", 0x45);
 
+			// Set new values using indexer
+			config["MySQL"]["persistent"] = true;
+
 			// Get specific section that was not required
 			var httpSection = config["HTTP"];
 			if (httpSection != null)
@@ -59,6 +63,8 @@ namespace Examples
 			newSection
 				.Set("foo", 123)
 				.Set("bar", false);
+
+			newSection["another"] = 42.69f;
 
 			// Save changed config into a new file
 			using (var configSaver = new IniFileConfigSaver("/www/mywebsite/config.local.ini"))

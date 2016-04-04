@@ -6,5 +6,10 @@
 		{
 			Value = value;
 		}
+
+		public static implicit operator SignedConfigValue(long l)
+		{
+			return new SignedConfigValue(l);
+		}
 	}
 }

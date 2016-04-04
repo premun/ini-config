@@ -3,8 +3,15 @@ using System.Collections.Generic;
 
 namespace Config.Values
 {
-	public abstract class ListConfigValue<T> : ConfigValue where T : ConfigValue
+	public class ListConfigValue<T> : ConfigValue where T : ConfigValue
 	{
+		public IEnumerable<T> Values { get; set; }
+
+		public ListConfigValue(IEnumerable<T> values)
+		{
+			Values = values;
+		}
+
 		public ConfigValue this[int index]
 		{
 			get
@@ -18,6 +25,9 @@ namespace Config.Values
 			}
 		}
 
-		public abstract List<T> Get();
+		public List<T> Get()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

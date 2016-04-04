@@ -6,5 +6,10 @@
 		{
 			Value = value;
 		}
+
+		public static implicit operator StringConfigValue(string s)
+		{
+			return new StringConfigValue(s);
+		}
 	}
 }
