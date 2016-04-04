@@ -4,9 +4,7 @@ using Config.Format;
 
 namespace Config.Attribute
 {
-    [System.AttributeUsage(System.AttributeTargets.Class |
-                           System.AttributeTargets.Struct)
-    ]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
     public class ConfigAttribute : System.Attribute
     {
         private string _file;
@@ -22,6 +20,7 @@ namespace Config.Attribute
             {
                 throw new InvalidDataException();
             }
+
             _formatSpecifier = (IFormatSpecifier)Activator.CreateInstance(formatSpecifier);
         }
     }
