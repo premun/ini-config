@@ -30,4 +30,12 @@ namespace Examples
 			// Connect to MySQL using fetched config values...
 		}
 	}
+
+	public class InitializationExample
+	{
+		public void InitializeMySqlConnector()
+		{
+			ConfigFactory.Create<MySqlConnector>();
+		}
+	}
 }

@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attribute\Config.cs" />
+    <Compile Include="Attribute\ConfigFactory.cs" />
     <Compile Include="Attribute\ConfigAttribute.cs" />
     <Compile Include="Attribute\ConfigOptionAttribute.cs" />
     <Compile Include="BuildMode.cs" />

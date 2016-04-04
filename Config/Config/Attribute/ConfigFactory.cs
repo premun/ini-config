@@ -1,12 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Config.Attribute
 {
-    public static class Config
+    public static class ConfigFactory
     {
-        public static void Init()
+        public static T Create<T>()
         {
             // Find all attributes and load data.
+            throw new NotImplementedException();
         }
 
         public static void Save(object configClass)
