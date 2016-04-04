@@ -7,8 +7,8 @@ namespace Config.Format
     /// </summary>
     public interface IFormatSpecifier
     {
-        List<FormatSectionSpecifier> RequiredSections { get; }
+        List<IFormatSectionSpecifier> RequiredSections { get; }
 
-        List<FormatSectionSpecifier> OptionalSections { get; }
+        List<IFormatSectionSpecifier> OptionalSections { get; }
     }
 }

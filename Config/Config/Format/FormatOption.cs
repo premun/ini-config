@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Config.Values;
 
 namespace Config.Format
 {
-    public class FormatOption<T> : IFormatOption<T>
+    public class FormatOption<T> : IFormatOption<T> where T : ConfigValue
     {
         public FormatOption(string name)
         {
@@ -17,8 +18,8 @@ namespace Config.Format
         #endregion
     }
 
-    public class FormatListOption<T> : List<T>, IFormatOption<T>
-    {
+    public class FormatListOption<T> : List<T>, IFormatOption<T> where T : ConfigValue
+	{
         public FormatListOption(string name)
         {
             Name = name;
@@ -33,8 +34,14 @@ namespace Config.Format
 
 	// TODO
     public class FormatEnumOption<T> : IFormatOption<T> where T : struct, IConvertible
-    {
-        public FormatEnumOption(string name)
+	{
+		#region Implementation of IFormatOption
+
+		public string Name { get; set; }
+
+		#endregion
+
+		public FormatEnumOption(string name)
         {
             if (!typeof(T).IsEnum)
             {
@@ -43,11 +50,5 @@ namespace Config.Format
 
             Name = name;
         }
-
-        #region Implementation of IFormatOption
-
-        public string Name { get; set; }
-
-        #endregion
     }
 }
