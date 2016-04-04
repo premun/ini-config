@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AddSection method">
+    <HelpKINode Title="Config.AddSection Method " Url="html/12367501-9473-7229-921f-345f8010074b.htm" />
+    <HelpKINode Title="IConfig.AddSection Method " Url="html/d92a302d-a923-5f5a-24a8-e43d9109e8c8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="As(Of T) method">
+    <HelpKINode Title="ConfigValue.As(T) Method " Url="html/c9ac47cb-6ac3-399d-cc14-c22230b8ea8b.htm" />
+    <HelpKINode Title="IConfigSection.As(T) Method " Url="html/c1ce3828-d42b-c717-a982-f5b6f5f8e2c6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="As&lt;T&gt; method">
+    <HelpKINode Title="ConfigValue.As(T) Method " Url="html/c9ac47cb-6ac3-399d-cc14-c22230b8ea8b.htm" />
+    <HelpKINode Title="IConfigSection.As(T) Method " Url="html/c1ce3828-d42b-c717-a982-f5b6f5f8e2c6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BoolConfigValue class">
+    <HelpKINode Title="BoolConfigValue Class" Url="html/d8ccca13-55ec-304a-6c5f-a719fb8ba011.htm" />
+    <HelpKINode Title="about BoolConfigValue class" Url="html/d8ccca13-55ec-304a-6c5f-a719fb8ba011.htm" />
+    <HelpKINode Title="constructor" Url="html/6f4e30db-3aa4-9c76-4015-ccfd4d921270.htm" />
+    <HelpKINode Title="methods" Url="html/854d99c5-2532-7bed-1165-fc12406c4788.htm" />
+    <HelpKINode Title="properties" Url="html/b83f9e22-9ead-beec-a0e7-77626fe9525a.htm" />
+    <HelpKINode Title="type conversions" Url="html/e4c7aebb-fa87-116a-e2df-2ced36837967.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BoolConfigValue.BoolConfigValue constructor" Url="html/6f4e30db-3aa4-9c76-4015-ccfd4d921270.htm" />
+  <HelpKINode Title="BoolConfigValue.Serialize method" Url="html/a737e798-b375-9a3d-2928-42e81c82a04d.htm" />
+  <HelpKINode Title="Boolean to BoolConfigValue conversion" Url="html/dbf68220-a475-d90e-11d3-4516d99c08c3.htm" />
+  <HelpKINode Title="Boolean to ConfigValue conversion" Url="html/7d1fdb54-f111-c34d-d235-419266a5b5f4.htm" />
+  <HelpKINode Title="Build method">
+    <HelpKINode Title="ConfigBuilder.Build Method " Url="html/fe91de5c-8450-346b-9990-707f00500aeb.htm" />
+    <HelpKINode Title="IConfigBuilder.Build Method " Url="html/bddd4e2e-5bf4-52e6-9992-05779b61b3e4.htm" />
+    <HelpKINode Title="IniFileConfigBuilder.Build Method " Url="html/e7ad98e9-f5bc-0b5a-4432-4fcf66144ea9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BuildMode enumeration" Url="html/9da3f46a-02e1-f7b7-1e21-13af4f41ead1.htm" />
+  <HelpKINode Title="Comment property">
+    <HelpKINode Title="ConfigValue.Comment Property " Url="html/eba11e10-4b4b-3012-9bb9-620f5598baf4.htm" />
+    <HelpKINode Title="IConfigSection.Comment Property " Url="html/3c4452d2-197d-375a-1180-2d7ad83e2051.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CommentConfigValue class">
+    <HelpKINode Title="CommentConfigValue Class" Url="html/bc3a3eea-87f6-d148-f3e9-03cbc27b2d2a.htm" />
+    <HelpKINode Title="about CommentConfigValue class" Url="html/bc3a3eea-87f6-d148-f3e9-03cbc27b2d2a.htm" />
+    <HelpKINode Title="constructor" Url="html/3ce62231-e9fc-201c-92f8-f3772dcd60d1.htm" />
+    <HelpKINode Title="methods" Url="html/756491fe-9945-662b-a233-17893fce0496.htm" />
+    <HelpKINode Title="properties" Url="html/bd7a8799-dc86-9179-f6eb-87c0c7fec328.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CommentConfigValue.CommentConfigValue constructor" Url="html/3ce62231-e9fc-201c-92f8-f3772dcd60d1.htm" />
+  <HelpKINode Title="Comments enumeration member" Url="html/da56f52e-8da3-cc9a-8edc-d0e353da7a8b.htm" />
+  <HelpKINode Title="Config class">
+    <HelpKINode Title="Config Class" Url="html/0cae754f-818c-f91c-dedb-851c8052cd6e.htm" />
+    <HelpKINode Title="about Config class" Url="html/0cae754f-818c-f91c-dedb-851c8052cd6e.htm" />
+    <HelpKINode Title="constructor" Url="html/ffe0dffe-40cb-eb69-ba51-19a4ffe9a288.htm" />
+    <HelpKINode Title="methods" Url="html/ae15288f-9599-8ca6-9131-be51c2f4029f.htm" />
+    <HelpKINode Title="properties" Url="html/866ae674-5ae8-016c-3f7a-d0e12a68f278.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Config namespace" Url="html/cc3d4930-8a29-4ebe-b95e-683012217500.htm" />
+  <HelpKINode Title="Config.AddSection method" Url="html/12367501-9473-7229-921f-345f8010074b.htm" />
+  <HelpKINode Title="Config.Attribute namespace" Url="html/1711fe5a-3905-92e4-de8e-f849e13dee12.htm" />
+  <HelpKINode Title="Config.Attribute.ConfigAttribute class" Url="html/48586413-242f-64b4-3441-c25cf03c48ed.htm" />
+  <HelpKINode Title="Config.Attribute.ConfigFactory class" Url="html/8b8ab6fb-a6c4-48a4-9436-90e0766025f6.htm" />
+  <HelpKINode Title="Config.Attribute.ConfigOptionAttribute class" Url="html/01a98d5c-a2fd-3687-7013-2d17e81d4ae6.htm" />
+  <HelpKINode Title="Config.BuildMode enumeration" Url="html/9da3f46a-02e1-f7b7-1e21-13af4f41ead1.htm" />
+  <HelpKINode Title="Config.Config class" Url="html/0cae754f-818c-f91c-dedb-851c8052cd6e.htm" />
+  <HelpKINode Title="Config.Config constructor" Url="html/ffe0dffe-40cb-eb69-ba51-19a4ffe9a288.htm" />
+  <HelpKINode Title="Config.ConfigBuilder class" Url="html/603ae866-79dd-8d23-0039-67948849cfe0.htm" />
+  <HelpKINode Title="Config.ConfigException class" Url="html/3c467684-1382-dfc9-41da-ab9fa247efd7.htm" />
+  <HelpKINode Title="Config.Format namespace" Url="html/b3a868a9-c3d1-2812-81ef-52110a3300e7.htm" />
+  <HelpKINode Title="Config.Format.ConfigFormatException class" Url="html/6e09986c-4214-7653-b00f-2af7fa4184e2.htm" />
+  <HelpKINode Title="Config.Format.ConstraintFormatOption(Of T) class" Url="html/69f9a879-0993-ca87-2e1c-c17138b76583.htm" />
+  <HelpKINode Title="Config.Format.ConstraintFormatOption&lt;T&gt; class" Url="html/69f9a879-0993-ca87-2e1c-c17138b76583.htm" />
+  <HelpKINode Title="Config.Format.EnumFormatOption(Of T) class" Url="html/ec695f8e-38b6-ad6b-f246-2e8d39916b9a.htm" />
+  <HelpKINode Title="Config.Format.EnumFormatOption&lt;T&gt; class" Url="html/ec695f8e-38b6-ad6b-f246-2e8d39916b9a.htm" />
+  <HelpKINode Title="Config.Format.Errors namespace" Url="html/cf581416-05cc-b1ab-3e48-b4f8ea769120.htm" />
+  <HelpKINode Title="Config.Format.Errors.DuplicateSectionException class" Url="html/94eea718-9e1d-ff61-de25-5319aa8ed3f9.htm" />
+  <HelpKINode Title="Config.Format.Errors.InvalidIdentifierException class" Url="html/19ccd710-e6b8-af27-ff11-200fc5120733.htm" />
+  <HelpKINode Title="Config.Format.Errors.InvalidValueException class" Url="html/6d9b25f7-413b-44c6-55f8-5df1d6c0144e.htm" />
+  <HelpKINode Title="Config.Format.FormatEnumOption(Of T) class" Url="html/c0ae8039-e681-ad1d-4b2f-d59ae8d4d40f.htm" />
+  <HelpKINode Title="Config.Format.FormatEnumOption&lt;T&gt; class" Url="html/c0ae8039-e681-ad1d-4b2f-d59ae8d4d40f.htm" />
+  <HelpKINode Title="Config.Format.FormatListOption(Of T) class" Url="html/6f397f42-7a15-ffa9-f09a-ec2602005083.htm" />
+  <HelpKINode Title="Config.Format.FormatListOption&lt;T&gt; class" Url="html/6f397f42-7a15-ffa9-f09a-ec2602005083.htm" />
+  <HelpKINode Title="Config.Format.FormatOption(Of T) class" Url="html/b6c0cd7c-fe91-68b1-9508-bf4363b94995.htm" />
+  <HelpKINode Title="Config.Format.FormatOption&lt;T&gt; class" Url="html/b6c0cd7c-fe91-68b1-9508-bf4363b94995.htm" />
+  <HelpKINode Title="Config.Format.FormatSectionSpecifier class" Url="html/717e545b-052a-9a18-85bf-84d06362ab11.htm" />
+  <HelpKINode Title="Config.Format.FormatSpecifier class" Url="html/4df6a256-d4f9-012e-c0da-5d864a172f47.htm" />
+  <HelpKINode Title="Config.Format.IFormatOption interface" Url="html/9949b4c4-8690-4927-8e61-d469154a2db6.htm" />
+  <HelpKINode Title="Config.Format.IFormatOption(Of T) interface" Url="html/39a361e5-b054-65d5-0509-550f5c436870.htm" />
+  <HelpKINode Title="Config.Format.IFormatOption&lt;T&gt; interface" Url="html/39a361e5-b054-65d5-0509-550f5c436870.htm" />
+  <HelpKINode Title="Config.Format.IFormatSectionSpecifier interface" Url="html/de73ef6a-92d9-3971-c51a-97dd3d5e3962.htm" />
+  <HelpKINode Title="Config.Format.IFormatSpecifier interface" Url="html/d976fedb-1995-243a-0537-7dd530b7f0c4.htm" />
+  <HelpKINode Title="Config.FormatSpecifier property" Url="html/b74ed21f-62e4-c1bf-e263-d390a1a80f1d.htm" />
+  <HelpKINode Title="Config.GetSection method" Url="html/655d2a39-bef7-25ce-50d6-a59f23ce99c6.htm" />
+  <HelpKINode Title="Config.IConfig interface" Url="html/6a8a820d-6f6d-1b75-3b53-6772f17cbe7a.htm" />
+  <HelpKINode Title="Config.IConfigBuilder interface" Url="html/b53add3b-7f91-17e1-1f47-f0c8ec2eb964.htm" />
+  <HelpKINode Title="Config.IConfigSaver interface" Url="html/d8e81d6c-2ba5-af5c-81b7-a5ca13210ae5.htm" />
+  <HelpKINode Title="Config.IConfigSection interface" Url="html/707678b0-0670-9b08-9342-7e63874e0377.htm" />
+  <HelpKINode Title="Config.IniFileConfigBuilder class" Url="html/7c173115-2fb2-d5b1-3b44-a4034d6be8c2.htm" />
+  <HelpKINode Title="Config.IniFileConfigSaver class" Url="html/02ce6a8b-8756-5979-d27f-463e4d462c9a.htm" />
+  <HelpKINode Title="Config.Item property" Url="html/ff6f0689-4008-e83b-6856-6459e593370e.htm" />
+  <HelpKINode Title="Config.RemoveSection method" Url="html/ef9987e4-73fe-1808-d6db-3fbec343b7a7.htm" />
+  <HelpKINode Title="Config.Sections property" Url="html/9f5dfe98-46ba-5637-e3ae-ea5981460224.htm" />
+  <HelpKINode Title="Config.Values namespace" Url="html/8812fce3-f926-a8c6-5a73-dd9ff7d8be9a.htm" />
+  <HelpKINode Title="Config.Values.BoolConfigValue class" Url="html/d8ccca13-55ec-304a-6c5f-a719fb8ba011.htm" />
+  <HelpKINode Title="Config.Values.CommentConfigValue class" Url="html/bc3a3eea-87f6-d148-f3e9-03cbc27b2d2a.htm" />
+  <HelpKINode Title="Config.Values.ConfigValue class" Url="html/163f9815-d8bc-5036-33ad-c3623ef60b2a.htm" />
+  <HelpKINode Title="Config.Values.ConfigValue(Of T) class" Url="html/d43e3ef0-0a6d-f259-d030-54a33a1b656b.htm" />
+  <HelpKINode Title="Config.Values.ConfigValue&lt;T&gt; class" Url="html/d43e3ef0-0a6d-f259-d030-54a33a1b656b.htm" />
+  <HelpKINode Title="Config.Values.ConstraintConfigValue(Of T) class" Url="html/8fedbb74-6aef-9fba-12e8-781a80b8baa2.htm" />
+  <HelpKINode Title="Config.Values.ConstraintConfigValue&lt;T&gt; class" Url="html/8fedbb74-6aef-9fba-12e8-781a80b8baa2.htm" />
+  <HelpKINode Title="Config.Values.FloatConfigValue class" Url="html/104bbe8b-818e-3ae6-156b-9b2d34d039cb.htm" />
+  <HelpKINode Title="Config.Values.IntConfigValue class" Url="html/6ddc765d-e73e-d767-0044-7c3bfece0e95.htm" />
+  <HelpKINode Title="Config.Values.ListConfigValue(Of T) class" Url="html/1b6b008a-7f6e-4310-0015-6a18da3ab43e.htm" />
+  <HelpKINode Title="Config.Values.ListConfigValue&lt;T&gt; class" Url="html/1b6b008a-7f6e-4310-0015-6a18da3ab43e.htm" />
+  <HelpKINode Title="Config.Values.ReferenceConfigValue class" Url="html/a6955f9b-2441-aa97-0dfa-8ab5c56a2a29.htm" />
+  <HelpKINode Title="Config.Values.SignedConfigValue class" Url="html/01209b6e-f621-ee58-13e1-15713d2a083f.htm" />
+  <HelpKINode Title="Config.Values.StringConfigValue class" Url="html/baecdcaf-d809-2e7c-06fe-97c80356b8d6.htm" />
+  <HelpKINode Title="Config.Values.UnsignedConfigValue class" Url="html/b3e240b6-ee19-f078-16b0-2034b82f18aa.htm" />
+  <HelpKINode Title="Config.Verbosity enumeration" Url="html/da56f52e-8da3-cc9a-8edc-d0e353da7a8b.htm" />
+  <HelpKINode Title="ConfigAttribute class">
+    <HelpKINode Title="ConfigAttribute Class" Url="html/48586413-242f-64b4-3441-c25cf03c48ed.htm" />
+    <HelpKINode Title="about ConfigAttribute class" Url="html/48586413-242f-64b4-3441-c25cf03c48ed.htm" />
+    <HelpKINode Title="constructor" Url="html/1fe2bae7-0212-f7a6-bea7-1cf52ebcda3f.htm" />
+    <HelpKINode Title="methods" Url="html/b856f630-6ca8-b1ef-41b4-1c87e06c12b8.htm" />
+    <HelpKINode Title="properties" Url="html/d1e0566a-5c79-5b10-621a-a3e47b77073a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigAttribute.ConfigAttribute constructor" Url="html/1fe2bae7-0212-f7a6-bea7-1cf52ebcda3f.htm" />
+  <HelpKINode Title="ConfigBuilder class">
+    <HelpKINode Title="ConfigBuilder Class" Url="html/603ae866-79dd-8d23-0039-67948849cfe0.htm" />
+    <HelpKINode Title="about ConfigBuilder class" Url="html/603ae866-79dd-8d23-0039-67948849cfe0.htm" />
+    <HelpKINode Title="constructor" Url="html/35e809b0-d468-03f6-6173-0c10c81c1bfd.htm" />
+    <HelpKINode Title="methods" Url="html/18de8093-3d10-95ff-c48a-2b59a43b13fd.htm" />
+    <HelpKINode Title="properties" Url="html/8ef350e4-3f55-2aeb-671d-83913adb7f85.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigBuilder.Build method" Url="html/fe91de5c-8450-346b-9990-707f00500aeb.htm" />
+  <HelpKINode Title="ConfigBuilder.ConfigBuilder constructor" Url="html/35e809b0-d468-03f6-6173-0c10c81c1bfd.htm" />
+  <HelpKINode Title="ConfigBuilder.Empty property" Url="html/fb539bed-c090-fa7d-ee09-25709fa7a05e.htm" />
+  <HelpKINode Title="ConfigException class">
+    <HelpKINode Title="ConfigException Class" Url="html/3c467684-1382-dfc9-41da-ab9fa247efd7.htm" />
+    <HelpKINode Title="about ConfigException class" Url="html/3c467684-1382-dfc9-41da-ab9fa247efd7.htm" />
+    <HelpKINode Title="constructor" Url="html/6c16d8fd-c454-dae4-cfba-01d0aca8d6e1.htm" />
+    <HelpKINode Title="events" Url="html/0f296148-ac10-7e32-57b5-19c4366743f6.htm" />
+    <HelpKINode Title="methods" Url="html/9a4d48c6-c188-9ff0-3352-95dedff6f81a.htm" />
+    <HelpKINode Title="properties" Url="html/68dac3bf-a202-b382-942a-258d9078e06f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigException.ConfigException constructor" Url="html/6c16d8fd-c454-dae4-cfba-01d0aca8d6e1.htm" />
+  <HelpKINode Title="ConfigFactory class">
+    <HelpKINode Title="ConfigFactory Class" Url="html/8b8ab6fb-a6c4-48a4-9436-90e0766025f6.htm" />
+    <HelpKINode Title="about ConfigFactory class" Url="html/8b8ab6fb-a6c4-48a4-9436-90e0766025f6.htm" />
+    <HelpKINode Title="methods" Url="html/dc6bd4e3-5039-ab29-94a7-38e0f69eb2ee.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigFactory.Create(Of T) method" Url="html/485c9d7f-c386-aa92-4448-62ff10f5df03.htm" />
+  <HelpKINode Title="ConfigFactory.Create&lt;T&gt; method" Url="html/485c9d7f-c386-aa92-4448-62ff10f5df03.htm" />
+  <HelpKINode Title="ConfigFormatException class">
+    <HelpKINode Title="ConfigFormatException Class" Url="html/6e09986c-4214-7653-b00f-2af7fa4184e2.htm" />
+    <HelpKINode Title="about ConfigFormatException class" Url="html/6e09986c-4214-7653-b00f-2af7fa4184e2.htm" />
+    <HelpKINode Title="constructor" Url="html/405a8bb5-ad5a-8940-17f9-a0d952ce495b.htm" />
+    <HelpKINode Title="events" Url="html/99403c7e-ac9a-1ded-6660-5e8f2ca5f302.htm" />
+    <HelpKINode Title="methods" Url="html/c95a2b83-ec7a-5db7-a160-2270e05421c1.htm" />
+    <HelpKINode Title="properties" Url="html/6262c4d0-07ec-007b-7494-c6b43ac84786.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigFormatException.ConfigFormatException constructor" Url="html/405a8bb5-ad5a-8940-17f9-a0d952ce495b.htm" />
+  <HelpKINode Title="ConfigFormatException.ErrorList property" Url="html/b825343f-81c7-e1f2-b6a1-84e7b48b6a45.htm" />
+  <HelpKINode Title="ConfigOptionAttribute class">
+    <HelpKINode Title="ConfigOptionAttribute Class" Url="html/01a98d5c-a2fd-3687-7013-2d17e81d4ae6.htm" />
+    <HelpKINode Title="about ConfigOptionAttribute class" Url="html/01a98d5c-a2fd-3687-7013-2d17e81d4ae6.htm" />
+    <HelpKINode Title="constructor" Url="html/4fa3d0ee-a1d2-60c5-6ac6-444874ff2a30.htm" />
+    <HelpKINode Title="methods" Url="html/67eb6bf3-4c16-a7fa-f61b-9d3112f3d8f7.htm" />
+    <HelpKINode Title="properties" Url="html/5de24d91-4a1c-c4b3-7365-e9e18d56a684.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigOptionAttribute.ConfigOptionAttribute constructor" Url="html/4fa3d0ee-a1d2-60c5-6ac6-444874ff2a30.htm" />
+  <HelpKINode Title="ConfigValue class">
+    <HelpKINode Title="ConfigValue Class" Url="html/163f9815-d8bc-5036-33ad-c3623ef60b2a.htm" />
+    <HelpKINode Title="about ConfigValue class" Url="html/163f9815-d8bc-5036-33ad-c3623ef60b2a.htm" />
+    <HelpKINode Title="constructor" Url="html/e577416e-bf4b-e18b-5974-4adf56940c5e.htm" />
+    <HelpKINode Title="methods" Url="html/07980b60-6ab2-b826-dd06-7151911bd615.htm" />
+    <HelpKINode Title="properties" Url="html/e0d83f67-a126-2d9a-d5f8-12c49659aa8a.htm" />
+    <HelpKINode Title="type conversions" Url="html/053444bc-c582-83fe-e82d-6144b1eacc99.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigValue(Of T) class">
+    <HelpKINode Title="ConfigValue(T) Class" Url="html/d43e3ef0-0a6d-f259-d030-54a33a1b656b.htm" />
+    <HelpKINode Title="about ConfigValue(Of T) class" Url="html/d43e3ef0-0a6d-f259-d030-54a33a1b656b.htm" />
+    <HelpKINode Title="constructor" Url="html/4901d74b-6141-96f0-6adb-d4ff9955a19d.htm" />
+    <HelpKINode Title="methods" Url="html/806427ee-0b3a-ba37-47b5-cdf9d7b9bfe5.htm" />
+    <HelpKINode Title="properties" Url="html/6003221a-bb11-cd3f-17a6-9523c54c94d2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigValue(Of T).ConfigValue constructor" Url="html/4901d74b-6141-96f0-6adb-d4ff9955a19d.htm" />
+  <HelpKINode Title="ConfigValue(Of T).Set method" Url="html/2983080c-4828-d7e2-eb8a-6cf048db8e32.htm" />
+  <HelpKINode Title="ConfigValue.As(Of T) method" Url="html/c9ac47cb-6ac3-399d-cc14-c22230b8ea8b.htm" />
+  <HelpKINode Title="ConfigValue.As&lt;T&gt; method" Url="html/c9ac47cb-6ac3-399d-cc14-c22230b8ea8b.htm" />
+  <HelpKINode Title="ConfigValue.Comment property" Url="html/eba11e10-4b4b-3012-9bb9-620f5598baf4.htm" />
+  <HelpKINode Title="ConfigValue.ConfigValue constructor" Url="html/e577416e-bf4b-e18b-5974-4adf56940c5e.htm" />
+  <HelpKINode Title="ConfigValue.Get(Of T) method" Url="html/85e6c57b-ad1a-6330-2e75-a20a25c9375e.htm" />
+  <HelpKINode Title="ConfigValue.Get&lt;T&gt; method" Url="html/85e6c57b-ad1a-6330-2e75-a20a25c9375e.htm" />
+  <HelpKINode Title="ConfigValue.Serialize method" Url="html/05cf0b0a-16f0-760d-cea7-15d04a9a7e0d.htm" />
+  <HelpKINode Title="ConfigValue.Value property" Url="html/0e06db28-abe2-88b7-2c94-65d7e52610e9.htm" />
+  <HelpKINode Title="ConfigValue&lt;T&gt; class">
+    <HelpKINode Title="ConfigValue(T) Class" Url="html/d43e3ef0-0a6d-f259-d030-54a33a1b656b.htm" />
+    <HelpKINode Title="about ConfigValue&lt;T&gt; class" Url="html/d43e3ef0-0a6d-f259-d030-54a33a1b656b.htm" />
+    <HelpKINode Title="constructor" Url="html/4901d74b-6141-96f0-6adb-d4ff9955a19d.htm" />
+    <HelpKINode Title="methods" Url="html/806427ee-0b3a-ba37-47b5-cdf9d7b9bfe5.htm" />
+    <HelpKINode Title="properties" Url="html/6003221a-bb11-cd3f-17a6-9523c54c94d2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigValue&lt;T&gt;.ConfigValue constructor" Url="html/4901d74b-6141-96f0-6adb-d4ff9955a19d.htm" />
+  <HelpKINode Title="ConfigValue&lt;T&gt;.Set method" Url="html/2983080c-4828-d7e2-eb8a-6cf048db8e32.htm" />
+  <HelpKINode Title="ConstraintConfigValue(Of T) class">
+    <HelpKINode Title="ConstraintConfigValue(T) Class" Url="html/8fedbb74-6aef-9fba-12e8-781a80b8baa2.htm" />
+    <HelpKINode Title="about ConstraintConfigValue(Of T) class" Url="html/8fedbb74-6aef-9fba-12e8-781a80b8baa2.htm" />
+    <HelpKINode Title="constructor" Url="html/0688ed84-e013-c6cf-73cd-598d3f59d3b5.htm" />
+    <HelpKINode Title="methods" Url="html/63af43b6-4718-52f5-af44-ad17b0cca0dd.htm" />
+    <HelpKINode Title="properties" Url="html/7f536f20-b256-c56c-73cd-4f8f0d0835f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConstraintConfigValue(Of T).ConstraintConfigValue constructor" Url="html/0688ed84-e013-c6cf-73cd-598d3f59d3b5.htm" />
+  <HelpKINode Title="ConstraintConfigValue&lt;T&gt; class">
+    <HelpKINode Title="ConstraintConfigValue(T) Class" Url="html/8fedbb74-6aef-9fba-12e8-781a80b8baa2.htm" />
+    <HelpKINode Title="about ConstraintConfigValue&lt;T&gt; class" Url="html/8fedbb74-6aef-9fba-12e8-781a80b8baa2.htm" />
+    <HelpKINode Title="constructor" Url="html/0688ed84-e013-c6cf-73cd-598d3f59d3b5.htm" />
+    <HelpKINode Title="methods" Url="html/63af43b6-4718-52f5-af44-ad17b0cca0dd.htm" />
+    <HelpKINode Title="properties" Url="html/7f536f20-b256-c56c-73cd-4f8f0d0835f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConstraintConfigValue&lt;T&gt;.ConstraintConfigValue constructor" Url="html/0688ed84-e013-c6cf-73cd-598d3f59d3b5.htm" />
+  <HelpKINode Title="ConstraintFormatOption(Of T) class">
+    <HelpKINode Title="ConstraintFormatOption(T) Class" Url="html/69f9a879-0993-ca87-2e1c-c17138b76583.htm" />
+    <HelpKINode Title="about ConstraintFormatOption(Of T) class" Url="html/69f9a879-0993-ca87-2e1c-c17138b76583.htm" />
+    <HelpKINode Title="constructor" Url="html/ece8d1db-b3ed-ad3a-3719-2b9126b3dbc0.htm" />
+    <HelpKINode Title="fields" Url="html/27a66197-f943-fd69-b87f-122b92f4f01e.htm" />
+    <HelpKINode Title="methods" Url="html/bda321f1-043c-1df8-da91-e0ef33470357.htm" />
+    <HelpKINode Title="properties" Url="html/2600d061-9142-077b-a493-2a304a21951e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConstraintFormatOption(Of T).ConstraintFormatOption constructor" Url="html/ece8d1db-b3ed-ad3a-3719-2b9126b3dbc0.htm" />
+  <HelpKINode Title="ConstraintFormatOption(Of T).Contraint field" Url="html/74ff1ae9-b4af-fec8-5837-f11ea5627611.htm" />
+  <HelpKINode Title="ConstraintFormatOption&lt;T&gt; class">
+    <HelpKINode Title="ConstraintFormatOption(T) Class" Url="html/69f9a879-0993-ca87-2e1c-c17138b76583.htm" />
+    <HelpKINode Title="about ConstraintFormatOption&lt;T&gt; class" Url="html/69f9a879-0993-ca87-2e1c-c17138b76583.htm" />
+    <HelpKINode Title="constructor" Url="html/ece8d1db-b3ed-ad3a-3719-2b9126b3dbc0.htm" />
+    <HelpKINode Title="fields" Url="html/27a66197-f943-fd69-b87f-122b92f4f01e.htm" />
+    <HelpKINode Title="methods" Url="html/bda321f1-043c-1df8-da91-e0ef33470357.htm" />
+    <HelpKINode Title="properties" Url="html/2600d061-9142-077b-a493-2a304a21951e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConstraintFormatOption&lt;T&gt;.ConstraintFormatOption constructor" Url="html/ece8d1db-b3ed-ad3a-3719-2b9126b3dbc0.htm" />
+  <HelpKINode Title="ConstraintFormatOption&lt;T&gt;.Contraint field" Url="html/74ff1ae9-b4af-fec8-5837-f11ea5627611.htm" />
+  <HelpKINode Title="Contraint field" Url="html/74ff1ae9-b4af-fec8-5837-f11ea5627611.htm" />
+  <HelpKINode Title="Create(Of T) method" Url="html/485c9d7f-c386-aa92-4448-62ff10f5df03.htm" />
+  <HelpKINode Title="Create&lt;T&gt; method" Url="html/485c9d7f-c386-aa92-4448-62ff10f5df03.htm" />
+  <HelpKINode Title="Defaults enumeration member" Url="html/da56f52e-8da3-cc9a-8edc-d0e353da7a8b.htm" />
+  <HelpKINode Title="DefaultValue property" Url="html/1d30dff4-03eb-2700-3213-e138a7fa3b45.htm" />
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="IniFileConfigBuilder.Dispose Method " Url="html/72c96d6d-2a40-79a4-1297-0f4d8655dc4e.htm" />
+    <HelpKINode Title="IniFileConfigSaver.Dispose Method " Url="html/9f27589a-8ed2-16ce-35c5-02a2ce422043.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DuplicateSectionException class">
+    <HelpKINode Title="DuplicateSectionException Class" Url="html/94eea718-9e1d-ff61-de25-5319aa8ed3f9.htm" />
+    <HelpKINode Title="about DuplicateSectionException class" Url="html/94eea718-9e1d-ff61-de25-5319aa8ed3f9.htm" />
+    <HelpKINode Title="constructor" Url="html/75a21c42-3af9-fa24-f787-1396c031a7dc.htm" />
+    <HelpKINode Title="events" Url="html/c9bcdd8c-8cfa-dccf-6753-03c1ff67d397.htm" />
+    <HelpKINode Title="methods" Url="html/35776b93-1fbf-194f-124a-d6bc982f7872.htm" />
+    <HelpKINode Title="properties" Url="html/50f50347-a066-00a5-a8a5-e07db94224e7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DuplicateSectionException.DuplicateSectionException constructor" Url="html/75a21c42-3af9-fa24-f787-1396c031a7dc.htm" />
+  <HelpKINode Title="Empty property">
+    <HelpKINode Title="ConfigBuilder.Empty Property " Url="html/fb539bed-c090-fa7d-ee09-25709fa7a05e.htm" />
+    <HelpKINode Title="IConfigBuilder.Empty Property " Url="html/197dca58-cbd0-04ac-842a-4c2aa9035d46.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnumFormatOption(Of T) class">
+    <HelpKINode Title="EnumFormatOption(T) Class" Url="html/ec695f8e-38b6-ad6b-f246-2e8d39916b9a.htm" />
+    <HelpKINode Title="about EnumFormatOption(Of T) class" Url="html/ec695f8e-38b6-ad6b-f246-2e8d39916b9a.htm" />
+    <HelpKINode Title="constructor" Url="html/15f8ad3d-5e51-efb9-6d4b-bf63df8806a8.htm" />
+    <HelpKINode Title="methods" Url="html/8cb5c0f5-4df0-6191-f11e-082cf9fb15b4.htm" />
+    <HelpKINode Title="properties" Url="html/164313b0-bf11-ea5e-d9a7-6b2d324eb9ca.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnumFormatOption(Of T).EnumFormatOption constructor" Url="html/15f8ad3d-5e51-efb9-6d4b-bf63df8806a8.htm" />
+  <HelpKINode Title="EnumFormatOption&lt;T&gt; class">
+    <HelpKINode Title="EnumFormatOption(T) Class" Url="html/ec695f8e-38b6-ad6b-f246-2e8d39916b9a.htm" />
+    <HelpKINode Title="about EnumFormatOption&lt;T&gt; class" Url="html/ec695f8e-38b6-ad6b-f246-2e8d39916b9a.htm" />
+    <HelpKINode Title="constructor" Url="html/15f8ad3d-5e51-efb9-6d4b-bf63df8806a8.htm" />
+    <HelpKINode Title="methods" Url="html/8cb5c0f5-4df0-6191-f11e-082cf9fb15b4.htm" />
+    <HelpKINode Title="properties" Url="html/164313b0-bf11-ea5e-d9a7-6b2d324eb9ca.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnumFormatOption&lt;T&gt;.EnumFormatOption constructor" Url="html/15f8ad3d-5e51-efb9-6d4b-bf63df8806a8.htm" />
+  <HelpKINode Title="ErrorList property" Url="html/b825343f-81c7-e1f2-b6a1-84e7b48b6a45.htm" />
+  <HelpKINode Title="FloatConfigValue class">
+    <HelpKINode Title="FloatConfigValue Class" Url="html/104bbe8b-818e-3ae6-156b-9b2d34d039cb.htm" />
+    <HelpKINode Title="about FloatConfigValue class" Url="html/104bbe8b-818e-3ae6-156b-9b2d34d039cb.htm" />
+    <HelpKINode Title="constructor" Url="html/dcce7481-a8fc-fe51-b1bc-9d9fb8f07d64.htm" />
+    <HelpKINode Title="methods" Url="html/c4260375-bb03-2b3d-3f2c-9bfce0693058.htm" />
+    <HelpKINode Title="properties" Url="html/56eb2fc7-ee27-def5-7a10-ad2ada28c224.htm" />
+    <HelpKINode Title="type conversions" Url="html/0d775784-e13e-e87d-8a3f-7591f872fae4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FloatConfigValue.FloatConfigValue constructor" Url="html/dcce7481-a8fc-fe51-b1bc-9d9fb8f07d64.htm" />
+  <HelpKINode Title="FormatEnumOption(Of T) class">
+    <HelpKINode Title="FormatEnumOption(T) Class" Url="html/c0ae8039-e681-ad1d-4b2f-d59ae8d4d40f.htm" />
+    <HelpKINode Title="about FormatEnumOption(Of T) class" Url="html/c0ae8039-e681-ad1d-4b2f-d59ae8d4d40f.htm" />
+    <HelpKINode Title="constructor" Url="html/b6f7909e-8fb5-1399-4c29-a975d4405a21.htm" />
+    <HelpKINode Title="methods" Url="html/1c37dd5e-b2e8-02dc-4f8a-086407f6dd53.htm" />
+    <HelpKINode Title="properties" Url="html/82cafb92-3ec1-60ea-7463-2fd123619a8f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatEnumOption(Of T).FormatEnumOption constructor" Url="html/b6f7909e-8fb5-1399-4c29-a975d4405a21.htm" />
+  <HelpKINode Title="FormatEnumOption(Of T).Name property" Url="html/bc3a23b9-e72c-4b5e-d21d-e2c97b08f724.htm" />
+  <HelpKINode Title="FormatEnumOption&lt;T&gt; class">
+    <HelpKINode Title="FormatEnumOption(T) Class" Url="html/c0ae8039-e681-ad1d-4b2f-d59ae8d4d40f.htm" />
+    <HelpKINode Title="about FormatEnumOption&lt;T&gt; class" Url="html/c0ae8039-e681-ad1d-4b2f-d59ae8d4d40f.htm" />
+    <HelpKINode Title="constructor" Url="html/b6f7909e-8fb5-1399-4c29-a975d4405a21.htm" />
+    <HelpKINode Title="methods" Url="html/1c37dd5e-b2e8-02dc-4f8a-086407f6dd53.htm" />
+    <HelpKINode Title="properties" Url="html/82cafb92-3ec1-60ea-7463-2fd123619a8f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatEnumOption&lt;T&gt;.FormatEnumOption constructor" Url="html/b6f7909e-8fb5-1399-4c29-a975d4405a21.htm" />
+  <HelpKINode Title="FormatEnumOption&lt;T&gt;.Name property" Url="html/bc3a23b9-e72c-4b5e-d21d-e2c97b08f724.htm" />
+  <HelpKINode Title="FormatListOption(Of T) class">
+    <HelpKINode Title="FormatListOption(T) Class" Url="html/6f397f42-7a15-ffa9-f09a-ec2602005083.htm" />
+    <HelpKINode Title="about FormatListOption(Of T) class" Url="html/6f397f42-7a15-ffa9-f09a-ec2602005083.htm" />
+    <HelpKINode Title="constructor" Url="html/43eec11b-3d40-e131-e223-32eb309a71d1.htm" />
+    <HelpKINode Title="methods" Url="html/5cea1392-eac4-78d9-2843-ee4513dd87d1.htm" />
+    <HelpKINode Title="properties" Url="html/bf04960d-cc3c-5099-1c5e-677d265788d8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatListOption(Of T).FormatListOption constructor" Url="html/43eec11b-3d40-e131-e223-32eb309a71d1.htm" />
+  <HelpKINode Title="FormatListOption(Of T).Name property" Url="html/3643652a-9d20-70ff-3ba1-63ed52e6cebb.htm" />
+  <HelpKINode Title="FormatListOption&lt;T&gt; class">
+    <HelpKINode Title="FormatListOption(T) Class" Url="html/6f397f42-7a15-ffa9-f09a-ec2602005083.htm" />
+    <HelpKINode Title="about FormatListOption&lt;T&gt; class" Url="html/6f397f42-7a15-ffa9-f09a-ec2602005083.htm" />
+    <HelpKINode Title="constructor" Url="html/43eec11b-3d40-e131-e223-32eb309a71d1.htm" />
+    <HelpKINode Title="methods" Url="html/5cea1392-eac4-78d9-2843-ee4513dd87d1.htm" />
+    <HelpKINode Title="properties" Url="html/bf04960d-cc3c-5099-1c5e-677d265788d8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatListOption&lt;T&gt;.FormatListOption constructor" Url="html/43eec11b-3d40-e131-e223-32eb309a71d1.htm" />
+  <HelpKINode Title="FormatListOption&lt;T&gt;.Name property" Url="html/3643652a-9d20-70ff-3ba1-63ed52e6cebb.htm" />
+  <HelpKINode Title="FormatOption(Of T) class">
+    <HelpKINode Title="FormatOption(T) Class" Url="html/b6c0cd7c-fe91-68b1-9508-bf4363b94995.htm" />
+    <HelpKINode Title="about FormatOption(Of T) class" Url="html/b6c0cd7c-fe91-68b1-9508-bf4363b94995.htm" />
+    <HelpKINode Title="constructor" Url="html/8b8b85c9-ccd3-dd8d-e7f0-170731d4eb51.htm" />
+    <HelpKINode Title="methods" Url="html/5a1c3630-bd88-1068-34ed-b408c91fd471.htm" />
+    <HelpKINode Title="properties" Url="html/12a2cdca-5663-b989-2ab4-e3a6b99120b6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatOption(Of T).DefaultValue property" Url="html/1d30dff4-03eb-2700-3213-e138a7fa3b45.htm" />
+  <HelpKINode Title="FormatOption(Of T).FormatOption constructor" Url="html/8b8b85c9-ccd3-dd8d-e7f0-170731d4eb51.htm" />
+  <HelpKINode Title="FormatOption(Of T).Name property" Url="html/0c7cc82d-6212-781d-0e1b-7cbc6ceb545a.htm" />
+  <HelpKINode Title="FormatOption&lt;T&gt; class">
+    <HelpKINode Title="FormatOption(T) Class" Url="html/b6c0cd7c-fe91-68b1-9508-bf4363b94995.htm" />
+    <HelpKINode Title="about FormatOption&lt;T&gt; class" Url="html/b6c0cd7c-fe91-68b1-9508-bf4363b94995.htm" />
+    <HelpKINode Title="constructor" Url="html/8b8b85c9-ccd3-dd8d-e7f0-170731d4eb51.htm" />
+    <HelpKINode Title="methods" Url="html/5a1c3630-bd88-1068-34ed-b408c91fd471.htm" />
+    <HelpKINode Title="properties" Url="html/12a2cdca-5663-b989-2ab4-e3a6b99120b6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatOption&lt;T&gt;.DefaultValue property" Url="html/1d30dff4-03eb-2700-3213-e138a7fa3b45.htm" />
+  <HelpKINode Title="FormatOption&lt;T&gt;.FormatOption constructor" Url="html/8b8b85c9-ccd3-dd8d-e7f0-170731d4eb51.htm" />
+  <HelpKINode Title="FormatOption&lt;T&gt;.Name property" Url="html/0c7cc82d-6212-781d-0e1b-7cbc6ceb545a.htm" />
+  <HelpKINode Title="FormatSectionSpecifier class">
+    <HelpKINode Title="FormatSectionSpecifier Class" Url="html/717e545b-052a-9a18-85bf-84d06362ab11.htm" />
+    <HelpKINode Title="about FormatSectionSpecifier class" Url="html/717e545b-052a-9a18-85bf-84d06362ab11.htm" />
+    <HelpKINode Title="constructor" Url="html/0880e382-8da8-dd16-c5c5-ccc79ff7451a.htm" />
+    <HelpKINode Title="methods" Url="html/e3051498-ffa4-1650-338d-f6c7dfd33927.htm" />
+    <HelpKINode Title="properties" Url="html/ced82c83-4c71-8c80-fd76-bdaf81c32a4a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatSectionSpecifier.FormatSectionSpecifier constructor" Url="html/0880e382-8da8-dd16-c5c5-ccc79ff7451a.htm" />
+  <HelpKINode Title="FormatSectionSpecifier.Name property" Url="html/8990f108-cabc-6b36-bbed-29c71d99e57e.htm" />
+  <HelpKINode Title="FormatSectionSpecifier.OptionalOptions property" Url="html/9d0cf3fd-e11d-6d6a-9302-06f2f8e26784.htm" />
+  <HelpKINode Title="FormatSectionSpecifier.RequiredOptions property" Url="html/51a8605f-9837-2d05-15d1-9df8148a3531.htm" />
+  <HelpKINode Title="FormatSpecifier class">
+    <HelpKINode Title="FormatSpecifier Class" Url="html/4df6a256-d4f9-012e-c0da-5d864a172f47.htm" />
+    <HelpKINode Title="about FormatSpecifier class" Url="html/4df6a256-d4f9-012e-c0da-5d864a172f47.htm" />
+    <HelpKINode Title="constructor" Url="html/29e70234-b9bb-5ba9-53dd-b03b3a8911c7.htm" />
+    <HelpKINode Title="methods" Url="html/3858bf65-23ff-96f0-a968-67f2f6169a6f.htm" />
+    <HelpKINode Title="properties" Url="html/0afa73fb-66d1-9e70-9525-317e2db08a04.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatSpecifier property">
+    <HelpKINode Title="Config.FormatSpecifier Property " Url="html/b74ed21f-62e4-c1bf-e263-d390a1a80f1d.htm" />
+    <HelpKINode Title="IConfig.FormatSpecifier Property " Url="html/eaa40d63-0c0d-e58f-8d9f-2cc3a93cb53d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatSpecifier.FormatSpecifier constructor" Url="html/29e70234-b9bb-5ba9-53dd-b03b3a8911c7.htm" />
+  <HelpKINode Title="FormatSpecifier.OptionalSections property" Url="html/f851f5a9-25c8-12a4-1448-56453b24b5db.htm" />
+  <HelpKINode Title="FormatSpecifier.RequiredSections property" Url="html/cca06f70-c8e7-826d-f3b4-1c1213fefedb.htm" />
+  <HelpKINode Title="Get method" Url="html/f368cf9a-0636-880e-898f-c6e1646c21c9.htm" />
+  <HelpKINode Title="Get(Of T) method">
+    <HelpKINode Title="ConfigValue.Get(T) Method " Url="html/85e6c57b-ad1a-6330-2e75-a20a25c9375e.htm" />
+    <HelpKINode Title="IConfigSection.Get(T) Method " Url="html/610a7815-2b9d-9bea-d8be-40ef8b648db6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Get&lt;T&gt; method">
+    <HelpKINode Title="ConfigValue.Get(T) Method " Url="html/85e6c57b-ad1a-6330-2e75-a20a25c9375e.htm" />
+    <HelpKINode Title="IConfigSection.Get(T) Method " Url="html/610a7815-2b9d-9bea-d8be-40ef8b648db6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetSafe(Of T) method" Url="html/e2d59312-344a-4376-0201-c46b21e11816.htm" />
+  <HelpKINode Title="GetSafe&lt;T&gt; method" Url="html/e2d59312-344a-4376-0201-c46b21e11816.htm" />
+  <HelpKINode Title="GetSection method">
+    <HelpKINode Title="Config.GetSection Method " Url="html/655d2a39-bef7-25ce-50d6-a59f23ce99c6.htm" />
+    <HelpKINode Title="IConfig.GetSection Method " Url="html/866d5c24-6c46-93d2-0744-0c45a6a0cca5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IConfig interface">
+    <HelpKINode Title="IConfig Interface" Url="html/6a8a820d-6f6d-1b75-3b53-6772f17cbe7a.htm" />
+    <HelpKINode Title="about IConfig interface" Url="html/6a8a820d-6f6d-1b75-3b53-6772f17cbe7a.htm" />
+    <HelpKINode Title="methods" Url="html/f6e60de4-ac8b-b615-054a-8e2af3740596.htm" />
+    <HelpKINode Title="properties" Url="html/38c9cab7-c66e-efca-b3b4-57fbde064920.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IConfig.AddSection method" Url="html/d92a302d-a923-5f5a-24a8-e43d9109e8c8.htm" />
+  <HelpKINode Title="IConfig.FormatSpecifier property" Url="html/eaa40d63-0c0d-e58f-8d9f-2cc3a93cb53d.htm" />
+  <HelpKINode Title="IConfig.GetSection method" Url="html/866d5c24-6c46-93d2-0744-0c45a6a0cca5.htm" />
+  <HelpKINode Title="IConfig.Item property" Url="html/5e809b6f-6e77-94e3-1404-03a036515249.htm" />
+  <HelpKINode Title="IConfig.RemoveSection method" Url="html/4466557a-6bb5-3391-472d-2c04f4d2c251.htm" />
+  <HelpKINode Title="IConfig.Sections property" Url="html/2d80cd12-5c61-84ba-5bf9-46c8644ece7a.htm" />
+  <HelpKINode Title="IConfigBuilder interface">
+    <HelpKINode Title="IConfigBuilder Interface" Url="html/b53add3b-7f91-17e1-1f47-f0c8ec2eb964.htm" />
+    <HelpKINode Title="about IConfigBuilder interface" Url="html/b53add3b-7f91-17e1-1f47-f0c8ec2eb964.htm" />
+    <HelpKINode Title="methods" Url="html/25b4f782-bde8-0920-59cd-489bebf5f8e5.htm" />
+    <HelpKINode Title="properties" Url="html/5e3d7f85-d583-79e8-3298-fc018db9950a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IConfigBuilder.Build method" Url="html/bddd4e2e-5bf4-52e6-9992-05779b61b3e4.htm" />
+  <HelpKINode Title="IConfigBuilder.Empty property" Url="html/197dca58-cbd0-04ac-842a-4c2aa9035d46.htm" />
+  <HelpKINode Title="IConfigSaver interface">
+    <HelpKINode Title="IConfigSaver Interface" Url="html/d8e81d6c-2ba5-af5c-81b7-a5ca13210ae5.htm" />
+    <HelpKINode Title="about IConfigSaver interface" Url="html/d8e81d6c-2ba5-af5c-81b7-a5ca13210ae5.htm" />
+    <HelpKINode Title="methods" Url="html/bc8638e1-74a2-58fd-4ee7-e5ed26484c31.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IConfigSaver.SaveConfig method" Url="html/b612bf7e-56f0-4533-acf5-ea0d0adf0610.htm" />
+  <HelpKINode Title="IConfigSection interface">
+    <HelpKINode Title="IConfigSection Interface" Url="html/707678b0-0670-9b08-9342-7e63874e0377.htm" />
+    <HelpKINode Title="about IConfigSection interface" Url="html/707678b0-0670-9b08-9342-7e63874e0377.htm" />
+    <HelpKINode Title="methods" Url="html/93b0494d-d69b-8e4d-e27f-d9c88977e2e3.htm" />
+    <HelpKINode Title="properties" Url="html/0853b981-b6f4-41e8-be64-e12f40213cd4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IConfigSection.As(Of T) method" Url="html/c1ce3828-d42b-c717-a982-f5b6f5f8e2c6.htm" />
+  <HelpKINode Title="IConfigSection.As&lt;T&gt; method" Url="html/c1ce3828-d42b-c717-a982-f5b6f5f8e2c6.htm" />
+  <HelpKINode Title="IConfigSection.Comment property" Url="html/3c4452d2-197d-375a-1180-2d7ad83e2051.htm" />
+  <HelpKINode Title="IConfigSection.Get(Of T) method" Url="html/610a7815-2b9d-9bea-d8be-40ef8b648db6.htm" />
+  <HelpKINode Title="IConfigSection.Get&lt;T&gt; method" Url="html/610a7815-2b9d-9bea-d8be-40ef8b648db6.htm" />
+  <HelpKINode Title="IConfigSection.GetSafe(Of T) method" Url="html/e2d59312-344a-4376-0201-c46b21e11816.htm" />
+  <HelpKINode Title="IConfigSection.GetSafe&lt;T&gt; method" Url="html/e2d59312-344a-4376-0201-c46b21e11816.htm" />
+  <HelpKINode Title="IConfigSection.Name property" Url="html/5197a571-8dba-ccbd-417b-eaca755ff131.htm" />
+  <HelpKINode Title="IConfigSection.Set method" Url="html/e02c83e8-1a9c-f62c-bb67-13c90b97135d.htm" />
+  <HelpKINode Title="IFormatOption interface">
+    <HelpKINode Title="IFormatOption Interface" Url="html/9949b4c4-8690-4927-8e61-d469154a2db6.htm" />
+    <HelpKINode Title="about IFormatOption interface" Url="html/9949b4c4-8690-4927-8e61-d469154a2db6.htm" />
+    <HelpKINode Title="properties" Url="html/fbb9b0dd-bf66-17f2-9877-f0347d439ab6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFormatOption(Of T) interface">
+    <HelpKINode Title="IFormatOption(T) Interface" Url="html/39a361e5-b054-65d5-0509-550f5c436870.htm" />
+    <HelpKINode Title="about IFormatOption(Of T) interface" Url="html/39a361e5-b054-65d5-0509-550f5c436870.htm" />
+    <HelpKINode Title="properties" Url="html/ad859703-36ed-a56d-c699-a5baa7e24e62.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFormatOption.Name property" Url="html/4366360f-feec-a14e-e6fc-0975fc0514ea.htm" />
+  <HelpKINode Title="IFormatOption&lt;T&gt; interface">
+    <HelpKINode Title="IFormatOption(T) Interface" Url="html/39a361e5-b054-65d5-0509-550f5c436870.htm" />
+    <HelpKINode Title="about IFormatOption&lt;T&gt; interface" Url="html/39a361e5-b054-65d5-0509-550f5c436870.htm" />
+    <HelpKINode Title="properties" Url="html/ad859703-36ed-a56d-c699-a5baa7e24e62.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFormatSectionSpecifier interface">
+    <HelpKINode Title="IFormatSectionSpecifier Interface" Url="html/de73ef6a-92d9-3971-c51a-97dd3d5e3962.htm" />
+    <HelpKINode Title="about IFormatSectionSpecifier interface" Url="html/de73ef6a-92d9-3971-c51a-97dd3d5e3962.htm" />
+    <HelpKINode Title="properties" Url="html/1c35e28f-a449-d81e-ee29-9e937eac0c03.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFormatSectionSpecifier.Name property" Url="html/1f86e19d-4d34-8636-672e-2025b900e9cb.htm" />
+  <HelpKINode Title="IFormatSectionSpecifier.OptionalOptions property" Url="html/e8c2b796-390f-1b70-35b5-ebfe7a3a4f27.htm" />
+  <HelpKINode Title="IFormatSectionSpecifier.RequiredOptions property" Url="html/b5eea7f9-547a-9302-cd33-d03ff2b96015.htm" />
+  <HelpKINode Title="IFormatSpecifier interface">
+    <HelpKINode Title="IFormatSpecifier Interface" Url="html/d976fedb-1995-243a-0537-7dd530b7f0c4.htm" />
+    <HelpKINode Title="about IFormatSpecifier interface" Url="html/d976fedb-1995-243a-0537-7dd530b7f0c4.htm" />
+    <HelpKINode Title="properties" Url="html/c89d4f21-625e-f067-d87f-2963c7c6632f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFormatSpecifier.OptionalSections property" Url="html/61db46d1-2517-2cd5-ddc8-13dd9d540f26.htm" />
+  <HelpKINode Title="IFormatSpecifier.RequiredSections property" Url="html/60ce3935-ae2e-df9c-546a-f2834d3508ed.htm" />
+  <HelpKINode Title="IniFileConfigBuilder class">
+    <HelpKINode Title="IniFileConfigBuilder Class" Url="html/7c173115-2fb2-d5b1-3b44-a4034d6be8c2.htm" />
+    <HelpKINode Title="about IniFileConfigBuilder class" Url="html/7c173115-2fb2-d5b1-3b44-a4034d6be8c2.htm" />
+    <HelpKINode Title="constructor" Url="html/8e2c6e37-18c6-06a0-3659-405b97a0509b.htm" />
+    <HelpKINode Title="methods" Url="html/763553b0-7aa5-9aa1-d73e-7a7b301da3f5.htm" />
+    <HelpKINode Title="properties" Url="html/bc53416b-0c1b-3d68-e641-ce0bd41756e6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IniFileConfigBuilder.Build method" Url="html/e7ad98e9-f5bc-0b5a-4432-4fcf66144ea9.htm" />
+  <HelpKINode Title="IniFileConfigBuilder.Dispose method" Url="html/72c96d6d-2a40-79a4-1297-0f4d8655dc4e.htm" />
+  <HelpKINode Title="IniFileConfigBuilder.IniFileConfigBuilder constructor" Url="html/8e2c6e37-18c6-06a0-3659-405b97a0509b.htm" />
+  <HelpKINode Title="IniFileConfigSaver class">
+    <HelpKINode Title="IniFileConfigSaver Class" Url="html/02ce6a8b-8756-5979-d27f-463e4d462c9a.htm" />
+    <HelpKINode Title="about IniFileConfigSaver class" Url="html/02ce6a8b-8756-5979-d27f-463e4d462c9a.htm" />
+    <HelpKINode Title="constructor" Url="html/3317b681-f4b3-256a-83d1-f6049205dd26.htm" />
+    <HelpKINode Title="methods" Url="html/7c5ab424-50c6-8297-8d97-607c29e1b4d1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IniFileConfigSaver.Dispose method" Url="html/9f27589a-8ed2-16ce-35c5-02a2ce422043.htm" />
+  <HelpKINode Title="IniFileConfigSaver.IniFileConfigSaver constructor" Url="html/3317b681-f4b3-256a-83d1-f6049205dd26.htm" />
+  <HelpKINode Title="IniFileConfigSaver.SaveConfig method" Url="html/bac32231-8b03-db1d-b2c8-dfc4d00b55f3.htm" />
+  <HelpKINode Title="Int32 to ConfigValue conversion" Url="html/9e00229d-f2cf-e4f8-be8f-b013492ea349.htm" />
+  <HelpKINode Title="Int32 to IntConfigValue conversion" Url="html/daedfebe-cc89-aeef-e7e4-a5280c970cf5.htm" />
+  <HelpKINode Title="Int64 to ConfigValue conversion" Url="html/bd027c81-7704-8c05-96e7-8a7234ed68a1.htm" />
+  <HelpKINode Title="Int64 to SignedConfigValue conversion" Url="html/e54d24f0-79ce-8ba3-9f1e-0e9fae3aa644.htm" />
+  <HelpKINode Title="IntConfigValue class">
+    <HelpKINode Title="IntConfigValue Class" Url="html/6ddc765d-e73e-d767-0044-7c3bfece0e95.htm" />
+    <HelpKINode Title="about IntConfigValue class" Url="html/6ddc765d-e73e-d767-0044-7c3bfece0e95.htm" />
+    <HelpKINode Title="constructor" Url="html/a35bc139-559a-61c5-fc02-c84c13d700f0.htm" />
+    <HelpKINode Title="methods" Url="html/fce61bab-ae11-691e-03b8-487c6a9c5c84.htm" />
+    <HelpKINode Title="properties" Url="html/95b13ece-9253-29a8-cdac-a3f27ca84cec.htm" />
+    <HelpKINode Title="type conversions" Url="html/f9869341-6fd9-a3cb-05dd-d93ec3427972.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IntConfigValue.IntConfigValue constructor" Url="html/a35bc139-559a-61c5-fc02-c84c13d700f0.htm" />
+  <HelpKINode Title="InvalidIdentifierException class">
+    <HelpKINode Title="InvalidIdentifierException Class" Url="html/19ccd710-e6b8-af27-ff11-200fc5120733.htm" />
+    <HelpKINode Title="about InvalidIdentifierException class" Url="html/19ccd710-e6b8-af27-ff11-200fc5120733.htm" />
+    <HelpKINode Title="constructor" Url="html/761dcdf2-0de9-73e4-735c-12a358af51d3.htm" />
+    <HelpKINode Title="events" Url="html/b1399d41-fbe6-d17f-ad2b-a5f4a1c6f4d8.htm" />
+    <HelpKINode Title="methods" Url="html/1206fd2e-b1fa-d306-8210-2ec87b42da07.htm" />
+    <HelpKINode Title="properties" Url="html/90cb0792-334d-33e7-5461-f4f2a3e55e0c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvalidIdentifierException.InvalidIdentifierException constructor" Url="html/761dcdf2-0de9-73e4-735c-12a358af51d3.htm" />
+  <HelpKINode Title="InvalidValueException class">
+    <HelpKINode Title="InvalidValueException Class" Url="html/6d9b25f7-413b-44c6-55f8-5df1d6c0144e.htm" />
+    <HelpKINode Title="about InvalidValueException class" Url="html/6d9b25f7-413b-44c6-55f8-5df1d6c0144e.htm" />
+    <HelpKINode Title="constructor" Url="html/c89c8fc9-e278-3956-cdc6-648e2033d6bc.htm" />
+    <HelpKINode Title="events" Url="html/71f4eed9-338a-2cd8-1d3f-2b1fdc03d729.htm" />
+    <HelpKINode Title="methods" Url="html/e7015cce-02fb-c727-2067-de6010e02c7c.htm" />
+    <HelpKINode Title="properties" Url="html/27aecac5-2aaa-1f7b-f341-c6c2bc843775.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvalidValueException.InvalidValueException constructor" Url="html/c89c8fc9-e278-3956-cdc6-648e2033d6bc.htm" />
+  <HelpKINode Title="Item property">
+    <HelpKINode Title="Config.Item Property " Url="html/ff6f0689-4008-e83b-6856-6459e593370e.htm" />
+    <HelpKINode Title="IConfig.Item Property " Url="html/5e809b6f-6e77-94e3-1404-03a036515249.htm" />
+    <HelpKINode Title="ListConfigValue(T).Item Property " Url="html/6e84169c-343a-6f24-54ce-8dd8220272c6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ListConfigValue(Of T) class">
+    <HelpKINode Title="ListConfigValue(T) Class" Url="html/1b6b008a-7f6e-4310-0015-6a18da3ab43e.htm" />
+    <HelpKINode Title="about ListConfigValue(Of T) class" Url="html/1b6b008a-7f6e-4310-0015-6a18da3ab43e.htm" />
+    <HelpKINode Title="constructor" Url="html/ce03e42d-fd6c-9b29-c1fa-f174600f54e3.htm" />
+    <HelpKINode Title="methods" Url="html/d9632aa9-ef5f-6e52-c3bc-9870b0b54494.htm" />
+    <HelpKINode Title="properties" Url="html/830f9fa9-9b64-59bb-f8b3-758c4610ef59.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ListConfigValue(Of T).Get method" Url="html/f368cf9a-0636-880e-898f-c6e1646c21c9.htm" />
+  <HelpKINode Title="ListConfigValue(Of T).Item property" Url="html/6e84169c-343a-6f24-54ce-8dd8220272c6.htm" />
+  <HelpKINode Title="ListConfigValue(Of T).ListConfigValue constructor" Url="html/ce03e42d-fd6c-9b29-c1fa-f174600f54e3.htm" />
+  <HelpKINode Title="ListConfigValue(Of T).Values property" Url="html/6a8c88d6-7f75-9fc5-ca9a-a0bc401864cf.htm" />
+  <HelpKINode Title="ListConfigValue&lt;T&gt; class">
+    <HelpKINode Title="ListConfigValue(T) Class" Url="html/1b6b008a-7f6e-4310-0015-6a18da3ab43e.htm" />
+    <HelpKINode Title="about ListConfigValue&lt;T&gt; class" Url="html/1b6b008a-7f6e-4310-0015-6a18da3ab43e.htm" />
+    <HelpKINode Title="constructor" Url="html/ce03e42d-fd6c-9b29-c1fa-f174600f54e3.htm" />
+    <HelpKINode Title="methods" Url="html/d9632aa9-ef5f-6e52-c3bc-9870b0b54494.htm" />
+    <HelpKINode Title="properties" Url="html/830f9fa9-9b64-59bb-f8b3-758c4610ef59.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ListConfigValue&lt;T&gt;.Get method" Url="html/f368cf9a-0636-880e-898f-c6e1646c21c9.htm" />
+  <HelpKINode Title="ListConfigValue&lt;T&gt;.Item property" Url="html/6e84169c-343a-6f24-54ce-8dd8220272c6.htm" />
+  <HelpKINode Title="ListConfigValue&lt;T&gt;.ListConfigValue constructor" Url="html/ce03e42d-fd6c-9b29-c1fa-f174600f54e3.htm" />
+  <HelpKINode Title="ListConfigValue&lt;T&gt;.Values property" Url="html/6a8c88d6-7f75-9fc5-ca9a-a0bc401864cf.htm" />
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="FormatEnumOption(T).Name Property " Url="html/bc3a23b9-e72c-4b5e-d21d-e2c97b08f724.htm" />
+    <HelpKINode Title="FormatListOption(T).Name Property " Url="html/3643652a-9d20-70ff-3ba1-63ed52e6cebb.htm" />
+    <HelpKINode Title="FormatOption(T).Name Property " Url="html/0c7cc82d-6212-781d-0e1b-7cbc6ceb545a.htm" />
+    <HelpKINode Title="FormatSectionSpecifier.Name Property " Url="html/8990f108-cabc-6b36-bbed-29c71d99e57e.htm" />
+    <HelpKINode Title="IConfigSection.Name Property " Url="html/5197a571-8dba-ccbd-417b-eaca755ff131.htm" />
+    <HelpKINode Title="IFormatOption.Name Property " Url="html/4366360f-feec-a14e-e6fc-0975fc0514ea.htm" />
+    <HelpKINode Title="IFormatSectionSpecifier.Name Property " Url="html/1f86e19d-4d34-8636-672e-2025b900e9cb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Option property" Url="html/714e43fc-8ddf-c158-0f99-1f83c9cc18a2.htm" />
+  <HelpKINode Title="OptionalOptions property">
+    <HelpKINode Title="FormatSectionSpecifier.OptionalOptions Property " Url="html/9d0cf3fd-e11d-6d6a-9302-06f2f8e26784.htm" />
+    <HelpKINode Title="IFormatSectionSpecifier.OptionalOptions Property " Url="html/e8c2b796-390f-1b70-35b5-ebfe7a3a4f27.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OptionalSections property">
+    <HelpKINode Title="FormatSpecifier.OptionalSections Property " Url="html/f851f5a9-25c8-12a4-1448-56453b24b5db.htm" />
+    <HelpKINode Title="IFormatSpecifier.OptionalSections Property " Url="html/61db46d1-2517-2cd5-ddc8-13dd9d540f26.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReferenceConfigValue class">
+    <HelpKINode Title="ReferenceConfigValue Class" Url="html/a6955f9b-2441-aa97-0dfa-8ab5c56a2a29.htm" />
+    <HelpKINode Title="about ReferenceConfigValue class" Url="html/a6955f9b-2441-aa97-0dfa-8ab5c56a2a29.htm" />
+    <HelpKINode Title="constructor" Url="html/192fa359-be6b-f32f-7c59-71f63ad06c69.htm" />
+    <HelpKINode Title="methods" Url="html/6022bfe1-b469-2468-0fe6-e108887e95b4.htm" />
+    <HelpKINode Title="properties" Url="html/c93ad8f7-a709-eb08-69cc-e8927bcb0f3f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReferenceConfigValue.Option property" Url="html/714e43fc-8ddf-c158-0f99-1f83c9cc18a2.htm" />
+  <HelpKINode Title="ReferenceConfigValue.ReferenceConfigValue constructor" Url="html/192fa359-be6b-f32f-7c59-71f63ad06c69.htm" />
+  <HelpKINode Title="ReferenceConfigValue.ReferencedValue property" Url="html/2a31f619-30a1-0a11-cd7d-332dd724cae5.htm" />
+  <HelpKINode Title="ReferenceConfigValue.Section property" Url="html/0fe60ed3-e398-2979-4a4e-ccb1dc68fd7d.htm" />
+  <HelpKINode Title="ReferencedValue property" Url="html/2a31f619-30a1-0a11-cd7d-332dd724cae5.htm" />
+  <HelpKINode Title="Relaxed enumeration member" Url="html/9da3f46a-02e1-f7b7-1e21-13af4f41ead1.htm" />
+  <HelpKINode Title="RemoveSection method">
+    <HelpKINode Title="Config.RemoveSection Method " Url="html/ef9987e4-73fe-1808-d6db-3fbec343b7a7.htm" />
+    <HelpKINode Title="IConfig.RemoveSection Method " Url="html/4466557a-6bb5-3391-472d-2c04f4d2c251.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RequiredOptions property">
+    <HelpKINode Title="FormatSectionSpecifier.RequiredOptions Property " Url="html/51a8605f-9837-2d05-15d1-9df8148a3531.htm" />
+    <HelpKINode Title="IFormatSectionSpecifier.RequiredOptions Property " Url="html/b5eea7f9-547a-9302-cd33-d03ff2b96015.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RequiredSections property">
+    <HelpKINode Title="FormatSpecifier.RequiredSections Property " Url="html/cca06f70-c8e7-826d-f3b4-1c1213fefedb.htm" />
+    <HelpKINode Title="IFormatSpecifier.RequiredSections Property " Url="html/60ce3935-ae2e-df9c-546a-f2834d3508ed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SaveConfig method">
+    <HelpKINode Title="IConfigSaver.SaveConfig Method " Url="html/b612bf7e-56f0-4533-acf5-ea0d0adf0610.htm" />
+    <HelpKINode Title="IniFileConfigSaver.SaveConfig Method " Url="html/bac32231-8b03-db1d-b2c8-dfc4d00b55f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Section property" Url="html/0fe60ed3-e398-2979-4a4e-ccb1dc68fd7d.htm" />
+  <HelpKINode Title="Sections property">
+    <HelpKINode Title="Config.Sections Property " Url="html/9f5dfe98-46ba-5637-e3ae-ea5981460224.htm" />
+    <HelpKINode Title="IConfig.Sections Property " Url="html/2d80cd12-5c61-84ba-5bf9-46c8644ece7a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Serialize method">
+    <HelpKINode Title="BoolConfigValue.Serialize Method " Url="html/a737e798-b375-9a3d-2928-42e81c82a04d.htm" />
+    <HelpKINode Title="ConfigValue.Serialize Method " Url="html/05cf0b0a-16f0-760d-cea7-15d04a9a7e0d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Set method">
+    <HelpKINode Title="ConfigValue(T).Set Method " Url="html/2983080c-4828-d7e2-eb8a-6cf048db8e32.htm" />
+    <HelpKINode Title="IConfigSection.Set Method " Url="html/e02c83e8-1a9c-f62c-bb67-13c90b97135d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SignedConfigValue class">
+    <HelpKINode Title="SignedConfigValue Class" Url="html/01209b6e-f621-ee58-13e1-15713d2a083f.htm" />
+    <HelpKINode Title="about SignedConfigValue class" Url="html/01209b6e-f621-ee58-13e1-15713d2a083f.htm" />
+    <HelpKINode Title="constructor" Url="html/43bbd0c7-3e8e-d97b-24e3-fae47f03b41c.htm" />
+    <HelpKINode Title="methods" Url="html/0148e910-7049-83eb-7026-fea87665b396.htm" />
+    <HelpKINode Title="properties" Url="html/f5024007-c3db-54d4-7cec-472808f55461.htm" />
+    <HelpKINode Title="type conversions" Url="html/b083aa36-54c4-88e4-bc07-d524cea19c29.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SignedConfigValue.SignedConfigValue constructor" Url="html/43bbd0c7-3e8e-d97b-24e3-fae47f03b41c.htm" />
+  <HelpKINode Title="Single to ConfigValue conversion" Url="html/d0833a57-ca50-4d8b-ff80-70963423dd75.htm" />
+  <HelpKINode Title="Single to FloatConfigValue conversion" Url="html/a6209ae8-2275-bea1-ab10-4a7b4022fc53.htm" />
+  <HelpKINode Title="Strict enumeration member" Url="html/9da3f46a-02e1-f7b7-1e21-13af4f41ead1.htm" />
+  <HelpKINode Title="String to ConfigValue conversion" Url="html/c120272b-8927-7d74-f7a6-2790e7b2416b.htm" />
+  <HelpKINode Title="String to StringConfigValue conversion" Url="html/83eb7157-3e5c-fa04-1197-070b9ffb368d.htm" />
+  <HelpKINode Title="StringConfigValue class">
+    <HelpKINode Title="StringConfigValue Class" Url="html/baecdcaf-d809-2e7c-06fe-97c80356b8d6.htm" />
+    <HelpKINode Title="about StringConfigValue class" Url="html/baecdcaf-d809-2e7c-06fe-97c80356b8d6.htm" />
+    <HelpKINode Title="constructor" Url="html/409f010a-e319-0f1f-9680-8396d4a6a0df.htm" />
+    <HelpKINode Title="methods" Url="html/267138b7-b24a-fc2a-178c-36e1cc84d75c.htm" />
+    <HelpKINode Title="properties" Url="html/d40e1fc4-b312-caae-6283-b2e8a303d386.htm" />
+    <HelpKINode Title="type conversions" Url="html/32ba4fcc-5522-f210-9fc9-588cb2c8704e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StringConfigValue.StringConfigValue constructor" Url="html/409f010a-e319-0f1f-9680-8396d4a6a0df.htm" />
+  <HelpKINode Title="UInt64 to ConfigValue conversion" Url="html/2afd26de-e40e-e2ad-efc8-65de0773c2fe.htm" />
+  <HelpKINode Title="UInt64 to UnsignedConfigValue conversion" Url="html/8196b77d-d849-4505-65f4-e2b82b2fc6df.htm" />
+  <HelpKINode Title="UnsignedConfigValue class">
+    <HelpKINode Title="UnsignedConfigValue Class" Url="html/b3e240b6-ee19-f078-16b0-2034b82f18aa.htm" />
+    <HelpKINode Title="about UnsignedConfigValue class" Url="html/b3e240b6-ee19-f078-16b0-2034b82f18aa.htm" />
+    <HelpKINode Title="constructor" Url="html/327c0f2c-6dea-29b7-93b8-d6a4e49b1d0a.htm" />
+    <HelpKINode Title="methods" Url="html/bccb37a7-0bef-e812-56a9-cd795a7ef48f.htm" />
+    <HelpKINode Title="properties" Url="html/1a3482fb-b66a-354e-2bf3-004a10f06aea.htm" />
+    <HelpKINode Title="type conversions" Url="html/2d08e81d-8f69-cbf7-c931-79c86f29c5e0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UnsignedConfigValue.UnsignedConfigValue constructor" Url="html/327c0f2c-6dea-29b7-93b8-d6a4e49b1d0a.htm" />
+  <HelpKINode Title="Value property" Url="html/0e06db28-abe2-88b7-2c94-65d7e52610e9.htm" />
+  <HelpKINode Title="Values property" Url="html/6a8c88d6-7f75-9fc5-ca9a-a0bc401864cf.htm" />
+  <HelpKINode Title="Verbosity enumeration" Url="html/da56f52e-8da3-cc9a-8edc-d0e353da7a8b.htm" />
+</HelpKI>
