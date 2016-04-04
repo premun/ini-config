@@ -1,10 +1,10 @@
 ﻿namespace Config.Values
 {
-    public abstract class ConfigValue
-    {
+	public abstract class ConfigValue
+	{
 		public object Value { get; protected set; }
 
-		public string Description { get; set; }
+		public string Comment { get; set; }
 
 		public T Get<T>()
 		{
@@ -17,11 +17,15 @@
 		}
 
 		public virtual string Serialize()
-	    {
-		    return Value.ToString();
+		{
+			return Value.ToString();
 		}
 
-		#region Auto boxing
+		#region Auto-boxing
+
+		/*
+		 * TODO: okomentovat proc
+		*/
 
 		public static implicit operator ConfigValue(bool b)
 		{

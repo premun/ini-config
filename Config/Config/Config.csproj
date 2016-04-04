@@ -49,7 +49,11 @@
     <Compile Include="ConfigBuilder.cs" />
     <Compile Include="ConfigException.cs" />
     <Compile Include="Format\ConfigFormatException.cs" />
+    <Compile Include="Format\ConstraintFormatOption.cs" />
     <Compile Include="Format\Errors\ConfigFormatError.cs" />
+    <Compile Include="Format\Errors\DuplicateSectionFormatError.cs" />
+    <Compile Include="Format\Errors\InvalidIdentifierFormatError.cs" />
+    <Compile Include="Format\Errors\InvalidValueFormatError.cs" />
     <Compile Include="Format\FormatOption.cs" />
     <Compile Include="Format\FormatSectionSpecifier.cs" />
     <Compile Include="Format\FormatSpecifier.cs" />
@@ -59,6 +63,7 @@
     <Compile Include="IConfigBuilder.cs" />
     <Compile Include="IniFileConfigBuilder.cs" />
     <Compile Include="IniFileConfigSaver.cs" />
+    <Compile Include="Values\ConstraintConfigValue.cs" />
     <Compile Include="Values\FloatConfigValue.cs" />
     <Compile Include="Values\ConfigValue.cs" />
     <Compile Include="IConfigSaver.cs" />
@@ -66,6 +71,7 @@
     <Compile Include="Format\IFormatSpecifier.cs" />
     <Compile Include="Values\BoolConfigValue.cs" />
     <Compile Include="Values\EnumConfigValue.cs" />
+    <Compile Include="Values\ReferenceConfigValue.cs" />
     <Compile Include="Values\UnsignedConfigValue.cs" />
     <Compile Include="Values\SignedConfigValue.cs" />
     <Compile Include="Values\StringConfigValue.cs" />

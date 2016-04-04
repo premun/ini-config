@@ -18,14 +18,14 @@ namespace Examples
 			{
 				RequiredOptions = new List<IFormatOption>
 				{
-					new FormatOption<StringConfigValue>("hostname"),
+					new FormatOption<StringConfigValue>("hostname", "localhost"),
 					new FormatOption<StringConfigValue>("username"),
 					new FormatOption<StringConfigValue>("password"),
 					new FormatOption<StringConfigValue>("schema")
 				},
 				OptionalOptions = new List<IFormatOption>
 				{
-					new FormatOption<IntConfigValue>("port")
+					new FormatOption<IntConfigValue>("port", 3507)
 				}
 			}
 		};

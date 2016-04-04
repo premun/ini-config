@@ -6,19 +6,22 @@ namespace Config.Format
 {
     public class FormatOption<T> : IFormatOption<T> where T : ConfigValue
     {
-        public FormatOption(string name)
+        public FormatOption(string name, object defaultValue = null)
         {
             Name = name;
+	        DefaultValue = defaultValue;
         }
 
-        #region Implementation of IFormatOption
+		#region Implementation of IFormatOption
 
-        public string Name { get; set; }
+		public string Name { get; set; }
 
-        #endregion
-    }
+		public object DefaultValue { get; set; }
 
-    public class FormatListOption<T> : List<T>, IFormatOption<T> where T : ConfigValue
+		#endregion
+	}
+
+	public class FormatListOption<T> : List<T>, IFormatOption<T> where T : ConfigValue
 	{
         public FormatListOption(string name)
         {

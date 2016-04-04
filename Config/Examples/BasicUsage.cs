@@ -26,7 +26,9 @@ namespace Examples
 
 					e.ErrorList
 						.ToList()
-						.ForEach(error => Console.WriteLine("  - " + error));
+						.ForEach(error => Console.WriteLine("  - " + error.Message));
+
+					Console.WriteLine();
 
 					throw;
 				}
@@ -69,7 +71,7 @@ namespace Examples
 			// Save changed config into a new file
 			using (var configSaver = new IniFileConfigSaver("/www/mywebsite/config.local.ini"))
 			{
-				configSaver.SaveConfig(config);
+				configSaver.SaveConfig(config, Verbosity.Defaults & Verbosity.Comments);
 			}
 		} 
 	}

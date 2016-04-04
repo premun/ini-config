@@ -11,7 +11,7 @@ namespace Config
 			_path = path;
 		}
 
-		public void SaveConfig(IConfig config)
+		public void SaveConfig(IConfig config, Verbosity verbosity)
 		{
 			throw new NotImplementedException();
 		}

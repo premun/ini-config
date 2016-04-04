@@ -19,18 +19,21 @@ namespace Examples
 						RequiredOptions = new List<IFormatOption>
 						{
 							new FormatOption<StringConfigValue>("hostname"),
-							new FormatOption<IntConfigValue>("port")
+							// Example of restricted values (range)
+							new ConstraintFormatOption<IntConfigValue>("port", x => (int) x > 0 && (int) x < 65536)
 						}
 					},
 					new FormatSectionSpecifier("HTTP")
 					{
 						RequiredOptions = new List<IFormatOption>
 						{
-							new FormatListOption<IntConfigValue>("timeout")
+							// Example of default value
+							new FormatOption<IntConfigValue>("timeout", 5000)
 						},
 						OptionalOptions = new List<IFormatOption>
 						{
-							new FormatOption<BoolConfigValue>("use_https")
+							// Example of default value
+							new FormatOption<BoolConfigValue>("use_https", false)
 						}
 					}
 				},

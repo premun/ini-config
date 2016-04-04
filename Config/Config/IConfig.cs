@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Config.Format;
 
 namespace Config
 {
@@ -7,6 +8,11 @@ namespace Config
     /// </summary>
     public interface IConfig
     {
+		/// <summary>
+		/// Format specifier that was used when config instance was built.
+		/// </summary>
+		IFormatSpecifier FormatSpecifier { get; }
+
         /// <summary>
         /// Retreive config section by its name.
         /// </summary>

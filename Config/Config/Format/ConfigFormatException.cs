@@ -8,8 +8,8 @@ namespace Config.Format
     /// Thrown when config format does not correspond with parsed config structure. 
     /// Contains list of all errors, that were encountered.
     /// </summary>
-    public class ConfigFormatException : Exception
-    {
+    public class ConfigFormatException : ConfigException
+	{
         public IEnumerable<ConfigFormatError> ErrorList { get; set; }
     }
 }

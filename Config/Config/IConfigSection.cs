@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Config.Format;
 using Config.Values;
 
 namespace Config
@@ -7,10 +8,6 @@ namespace Config
 	/// Represents data of one config section (list of key-value items).
 	/// Also behaves like a collection of items.
 	/// </summary>
-	/// TODO: Name a Required bych dal readonly setovane v constructoru.
-	/// TODO: Zrusit IDictionary? Protoze napriklad moc nechceme mit setter na indexeru.
-	/// TODO: Minimalne setter musime prepsat, aby do nej sly ukladat vsechny mozny hodnoty a ono to z nich delalo ConfigValue, pripadne jen tak implementovat Set.
-	/// TODO: Jako tady: http://stackoverflow.com/questions/27083064/indexer-get-and-set-different-types
 	public interface IConfigSection : IDictionary<string, ConfigValue>
     {
         /// <summary>
@@ -27,7 +24,7 @@ namespace Config
         /// <value>
         /// The description.
         /// </value>
-        string Description { get; set; }
+        string Comment { get; set; }
 
 		/// <summary>
 		/// TODO: exception type to doc

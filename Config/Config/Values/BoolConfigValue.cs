@@ -1,4 +1,5 @@
 ﻿using System;
+using Config.Format;
 
 namespace Config.Values
 {
@@ -14,12 +15,8 @@ namespace Config.Values
 
 		public BoolConfigValue(string value)
 		{
-			Value = FromString(value);
 			_textValue = value;
-		}
 
-		private bool FromString(string value)
-		{
 			switch (value)
 			{
 				case "0":
@@ -28,7 +25,8 @@ namespace Config.Values
 				case "off":
 				case "no":
 				case "disabled":
-					return false;
+					Value = false;
+					break;
 
 				case "1":
 				case "t":
@@ -36,22 +34,18 @@ namespace Config.Values
 				case "on":
 				case "yes":
 				case "enabled":
-					return true;
+					Value = true;
+					break;
 
 				default:
-					throw new ArgumentOutOfRangeException(string.Format("Unknown boolean value '{0}'", value));
+					// TODO: add error to exception: string.Format("Unknown boolean value '{0}'", value)
+					throw new ConfigFormatException();
 			}
 		}
 
 		public override string Serialize()
 		{
 			return _textValue;
-		}
-
-		public void Set(string value)
-		{
-			Value = FromString(value);
-			_textValue = value;
 		}
 
 		public static implicit operator BoolConfigValue(bool b)

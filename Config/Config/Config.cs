@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
+using Config.Format;
 
 namespace Config
 {
 	public class Config : IConfig
 	{
+		public IFormatSpecifier FormatSpecifier { get; }
+
 		public IConfigSection this[string sectionName]
 		{
 			get { throw new System.NotImplementedException(); }
