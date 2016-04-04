@@ -20,7 +20,9 @@ namespace Examples
 						{
 							new FormatOption<StringConfigValue>("hostname"),
 							// Example of restricted values (range)
-							new ConstraintFormatOption<IntConfigValue>("port", x => (int) x > 0 && (int) x < 65536)
+							new ConstraintFormatOption<IntConfigValue>("port", x => (int) x > 0 && (int) x < 65536),
+							// Example of enum
+							new EnumFormatOption<StringConfigValue>("domain", new [] {"com", "eu", "fr"})
 						}
 					},
 					new FormatSectionSpecifier("HTTP")

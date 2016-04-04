@@ -4,7 +4,10 @@ using Config.Format;
 
 namespace Config.Attribute
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
+	/// <summary>
+	/// Class represents an attribute that is used for linking a class and a config file.
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
     public class ConfigAttribute : System.Attribute
     {
         private string _file;

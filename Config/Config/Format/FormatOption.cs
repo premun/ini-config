@@ -34,8 +34,7 @@ namespace Config.Format
 
         #endregion
     }
-
-	// TODO
+	
     public class FormatEnumOption<T> : IFormatOption<T> where T : struct, IConvertible
 	{
 		#region Implementation of IFormatOption

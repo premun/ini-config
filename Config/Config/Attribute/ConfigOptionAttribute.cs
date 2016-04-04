@@ -2,7 +2,10 @@
 
 namespace Config.Attribute
 {
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
+	/// <summary>
+	/// Class represents an attribute that is used for linking a class field/property and a config option.
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     public class ConfigOptionAttribute : System.Attribute
     {
         private readonly string _section;

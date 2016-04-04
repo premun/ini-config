@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Config.Values;
 
 namespace Config.Format
@@ -11,6 +12,17 @@ namespace Config.Format
 			: base(name, defaultValue)
 		{
 			Contraint = contraint;
+		}
+	}
+
+	public class EnumFormatOption<T> : FormatOption<T> where T : ConfigValue
+	{
+		private readonly IEnumerable<string> _allowedValues;
+
+		public EnumFormatOption(string name, IEnumerable<string> allowedValues, object defaultValue = null)
+			: base(name, defaultValue)
+		{
+			_allowedValues = allowedValues;
 		}
 	}
 }

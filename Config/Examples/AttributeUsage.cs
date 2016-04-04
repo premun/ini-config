@@ -24,11 +24,6 @@ namespace Examples
 
 		[ConfigOption("MySQL", "schema")]
 		public string Schema;
-
-		public MySqlConnector()
-		{
-			// Connect to MySQL using fetched config values...
-		}
 	}
 
 	public class InitializationExample

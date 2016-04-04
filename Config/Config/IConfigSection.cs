@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Config.Format;
 using Config.Values;
 
 namespace Config
@@ -27,7 +26,6 @@ namespace Config
         string Comment { get; set; }
 
 		/// <summary>
-		/// TODO: exception type to doc
 		/// Returns a single item by given key. 
 		/// An [exception] will be raised when object is not of T type.
 		/// </summary>
@@ -37,7 +35,6 @@ namespace Config
 		T Get<T>(string key);
 
 		/// <summary>
-		/// TODO: exception type to doc
 		/// Returns a single item by given key. 
 		/// An [exception] will be raised when object is not of T type.
 		/// </summary>

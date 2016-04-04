@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Config.Format.Errors;
+﻿using System.Collections.Generic;
 
 namespace Config.Format
 {
@@ -10,6 +8,6 @@ namespace Config.Format
     /// </summary>
     public class ConfigFormatException : ConfigException
 	{
-        public IEnumerable<ConfigFormatError> ErrorList { get; set; }
+        public IEnumerable<ConfigException> ErrorList { get; set; }
     }
 }

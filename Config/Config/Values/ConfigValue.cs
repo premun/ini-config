@@ -23,9 +23,12 @@
 
 		#region Auto-boxing
 
-		/*
-		 * TODO: okomentovat proc
-		*/
+		/**
+		 * Auto boxing occurs when we want to add values into sections:
+		 * config["Section"]["foo"] = "bar";
+		 *
+		 * Then "bar" needs to be boxed into StringConfigValue automatically.
+		 */
 
 		public static implicit operator ConfigValue(bool b)
 		{

@@ -1,11 +1,10 @@
-﻿using System;
-using Config.Format;
+﻿using Config.Format.Errors;
 
 namespace Config.Values
 {
 	public class BoolConfigValue : ConfigValue<bool>
 	{
-		private string _textValue;
+		private readonly string _textValue;
 
 		public BoolConfigValue(bool value)
 		{
@@ -38,8 +37,7 @@ namespace Config.Values
 					break;
 
 				default:
-					// TODO: add error to exception: string.Format("Unknown boolean value '{0}'", value)
-					throw new ConfigFormatException();
+					throw new InvalidValueException(string.Format("Unknown boolean value '{0}'", value));
 			}
 		}
 

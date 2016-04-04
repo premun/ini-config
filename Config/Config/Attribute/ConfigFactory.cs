@@ -1,27 +1,21 @@
 ﻿using System;
-using System.IO;
 
 namespace Config.Attribute
 {
-    public static class ConfigFactory
+	/// <summary>
+	/// Class used for creating objects that inject config values through attributes.
+	/// </summary>
+	public static class ConfigFactory
     {
+		/// <summary>
+		/// Instantiates given type and injects values from config into annotated fields/properties.
+		/// </summary>
+		/// <typeparam name="T">Type we would like to instantiate.</typeparam>
+		/// <returns>Instance of given type T.</returns>
         public static T Create<T>()
         {
             // Find all attributes and load data.
             throw new NotImplementedException();
-        }
-
-        public static void Save(object configClass)
-        {
-            var hasConfigAttr = configClass.GetType()
-                .IsDefined(typeof (ConfigAttribute), false);
-
-            if (!hasConfigAttr)
-            {
-                throw new InvalidDataException();
-            }
-
-            // SaveConfig config
         }
     }
 }

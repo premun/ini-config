@@ -30,7 +30,7 @@ namespace Examples
 			}
 		};
 
-		public List<IFormatSectionSpecifier> OptionalSections => new List<IFormatSectionSpecifier>();
+		public List<IFormatSectionSpecifier> OptionalSections { get; } = new List<IFormatSectionSpecifier>();
 
 		#endregion
 	}

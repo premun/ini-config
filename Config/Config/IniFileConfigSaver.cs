@@ -2,6 +2,9 @@
 
 namespace Config
 {
+	/// <summary>
+	/// Example stub of an object that will store config into an ini file.
+	/// </summary>
 	public class IniFileConfigSaver : IConfigSaver, IDisposable
 	{
 		private readonly string _path;

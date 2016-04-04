@@ -2,7 +2,6 @@
 using System.Linq;
 using Config;
 using Config.Format;
-using Config.Values;
 
 namespace Examples
 {
