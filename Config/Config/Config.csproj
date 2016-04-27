@@ -63,6 +63,13 @@
     <Compile Include="IConfigBuilder.cs" />
     <Compile Include="IniFileConfigBuilder.cs" />
     <Compile Include="IniFileConfigSaver.cs" />
+    <Compile Include="IniFileParser\ITokenParser.cs" />
+    <Compile Include="IniFileParser\TokenParser.cs" />
+    <Compile Include="IniFileParser\Tokens\CommentToken.cs" />
+    <Compile Include="IniFileParser\Tokens\NewLineToken.cs" />
+    <Compile Include="IniFileParser\Tokens\OptionToken.cs" />
+    <Compile Include="IniFileParser\Tokens\SectionHeaderToken.cs" />
+    <Compile Include="IniFileParser\Tokens\Token.cs" />
     <Compile Include="Values\CommentConfigValue.cs" />
     <Compile Include="Values\ConstraintConfigValue.cs" />
     <Compile Include="Values\FloatConfigValue.cs" />
