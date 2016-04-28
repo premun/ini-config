@@ -15,7 +15,7 @@ namespace Config
         /// <param name="buildMode">Should an exception be raised when format doesn't correspond with the specified structure?</param>
         /// <returns>Built IConfig filled with data</returns>
         /// <exception cref="ConfigFormatException">Thrown when config format does not correspond with supplied specification.</exception>
-		IConfig Build(IFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed);
+		IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed);
 
         /// <summary>
         /// Generates an empty config that can be filled with values manually.

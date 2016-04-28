@@ -11,7 +11,7 @@ namespace Config.Attribute
     public class ConfigAttribute : System.Attribute
     {
         private string _file;
-        private IFormatSpecifier _formatSpecifier;
+        private ConfigFormatSpecifier _formatSpecifier;
         private BuildMode _mode;
 
         public ConfigAttribute(string file, Type formatSpecifier, BuildMode mode)
@@ -19,12 +19,12 @@ namespace Config.Attribute
             _file = file;
             _mode = mode;
 
-            if (!typeof(IFormatSpecifier).IsAssignableFrom(formatSpecifier) )
+            if (!typeof(ConfigFormatSpecifier).IsAssignableFrom(formatSpecifier) )
             {
                 throw new InvalidDataException();
             }
 
-            _formatSpecifier = (IFormatSpecifier)Activator.CreateInstance(formatSpecifier);
+            _formatSpecifier = ((IConfigFormatSpecifier) Activator.CreateInstance(formatSpecifier)).GetFormatSpecifier();
         }
     }
 }

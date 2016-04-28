@@ -13,7 +13,7 @@ namespace Config
 			throw new NotImplementedException();
 		}
 
-		public override IConfig Build(IFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
+		public override IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
 		{
 			throw new NotImplementedException();
 		}
