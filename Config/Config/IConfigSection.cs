@@ -25,33 +25,6 @@ namespace Config
         /// </value>
         string Comment { get; set; }
 
-		/// <summary>
-		/// Returns a single item by given key. 
-		/// An [exception] will be raised when object is not of T type.
-		/// </summary>
-		/// <typeparam name="T">Desired item type. Type is cast silently.</typeparam>
-		/// <param name="key">Item key</param>
-		/// <returns>Item, if found and good type is specified, null otherwise.</returns>
-		T Get<T>(string key);
-
-		/// <summary>
-		/// Returns a single item by given key. 
-		/// An [exception] will be raised when object is not of T type.
-		/// </summary>
-		/// <typeparam name="T">Desired item type. Type is cast silently.</typeparam>
-		/// <param name="key">Item key</param>
-		/// <returns>Item, if found and good type is specified, null otherwise.</returns>
-		T As<T>(string key);
-
-		/// <summary>
-		/// Returns a single item by given key. 
-		/// Type is cast silently, null returned in case it fails.
-		/// </summary>
-		/// <typeparam name="T">Desired item type. Type is cast silently.</typeparam>
-		/// <param name="key">Item key</param>
-		/// <returns>Item, if found and good type is specified, null otherwise.</returns>
-		T GetSafe<T>(string key); 
-
         /// <summary>
         /// Sets an item (key-value), effectively overwriting previous item with same key.
         /// </summary>
