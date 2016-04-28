@@ -47,7 +47,6 @@
     <Compile Include="AttributeUsage.cs" />
     <Compile Include="BasicUsage.cs" />
     <Compile Include="FormatSpecification.cs" />
-    <Compile Include="MySqlFormater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
