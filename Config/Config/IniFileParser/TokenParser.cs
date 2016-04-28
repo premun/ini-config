@@ -51,9 +51,6 @@ namespace Config.IniFileParser
 				case ';':
 					return new CommentToken(_reader);
 
-				case '\n':
-					return new NewLineToken();
-
 				default:
 					return new OptionToken(_reader);
 			}
