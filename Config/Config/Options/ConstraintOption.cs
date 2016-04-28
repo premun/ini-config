@@ -4,7 +4,7 @@ namespace Config.Options
 {
 	public class ConstraintOption<T> : Option where T : Option
 	{
-		public ConstraintOption(T value, Func<object, bool> constraint)
+		public ConstraintOption(T value, Predicate<T> constraint)
 		{
 		}
 	}

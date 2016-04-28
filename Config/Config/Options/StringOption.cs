@@ -1,6 +1,6 @@
 ﻿namespace Config.Options
 {
-	public class StringOption : Option<int>
+	public class StringOption : Option<string>
 	{
 		public StringOption(string rawValue)
 		{
