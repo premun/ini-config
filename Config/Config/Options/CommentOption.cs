@@ -1,9 +1,9 @@
-﻿namespace Config.Values
+﻿namespace Config.Options
 {
 	/// <summary>
 	/// Represents an empty line containing only comment.
 	/// </summary>
-	public class CommentConfigValue : ConfigValue
+	public class CommentOption : Option
 	{
 	}
 }

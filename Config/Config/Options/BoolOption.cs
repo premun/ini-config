@@ -1,18 +1,18 @@
 ﻿using Config.Format.Errors;
 
-namespace Config.Values
+namespace Config.Options
 {
-	public class BoolConfigValue : ConfigValue<bool>
+	public class BoolOption : Option<bool>
 	{
 		private readonly string _textValue;
 
-		public BoolConfigValue(bool value)
+		public BoolOption(bool rawValue)
 		{
-			Value = value;
+			RawValue = rawValue;
 			_textValue = "false";
 		}
 
-		public BoolConfigValue(string value)
+		public BoolOption(string value)
 		{
 			_textValue = value;
 
@@ -24,7 +24,7 @@ namespace Config.Values
 				case "off":
 				case "no":
 				case "disabled":
-					Value = false;
+					RawValue = false;
 					break;
 
 				case "1":
@@ -33,7 +33,7 @@ namespace Config.Values
 				case "on":
 				case "yes":
 				case "enabled":
-					Value = true;
+					RawValue = true;
 					break;
 
 				default:
@@ -46,9 +46,9 @@ namespace Config.Values
 			return _textValue;
 		}
 
-		public static implicit operator BoolConfigValue(bool b)
+		public static implicit operator BoolOption(bool b)
 		{
-			return new BoolConfigValue(b);
+			return new BoolOption(b);
 		}
 	}
 }

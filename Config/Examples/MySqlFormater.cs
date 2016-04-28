@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Config.Format;
-using Config.Values;
+using Config.Options;
 
 namespace Examples
 {
@@ -17,14 +17,14 @@ namespace Examples
 	        {
 	            RequiredOptions = new List<IFormatOption>
 	            {
-	                new FormatOption<StringConfigValue>("hostname", "localhost"),
-	                new FormatOption<StringConfigValue>("username"),
-	                new FormatOption<StringConfigValue>("password"),
-	                new FormatOption<StringConfigValue>("schema")
+	                new FormatOption<StringOption>("hostname", "localhost"),
+	                new FormatOption<StringOption>("username"),
+	                new FormatOption<StringOption>("password"),
+	                new FormatOption<StringOption>("schema")
 	            },
 	            OptionalOptions = new List<IFormatOption>
 	            {
-	                new FormatOption<IntConfigValue>("port", 3507)
+	                new FormatOption<IntOption>("port", 3507)
 	            }
 	        }
 	    };

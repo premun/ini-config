@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Config.Values;
+using Config.Options;
 
 namespace Config
 {
@@ -7,7 +7,7 @@ namespace Config
 	/// Represents data of one config section (list of key-value items).
 	/// Also behaves like a collection of items.
 	/// </summary>
-	public interface IConfigSection : IDictionary<string, ConfigValue>
+	public interface IConfigSection : IDictionary<string, Option>
     {
         /// <summary>
         /// Unique name of the config section, used for identification.
@@ -58,6 +58,6 @@ namespace Config
         /// <param name="key">Item key</param>
         /// <param name="value">Item value</param>
         /// <returns>Itself for better chaining.</returns>
-        IConfigSection Set(string key, ConfigValue value);
+        IConfigSection Set(string key, Option value);
     }
 }

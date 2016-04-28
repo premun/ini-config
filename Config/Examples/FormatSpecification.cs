@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Config.Format;
-using Config.Values;
+using Config.Options;
 
 namespace Examples
 {
@@ -18,11 +18,11 @@ namespace Examples
 					{
 						RequiredOptions = new List<IFormatOption>
 						{
-							new FormatOption<StringConfigValue>("hostname"),
+							new FormatOption<StringOption>("hostname"),
 							// Example of restricted values (range)
-							new ConstraintFormatOption<IntConfigValue>("port", x => (int) x > 0 && (int) x < 65536),
+							new ConstraintFormatOption<IntOption>("port", x => (int) x > 0 && (int) x < 65536),
 							// Example of enum
-							new EnumFormatOption<StringConfigValue>("domain", new [] {"com", "eu", "fr"})
+							new EnumFormatOption<StringOption>("domain", new [] {"com", "eu", "fr"})
 						}
 					},
 					new FormatSectionSpecifier("HTTP")
@@ -30,12 +30,12 @@ namespace Examples
 						RequiredOptions = new List<IFormatOption>
 						{
 							// Example of default value
-							new FormatOption<IntConfigValue>("timeout", 5000)
+							new FormatOption<IntOption>("timeout", 5000)
 						},
 						OptionalOptions = new List<IFormatOption>
 						{
 							// Example of default value
-							new FormatOption<BoolConfigValue>("use_https", false)
+							new FormatOption<BoolOption>("use_https", false)
 						}
 					}
 				},
@@ -45,12 +45,12 @@ namespace Examples
 					{
 						RequiredOptions = new List<IFormatOption>
 						{
-							new FormatOption<StringConfigValue>("jquery_js")
+							new FormatOption<StringOption>("jquery_js")
 						},
 						OptionalOptions = new List<IFormatOption>
 						{
-							new FormatOption<StringConfigValue>("main_css"),
-							new FormatOption<StringConfigValue>("main_js")
+							new FormatOption<StringOption>("main_css"),
+							new FormatOption<StringOption>("main_js")
 						}
 					}
 				}

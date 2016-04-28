@@ -1,18 +1,18 @@
 using System;
 using System.Collections.Generic;
 
-namespace Config.Values
+namespace Config.Options
 {
-	public class ListConfigValue<T> : ConfigValue where T : ConfigValue
+	public class ListOption<T> : Option where T : Option
 	{
 		public IEnumerable<T> Values { get; set; }
 
-		public ListConfigValue(IEnumerable<T> values)
+		public ListOption(IEnumerable<T> values)
 		{
 			Values = values;
 		}
 
-		public ConfigValue this[int index]
+		public Option this[int index]
 		{
 			get
 			{

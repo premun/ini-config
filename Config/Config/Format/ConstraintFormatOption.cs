@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Config.Values;
+using Config.Options;
 
 namespace Config.Format
 {
-	public class ConstraintFormatOption<T> : FormatOption<T> where T : ConfigValue
+	public class ConstraintFormatOption<T> : FormatOption<T> where T : Option
 	{
 		public readonly Func<object, bool> Contraint;
 
@@ -15,7 +15,7 @@ namespace Config.Format
 		}
 	}
 
-	public class EnumFormatOption<T> : FormatOption<T> where T : ConfigValue
+	public class EnumFormatOption<T> : FormatOption<T> where T : Option
 	{
 		private readonly IEnumerable<string> _allowedValues;
 

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Config.Values;
+using Config.Options;
 
 namespace Config.Format
 {
-    public class FormatOption<T> : IFormatOption<T> where T : ConfigValue
+    public class FormatOption<T> : IFormatOption<T> where T : Option
     {
         public FormatOption(string name, object defaultValue = null)
         {
@@ -21,7 +21,7 @@ namespace Config.Format
 		#endregion
 	}
 
-	public class FormatListOption<T> : List<T>, IFormatOption<T> where T : ConfigValue
+	public class FormatListOption<T> : List<T>, IFormatOption<T> where T : Option
 	{
         public FormatListOption(string name)
         {
