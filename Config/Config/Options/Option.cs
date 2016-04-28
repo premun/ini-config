@@ -11,6 +11,40 @@
 			return RawValue.ToString();
 		}
 
+		#region Typed getters
+
+		public bool Bool
+		{
+			get { return (bool) RawValue; }
+		}
+
+		public float Float
+		{
+			get { return (float) RawValue; }
+		}
+
+		public int Int
+		{
+			get { return (int) RawValue; }
+		}
+
+		public long Signed
+		{
+			get { return (long) RawValue; }
+		}
+
+		public string String
+		{
+			get { return (string) RawValue; }
+		}
+
+		public ulong Unsigned
+		{
+			get { return (ulong) RawValue; }
+		}
+
+		#endregion
+
 		#region Auto-boxing
 
 		/**
