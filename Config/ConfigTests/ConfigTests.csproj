@@ -62,6 +62,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Format\WhenSpecifyingFormat.cs" />
     <Compile Include="IniFileParser\Tokens\WhenParsingItemToken.cs" />
     <Compile Include="IniFileParser\Tokens\WhenParsingSectionHeaderToken.cs" />
     <Compile Include="IniFileParser\WhenParsingFile.cs" />

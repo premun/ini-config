@@ -5,7 +5,7 @@ namespace Config.Format
 {
 	internal class SectionSpecifier
 	{
-		internal IList<OptionSpecifier> Options { get; set; }
+		internal IDictionary<string, OptionSpecifier> Options { get; set; }
 
 		internal string Name { get; set; }
 
@@ -15,22 +15,22 @@ namespace Config.Format
 		{
 			Name = name;
 			Required = required;
-			Options = new List<OptionSpecifier>();
+			Options = new Dictionary<string, OptionSpecifier>();
 		}
 
 		public void AddOption(string name, bool required = false, object defaultValue = null)
 		{
-			Options.Add(new OptionSpecifier(name, required, defaultValue));
+			Options[name] = new OptionSpecifier(name, required, defaultValue);
 		}
 
 		public void AddOption(string name, Predicate<object> constraint, bool required = false, object defaultValue = null)
 		{
-			Options.Add(new OptionSpecifier(name, required, defaultValue));
+			Options[name] = new ConstraintOptionSpecifier(name, constraint, required, defaultValue);
 		}
 
 		public void AddOption(string name, Type enumeration, bool required = false, object defaultValue = null)
 		{
-			Options.Add(new EnumOptionSpecifier(name, enumeration, required, defaultValue));
+			Options[name] = new EnumOptionSpecifier(name, enumeration, required, defaultValue);
 		}
 	}
 }
