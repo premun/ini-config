@@ -12,6 +12,11 @@ namespace Config.Options
 			Values = values;
 		}
 
+		public ListOption(T[] values)
+		{
+			Values = values;
+		}
+
 		public Option this[int index]
 		{
 			get
@@ -25,7 +30,7 @@ namespace Config.Options
 			}
 		}
 
-		public List<T> Get()
+		public IEnumerable<T> Get()
 		{
 			throw new NotImplementedException();
 		}

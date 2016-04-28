@@ -35,11 +35,11 @@ namespace Examples
 
 			// Get config values
 			// Either directly
-			string hostname = config["MySQL"]["hostname"].As<string>();
+			string hostname = config["MySQL"]["hostname"].String;
 
 			// Or through section
 			var mysqlSection = config["MySQL"];
-			int port = mysqlSection["port"].As<int>();
+			int port = mysqlSection["port"].Int;
 
 			// Set new values (notice method chaining)
 			config["MySQL"]
@@ -53,8 +53,8 @@ namespace Examples
 			var httpSection = config["HTTP"];
 			if (httpSection != null)
 			{
-				bool secure = httpSection["use_https"].As<bool>();
-				int timeout = httpSection["timeout"].As<int>();
+				bool secure = httpSection["use_https"].Bool;
+				int timeout = httpSection["timeout"].Int;
 			}
 
 			// Add new section
@@ -66,6 +66,7 @@ namespace Examples
 				.Set("bar", false);
 
 			newSection["another"] = 42.69f;
+			newSection["allowedIPs"] = new[] {"147.54.32.148", "10.12.45.188"};
 
 			// Save changed config into a new file
 			using (var configSaver = new IniFileConfigSaver("/www/mywebsite/config.local.ini"))
