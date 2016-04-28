@@ -5,7 +5,7 @@ namespace Config
 {
 	public class Config : IConfig
 	{
-		public IFormatSpecifier FormatSpecifier
+		public ConfigFormatSpecifier FormatSpecifier
 		{
 		    get { throw new System.NotImplementedException(); }
 		}

@@ -56,7 +56,7 @@
     <Compile Include="Format\Errors\InvalidIdentifierException.cs" />
     <Compile Include="Format\Errors\InvalidValueException.cs" />
     <Compile Include="Format\OptionSpecifier.cs" />
-    <Compile Include="Format\SectionFormatSpecifier.cs" />
+    <Compile Include="Format\SectionSpecifier.cs" />
     <Compile Include="Format\ConfigFormatSpecifier.cs" />
     <Compile Include="Format\FluentSectionSpecifier.cs" />
     <Compile Include="IConfig.cs" />

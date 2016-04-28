@@ -11,7 +11,7 @@ namespace Config
 		/// <summary>
 		/// Format specifier that was used when config instance was built.
 		/// </summary>
-		IFormatSpecifier FormatSpecifier { get; }
+		ConfigFormatSpecifier FormatSpecifier { get; }
 
         /// <summary>
         /// Retreive config section by its name.

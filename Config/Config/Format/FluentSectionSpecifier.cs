@@ -5,9 +5,9 @@ namespace Config.Format
 	public class FluentSectionSpecifier
 	{
 		private readonly ConfigFormatSpecifier _parentSpecifier;
-		private readonly SectionFormatSpecifier _sectionSpecifier;
+		private readonly SectionSpecifier _sectionSpecifier;
 
-		internal FluentSectionSpecifier(ConfigFormatSpecifier parentSpecifier, SectionFormatSpecifier sectionSpecifier)
+		internal FluentSectionSpecifier(ConfigFormatSpecifier parentSpecifier, SectionSpecifier sectionSpecifier)
 		{
 			_parentSpecifier = parentSpecifier;
 			_sectionSpecifier = sectionSpecifier;

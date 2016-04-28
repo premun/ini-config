@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Config.Format
 {
-	internal class SectionFormatSpecifier
+	internal class SectionSpecifier
 	{
 		internal IList<OptionSpecifier> Options { get; set; }
 
@@ -11,7 +11,7 @@ namespace Config.Format
 
 		internal bool Required { get; set; }
 
-		internal SectionFormatSpecifier(string name, bool required = false)
+		internal SectionSpecifier(string name, bool required = false)
 		{
 			Name = name;
 			Required = required;
