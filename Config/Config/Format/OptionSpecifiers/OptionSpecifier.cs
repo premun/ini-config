@@ -7,6 +7,8 @@ namespace Config.Format.OptionSpecifiers
 		public string Name { get; set; }
 
 		public bool Required { get; set; }
+
+		internal abstract Option Parse(string value);
 	}
 
 	public abstract class OptionSpecifier<T> : OptionSpecifier
@@ -19,7 +21,5 @@ namespace Config.Format.OptionSpecifiers
 			Required = required;
 			DefaultValue = defaultValue;
 		}
-
-		internal abstract Option<T> Parse(string value);
 	}
 }

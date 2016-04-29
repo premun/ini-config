@@ -8,7 +8,7 @@ namespace Config.Format.OptionSpecifiers
 		{
 		}
 
-		internal override Option<bool> Parse(string value)
+		internal override Option Parse(string value)
 		{
 			return new BoolOption(value);
 		}

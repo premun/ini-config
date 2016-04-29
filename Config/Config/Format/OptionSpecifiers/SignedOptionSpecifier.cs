@@ -8,7 +8,7 @@ namespace Config.Format.OptionSpecifiers
 		{
 		}
 
-		internal override Option<long> Parse(string value)
+		internal override Option Parse(string value)
 		{
 			return new SignedOption(value);
 		}

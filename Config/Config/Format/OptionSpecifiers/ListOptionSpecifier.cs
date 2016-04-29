@@ -8,7 +8,7 @@ namespace Config.Format.OptionSpecifiers
 		{
 		}
 
-		internal override Option<T> Parse(string value)
+		internal override Option Parse(string value)
 		{
 			throw new System.NotImplementedException();
 		}

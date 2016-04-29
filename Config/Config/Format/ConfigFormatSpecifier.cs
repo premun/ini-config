@@ -6,18 +6,33 @@ using System.Runtime.CompilerServices;
 namespace Config.Format
 {
     public class ConfigFormatSpecifier
-    {
-	    internal IDictionary<string, SectionSpecifier> Sections { get; }
+	{
+	    private readonly IDictionary<string, SectionSpecifier> _sections;
 
-	    public ConfigFormatSpecifier()
+		internal SectionSpecifier this[string key]
+		{
+			get
+			{
+				if (_sections.ContainsKey(key))
+				{
+					return _sections[key];
+				}
+
+				return null;
+			}
+
+			set { _sections[key] = value; }
+		}
+
+		public ConfigFormatSpecifier()
 	    {
-		    Sections = new Dictionary<string, SectionSpecifier>();
+		    _sections = new Dictionary<string, SectionSpecifier>();
 	    }
 
 	    public FluentSectionSpecifier AddSection(string name, bool required = false)
 	    {
 			var sectionSpecifier = new SectionSpecifier(name, required);
-			Sections[name] = sectionSpecifier;
+			_sections[name] = sectionSpecifier;
 		    return new FluentSectionSpecifier(this, sectionSpecifier);
 	    }
 	}

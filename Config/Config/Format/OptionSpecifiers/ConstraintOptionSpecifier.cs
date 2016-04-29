@@ -13,7 +13,7 @@ namespace Config.Format.OptionSpecifiers
 			Constraint = constraint;
 		}
 
-		internal override Option<T> Parse(string value)
+		internal override Option Parse(string value)
 		{
 			// TODO: catch exception, throw wrong type exception
 			var val = (T) Convert.ChangeType(value, typeof(T));
