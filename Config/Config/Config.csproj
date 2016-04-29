@@ -68,6 +68,7 @@
     <Compile Include="Format\FluentSectionSpecifier.cs" />
     <Compile Include="IConfig.cs" />
     <Compile Include="IConfigBuilder.cs" />
+    <Compile Include="IniFiles\IniConfig.cs" />
     <Compile Include="IniFiles\IniFileConfigBuilder.cs" />
     <Compile Include="IniFiles\IniFileConfigSaver.cs" />
     <Compile Include="IniFiles\Parser\ITokenParser.cs" />

@@ -18,7 +18,7 @@ namespace Config
 	[Flags]
 	public enum Verbosity
 	{
-		Defaults,
-		Comments
+		Defaults = 1,
+		Comments = 2
 	}
 }

@@ -32,24 +32,23 @@ namespace Examples
 		public void ConfigBuilder()
 		{
 			IConfig config;
-			using (var builder = new IniFileConfigBuilder("/www/mywebsite/config.ini"))
+
+			try { 
+				// Notice the IniConfig class that adds the ini file representation
+				// Representation is not bound to basic implementation, more sources can be added easily
+				config = IniConfig.FromFile("/www/mywebsite/config.ini");
+			}
+			catch (ConfigFormatException e)
 			{
-				try
-				{
-					config = builder.Build();
-				}
-				catch (ConfigFormatException e)
-				{
-					Console.WriteLine("Cannot build config. Encountered following errors:");
+				Console.WriteLine("Cannot build config. Encountered following errors:");
 
-					e.ErrorList
-						.ToList()
-						.ForEach(error => Console.WriteLine("  - " + error.Message));
+				e.ErrorList
+					.ToList()
+					.ForEach(error => Console.WriteLine("  - " + error.Message));
 
-					Console.WriteLine();
+				Console.WriteLine();
 
-					throw;
-				}
+				throw;
 			}
 
 			// Get config values
@@ -65,8 +64,10 @@ namespace Examples
 				.Set("foo", 3.14f)
 				.Set("bar", 0x45);
 
-			// Set new values using indexer
+			// Set new values using indexer 
+			// (notice auto-boxing to BoolOption or ListOption<string>)
 			config["MySQL"]["persistent"] = true;
+			config["MySQL"]["allowedIPs"] = new[] { "147.54.32.148", "10.12.45.188" };
 
 			// Get specific section that was not required
 			var httpSection = config["HTTP"];
@@ -84,14 +85,7 @@ namespace Examples
 				.Set("foo", 123)
 				.Set("bar", false);
 
-			newSection["another"] = 42.69f;
-			newSection["allowedIPs"] = new[] {"147.54.32.148", "10.12.45.188"};
-
-			// Save changed config into a new file
-			using (var configSaver = new IniFileConfigSaver("/www/mywebsite/config.local.ini"))
-			{
-				configSaver.SaveConfig(config, Verbosity.Defaults & Verbosity.Comments);
-			}
+			config.SaveToFile(Verbosity.Defaults & Verbosity.Comments);
 		} 
 	}
 }

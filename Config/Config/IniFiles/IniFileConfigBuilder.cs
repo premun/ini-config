@@ -10,6 +10,7 @@ namespace Config.IniFiles
 	/// <summary>
 	/// Class that builds a config out of an ini file.
 	/// </summary>
+	/// TODO: Turn into internal?
 	public class IniFileConfigBuilder : ConfigBuilder, IDisposable
 	{
 		private readonly string _path;
