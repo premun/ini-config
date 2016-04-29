@@ -63,9 +63,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Format\WhenSpecifyingFormat.cs" />
-    <Compile Include="IniFileParser\Tokens\WhenParsingItemToken.cs" />
-    <Compile Include="IniFileParser\Tokens\WhenParsingSectionHeaderToken.cs" />
-    <Compile Include="IniFileParser\WhenParsingFile.cs" />
+    <Compile Include="IniFiles\Parser\Tokens\WhenParsingItemToken.cs" />
+    <Compile Include="IniFiles\Parser\Tokens\WhenParsingSectionHeaderToken.cs" />
+    <Compile Include="IniFiles\Parser\WhenParsingFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

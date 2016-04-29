@@ -2,7 +2,7 @@
 
 [assembly: InternalsVisibleTo("ConfigTests")]
 
-namespace Config.IniFileParser.Tokens
+namespace Config.IniFiles.Parser.Tokens
 {
 	internal abstract class Token
 	{

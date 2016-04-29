@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("ConfigTests")]
 
-namespace Config.IniFileParser.Tokens
+namespace Config.IniFiles.Parser.Tokens
 {
 	/// <summary>
 	/// Represents a commented section that the parser read.

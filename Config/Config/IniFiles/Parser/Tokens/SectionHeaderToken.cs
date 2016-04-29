@@ -5,7 +5,7 @@ using System.Text;
 
 [assembly: InternalsVisibleTo("ConfigTests")]
 
-namespace Config.IniFileParser.Tokens
+namespace Config.IniFiles.Parser.Tokens
 {
 	/// <summary>
 	/// Represents a config file section [Header] that the parser read.

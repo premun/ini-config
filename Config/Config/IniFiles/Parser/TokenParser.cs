@@ -1,10 +1,10 @@
 ﻿using System.IO;
 using System.Runtime.CompilerServices;
-using Config.IniFileParser.Tokens;
+using Config.IniFiles.Parser.Tokens;
 
 [assembly: InternalsVisibleTo("ConfigTests")]
 
-namespace Config.IniFileParser
+namespace Config.IniFiles.Parser
 {
 	/// <summary>
 	/// Parses stream into tokens and returns them one by one.

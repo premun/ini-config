@@ -1,14 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-
+using Config.IniFiles.Parser;
+using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Config.IniFileParser;
-using Config.IniFileParser.Tokens;
-
-namespace ConfigTests.IniFileParser
+namespace ConfigTests.IniFiles.Parser
 {
 	[TestClass]
 	public class WhenParsingFile

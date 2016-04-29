@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("ConfigTests")]
 
-namespace Config.IniFileParser.Tokens
+namespace Config.IniFiles.Parser.Tokens
 {
 	/// <summary>
 	/// Represents a config key=value item that the parser read.

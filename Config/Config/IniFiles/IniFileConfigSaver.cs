@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Config
+namespace Config.IniFiles
 {
 	/// <summary>
 	/// Example stub of an object that will store config into an ini file.

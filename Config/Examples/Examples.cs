@@ -3,6 +3,7 @@ using System.Linq;
 using Config;
 using Config.Format;
 using Config.Format.OptionSpecifiers;
+using Config.IniFiles;
 
 namespace Examples
 {
