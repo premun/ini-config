@@ -2,6 +2,7 @@
 using System.Linq;
 using Config;
 using Config.Format;
+using Config.Format.OptionSpecifiers;
 
 namespace Examples
 {
@@ -19,12 +20,12 @@ namespace Examples
 
 		public readonly ConfigFormatSpecifier FormatSpecifier = new ConfigFormatSpecifier()
 			.AddSection("Server", true)
-				.AddOption("hostname", true)
-				.AddOption("port", x => (int) x > 0 && (int) x < 65536, defaultValue: 3306)
-				.AddOption("domain", typeof(Domains), defaultValue: Domains.Com)
+				.AddOption(new StringOptionSpecifier("hostname", true))
+				.AddOption(new ConstraintOptionSpecifier<int>("port", x => x > 0 && x < 65536, defaultValue: 3306))
+				.AddOption(new EnumOptionSpecifier<Domains>("domain", defaultValue: Domains.Eu))
 			.AddSection("HTTP", true)
-				.AddOption("timeout", defaultValue: 5000)
-				.AddOption("use_https", defaultValue: false)
+				.AddOption(new IntOptionSpecifier("timeout", defaultValue: 5000))
+				.AddOption(new BoolOptionSpecifier("use_https"))
 			.FinishDefinition();
 
 		public void ConfigBuilder()

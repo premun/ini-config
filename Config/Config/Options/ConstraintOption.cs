@@ -2,7 +2,7 @@
 
 namespace Config.Options
 {
-	public class ConstraintOption<T> : Option where T : Option
+	public class ConstraintOption<T> : Option<T>
 	{
 		public ConstraintOption(T value, Predicate<T> constraint)
 		{

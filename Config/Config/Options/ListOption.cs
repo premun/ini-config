@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Config.Options
 {
-	public class ListOption<T> : Option where T : Option
+	public class ListOption<T> : Option<T> where T : Option
 	{
 		public IEnumerable<T> Values { get; set; }
 

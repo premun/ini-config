@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Config.Format.OptionSpecifiers;
 
 namespace Config.Format
 {
@@ -18,21 +18,9 @@ namespace Config.Format
 			return _parentSpecifier.AddSection(name, required);
 		}
 
-		public FluentSectionSpecifier AddOption(string name, bool required = false, object defaultValue = null)
+		public FluentSectionSpecifier AddOption(OptionSpecifier optionSpecifier)
 		{
-			_sectionSpecifier.AddOption(name, required, defaultValue);
-			return this;
-		}
-
-		public FluentSectionSpecifier AddOption(string name, Predicate<object> constraint, bool required = false, object defaultValue = null)
-		{
-			_sectionSpecifier.AddOption(name, constraint, required, defaultValue);
-			return this;
-		}
-
-		public FluentSectionSpecifier AddOption(string name, Type enumeration, bool required = false, object defaultValue = null)
-		{
-			_sectionSpecifier.AddOption(name, enumeration, required, defaultValue);
+			_sectionSpecifier.AddOption(optionSpecifier);
 			return this;
 		}
 

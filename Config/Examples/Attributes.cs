@@ -1,6 +1,7 @@
 ﻿using Config;
 using Config.Attribute;
 using Config.Format;
+using Config.Format.OptionSpecifiers;
 
 namespace Examples
 {
@@ -40,10 +41,10 @@ namespace Examples
 		{
 			return new ConfigFormatSpecifier()
 				.AddSection("MySQL", true)
-					.AddOption("hostname", required: true)
-					.AddOption("username", required: true)
-					.AddOption("password")
-					.AddOption("schema", defaultValue: "db1")
+					.AddOption(new StringOptionSpecifier("hostname", required: true))
+					.AddOption(new StringOptionSpecifier("username", required: true))
+					.AddOption(new StringOptionSpecifier("password"))
+					.AddOption(new StringOptionSpecifier("schema", defaultValue: "db1"))
 				.FinishDefinition();
 		}
 	}
