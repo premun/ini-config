@@ -10,13 +10,16 @@ namespace Config.IniFiles.Parser.Tokens
 	/// </summary>
 	internal class CommentToken : Token
 	{
-		public string Content { get; private set; }
+		internal string Content { get; private set; }
 
-		public static readonly char CommentSymbol = ';';
+		internal static readonly char CommentSymbol = ';';
 
-		public CommentToken(StreamReader reader)
+		internal static CommentToken FromStream(StreamReader stream)
 		{
-			Content = reader.ReadLine();
+			return new CommentToken
+			{
+				Content = stream.ReadLine()
+			};
 		}
 	}
 }

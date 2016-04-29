@@ -11,15 +11,17 @@ namespace Config.IniFiles.Parser.Tokens
 	/// </summary>
 	internal class OptionToken : Token
 	{
-		public string Name { get; private set; }
+		public string Name { get; set; }
 
-		public string Value { get; private set; }
+		public string Value { get; set; }
 
 		public string Comment { get; private set; }
 
-		public OptionToken(StreamReader reader)
+		public static OptionToken FromStream(StreamReader stream)
 		{
-			string line = reader.ReadLine();
+			var token = new OptionToken();
+
+			string line = stream.ReadLine();
 
 			if (!line.Contains("="))
 			{
@@ -37,14 +39,16 @@ namespace Config.IniFiles.Parser.Tokens
 				value = value.Substring(0, commentStartPosition);
 				value = TrimEndEscaped(value);
 
-				Comment = value.Substring(commentStartPosition + 1).Trim();
+				token.Comment = line.Substring(commentStartPosition + 1).Trim();
 			}
 
 			value = value.Replace("\\ ", " ");
 			value = value.Replace("\\" + CommentToken.CommentSymbol, CommentToken.CommentSymbol + "");
 
-			Name = parts[0].Trim();
-			Value = value;
+			token.Name = parts[0].Trim();
+			token.Value = value;
+
+			return token;
 		}
 
 		private static int FindCommentStartPosition(string s)

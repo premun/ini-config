@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Config.Format;
 using Config.IniFiles.Errors;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using Config.Options;
+
+[assembly: InternalsVisibleTo("ConfigTests")]
 
 namespace Config.IniFiles
 {
@@ -25,9 +28,7 @@ namespace Config.IniFiles
 
 		private BuildMode _buildMode = BuildMode.Relaxed;
 
-		private StreamReader _reader;
-
-		private ITokenParser _parser;
+		private readonly ITokenParser _parser;
 
 		private IConfig _config;
 
@@ -38,6 +39,12 @@ namespace Config.IniFiles
 		public IniFileConfigBuilder(string path)
 		{
 			_path = path;
+			_parser = new TokenParser();
+		}
+
+		internal IniFileConfigBuilder(ITokenParser tokenParser)
+		{
+			_parser = tokenParser;
 		}
 
 		public override IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
@@ -79,12 +86,11 @@ namespace Config.IniFiles
 		/// </summary>
 		private void ParseConfig()
 		{
-			using (_reader = new StreamReader(_path))
+			using (_parser)
 			{
-				_parser = new TokenParser(_reader);
-				
-				Token token;
+				_parser.Open(_path);
 
+				Token token;
 				while ((token = _parser.GetNextToken()) != null)
 				{
 					if (token is SectionHeaderToken)
@@ -106,7 +112,7 @@ namespace Config.IniFiles
 		private void ParseToken(SectionHeaderToken token)
 		{
 			var sectionName = token.Name;
-			if (_config.GetSection(sectionName) != null)
+			if (_config[sectionName] != null)
 			{
 				ReportError(new DuplicateSectionError(sectionName, _parser.GetLine()));
 				return;
@@ -186,8 +192,7 @@ namespace Config.IniFiles
 
 		public void Dispose()
 		{
-			_reader.Close();
-			_reader.Dispose();
+			_parser.Dispose();
 		}
 	}
 }

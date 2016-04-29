@@ -1,8 +1,6 @@
-﻿using System.IO;
-using System.Runtime.CompilerServices;
+﻿using System;
+using System.IO;
 using Config.IniFiles.Parser.Tokens;
-
-[assembly: InternalsVisibleTo("ConfigTests")]
 
 namespace Config.IniFiles.Parser
 {
@@ -11,12 +9,33 @@ namespace Config.IniFiles.Parser
 	/// </summary>
 	internal class TokenParser : ITokenParser
 	{
-		private readonly StreamReader _reader;
+		private StreamReader _reader;
 		private int _currentLine;
 
-		internal TokenParser(StreamReader reader)
+		public TokenParser()
 		{
-			_reader = reader;
+		}
+
+		public TokenParser(string file)
+		{
+			Open(file);
+		}
+
+		public TokenParser(StreamReader stream)
+		{
+			Open(stream);
+		}
+
+		public void Open(string file)
+		{
+			Dispose();
+			_reader = new StreamReader(file);
+		}
+
+		public void Open(StreamReader stream)
+		{
+			Dispose();
+			_reader = stream;
 		}
 
 		/// <summary>
@@ -25,6 +44,11 @@ namespace Config.IniFiles.Parser
 		/// <returns>Next token or null if file at the end.</returns>
 		public Token GetNextToken()
 		{
+			if (_reader == null)
+			{
+				throw new InvalidOperationException("Open a file or stream before using GetNextToken()");
+			}
+
 			if (_reader.EndOfStream)
 			{
 				return null;
@@ -54,13 +78,13 @@ namespace Config.IniFiles.Parser
 			switch (c)
 			{
 				case '[':
-					return new SectionHeaderToken(_reader);
+					return SectionHeaderToken.FromStream(_reader);
 
 				case ';':
-					return new CommentToken(_reader);
+					return CommentToken.FromStream(_reader);
 
 				default:
-					return new OptionToken(_reader);
+					return OptionToken.FromStream(_reader);
 			}
 		}
 
@@ -72,6 +96,15 @@ namespace Config.IniFiles.Parser
 		private bool isWhiteSpace(int c)
 		{
 			return char.IsWhiteSpace((char) c);
+		}
+
+		public void Dispose()
+		{
+			if (_reader != null)
+			{
+				_reader.Close();
+				_reader.Dispose();
+			}
 		}
 	}
 }

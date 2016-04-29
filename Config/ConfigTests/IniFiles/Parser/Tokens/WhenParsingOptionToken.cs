@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ConfigTests.IniFiles.Parser.Tokens
 {
 	[TestClass]
-	public class WhenParsingItemToken
+	public class WhenParsingOptionToken
 	{
 		[TestMethod]
 		public void ValidValuesShouldBeParsedOk()
@@ -97,7 +97,7 @@ namespace ConfigTests.IniFiles.Parser.Tokens
 		{
 			var ms = new MemoryStream(Encoding.UTF8.GetBytes(s ?? ""));
 			var sr = new StreamReader(ms);
-			return new OptionToken(sr);
+			return OptionToken.FromStream(sr);
 		}
 	}
 }

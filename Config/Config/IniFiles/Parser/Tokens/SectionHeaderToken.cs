@@ -10,22 +10,21 @@ namespace Config.IniFiles.Parser.Tokens
 	/// <summary>
 	/// Represents a config file section [Header] that the parser read.
 	/// </summary>
-	class SectionHeaderToken : Token
+	internal class SectionHeaderToken : Token
 	{
-		public string Name { get; private set; }
+		internal string Name { get; set; }
 
-		// TODO: Exceptions in ctor?
-		public SectionHeaderToken(StreamReader reader)
+		internal static SectionHeaderToken FromStream(StreamReader stream)
 		{
-			StringBuilder sb = new StringBuilder();
+			var sb = new StringBuilder();
 
 			// Consume opening square bracket
-			if (reader.Peek() == '[')
+			if (stream.Peek() == '[')
 			{
-				reader.Read();
+				stream.Read();
 			}
 
-			int c = reader.Read();
+			int c = stream.Read();
 			while (c != ']')
 			{
 				if (c == '\n')
@@ -34,7 +33,7 @@ namespace Config.IniFiles.Parser.Tokens
 				}
 
 				sb.Append((char) c);
-				c = reader.Read();
+				c = stream.Read();
 			}
 
 			if (sb.Length == 0)
@@ -42,7 +41,10 @@ namespace Config.IniFiles.Parser.Tokens
 				throw new FormatException("Section header with empty name encountered!");
 			}
 
-			Name = sb.ToString();
+			return new SectionHeaderToken
+			{
+				Name = sb.ToString()
+			};
 		}
 	}
 }

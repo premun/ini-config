@@ -61,7 +61,7 @@ namespace ConfigTests.IniFiles.Parser.Tokens
 		{
 			var ms = new MemoryStream(Encoding.UTF8.GetBytes(s ?? ""));
 			var sr = new StreamReader(ms);
-			return new SectionHeaderToken(sr);
+			return SectionHeaderToken.FromStream(sr);
 		}
 	}
 }

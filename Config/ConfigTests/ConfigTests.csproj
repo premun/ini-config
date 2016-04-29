@@ -43,6 +43,10 @@
       <HintPath>..\packages\FluentAssertions.4.5.0\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -63,9 +67,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Format\WhenSpecifyingFormat.cs" />
-    <Compile Include="IniFiles\Parser\Tokens\WhenParsingItemToken.cs" />
+    <Compile Include="IniFiles\Parser\Tokens\WhenParsingOptionToken.cs" />
     <Compile Include="IniFiles\Parser\Tokens\WhenParsingSectionHeaderToken.cs" />
     <Compile Include="IniFiles\Parser\WhenParsingFile.cs" />
+    <Compile Include="IniFiles\WhenBuildingConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
