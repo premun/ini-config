@@ -1,4 +1,5 @@
-﻿using Config.Format;
+﻿using System.Collections.Generic;
+using Config.Format;
 
 namespace Config
 {
@@ -21,5 +22,11 @@ namespace Config
         /// Generates an empty config that can be filled with values manually.
         /// </summary>
 		IConfig Empty { get; }
+
+		/// <summary>
+		/// Returns a list of errors that occured during building.
+		/// </summary>
+		/// <returns>List of errors</returns>
+	    IEnumerable<ConfigException> GetErrors();
 	}
 }

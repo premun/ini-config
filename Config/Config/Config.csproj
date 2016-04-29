@@ -49,6 +49,8 @@
     <Compile Include="ConfigBuilder.cs" />
     <Compile Include="ConfigException.cs" />
     <Compile Include="Format\ConfigFormatException.cs" />
+    <Compile Include="Format\Errors\ParseOptionException.cs" />
+    <Compile Include="Format\Errors\NoSectionException.cs" />
     <Compile Include="Format\Errors\DuplicateSectionException.cs" />
     <Compile Include="Format\Errors\InvalidIdentifierException.cs" />
     <Compile Include="Format\Errors\InvalidValueException.cs" />

@@ -12,7 +12,10 @@ namespace Config.IniFiles.Parser.Tokens
 	internal class OptionToken : Token
 	{
 		public string Name { get; private set; }
+
 		public string Value { get; private set; }
+
+		public string Comment { get; private set; }
 
 		public OptionToken(StreamReader reader)
 		{
@@ -33,6 +36,8 @@ namespace Config.IniFiles.Parser.Tokens
 			{
 				value = value.Substring(0, commentStartPosition);
 				value = TrimEndEscaped(value);
+
+				Comment = value.Substring(commentStartPosition + 1).Trim();
 			}
 
 			value = value.Replace("\\ ", " ");

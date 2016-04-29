@@ -5,5 +5,7 @@ namespace Config.IniFiles.Parser
 	internal interface ITokenParser
 	{
 		Token GetNextToken();
+
+		int GetLine();
 	}
 }

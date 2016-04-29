@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Config.Format;
 
 namespace Config
@@ -8,7 +9,9 @@ namespace Config
 
 	    public abstract IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed);
 
-	    public IConfig Empty
+		public abstract IEnumerable<ConfigException> GetErrors();
+
+		public IConfig Empty
 	    {
 	        get { return _empty; }
 	    }

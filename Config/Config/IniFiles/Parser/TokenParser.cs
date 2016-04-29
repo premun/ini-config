@@ -12,8 +12,9 @@ namespace Config.IniFiles.Parser
 	internal class TokenParser : ITokenParser
 	{
 		private readonly StreamReader _reader;
+		private int _currentLine;
 
-		public TokenParser(StreamReader reader)
+		internal TokenParser(StreamReader reader)
 		{
 			_reader = reader;
 		}
@@ -33,6 +34,11 @@ namespace Config.IniFiles.Parser
 			int c = _reader.Peek();
 			while (isWhiteSpace(c))
 			{
+				if (c == '\n')
+				{
+					_currentLine++;
+				}
+
 				_reader.Read();
 				c = _reader.Peek();
 			}
@@ -42,6 +48,8 @@ namespace Config.IniFiles.Parser
 			{
 				return null;
 			}
+
+			_currentLine++;
 
 			switch (c)
 			{
@@ -54,6 +62,11 @@ namespace Config.IniFiles.Parser
 				default:
 					return new OptionToken(_reader);
 			}
+		}
+
+		public int GetLine()
+		{
+			return _currentLine;
 		}
 
 		private bool isWhiteSpace(int c)
