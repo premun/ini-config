@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Config.Format.OptionSpecifiers;
 
 namespace Config.Format
 {
@@ -18,19 +18,9 @@ namespace Config.Format
 			Options = new Dictionary<string, OptionSpecifier>();
 		}
 
-		public void AddOption(string name, bool required = false, object defaultValue = null)
+		public void AddOption(OptionSpecifier optionSpecifier)
 		{
-			Options[name] = new OptionSpecifier(name, required, defaultValue);
-		}
-
-		public void AddOption(string name, Predicate<object> constraint, bool required = false, object defaultValue = null)
-		{
-			Options[name] = new ConstraintOptionSpecifier(name, constraint, required, defaultValue);
-		}
-
-		public void AddOption(string name, Type enumeration, bool required = false, object defaultValue = null)
-		{
-			Options[name] = new EnumOptionSpecifier(name, enumeration, required, defaultValue);
+			Options[optionSpecifier.Name] = optionSpecifier;
 		}
 	}
 }

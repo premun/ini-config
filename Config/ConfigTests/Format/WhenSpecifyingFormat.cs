@@ -1,4 +1,5 @@
 ﻿using Config.Format;
+using Config.Format.OptionSpecifiers;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -18,14 +19,14 @@ namespace ConfigTests.Format
 		public void SpecificationShouldBeSaved()
 		{
 			var formatSpecifier = new ConfigFormatSpecifier()
-				.AddSection("Server", true)
-					.AddOption("hostname", true)
-					.AddOption("port", x => (int) x > 0 && (int) x < 65536, defaultValue: 3306)
-					.AddOption("domain", typeof(Domains), defaultValue: Domains.Com)
-				.AddSection("HTTP", true)
-					.AddOption("timeout", defaultValue: 5000)
-					.AddOption("use_https", defaultValue: false)
-				.FinishDefinition();
+			.AddSection("Server", true)
+				.AddOption(new StringOptionSpecifier("hostname", true))
+				.AddOption(new ConstraintOptionSpecifier<int>("port", x => x > 0 && x < 65536, defaultValue: 3306))
+				.AddOption(new EnumOptionSpecifier<Domains>("domain", defaultValue: Domains.Eu))
+			.AddSection("HTTP", true)
+				.AddOption(new IntOptionSpecifier("timeout", defaultValue: 5000))
+				.AddOption(new BoolOptionSpecifier("use_https"))
+			.FinishDefinition();
 
 			formatSpecifier.Sections.Count.ShouldBeEquivalentTo(2);
 			formatSpecifier.Sections.ContainsKey("Server").Should().BeTrue();
@@ -40,9 +41,9 @@ namespace ConfigTests.Format
 			serverOptions.ContainsKey("hostname").Should().BeTrue();
 			serverOptions["hostname"].Required.Should().BeTrue();
 			serverOptions["port"].Required.Should().BeFalse();
-			serverOptions["port"].DefaultValue.ShouldBeEquivalentTo(3306);
-			serverOptions["domain"].Should().BeOfType<EnumOptionSpecifier>();
-			((EnumOptionSpecifier) serverOptions["domain"]).Enumeration.ShouldBeEquivalentTo(typeof(Domains));
+			((ConstraintOptionSpecifier<int>) serverOptions["port"]).DefaultValue.ShouldBeEquivalentTo(3306);
+			serverOptions["domain"].Should().BeOfType<EnumOptionSpecifier<Domains>>();
+			((EnumOptionSpecifier<Domains>) serverOptions["domain"]).DefaultValue.ShouldBeEquivalentTo(Domains.Eu);
 
 			var httpSection = formatSpecifier.Sections["HTTP"];
 			httpSection.Name.ShouldBeEquivalentTo("HTTP");
@@ -52,7 +53,7 @@ namespace ConfigTests.Format
 			httpOptions.Count.ShouldBeEquivalentTo(2);
 			httpOptions.ContainsKey("use_https").Should().BeTrue();
 			httpOptions["use_https"].Required.Should().BeFalse();
-			httpOptions["use_https"].DefaultValue.ShouldBeEquivalentTo(false);
+			((BoolOptionSpecifier) httpOptions["use_https"]).DefaultValue.ShouldBeEquivalentTo(false);
 		}
 	}
 }

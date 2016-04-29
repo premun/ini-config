@@ -1,4 +1,5 @@
 ﻿using System;
+using Config.Format.OptionSpecifiers;
 
 namespace Config.Options
 {
