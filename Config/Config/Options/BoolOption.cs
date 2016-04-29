@@ -1,4 +1,4 @@
-﻿using Config.Format.Errors;
+﻿using System;
 
 namespace Config.Options
 {
@@ -37,7 +37,7 @@ namespace Config.Options
 					break;
 
 				default:
-					throw new InvalidValueException(string.Format("Unknown boolean value '{0}'", value));
+					throw new ArgumentOutOfRangeException(string.Format("Unknown boolean value '{0}'", value));
 			}
 		}
 

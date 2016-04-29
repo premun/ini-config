@@ -49,11 +49,6 @@
     <Compile Include="ConfigBuilder.cs" />
     <Compile Include="ConfigException.cs" />
     <Compile Include="Format\ConfigFormatException.cs" />
-    <Compile Include="Format\Errors\ParseOptionException.cs" />
-    <Compile Include="Format\Errors\NoSectionException.cs" />
-    <Compile Include="Format\Errors\DuplicateSectionException.cs" />
-    <Compile Include="Format\Errors\InvalidIdentifierException.cs" />
-    <Compile Include="Format\Errors\InvalidValueException.cs" />
     <Compile Include="Format\IConfigFormatSpecifier.cs" />
     <Compile Include="Format\OptionSpecifiers\ConstraintOptionSpecifier.cs" />
     <Compile Include="Format\OptionSpecifiers\EnumOptionSpecifier.cs" />
@@ -70,7 +65,13 @@
     <Compile Include="Format\FluentSectionSpecifier.cs" />
     <Compile Include="IConfig.cs" />
     <Compile Include="IConfigBuilder.cs" />
+    <Compile Include="IniFiles\Errors\DuplicateSectionError.cs" />
+    <Compile Include="IniFiles\Errors\FormatError.cs" />
+    <Compile Include="IniFiles\Errors\InvalidIdentifierError.cs" />
+    <Compile Include="IniFiles\Errors\NoSectionException.cs" />
+    <Compile Include="IniFiles\Errors\InvalidValueError.cs" />
     <Compile Include="IniFiles\IniConfig.cs" />
+    <Compile Include="IniFiles\IniConfigException.cs" />
     <Compile Include="IniFiles\IniFileConfigBuilder.cs" />
     <Compile Include="IniFiles\IniFileConfigSaver.cs" />
     <Compile Include="IniFiles\Parser\ITokenParser.cs" />

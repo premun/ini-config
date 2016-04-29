@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Config.Format;
-using Config.Format.Errors;
+using Config.IniFiles.Errors;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using Config.Options;
@@ -17,7 +17,9 @@ namespace Config.IniFiles
 	{
 		private readonly string _path;
 
-		private IList<ConfigException> _errors;
+		#region Parsing context related fields
+
+		private IList<FormatError> _errors;
 
 		private ConfigFormatSpecifier _formatSpecifier;
 
@@ -25,7 +27,13 @@ namespace Config.IniFiles
 
 		private StreamReader _reader;
 
+		private ITokenParser _parser;
+
 		private IConfig _config;
+
+		private IConfigSection _currentSection;
+
+		#endregion
 
 		public IniFileConfigBuilder(string path)
 		{
@@ -35,18 +43,17 @@ namespace Config.IniFiles
 		public override IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
 		{
 			_config = new Config();
-			_errors = new List<ConfigException>();
+			_errors = new List<FormatError>();
 			_formatSpecifier = formatSpecifier;
 			_buildMode = buildMode;
 
-			ReadConfig();
 			ParseConfig();
 			ValidateConfig();
 
 			return _config;
 		}
 
-		public override IEnumerable<ConfigException> GetErrors()
+		public override IEnumerable<FormatError> GetErrors()
 		{
 			if (_errors == null)
 			{
@@ -57,99 +64,116 @@ namespace Config.IniFiles
 		}
 
 		/// <summary>
-		/// Reads the ini file and creates sections and options (with string values).
+		/// Gets whether there are parser errors.
 		/// </summary>
-		private void ReadConfig()
+		public bool Ok
 		{
-			var config = new Config();
-
-			using (_reader = new StreamReader(_path))
+			get
 			{
-				var parser = new TokenParser(_reader);
-
-				IConfigSection currentSection = null;
-				Token token;
-
-				while ((token = parser.GetNextToken()) != null)
-				{
-					if (token is SectionHeaderToken)
-					{
-						var sectionName = ((SectionHeaderToken) token).Name;
-						if (config.GetSection(sectionName) != null)
-						{
-							ReportError(new DuplicateSectionException(sectionName));
-							continue;
-						}
-
-						currentSection = config.AddSection(sectionName);
-					}
-					else if (token is OptionToken)
-					{
-						if (currentSection == null)
-						{
-							ReportError(new NoSectionException());
-							continue;
-						}
-
-						var optionToken = (OptionToken) token;
-						var option = new StringOption(optionToken.Value)
-						{
-							Comment = optionToken.Comment
-						};
-
-						// We save values as strings and parse them in the second step
-						currentSection.Add(optionToken.Name, option);
-					}
-					else if (token is CommentToken)
-					{
-						// TODO: Opravdu tohle chovani?
-						if (currentSection != null)
-						{
-							currentSection.Comment = ((CommentToken) token).Content;
-						}
-					}
-				}
+				return _errors == null || _errors.Count == 0;
 			}
 		}
 
 		/// <summary>
-		/// Tries to parse all values into the type dictated by the format specification.
+		/// Reads the ini file and creates sections and options (with string values).
 		/// </summary>
 		private void ParseConfig()
 		{
-			foreach (var section in _config.Sections)
+			using (_reader = new StreamReader(_path))
 			{
-				var formatSection = _formatSpecifier[section.Name];
-				if (formatSection == null)
-				{
-					continue;
-				}
+				_parser = new TokenParser(_reader);
+				
+				Token token;
 
-				foreach (var optionName in section.Keys)
+				while ((token = _parser.GetNextToken()) != null)
 				{
-					var formatOption = formatSection[optionName];
-					if (formatOption == null)
+					if (token is SectionHeaderToken)
 					{
-						continue;
+						ParseToken((SectionHeaderToken) token);
 					}
-
-					try
+					else if (token is OptionToken)
 					{
-						section[optionName] = formatOption.Parse(section[optionName].String);
+						ParseToken((OptionToken) token);
 					}
-					catch
+					else if (token is CommentToken)
 					{
-						ReportError(new ParseOptionException(optionName, formatOption));
+						ParseToken((CommentToken) token);
 					}
 				}
 			}
 		}
 
-		private void ReportError(ConfigException error)
+		private void ParseToken(SectionHeaderToken token)
+		{
+			var sectionName = token.Name;
+			if (_config.GetSection(sectionName) != null)
+			{
+				ReportError(new DuplicateSectionError(sectionName, _parser.GetLine()));
+				return;
+			}
+
+			_currentSection = _config.AddSection(sectionName);
+		}
+
+		private void ParseToken(OptionToken token)
+		{
+			if (_currentSection == null)
+			{
+				ReportError(new NoSectionException(_parser.GetLine()));
+				return;
+			}
+			
+			_currentSection[token.Name] = ParseOptionValue(token, _currentSection.Name);
+		}
+
+		private void ParseToken(CommentToken token)
+		{
+			// TODO: Opravdu tohle chovani?
+			if (_currentSection != null)
+			{
+				_currentSection.Comment = ((CommentToken) token).Content;
+			}
+		}
+
+		/// <summary>
+		/// Tries to parse an option value according to the format specification.
+		/// </summary>
+		private Option ParseOptionValue(OptionToken token, string sectionName)
+		{
+			var formatSection = _formatSpecifier[sectionName];
+			if (formatSection == null)
+			{
+				return new StringOption(token);
+			}
+
+			var formatOption = formatSection[token.Name];
+			if (formatOption == null)
+			{
+				return new StringOption(token);
+			}
+
+			try
+			{
+				var option = formatOption.Parse(token.Value);
+				option.Comment = token.Comment;
+				return option;
+			}
+			catch
+			{
+				ReportError(new InvalidValueError(token.Name, token.Value, formatOption, _parser.GetLine()));
+				return new StringOption(token);
+			}
+		}
+
+		/// <summary>
+		/// Depending on BuildMode, either throws an exception (Strict) or adds error to the list of errors.
+		/// </summary>
+		/// <param name="error"></param>
+		private void ReportError(FormatError error)
 		{
 			if (_buildMode == BuildMode.Strict)
 			{
-				throw error;
+				throw new IniConfigException(error);
 			}
 
 			_errors.Add(error);

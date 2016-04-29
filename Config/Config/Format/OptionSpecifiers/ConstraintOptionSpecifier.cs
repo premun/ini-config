@@ -1,5 +1,5 @@
 ﻿using System;
-using Config.Format.Errors;
+using Config.IniFiles.Errors;
 using Config.Options;
 
 namespace Config.Format.OptionSpecifiers
@@ -15,7 +15,7 @@ namespace Config.Format.OptionSpecifiers
 
 		internal override Option Parse(string value)
 		{
-			// TODO: catch exception, throw wrong type exception
+			// TODO: exception handling
 			var val = (T) Convert.ChangeType(value, typeof(T));
 
 			if (Constraint(val))
@@ -23,7 +23,7 @@ namespace Config.Format.OptionSpecifiers
 				return new ConstraintOption<T>(val, Constraint);	
 			}
 
-			throw new InvalidValueException(string.Format("Option {0} value ({1}) is not within allowed bounds.", Name, value));
+			throw new ArgumentOutOfRangeException(string.Format("Option {0} value ({1}) is not within allowed bounds.", Name, value));
 		}
 	}
 }

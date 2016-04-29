@@ -33,18 +33,18 @@ namespace Examples
 		{
 			IConfig config;
 
-			try { 
+			try {
 				// Notice the IniConfig class that adds the ini file representation
 				// Representation is not bound to basic implementation, more sources can be added easily
-				config = IniConfig.FromFile("/www/mywebsite/config.ini");
+				config = IniConfig.FromFile("/www/mywebsite/config.ini", FormatSpecifier);
 			}
-			catch (ConfigFormatException e)
+			catch (IniConfigException e)
 			{
 				Console.WriteLine("Cannot build config. Encountered following errors:");
 
-				e.ErrorList
+				e.Errors
 					.ToList()
-					.ForEach(error => Console.WriteLine("  - " + error.Message));
+					.ForEach(error => Console.WriteLine("  Line " + error.Line + ": " + error.Message));
 
 				Console.WriteLine();
 

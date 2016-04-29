@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Config.Format;
+using Config.IniFiles.Errors;
 
 namespace Config
 {
@@ -27,6 +28,6 @@ namespace Config
 		/// Returns a list of errors that occured during building.
 		/// </summary>
 		/// <returns>List of errors</returns>
-	    IEnumerable<ConfigException> GetErrors();
+	    IEnumerable<FormatError> GetErrors();
 	}
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Config.Format;
+using Config.IniFiles.Errors;
 
 namespace Config
 {
@@ -9,7 +10,7 @@ namespace Config
 
 	    public abstract IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed);
 
-		public abstract IEnumerable<ConfigException> GetErrors();
+		public abstract IEnumerable<FormatError> GetErrors();
 
 		public IConfig Empty
 	    {
