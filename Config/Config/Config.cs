@@ -25,8 +25,6 @@ namespace Config
 					return _sections[name];
 				}
 
-				// TODO: Check format spec. for default value
-
 				return null;
 			}
 		}
@@ -47,7 +45,7 @@ namespace Config
 		{
 			var section = new ConfigSection(name);
 
-			if (FormatSpecifier[name] != null)
+			if (FormatSpecifier != null && FormatSpecifier[name] != null)
 			{
 				section.FormatSpecifier = FormatSpecifier[name];
 			}

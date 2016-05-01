@@ -50,6 +50,11 @@ namespace Config
 			return this;
 		}
 
+		public bool Remove(string key)
+		{
+			return _options.Remove(key);
+		}
+
 		public IEnumerator<Option> GetEnumerator()
 		{
 			return _options.Values.GetEnumerator();

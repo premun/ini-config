@@ -28,5 +28,12 @@ namespace Config
 		/// <param name="value">Item value</param>
 		/// <returns>Itself for better chaining.</returns>
 		IConfigSection Set(string key, Option value);
-	}
+
+		/// <summary>
+		/// Removes an option item from section.
+		/// </summary>
+		/// <param name="key">Item's key</param>
+		/// <returns>True, when item was present and removed, false otherwise.</returns>
+		bool Remove(string key);
+    }
 }
