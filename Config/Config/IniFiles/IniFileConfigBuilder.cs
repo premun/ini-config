@@ -47,33 +47,34 @@ namespace Config.IniFiles
 			_parser = tokenParser;
 		}
 
-		public override IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
+		public override void Build(IConfig config, ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
 		{
-			_config = new Config();
+			_config = config;
 			_errors = new List<FormatError>();
 			_formatSpecifier = formatSpecifier;
 			_buildMode = buildMode;
 
 			ParseConfig();
 			ValidateConfig();
-
-			return _config;
 		}
 
-		public override IEnumerable<FormatError> GetErrors()
+		public override IEnumerable<FormatError> Errors
 		{
-			if (_errors == null)
+			get
 			{
-				throw new InvalidOperationException("GetErrors() called, but Build() not called before");
-			}
+				if (_errors == null)
+				{
+					throw new InvalidOperationException("GetErrors() called, but Build() not called before");
+				}
 
-			return _errors;
+				return _errors;
+			}
 		}
 
 		/// <summary>
 		/// Gets whether there are parser errors.
 		/// </summary>
-		public bool Ok
+		public override bool Ok
 		{
 			get
 			{
@@ -125,7 +126,7 @@ namespace Config.IniFiles
 		{
 			if (_currentSection == null)
 			{
-				ReportError(new NoSectionException(_parser.GetLine()));
+				ReportError(new NoSectionError(_parser.GetLine()));
 				return;
 			}
 			
@@ -137,7 +138,7 @@ namespace Config.IniFiles
 			// TODO: Opravdu tohle chovani?
 			if (_currentSection != null)
 			{
-				_currentSection.Comment = ((CommentToken) token).Content;
+				_currentSection.Comment = token.Content;
 			}
 		}
 
@@ -146,6 +147,11 @@ namespace Config.IniFiles
 		/// </summary>
 		private Option ParseOptionValue(OptionToken token, string sectionName)
 		{
+			if (_formatSpecifier == null)
+			{
+				return new StringOption(token);
+			}
+
 			var formatSection = _formatSpecifier[sectionName];
 			if (formatSection == null)
 			{
@@ -177,17 +183,16 @@ namespace Config.IniFiles
 		/// <param name="error"></param>
 		private void ReportError(FormatError error)
 		{
+			_errors.Add(error);
+
 			if (_buildMode == BuildMode.Strict)
 			{
 				throw new IniConfigException(error);
 			}
-
-			_errors.Add(error);
 		}
 
 		private void ValidateConfig()
 		{
-			throw new NotImplementedException();
 		}
 
 		public void Dispose()

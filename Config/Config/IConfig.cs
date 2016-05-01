@@ -16,16 +16,9 @@ namespace Config
         /// <summary>
         /// Retreive config section by its name.
         /// </summary>
-        /// <param name="sectionName">Section name</param>
+        /// <param name="name">Section name</param>
         /// <returns>Section, if found, null otherwise.</returns>
-        IConfigSection this[string sectionName] { get; }
-
-        /// <summary>
-        /// Retreive config section by its name.
-        /// </summary>
-        /// <param name="sectionName">Section name</param>
-        /// <returns>Section, if found, null otherwise.</returns>
-        IConfigSection GetSection(string sectionName);
+        IConfigSection this[string name] { get; }
 
         /// <summary>
         /// Returns a collection of all registered config sections.
@@ -56,8 +49,8 @@ namespace Config
         /// <summary>
         /// Removes given config sections.
         /// </summary>
-        /// <param name="sectionName">Section's name</param>
+        /// <param name="name">Section's name</param>
         /// <returns>True, if section was present.</returns>
-        bool RemoveSection(string sectionName);
+        bool RemoveSection(string name);
     }
 }

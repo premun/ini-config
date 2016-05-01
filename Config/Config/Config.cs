@@ -3,46 +3,63 @@ using Config.Format;
 
 namespace Config
 {
+	// TODO: Jenom rychla implementace, aby mi bezely testy. Treba asi udelat poradne.
 	public class Config : IConfig
 	{
-		public ConfigFormatSpecifier FormatSpecifier
+		private readonly Dictionary<string, IConfigSection> _sections;
+
+		internal Config(ConfigFormatSpecifier formatSpecifier = null)
 		{
-		    get { throw new System.NotImplementedException(); }
+			FormatSpecifier = formatSpecifier;
+			_sections = new Dictionary<string, IConfigSection>();
 		}
 
-	    public IConfigSection this[string sectionName]
-		{
-			get { throw new System.NotImplementedException(); }
-		}
+		public ConfigFormatSpecifier FormatSpecifier { get; }
 
-		public IConfigSection GetSection(string sectionName)
+		public IConfigSection this[string name]
 		{
-			throw new System.NotImplementedException();
+			get
+			{
+				if (_sections.ContainsKey(name))
+				{
+					return _sections[name];
+				}
+
+				return null;
+			}
 		}
 
 		public IEnumerable<IConfigSection> Sections
 		{
-		    get { throw new System.NotImplementedException(); }
+		    get { return _sections.Values; }
 		}
 
 	    public bool AddSection(IConfigSection section)
-		{
-			throw new System.NotImplementedException();
-		}
+	    {
+		    bool sectionExisted = _sections.ContainsKey(section.Name);
+		    _sections[section.Name] = section;
+		    return sectionExisted;
+	    }
 
 		public IConfigSection AddSection(string name)
 		{
-			throw new System.NotImplementedException();
+			var section = new ConfigSection(name);
+			_sections[name] = section;
+			return section;
 		}
 
 		public bool RemoveSection(IConfigSection section)
 		{
-			throw new System.NotImplementedException();
+			bool sectionExisted = _sections.ContainsKey(section.Name);
+			_sections.Remove(section.Name);
+			return sectionExisted;
 		}
 
-		public bool RemoveSection(string sectionName)
+		public bool RemoveSection(string name)
 		{
-			throw new System.NotImplementedException();
+			bool sectionExisted = _sections.ContainsKey(name);
+			_sections.Remove(name);
+			return sectionExisted;
 		}
 	}
 }

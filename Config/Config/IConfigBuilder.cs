@@ -10,24 +10,37 @@ namespace Config
     /// </summary>
 	public interface IConfigBuilder
 	{
-        /// <summary>
-        /// Builds an IConfig instance. Depending on supplied format requirements and build mode generates exception.
-        /// </summary>
-        /// <param name="formatSpecifier">Specification of desired config structure</param>
-        /// <param name="buildMode">Should an exception be raised when format doesn't correspond with the specified structure?</param>
-        /// <returns>Built IConfig filled with data</returns>
-        /// <exception cref="ConfigFormatException">Thrown when config format does not correspond with supplied specification.</exception>
+		/// <summary>
+		/// Builds an IConfig instance. Depending on supplied format requirements and build mode generates exception.
+		/// </summary>
+		/// <param name="formatSpecifier">Specification of desired config structure</param>
+		/// <param name="buildMode">Should an exception be raised when format doesn't correspond with the specified structure?</param>
+		/// <returns>Built IConfig filled with data</returns>
+		/// <exception cref="ConfigFormatException">Thrown when config format does not correspond with supplied specification.</exception>
 		IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed);
 
-        /// <summary>
-        /// Generates an empty config that can be filled with values manually.
-        /// </summary>
+		/// <summary>
+		/// Builds an IConfig instance. Depending on supplied format requirements and build mode generates exception.
+		/// </summary>
+		/// <param name="config">Config object where values will be built to</param>
+		/// <param name="formatSpecifier">Specification of desired config structure</param>
+		/// <param name="buildMode">Should an exception be raised when format doesn't correspond with the specified structure?</param>
+		/// <exception cref="ConfigFormatException">Thrown when config format does not correspond with supplied specification.</exception>
+		void Build(IConfig config, ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed);
+
+		/// <summary>
+		/// Generates an empty config that can be filled with values manually.
+		/// </summary>
 		IConfig Empty { get; }
 
 		/// <summary>
-		/// Returns a list of errors that occured during building.
+		/// Gets whether building the config was successful.
 		/// </summary>
-		/// <returns>List of errors</returns>
-	    IEnumerable<FormatError> GetErrors();
+		bool Ok { get; }
+
+		/// <summary>
+		/// Gets a list of errors that occured during building.
+		/// </summary>
+		IEnumerable<FormatError> Errors { get; }
 	}
 }

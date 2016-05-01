@@ -41,6 +41,8 @@ namespace Config.IniFiles.Parser
 		/// <summary>
 		/// Reads new token from stream.
 		/// </summary>
+		/// <exception cref="InvalidOperationException">Thrown when no file/stream opened.</exception>
+		/// <exception cref="FormatException">Thrown when a parser error occured.</exception>
 		/// <returns>Next token or null if file at the end.</returns>
 		public Token GetNextToken()
 		{

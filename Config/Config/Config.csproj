@@ -48,6 +48,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="ConfigBuilder.cs" />
     <Compile Include="ConfigException.cs" />
+    <Compile Include="ConfigSection.cs" />
     <Compile Include="Format\ConfigFormatException.cs" />
     <Compile Include="Format\IConfigFormatSpecifier.cs" />
     <Compile Include="Format\OptionSpecifiers\ConstraintOptionSpecifier.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="IniFiles\Errors\DuplicateSectionError.cs" />
     <Compile Include="IniFiles\Errors\FormatError.cs" />
     <Compile Include="IniFiles\Errors\InvalidIdentifierError.cs" />
-    <Compile Include="IniFiles\Errors\NoSectionException.cs" />
+    <Compile Include="IniFiles\Errors\NoSectionError.cs" />
     <Compile Include="IniFiles\Errors\InvalidValueError.cs" />
     <Compile Include="IniFiles\IniConfig.cs" />
     <Compile Include="IniFiles\IniConfigException.cs" />
