@@ -1,7 +1,4 @@
-﻿using System;
-using Config.Format.OptionSpecifiers;
-
-namespace Config.Options
+﻿namespace Config.Options
 {
 	public class IntOption : Option<int>
 	{
@@ -12,7 +9,7 @@ namespace Config.Options
 
 		public IntOption(string value)
 		{
-			throw new NotImplementedException();
+			RawValue = int.Parse(value);
 		}
 
 		public static implicit operator IntOption(int i)

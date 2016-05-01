@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Config.Options
+﻿namespace Config.Options
 {
 	public class UnsignedOption : Option<ulong>
 	{
@@ -11,7 +9,7 @@ namespace Config.Options
 
 		public UnsignedOption(string value)
 		{
-			throw new NotImplementedException();
+			RawValue = ulong.Parse(value);
 		}
 
 		public static implicit operator UnsignedOption(ulong l)

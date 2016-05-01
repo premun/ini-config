@@ -2,9 +2,10 @@
 
 namespace Config.Format.OptionSpecifiers
 {
-	public class SignedOptionSpecifier : OptionSpecifier<long>
+	public class SignedOptionSpecifier : OptionSpecifier<long?>
 	{
-		public SignedOptionSpecifier(string name, bool required = false, long defaultValue = 0) : base(name, required, defaultValue)
+		public SignedOptionSpecifier(string name, bool required = false, long? defaultValue = null) 
+			: base(name, required, defaultValue)
 		{
 		}
 

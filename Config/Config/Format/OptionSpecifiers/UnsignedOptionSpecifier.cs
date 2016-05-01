@@ -2,9 +2,10 @@
 
 namespace Config.Format.OptionSpecifiers
 {
-	public class UnsignedOptionSpecifier : OptionSpecifier<ulong>
+	public class UnsignedOptionSpecifier : OptionSpecifier<ulong?>
 	{
-		public UnsignedOptionSpecifier(string name, bool required = false, ulong defaultValue = 0) : base(name, required, defaultValue)
+		public UnsignedOptionSpecifier(string name, bool required = false, ulong? defaultValue = null) 
+			: base(name, required, defaultValue)
 		{
 		}
 

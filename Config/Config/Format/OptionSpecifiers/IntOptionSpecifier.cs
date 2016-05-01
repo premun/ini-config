@@ -2,9 +2,10 @@
 
 namespace Config.Format.OptionSpecifiers
 {
-	public class IntOptionSpecifier : OptionSpecifier<int>
+	public class IntOptionSpecifier : OptionSpecifier<int?>
 	{
-		public IntOptionSpecifier(string name, bool required = false, int defaultValue = 0) : base(name, required, defaultValue)
+		public IntOptionSpecifier(string name, bool required = false, int? defaultValue = null) 
+			: base(name, required, defaultValue)
 		{
 		}
 

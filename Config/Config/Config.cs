@@ -25,6 +25,8 @@ namespace Config
 					return _sections[name];
 				}
 
+				// TODO: Check format spec. for default value
+
 				return null;
 			}
 		}
@@ -44,22 +46,24 @@ namespace Config
 		public IConfigSection AddSection(string name)
 		{
 			var section = new ConfigSection(name);
+
+			if (FormatSpecifier[name] != null)
+			{
+				section.FormatSpecifier = FormatSpecifier[name];
+			}
+
 			_sections[name] = section;
 			return section;
 		}
 
 		public bool RemoveSection(IConfigSection section)
 		{
-			bool sectionExisted = _sections.ContainsKey(section.Name);
-			_sections.Remove(section.Name);
-			return sectionExisted;
+			return _sections.Remove(section.Name); 
 		}
 
 		public bool RemoveSection(string name)
 		{
-			bool sectionExisted = _sections.ContainsKey(name);
-			_sections.Remove(name);
-			return sectionExisted;
+			return _sections.Remove(name);
 		}
 	}
 }

@@ -24,6 +24,8 @@ namespace Config.Options
 				case "off":
 				case "no":
 				case "disabled":
+				case "false":
+				case "False":
 					RawValue = false;
 					break;
 
@@ -33,6 +35,8 @@ namespace Config.Options
 				case "on":
 				case "yes":
 				case "enabled":
+				case "true":
+				case "True":
 					RawValue = true;
 					break;
 

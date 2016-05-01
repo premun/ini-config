@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Config.Format;
 using Config.Options;
 
 namespace Config
@@ -8,15 +9,17 @@ namespace Config
 	{
 		private readonly Dictionary<string, Option> _options;
 
+		internal SectionSpecifier FormatSpecifier { get; set; }
+
+		public string Name { get; }
+
+		public string Comment { get; set; }
+
 		public ConfigSection(string name)
 		{
 			Name = name;
 			_options = new Dictionary<string, Option>();
 		}
-
-		public string Name { get; }
-
-		public string Comment { get; set; }
 
 		public Option this[string key]
 		{
@@ -24,6 +27,12 @@ namespace Config
 				if (_options.ContainsKey(key))
 				{
 					return _options[key];
+				}
+
+				var specifier = FormatSpecifier[key];
+				if (specifier != null && specifier.DefaultValue != null)
+				{
+					return specifier.Parse(specifier.DefaultValue);
 				}
 
 				return null;

@@ -10,28 +10,15 @@ namespace Config
 	/// TODO: odebrano dedeni IDict, musi se pridat veci jako Remove a Contains?
 	public interface IConfigSection : IEnumerable<Option>
     {
-        /// <summary>
-        /// Unique name of the config section, used for identification.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        string Name { get; }
-
-        /// <summary>
-        /// Gets or sets the description of the section about its options.
-        /// </summary>
-        /// <value>
-        /// The description.
-        /// </value>
-        string Comment { get; set; }
-
 		/// <summary>
 		/// Gets or sets new option item inside section.
 		/// </summary>
 		/// <param name="key">Option key</param>
 		/// <returns>Option</returns>
 		Option this[string key] { get; set; }
+
+		string Name { get; }
+		string Comment { get; set; }
 
 		/// <summary>
 		/// Sets an item (key-value), effectively overwriting previous item with same key.

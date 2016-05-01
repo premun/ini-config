@@ -11,7 +11,7 @@ namespace Config.Options
 
 		public SignedOption(string value)
 		{
-			throw new NotImplementedException();
+			RawValue = long.Parse(value);
 		}
 
 		public static implicit operator SignedOption(long l)

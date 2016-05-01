@@ -11,7 +11,7 @@ namespace Config.Options
 
 		public FloatOption(string value)
 		{
-			throw new NotImplementedException();
+			RawValue = float.Parse(value);
 		}
 
 		public static implicit operator FloatOption(float f)

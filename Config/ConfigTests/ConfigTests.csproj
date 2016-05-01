@@ -74,6 +74,7 @@
     <Compile Include="IniFiles\WhenBuildingValidConfig.cs" />
     <Compile Include="MockFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WhenSpecifyingDefaults.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Config\Config.csproj">

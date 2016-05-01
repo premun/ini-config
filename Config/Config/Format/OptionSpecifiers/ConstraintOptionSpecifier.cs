@@ -1,5 +1,4 @@
 ﻿using System;
-using Config.IniFiles.Errors;
 using Config.Options;
 
 namespace Config.Format.OptionSpecifiers
@@ -8,7 +7,8 @@ namespace Config.Format.OptionSpecifiers
 	{
 		public readonly Predicate<T> Constraint;
 
-		public ConstraintOptionSpecifier(string name, Predicate<T> constraint,  bool required = false, T defaultValue = default(T)) : base(name, required, defaultValue)
+		public ConstraintOptionSpecifier(string name, Predicate<T> constraint,  bool required = false, T defaultValue = default(T)) 
+			: base(name, required, defaultValue)
 		{
 			Constraint = constraint;
 		}
