@@ -48,7 +48,7 @@ namespace ConfigTests.Format
 
 			httpSection["use_https"].Should().NotBeNull();
 			httpSection["use_https"].Required.Should().BeFalse();
-			((BoolOptionSpecifier) httpSection["use_https"]).DefaultValue.ShouldBeEquivalentTo(false);
+			((BoolOptionSpecifier) httpSection["use_https"]).DefaultValue.ShouldBeEquivalentTo(null);
 		}
 	}
 }
