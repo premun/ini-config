@@ -143,7 +143,7 @@ namespace Config.IniFiles
 			// TODO: Tahle kontrola by mozna mela bejt nekde niz (treba v OptionToken.Parse()), 
 			// TODO: vyhodit nejakou special vyjjimku a tady ji odchytit a pridat cislo radku atd.
 			// TODO: Pokud se to prenda jinam, tak treba zmenit InvalidIdentifierShouldRaiseError test
-			var identifierRegex = new Regex(@"$[a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]^");
+			var identifierRegex = new Regex(@"^[a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*$");
 			if (!identifierRegex.IsMatch(token.Name))
 			{
 				ReportError(new InvalidIdentifierError(token.Name, _parser.GetLine()));
