@@ -2,6 +2,7 @@
 
 namespace Config.Options
 {
+	// TODO: element typu string může obsahovat libovolné znaky s výjimkou ',', ':' a ';', kde je třeba je uvést znakem '\'
 	public class StringOption : Option<string>
 	{
 		public StringOption(string data)

@@ -5,6 +5,9 @@ using Config.Options;
 
 namespace Config
 {
+	/// <summary>
+	/// Represents a section of config containing config options.
+	/// </summary>
 	public class ConfigSection : IConfigSection
 	{
 		private readonly Dictionary<string, Option> _options;
@@ -43,7 +46,7 @@ namespace Config
 				_options[key] = value;
 			}
 		}
-
+		
 		public IConfigSection Set(string key, Option value)
 		{
 			this[key] = value;

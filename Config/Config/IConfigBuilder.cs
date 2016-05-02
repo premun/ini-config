@@ -29,11 +29,6 @@ namespace Config
 		void Build(IConfig config, ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed);
 
 		/// <summary>
-		/// Generates an empty config that can be filled with values manually.
-		/// </summary>
-		IConfig Empty { get; }
-
-		/// <summary>
 		/// Gets whether building the config was successful.
 		/// </summary>
 		bool Ok { get; }

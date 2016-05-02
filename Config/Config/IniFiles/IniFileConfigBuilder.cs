@@ -16,7 +16,7 @@ namespace Config.IniFiles
 	/// Class that builds a config out of an ini file.
 	/// </summary>
 	/// TODO: Turn into internal?
-	public class IniFileConfigBuilder : ConfigBuilder, IDisposable
+	public class IniFileConfigBuilder : IConfigBuilder, IDisposable
 	{
 		private readonly string _path;
 
@@ -47,7 +47,14 @@ namespace Config.IniFiles
 			_parser = tokenParser;
 		}
 
-		public override void Build(IConfig config, ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
+		public IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
+		{
+			var config = new Config();
+			Build(config, formatSpecifier, buildMode);
+			return config;
+		}
+
+		public void Build(IConfig config, ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
 		{
 			_config = config;
 			_errors = new List<FormatError>();
@@ -58,7 +65,7 @@ namespace Config.IniFiles
 			ValidateConfig();
 		}
 
-		public override IEnumerable<FormatError> Errors
+		public IEnumerable<FormatError> Errors
 		{
 			get
 			{
@@ -74,7 +81,7 @@ namespace Config.IniFiles
 		/// <summary>
 		/// Gets whether there are parser errors.
 		/// </summary>
-		public override bool Ok
+		public bool Ok
 		{
 			get
 			{
@@ -201,6 +208,7 @@ namespace Config.IniFiles
 		/// Depending on BuildMode, either throws an exception (Strict) or adds error to the list of errors.
 		/// </summary>
 		/// <param name="error"></param>
+		// TODO overit, ze chceme tohle chovani vzhledem k build modum
 		private void ReportError(FormatError error)
 		{
 			_errors.Add(error);

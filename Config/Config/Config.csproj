@@ -46,7 +46,6 @@
     <Compile Include="Attribute\ConfigOptionAttribute.cs" />
     <Compile Include="BuildMode.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="ConfigBuilder.cs" />
     <Compile Include="ConfigException.cs" />
     <Compile Include="ConfigSection.cs" />
     <Compile Include="Format\ConfigFormatException.cs" />

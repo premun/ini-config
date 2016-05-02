@@ -3,7 +3,7 @@ using Config.Format;
 
 namespace Config
 {
-	// TODO: Jenom rychla implementace, aby mi bezely testy. Treba asi udelat poradne.
+	// TODO: Jenom rychla implementace, aby mi bezely testy. Treba asi zchecknout.
 	public class Config : IConfig
 	{
 		private readonly Dictionary<string, IConfigSection> _sections;
@@ -45,6 +45,7 @@ namespace Config
 		{
 			var section = new ConfigSection(name);
 
+			// New section needs to know its specification in order to parse values / retrieve defaults
 			if (FormatSpecifier != null && FormatSpecifier[name] != null)
 			{
 				section.FormatSpecifier = FormatSpecifier[name];

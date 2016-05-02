@@ -12,6 +12,7 @@ namespace Config.Options
 
 		public ReferenceOption(string value)
 		{
+			// TODO
 			throw new NotImplementedException();
 		}
 	}

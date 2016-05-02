@@ -11,10 +11,12 @@ namespace Config
 	public interface IConfigSection : IEnumerable<Option>
     {
 		/// <summary>
-		/// Gets or sets new option item inside section.
+		/// Gets or sets value of an option.
+		/// If value is not present and we try to retrieve it, 
+		/// we check whether there was a default value set in the format specifier.
 		/// </summary>
 		/// <param name="key">Option key</param>
-		/// <returns>Option</returns>
+		/// <returns>Option with given key, or null when no option/default found.</returns>
 		Option this[string key] { get; set; }
 
 		string Name { get; }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Config.Format;
 using Config.Format.OptionSpecifiers;
@@ -12,6 +11,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ConfigTests.IniFiles
 {
 	[TestClass]
+	// TODO: Add tests for 0x 0b and 0 signed
 	public class WhenParsingValueTypes
 	{
 		private enum Colors

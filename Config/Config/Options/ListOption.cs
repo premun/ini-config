@@ -17,6 +17,7 @@ namespace Config.Options
 			Values = values;
 		}
 
+		// TODO
 		public Option this[int index]
 		{
 			get
@@ -32,6 +33,7 @@ namespace Config.Options
 
 		public IEnumerable<T> Get()
 		{
+			// TODO: potrebujeme vubec tohle?
 			throw new NotImplementedException();
 		}
 
