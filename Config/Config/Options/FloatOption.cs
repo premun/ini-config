@@ -7,9 +7,9 @@ namespace Config.Options
 	{
 		public const string DecimalSeparator = ".";
 
-		public FloatOption(float rawValue)
+		public FloatOption(float data)
 		{
-			RawValue = rawValue;
+			Data = data;
 		}
 
 		public FloatOption(string value)
@@ -21,11 +21,11 @@ namespace Config.Options
 			//       Kdyz se ale da defaultValue, tak se ulozi s carkou pred tim, nez se to znova parsuje (ConfigSection indexer getter)
 			try
 			{
-				RawValue = float.Parse(value, culture);
+				Data = float.Parse(value, culture);
 			}
 			catch (FormatException)
 			{
-				RawValue = float.Parse(value);
+				Data = float.Parse(value);
 			}
 		}
 

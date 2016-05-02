@@ -2,14 +2,14 @@
 {
 	public class UnsignedOption : Option<ulong>
 	{
-		public UnsignedOption(ulong rawValue)
+		public UnsignedOption(ulong data)
 		{
-			RawValue = rawValue;
+			Data = data;
 		}
 
 		public UnsignedOption(string value)
 		{
-			RawValue = ulong.Parse(value);
+			Data = ulong.Parse(value);
 		}
 
 		public static implicit operator UnsignedOption(ulong l)

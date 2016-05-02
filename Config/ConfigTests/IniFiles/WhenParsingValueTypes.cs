@@ -61,7 +61,7 @@ unsigned = 70
 			
 			section["bool"].Bool.ShouldBeEquivalentTo(false);
 			section["float"].Float.ShouldBeEquivalentTo(1.2f);
-			((Colors) section["enum"].RawValue).ShouldBeEquivalentTo(Colors.Black); // TODO: ziskavani enumu asi neni uplne dobry
+			((Colors) section["enum"].Data).ShouldBeEquivalentTo(Colors.Black); // TODO: ziskavani enumu asi neni uplne dobry
 			section["int"].Int.ShouldBeEquivalentTo(100);
 			section["signed"].Signed.ShouldBeEquivalentTo(60L);
 			section["string"].String.ShouldBeEquivalentTo("bar");
@@ -86,7 +86,7 @@ enum = Green
 			var section = config["Constraints"];
 
 			section["int"].Int.ShouldBeEquivalentTo(40);
-			((Colors) section["enum"].RawValue).ShouldBeEquivalentTo(Colors.Green);
+			((Colors) section["enum"].Data).ShouldBeEquivalentTo(Colors.Green);
 		}
 
 		[TestMethod]

@@ -2,14 +2,14 @@
 {
 	public class IntOption : Option<int>
 	{
-		public IntOption(int rawValue)
+		public IntOption(int data)
 		{
-			RawValue = rawValue;
+			Data = data;
 		}
 
 		public IntOption(string value)
 		{
-			RawValue = int.Parse(value);
+			Data = int.Parse(value);
 		}
 
 		public static implicit operator IntOption(int i)

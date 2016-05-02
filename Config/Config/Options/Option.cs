@@ -5,75 +5,75 @@ namespace Config.Options
 {
 	public abstract class Option
 	{
-		public object RawValue { get; protected set; }
+		public object Data { get; protected set; }
 
 		public string Comment { get; set; }
 
 		public virtual string Serialize()
 		{
-			return RawValue.ToString();
+			return Data.ToString();
 		}
 
 		#region Typed getters
 
 		public bool Bool
 		{
-			get { return (bool) RawValue; }
+			get { return (bool) Data; }
 		}
 
 		public IEnumerable<bool> BoolList
 		{
-			get { return (IEnumerable<bool>) RawValue; }
+			get { return (IEnumerable<bool>) Data; }
 		}
 
 		public float Float
 		{
-			get { return (float) RawValue; }
+			get { return (float) Data; }
 		}
 
 		public IEnumerable<float> FloatList
 		{
-			get { return (IEnumerable<float>) RawValue; }
+			get { return (IEnumerable<float>) Data; }
 		}
 
 		public int Int
 		{
-			get { return (int) RawValue; }
+			get { return (int) Data; }
 		}
 
 		public IEnumerable<int> IntList
 		{
-			get { return (IEnumerable<int>) RawValue; }
+			get { return (IEnumerable<int>) Data; }
 		}
 
 		public long Signed
 		{
-			get { return (long) RawValue; }
+			get { return (long) Data; }
 		}
 
 		public IEnumerable<long> SignedList
 		{
-			get { return (IEnumerable<long>) RawValue; }
+			get { return (IEnumerable<long>) Data; }
 		}
 
 		public string String
 		{
-			get { return (string) RawValue; }
+			get { return (string) Data; }
 		}
 
 		public IEnumerable<string> StringList
 		{
-			get { return (IEnumerable<string>) RawValue; }
+			get { return (IEnumerable<string>) Data; }
 		}
 
 		public ulong Unsigned
 		{
-			get { return (ulong) RawValue; }
+			get { return (ulong) Data; }
 		}
 
 		public IEnumerable<ulong> UnsignedList
 		{
-			get { return (IEnumerable<ulong>) RawValue; }
+			get { return (IEnumerable<ulong>) Data; }
 		}
 
 		#endregion

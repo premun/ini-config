@@ -77,7 +77,7 @@ namespace ConfigTests
 			var config = new Config.Config(formatSpecifier);
 
 			var section = config.AddSection("Foo");
-			((Colors) section["default"].RawValue).ShouldBeEquivalentTo(defaultValue);
+			((Colors) section["default"].Data).ShouldBeEquivalentTo(defaultValue);
 			section["null"].Should().BeNull();
 		}
 

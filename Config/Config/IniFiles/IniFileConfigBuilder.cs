@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using Config.Format;
@@ -150,7 +149,8 @@ namespace Config.IniFiles
 				return;
 			}
 
-			_currentSection[token.Name] = ParseOptionValue(token, _currentSection.Name);
+			var option = ParseOptionValue(token, _currentSection.Name);
+			_currentSection[token.Name] = option;
 		}
 
 		private void ParseToken(CommentToken token)

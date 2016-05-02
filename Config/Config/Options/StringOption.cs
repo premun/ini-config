@@ -4,14 +4,14 @@ namespace Config.Options
 {
 	public class StringOption : Option<string>
 	{
-		public StringOption(string rawValue)
+		public StringOption(string data)
 		{
-			RawValue = rawValue;
+			Data = data;
 		}
 
 		internal StringOption(OptionToken token)
 		{
-			RawValue = token.Value;
+			Data = token.Value;
 			Comment = token.Comment;
 		}
 

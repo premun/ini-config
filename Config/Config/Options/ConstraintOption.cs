@@ -8,7 +8,7 @@ namespace Config.Options
 
 		public ConstraintOption(T value, Predicate<T> constraint)
 		{
-			RawValue = value;
+			Data = value;
 			Constraint = constraint;
 		}
 	}

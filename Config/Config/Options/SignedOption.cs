@@ -4,14 +4,14 @@ namespace Config.Options
 {
 	public class SignedOption : Option<long>
 	{
-		public SignedOption(long rawValue)
+		public SignedOption(long data)
 		{
-			RawValue = rawValue;
+			Data = data;
 		}
 
 		public SignedOption(string value)
 		{
-			RawValue = long.Parse(value);
+			Data = long.Parse(value);
 		}
 
 		public static implicit operator SignedOption(long l)

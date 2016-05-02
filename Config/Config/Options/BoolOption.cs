@@ -6,9 +6,9 @@ namespace Config.Options
 	{
 		private readonly string _textValue;
 
-		public BoolOption(bool rawValue)
+		public BoolOption(bool data)
 		{
-			RawValue = rawValue;
+			Data = data;
 			_textValue = "false";
 		}
 
@@ -26,7 +26,7 @@ namespace Config.Options
 				case "disabled":
 				case "false":
 				case "False":
-					RawValue = false;
+					Data = false;
 					break;
 
 				case "1":
@@ -37,7 +37,7 @@ namespace Config.Options
 				case "enabled":
 				case "true":
 				case "True":
-					RawValue = true;
+					Data = true;
 					break;
 
 				default:
