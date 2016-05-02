@@ -16,9 +16,16 @@ namespace Config.IniFiles.Parser.Tokens
 
 		internal static CommentToken FromStream(StreamReader stream)
 		{
+			var content = stream.ReadLine();
+
+			if (content.StartsWith(";"))
+			{
+				content = content.Substring(1).Trim();
+			}
+
 			return new CommentToken
 			{
-				Content = stream.ReadLine()
+				Content = content
 			};
 		}
 	}

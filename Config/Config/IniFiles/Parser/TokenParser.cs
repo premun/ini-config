@@ -58,7 +58,7 @@ namespace Config.IniFiles.Parser
 
 			// Let's skip empty beginnings of lines
 			int c = _reader.Peek();
-			while (isWhiteSpace(c))
+			while (IsWhiteSpace(c))
 			{
 				if (c == '\n')
 				{
@@ -95,7 +95,7 @@ namespace Config.IniFiles.Parser
 			return _currentLine;
 		}
 
-		private bool isWhiteSpace(int c)
+		private static bool IsWhiteSpace(int c)
 		{
 			return char.IsWhiteSpace((char) c);
 		}

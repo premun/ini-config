@@ -74,6 +74,7 @@
     <Compile Include="IniFiles\WhenBuildingValidConfig.cs" />
     <Compile Include="MockFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IniFiles\WhenParsingValueTypes.cs" />
     <Compile Include="WhenUsingConfigSection.cs" />
     <Compile Include="WhenUsingConfig.cs" />
     <Compile Include="WhenSpecifyingDefaults.cs" />

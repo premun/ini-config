@@ -20,6 +20,11 @@ namespace ConfigTests.IniFiles
 					Name = "foo",
 					Value = "bar"
 				},
+				new OptionToken
+				{
+					Name = "foo 1",
+					Value = "bar 1"
+				},
 				new SectionHeaderToken {Name = "Foo 2"},
 				new OptionToken
 				{
@@ -35,6 +40,7 @@ namespace ConfigTests.IniFiles
 
 			config["Foo"].Should().NotBeNull();
 			config["Foo"]["foo"].String.ShouldBeEquivalentTo("bar");
+			config["Foo"]["foo 1"].String.ShouldBeEquivalentTo("bar 1");
 			config["Foo 2"].Should().NotBeNull();
 			config["Foo 2"]["foo 2"].String.ShouldBeEquivalentTo("bar 2");
 		}

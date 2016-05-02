@@ -15,8 +15,17 @@ namespace Config.Format.OptionSpecifiers
 
 		internal override Option Parse(string value)
 		{
-			// TODO: exception handling
-			var val = (T) Convert.ChangeType(value, typeof(T));
+			T val;
+
+			// TODO: tohle neni asi taky uplne vyborny
+			if (default(T) is Enum)
+			{
+				val = (T) Enum.Parse(typeof(T), value);
+			}
+			else
+			{
+				val = (T) Convert.ChangeType(value, typeof(T));
+			}
 
 			if (Constraint(val))
 			{

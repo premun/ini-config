@@ -1,7 +1,5 @@
-﻿using System;
-using Config.Format;
+﻿using Config.Format;
 using Config.Format.OptionSpecifiers;
-using Config.Options;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,6 +8,13 @@ namespace ConfigTests
 	[TestClass]
 	public class WhenSpecifyingDefaults
 	{
+		private enum Colors
+		{
+			Black,
+			White,
+			Green
+		}
+
 		[TestMethod]
 		public void BoolDefaults()
 		{
@@ -51,6 +56,28 @@ namespace ConfigTests
 
 			// This will fail, because we cannot force generic type to be nullable in ConstraintOptionSpecifier
 			// We set this to default(T), not null and then we are unable to tell
+			section["null"].Should().BeNull();
+		}
+
+		/// <summary>
+		/// Same as above
+		/// </summary>
+		[TestMethod]
+		[Ignore]
+		public void EnumDefaults()
+		{
+			const Colors defaultValue = Colors.Green;
+
+			var formatSpecifier = new ConfigFormatSpecifier()
+				.AddSection("Foo")
+					.AddOption(new EnumOptionSpecifier<Colors>("default", defaultValue: defaultValue))
+					.AddOption(new EnumOptionSpecifier<Colors>("null"))
+				.FinishDefinition();
+
+			var config = new Config.Config(formatSpecifier);
+
+			var section = config.AddSection("Foo");
+			((Colors) section["default"].RawValue).ShouldBeEquivalentTo(defaultValue);
 			section["null"].Should().BeNull();
 		}
 
@@ -158,7 +185,7 @@ namespace ConfigTests
 			var config = new Config.Config(formatSpecifier);
 
 			var section = config.AddSection("Foo");
-			section["default"].Unsigned.ShouldBeEquivalentTo(defaultValue);
+			section["default"].IntList.ShouldBeEquivalentTo(defaultValue);
 			section["null"].Should().BeNull();
 		}
 	}

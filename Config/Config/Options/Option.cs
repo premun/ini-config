@@ -152,9 +152,5 @@ namespace Config.Options
 
 	public abstract class Option<T> : Option
 	{
-		public void Set(T value)
-		{
-			RawValue = value;
-		}
 	}
 }

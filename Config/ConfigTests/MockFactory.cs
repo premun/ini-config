@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using Moq;
@@ -41,6 +43,17 @@ namespace ConfigTests
 				.Returns(lineNumbers.ElementAt(lineNumbers.Count - tokenQueue.Count));
 
 			return mock.Object;
+		}
+		
+		/// <summary>
+		/// Returns a TokenParser (not mock!) reading a given string.
+		/// </summary>
+		/// <param name="sourceString">Config data as string</param>
+		/// <returns>TokenParser (real object)</returns>
+		internal static ITokenParser TokenParser(string sourceString)
+		{
+			var ms = new MemoryStream(Encoding.UTF8.GetBytes(sourceString ?? ""));
+			return new TokenParser(new StreamReader(ms));
 		}
 	}
 }

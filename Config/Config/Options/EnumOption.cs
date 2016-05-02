@@ -8,7 +8,7 @@ namespace Config.Options
 
 		public EnumOption(string value)
 		{
-			// TODO: ... T.GetNames ...
+			RawValue = (T) Enum.Parse(typeof(T), value);
 		}
 
 		public EnumOption(T value)

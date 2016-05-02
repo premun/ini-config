@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Text;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
@@ -14,15 +12,15 @@ namespace ConfigTests.IniFiles.Parser
 		[TestMethod]
 		public void BasicCaseShouldBeParsedOk()
 		{
-			string content = "[foo]\n" +
-							 "bar = 123 ; commentary\n" +
-							 "  xyz =456 \n" +
-							 "[foo 2]\n" +
-							 " abc =   def;\n" +
-							 "; another=commentary\n" +
-							 "\n";
+			const string content = "[foo]\n" +
+			                       "bar = 123 ; commentary\n" +
+			                       "  xyz =456 \n" +
+			                       "[foo 2]\n" +
+			                       " abc =   def;\n" +
+			                       "; another=commentary\n" +
+			                       "\n";
 
-			using (TokenParser parser = TokenParserFromString(content))
+			using (var parser = MockFactory.TokenParser(content))
 			{
 				var token = parser.GetNextToken();
 				token.Should().BeOfType<SectionHeaderToken>();
@@ -49,7 +47,7 @@ namespace ConfigTests.IniFiles.Parser
 
 				token = parser.GetNextToken();
 				token.Should().BeOfType<CommentToken>();
-				token.As<CommentToken>().Content.ShouldBeEquivalentTo("; another=commentary");
+				token.As<CommentToken>().Content.ShouldBeEquivalentTo("another=commentary");
 
 				Assert.IsNull(parser.GetNextToken());
 				Assert.IsNull(parser.GetNextToken());
@@ -63,7 +61,7 @@ namespace ConfigTests.IniFiles.Parser
 			string content = "[foo\n" +
 							 "bar = 123 ; commentary\n";
 
-			using (TokenParser parser = TokenParserFromString(content))
+			using (var parser = MockFactory.TokenParser(content))
 			{
 				parser.GetNextToken();
 			}
@@ -76,7 +74,7 @@ namespace ConfigTests.IniFiles.Parser
 			string content = "[foo] ;commentary\n" +
 							 "bar123\n";
 
-			using (TokenParser parser = TokenParserFromString(content))
+			using (var parser = MockFactory.TokenParser(content))
 			{
 				var token = parser.GetNextToken();
 				token.Should().BeOfType<SectionHeaderToken>();
@@ -84,16 +82,10 @@ namespace ConfigTests.IniFiles.Parser
 
 				token = parser.GetNextToken();
 				token.Should().BeOfType<CommentToken>();
-				token.As<CommentToken>().Content.ShouldBeEquivalentTo(";commentary");
+				token.As<CommentToken>().Content.ShouldBeEquivalentTo("commentary");
 
 				token = parser.GetNextToken();
 			}
-		}
-
-		private static TokenParser TokenParserFromString(string s)
-		{
-			var ms = new MemoryStream(Encoding.UTF8.GetBytes(s ?? ""));
-			return new TokenParser(new StreamReader(ms));
 		}
 	}
 }

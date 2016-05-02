@@ -94,6 +94,10 @@ namespace Config.IniFiles
 				Token token;
 				while ((token = _parser.GetNextToken()) != null)
 				{
+					// TODO: Nevim, jestli to neni prasarna
+					ParseToken((dynamic) token);
+
+					/*
 					if (token is SectionHeaderToken)
 					{
 						ParseToken((SectionHeaderToken) token);
@@ -106,6 +110,11 @@ namespace Config.IniFiles
 					{
 						ParseToken((CommentToken) token);
 					}
+					else
+					{
+						// ...
+					}
+					*/
 				}
 			}
 		}
