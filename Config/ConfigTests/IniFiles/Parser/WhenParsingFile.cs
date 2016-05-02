@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Linq;
+using Config;
+using Config.IniFiles;
+using Config.IniFiles.Errors;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
@@ -84,7 +88,7 @@ namespace ConfigTests.IniFiles.Parser
 				token.Should().BeOfType<CommentToken>();
 				token.As<CommentToken>().Content.ShouldBeEquivalentTo("commentary");
 
-				token = parser.GetNextToken();
+				parser.GetNextToken();
 			}
 		}
 	}

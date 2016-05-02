@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using Config.Format;
 using Config.IniFiles.Errors;
 using Config.IniFiles.Parser;
@@ -138,7 +139,17 @@ namespace Config.IniFiles
 				ReportError(new NoSectionError(_parser.GetLine()));
 				return;
 			}
-			
+
+			// TODO: Tahle kontrola by mozna mela bejt nekde niz (treba v OptionToken.Parse()), 
+			// TODO: vyhodit nejakou special vyjjimku a tady ji odchytit a pridat cislo radku atd.
+			// TODO: Pokud se to prenda jinam, tak treba zmenit InvalidIdentifierShouldRaiseError test
+			var identifierRegex = new Regex(@"$[a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]^");
+			if (!identifierRegex.IsMatch(token.Name))
+			{
+				ReportError(new InvalidIdentifierError(token.Name, _parser.GetLine()));
+				return;
+			}
+
 			_currentSection[token.Name] = ParseOptionValue(token, _currentSection.Name);
 		}
 

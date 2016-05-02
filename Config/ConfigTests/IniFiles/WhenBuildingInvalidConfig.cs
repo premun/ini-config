@@ -71,9 +71,31 @@ namespace ConfigTests.IniFiles
 				builder.Build(buildMode: BuildMode.Strict);
 			};
 
-			build.ShouldThrow<IniConfigException>();
+			build.ShouldThrow<IniConfigException>().And.Errors.First().Should().BeOfType<DuplicateSectionError>();
 			builder.Ok.Should().BeFalse();
-			builder.Errors.First().Should().BeOfType<DuplicateSectionError>();
+		}
+
+		[TestMethod]
+		public void InvalidIdentifierShouldRaiseError()
+		{
+			var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken {Name = "Foo"},
+				new OptionToken
+				{
+					Name = "foo!",
+					Value = "bar"
+				}
+			});
+
+			var builder = new IniFileConfigBuilder(parser);
+
+			Action build = () => {
+				builder.Build(buildMode: BuildMode.Strict);
+			};
+
+			build.ShouldThrow<IniConfigException>().And.Errors.First().Should().BeOfType<InvalidIdentifierError>();
+			builder.Ok.Should().BeFalse();
 		}
 
 		[TestMethod]
