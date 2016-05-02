@@ -29,6 +29,14 @@ namespace Config.Options
 			}
 		}
 
+		public override string Serialize()
+		{
+			// TODO: Tohle by asi taky slo nejak ulozit, aby se to porad neprevytvarelo
+			var culture = (CultureInfo) CultureInfo.CurrentCulture.Clone();
+			culture.NumberFormat.NumberDecimalSeparator = DecimalSeparator;
+			return ((float)Data).ToString(culture);
+		}
+
 		public static implicit operator FloatOption(float f)
 		{
 			return new FloatOption(f);

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using Config;
 using Config.Format;
+using Config.Format.OptionSpecifiers;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,6 +33,40 @@ namespace ConfigTests
 			section.Remove("bar").Should().BeTrue();
 			section.Count().ShouldBeEquivalentTo(1);
 			section["foo"].Float.ShouldBeEquivalentTo(f);
+		}
+
+		[TestMethod]
+		public void GettingOptionKeysShouldWork()
+		{
+			var config = new Config.Config();
+
+			var section = config.AddSection("Foo");
+			section
+				.Set("foo", 3)
+				.Set("bar", "xyz");
+
+			var keys = section.Keys();
+			keys.ShouldBeEquivalentTo(new[] { "foo", "bar" });
+
+			var formatSpecifier = new ConfigFormatSpecifier()
+				.AddSection("Foo")
+					.AddOption(new FloatOptionSpecifier("float", defaultValue: 0.4f))
+					.AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+					.AddOption(new BoolOptionSpecifier("bool"))
+				.FinishDefinition();
+
+			config = new Config.Config(formatSpecifier);
+
+			section = config.AddSection("Foo");
+			section
+				.Set("foo", 3)
+				.Set("bar", "xyz");
+
+			keys = section.Keys(true);
+			keys.ShouldBeEquivalentTo(new[] { "foo", "bar", "float", "int" });
+
+			keys = section.Keys(false);
+			keys.ShouldBeEquivalentTo(new[] { "foo", "bar" });
 		}
 	}
 }

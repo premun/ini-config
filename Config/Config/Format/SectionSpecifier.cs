@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Config.Format.OptionSpecifiers;
 
 namespace Config.Format
 {
-	internal class SectionSpecifier
+	internal class SectionSpecifier : IEnumerable<OptionSpecifier>
 	{
 		private readonly IDictionary<string, OptionSpecifier> _options;
 
@@ -33,9 +34,19 @@ namespace Config.Format
 			_options = new Dictionary<string, OptionSpecifier>();
 		}
 
-		public void AddOption(OptionSpecifier optionSpecifier)
+		internal void AddOption(OptionSpecifier optionSpecifier)
 		{
 			_options[optionSpecifier.Name] = optionSpecifier;
+		}
+
+		public IEnumerator<OptionSpecifier> GetEnumerator()
+		{
+			return _options.Values.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
 		}
 	}
 }

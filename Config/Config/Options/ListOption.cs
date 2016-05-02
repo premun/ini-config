@@ -37,6 +37,12 @@ namespace Config.Options
 			throw new NotImplementedException();
 		}
 
+		public override string Serialize()
+		{
+			// TODO
+			throw new NotImplementedException();
+		}
+
 		public static implicit operator ListOption<T>(T[] t)
 		{
 			return new ListOption<T>(t);

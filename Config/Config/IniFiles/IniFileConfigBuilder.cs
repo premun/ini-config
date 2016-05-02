@@ -204,6 +204,11 @@ namespace Config.IniFiles
 			}
 		}
 
+		private void ValidateConfig()
+		{
+			// TODO: Zvalidovat chybejici options/sections a reportovat errory
+		}
+
 		/// <summary>
 		/// Depending on BuildMode, either throws an exception (Strict) or adds error to the list of errors.
 		/// </summary>
@@ -217,10 +222,6 @@ namespace Config.IniFiles
 			{
 				throw new IniConfigException(error);
 			}
-		}
-
-		private void ValidateConfig()
-		{
 		}
 
 		public void Dispose()

@@ -21,6 +21,9 @@ namespace Config.Format.OptionSpecifiers
 
 		internal Option Parse(object value)
 		{
+			// TODO: Tady by se melo ulozit parsedValue nekam a pak vracet to
+			//       Duvod je ten, ze kdyz se budu opakovane ptat na option, ktery v configu neni,
+			//		 ale ma defaultValue, tak se vytvari dokola porad novy a novy objekty
 			return Parse(value.ToString());
 		}
 	}

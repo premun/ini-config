@@ -7,7 +7,6 @@ namespace Config
 	/// Represents data of one config section (list of key-value items).
 	/// Also behaves like a collection of items.
 	/// </summary>
-	/// TODO: odebrano dedeni IDict, musi se pridat veci jako Remove a Contains?
 	public interface IConfigSection : IEnumerable<Option>
     {
 		/// <summary>
@@ -19,10 +18,24 @@ namespace Config
 		/// <returns>Option with given key, or null when no option/default found.</returns>
 		Option this[string key] { get; set; }
 
+		/// <summary>
+		/// Gets the section's name.
+		/// </summary>
 		string Name { get; }
+
+		/// <summary>
+		/// Gets or sets section's comment;
+		/// </summary>
 		string Comment { get; set; }
 
 		/// <summary>
+		/// Returns a list of keys of all options inside the config or of options with default values.
+		/// </summary>
+		/// <param name="keysOfDefaults">Indicates whether to also return keys of non-present options with default values</param>
+		/// <returns>List of option keys</returns>
+		IEnumerable<string> Keys(bool keysOfDefaults = true);
+
+			/// <summary>
 		/// Sets an item (key-value), effectively overwriting previous item with same key.
 		/// Can be chained.
 		/// </summary>

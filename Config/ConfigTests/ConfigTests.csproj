@@ -71,6 +71,7 @@
     <Compile Include="IniFiles\Parser\Tokens\WhenParsingSectionHeaderToken.cs" />
     <Compile Include="IniFiles\Parser\WhenParsingFile.cs" />
     <Compile Include="IniFiles\WhenBuildingInvalidConfig.cs" />
+    <Compile Include="IniFiles\WhenSavingConfig.cs" />
     <Compile Include="IniFiles\WhenBuildingValidConfig.cs" />
     <Compile Include="MockFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

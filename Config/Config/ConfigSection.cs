@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Config.Format;
 using Config.Options;
 
@@ -32,6 +33,7 @@ namespace Config
 					return _options[key];
 				}
 
+				// Option not present, but a default value might be provided
 				var specifier = FormatSpecifier[key];
 				if (specifier != null && specifier.DefaultValue != null)
 				{
@@ -46,7 +48,24 @@ namespace Config
 				_options[key] = value;
 			}
 		}
-		
+
+		public IEnumerable<string> Keys(bool keysOfDefaults = true)
+		{
+			var keys = new List<string>();
+
+			_options.Keys.ToList().ForEach(keys.Add);
+
+			if (keysOfDefaults && FormatSpecifier != null)
+			{
+				FormatSpecifier
+					.Where(o => !_options.ContainsKey(o.Name) && o.DefaultValue != null)
+					.ToList()
+					.ForEach(o => keys.Add(o.Name));
+			}
+
+			return keys;
+		}
+
 		public IConfigSection Set(string key, Option value)
 		{
 			this[key] = value;
