@@ -15,7 +15,7 @@ namespace Config
 
 		internal SectionSpecifier FormatSpecifier { get; set; }
 
-		public string Name { get; }
+        public string Name { get; private set; }
 
 		public string Comment { get; set; }
 

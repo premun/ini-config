@@ -5,7 +5,7 @@ namespace Config.IniFiles
 {
 	public class IniConfigException : ConfigException
 	{
-		public IEnumerable<FormatError> Errors { get; }
+		public IEnumerable<FormatError> Errors { get; private set; }
 
 		public IniConfigException(IEnumerable<FormatError> errors) : base("Error while parsing ini config file")
 		{

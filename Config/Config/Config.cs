@@ -14,7 +14,7 @@ namespace Config
 			_sections = new Dictionary<string, IConfigSection>();
 		}
 
-		public ConfigFormatSpecifier FormatSpecifier { get; }
+        public ConfigFormatSpecifier FormatSpecifier { get; private set; }
 
 		public IConfigSection this[string name]
 		{
