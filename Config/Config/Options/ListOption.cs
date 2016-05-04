@@ -17,6 +17,8 @@ namespace Config.Options
 			Values = values;
 		}
 
+        public ListOption() { } 
+
 		// TODO
 		public Option this[int index]
 		{

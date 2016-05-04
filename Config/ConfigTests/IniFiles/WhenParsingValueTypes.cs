@@ -94,7 +94,7 @@ enum = Green
 		{
 			const string configData = @"
 [Lists]
-ints = 4\,0, 50
+ints = 40, 50
 enums = Green, Black, Black
 ";
 			var parser = GetTokenParser(configData);
