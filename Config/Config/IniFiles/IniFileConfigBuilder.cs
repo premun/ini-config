@@ -71,7 +71,7 @@ namespace Config.IniFiles
 			{
 				if (_errors == null)
 				{
-					throw new InvalidOperationException("GetErrors() called, but Build() not called before");
+					throw new InvalidOperationException("Getter for Errors called, but Build() not called before");
 				}
 
 				return _errors;
