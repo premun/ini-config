@@ -21,12 +21,12 @@ namespace Config.Options
 			get { return (bool) Data; }
 		}
 
-		public IEnumerable<bool> BoolList
+		public IList<bool> BoolList
 		{
 			get
 			{
 				var list = (List<BoolOption>) Data;
-				return list.Select(o => o.Bool);
+				return list.Select(o => o.Bool).ToList();
 			}
 		}
 
@@ -35,12 +35,12 @@ namespace Config.Options
 			get { return (float) Data; }
 		}
 
-		public IEnumerable<float> FloatList
+        public IList<float> FloatList
 		{
 			get
 			{
 				var list = (List<FloatOption>) Data;
-				return list.Select(o => o.Float);
+				return list.Select(o => o.Float).ToList();
 			}
 		}
 
@@ -49,12 +49,12 @@ namespace Config.Options
 			get { return (int) Data; }
 		}
 
-		public IEnumerable<int> IntList
+        public IList<int> IntList
 		{
 			get
 			{
 			    var list = (List<IntOption>) Data;
-				return list.Select(o => o.Int);
+				return list.Select(o => o.Int).ToList();
 			}
 		}
 
@@ -63,12 +63,12 @@ namespace Config.Options
 			get { return (long) Data; }
 		}
 
-		public IEnumerable<long> SignedList
+        public IList<long> SignedList
 		{
 			get
 			{
 				var list = (List<SignedOption>) Data;
-				return list.Select(o => o.Signed);
+			    return list.Select(o => o.Signed).ToList();
 			}
 		}
 
@@ -77,12 +77,12 @@ namespace Config.Options
 			get { return (string) Data; }
 		}
 
-		public IEnumerable<string> StringList
+		public IList<string> StringList
 		{
 			get
 			{
 				var list = (List<StringOption>) Data;
-				return list.Select(o => o.String);
+				return list.Select(o => o.String).ToList();
 			}
 		}
 
@@ -91,12 +91,12 @@ namespace Config.Options
 			get { return (ulong) Data; }
 		}
 
-		public IEnumerable<ulong> UnsignedList
+		public IList<ulong> UnsignedList
 		{
 			get
 			{
 				var list = (List<UnsignedOption>) Data;
-				return list.Select(o => o.Unsigned);
+				return list.Select(o => o.Unsigned).ToList();
 			}
 		}
 

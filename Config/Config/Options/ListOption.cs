@@ -1,11 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Config.Options
 {
     public class ListOption<T> : Option<T> where T : Option
     {
-        public IEnumerable<T> Values { get; set; }
+        private IList<T> _values;
+
+        public IEnumerable<T> Values
+        {
+            get { return _values; }
+            set { _values = value.ToList(); }
+        }
 
         #region Overrides of Option
 
@@ -33,25 +40,25 @@ namespace Config.Options
             Values = values;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListOption{T}"/> class.
+        /// This constructor is used for runtime generic initialization.
+        /// </summary>
         public ListOption() { }
 
-        // TODO
         public Option this[int index]
         {
             get
             {
-                throw new NotImplementedException();
+                return _values[index];
             }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { _values[index] = (T) value; }
         }
 
         public IEnumerable<T> Get()
         {
-            throw new NotImplementedException();
+            return _values;
         }
 
         public override string Serialize()

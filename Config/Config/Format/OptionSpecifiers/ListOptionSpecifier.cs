@@ -11,12 +11,12 @@ namespace Config.Format.OptionSpecifiers
         public ListOptionSpecifier(string name, bool required = false, IEnumerable<T> defaultValue = null)
             : base(name, required, default(T))
         {
-	        if (typeof(T) == typeof(ListOption<>))
-	        {
-		        throw new InvalidOperationException("List of list is not allowed.");
-	        }
+            if (typeof(T) == typeof(ListOption<>))
+            {
+                throw new InvalidOperationException("List of list is not allowed.");
+            }
 
-            DefaultValue = defaultValue;
+            DefaultValue = defaultValue == null ? null : string.Join(",", defaultValue);
         }
 
         internal override Option Parse(string value)
@@ -33,8 +33,8 @@ namespace Config.Format.OptionSpecifiers
             // Prepares ListOption<T> object
             var genericListType = typeof(ListOption<>);
             Type specific = genericListType.MakeGenericType(innerGenericType);
-            ConstructorInfo ci = specific.GetConstructor(Type.EmptyTypes);
-            dynamic parsedListOption = ci.Invoke(new object[] { });
+            ConstructorInfo ctor = specific.GetConstructor(Type.EmptyTypes);
+            dynamic parsedListOption = ctor.Invoke(new object[] { });
 
             parsedListOption.Values = CreateGenericOptions(innerGenericType, inputValue);
 
@@ -43,6 +43,11 @@ namespace Config.Format.OptionSpecifiers
 
         private dynamic CreateGenericOptions(Type innerGenericType, string inputValue)
         {
+            if (inputValue == null)
+            {
+                return null;
+            }
+
             // Prepares each Option from parsed input value
             Type genericList = typeof(List<>);
             Type specificList = genericList.MakeGenericType(innerGenericType);
@@ -63,7 +68,6 @@ namespace Config.Format.OptionSpecifiers
 
         private Type GetSpecificOption()
         {
-            // TODO udelat nejak lepe?
             var type = typeof(T);
 
             if (type == typeof(int))
@@ -74,7 +78,6 @@ namespace Config.Format.OptionSpecifiers
             {
                 return typeof(BoolOption);
             }
-            // TODO test!
             if (type == typeof(Enum))
             {
                 return typeof(EnumOption<>);

@@ -39,6 +39,7 @@ namespace ConfigTests.IniFiles
                 .AddOption(new ListOptionSpecifier<long>("longs", defaultValue: new[] { 6L, 9L, 42L }))
                 .AddOption(new ListOptionSpecifier<ulong>("ulong", defaultValue: new[] { 1ul }))  
                 .AddOption(new ListOptionSpecifier<Colors>("colors", defaultValue: new[] { Colors.Black }))
+                .AddOption(new ListOptionSpecifier<string>("strings"))
             .FinishDefinition();
 
 		[TestMethod]

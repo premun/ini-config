@@ -185,7 +185,10 @@ namespace ConfigTests
 			var config = new Config.Config(formatSpecifier);
 
 			var section = config.AddSection("Foo");
-			section["default"].IntList.ShouldBeEquivalentTo(defaultValue);
+			var defs = section["default"].IntList;
+            defs[0].ShouldBeEquivalentTo(defaultValue[0]);
+            defs[1].ShouldBeEquivalentTo(defaultValue[1]);
+            defs[2].ShouldBeEquivalentTo(defaultValue[2]);
 			section["null"].Should().BeNull();
 		}
 	}
