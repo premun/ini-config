@@ -21,23 +21,9 @@ namespace Config.Format.OptionSpecifiers
 
         internal override Option Parse(string value)
         {
-            var values = SplitListValues(value);
+            
 
             var subOptionType = GetSpecificOption();
-
-            // TODO Neni todle overkill?
-    
-            // Prepares each Option from parsed input value
-            Type genericList = typeof(List<>);
-            Type specificList = genericList.MakeGenericType(subOptionType);
-            ConstructorInfo ctor = specificList.GetConstructor(Type.EmptyTypes);
-            dynamic options = ctor.Invoke(new object[] { });
-
-            foreach (var simpleValue in values)
-            {
-                dynamic option = Activator.CreateInstance(subOptionType, simpleValue);
-                options.Add(option);
-            }
 
             // Prepares ListOption<T> object
             var genericListType = typeof(ListOption<>);
@@ -45,9 +31,27 @@ namespace Config.Format.OptionSpecifiers
             ConstructorInfo ci = specific.GetConstructor(Type.EmptyTypes);
             dynamic parsedListOption = ci.Invoke(new object[] { });
 
-            parsedListOption.Values = options;
+            parsedListOption.Values = CreateListOption(subOptionType, value);
 
             return parsedListOption;
+        }
+
+        private dynamic CreateListOption(Type innerGenericType, string inputValue)
+        {
+            // Prepares each Option from parsed input value
+            Type genericList = typeof(List<>);
+            Type specificList = genericList.MakeGenericType(innerGenericType);
+            ConstructorInfo ctor = specificList.GetConstructor(Type.EmptyTypes);
+            dynamic options = ctor.Invoke(new object[] { });
+
+            var values = SplitListValues(inputValue);
+
+            // Creates instance of each parsed option
+            foreach (var simpleValue in values)
+            {
+                dynamic option = Activator.CreateInstance(innerGenericType, simpleValue);
+                options.Add(option);
+            }
         }
 
         private Type GetSpecificOption()
