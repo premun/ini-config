@@ -5,7 +5,7 @@ namespace Config.Options
 {
 	public abstract class Option
 	{
-		public object Data { get; protected set; }
+		public virtual object Data { get; protected set; }
 
 		public string Comment { get; set; }
 
@@ -25,7 +25,7 @@ namespace Config.Options
 		{
 			get
 			{
-				var list = ((ListOption<BoolOption>) Data).Get();
+				var list = (List<BoolOption>) Data;
 				return list.Select(o => o.Bool);
 			}
 		}
@@ -39,7 +39,7 @@ namespace Config.Options
 		{
 			get
 			{
-				var list = ((ListOption<FloatOption>) Data).Get();
+				var list = (List<FloatOption>) Data;
 				return list.Select(o => o.Float);
 			}
 		}
@@ -53,7 +53,7 @@ namespace Config.Options
 		{
 			get
 			{
-				var list = ((ListOption<IntOption>) Data).Get();
+			    var list = (List<IntOption>) Data;
 				return list.Select(o => o.Int);
 			}
 		}
@@ -67,7 +67,7 @@ namespace Config.Options
 		{
 			get
 			{
-				var list = ((ListOption<SignedOption>) Data).Get();
+				var list = (List<SignedOption>) Data;
 				return list.Select(o => o.Signed);
 			}
 		}
@@ -81,7 +81,7 @@ namespace Config.Options
 		{
 			get
 			{
-				var list = ((ListOption<StringOption>) Data).Get();
+				var list = (List<StringOption>) Data;
 				return list.Select(o => o.String);
 			}
 		}
@@ -95,7 +95,7 @@ namespace Config.Options
 		{
 			get
 			{
-				var list = ((ListOption<UnsignedOption>) Data).Get();
+				var list = (List<UnsignedOption>) Data;
 				return list.Select(o => o.Unsigned);
 			}
 		}

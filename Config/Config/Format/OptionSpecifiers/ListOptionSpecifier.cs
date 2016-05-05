@@ -21,22 +21,27 @@ namespace Config.Format.OptionSpecifiers
 
         internal override Option Parse(string value)
         {
-            
+            var optionType = GetSpecificOption();
+            var listOption = CreateListOption(optionType, value);
 
-            var subOptionType = GetSpecificOption();
+            return listOption;
+        }
+
+        private dynamic CreateListOption(Type innerGenericType, string inputValue)
+        {
 
             // Prepares ListOption<T> object
             var genericListType = typeof(ListOption<>);
-            Type specific = genericListType.MakeGenericType(subOptionType);
+            Type specific = genericListType.MakeGenericType(innerGenericType);
             ConstructorInfo ci = specific.GetConstructor(Type.EmptyTypes);
             dynamic parsedListOption = ci.Invoke(new object[] { });
 
-            parsedListOption.Values = CreateListOption(subOptionType, value);
+            parsedListOption.Values = CreateGenericOptions(innerGenericType, inputValue);
 
             return parsedListOption;
         }
 
-        private dynamic CreateListOption(Type innerGenericType, string inputValue)
+        private dynamic CreateGenericOptions(Type innerGenericType, string inputValue)
         {
             // Prepares each Option from parsed input value
             Type genericList = typeof(List<>);
@@ -44,20 +49,23 @@ namespace Config.Format.OptionSpecifiers
             ConstructorInfo ctor = specificList.GetConstructor(Type.EmptyTypes);
             dynamic options = ctor.Invoke(new object[] { });
 
-            var values = SplitListValues(inputValue);
+            var splitListValues = SplitListValues(inputValue);
 
             // Creates instance of each parsed option
-            foreach (var simpleValue in values)
+            foreach (var simpleValue in splitListValues)
             {
                 dynamic option = Activator.CreateInstance(innerGenericType, simpleValue);
                 options.Add(option);
             }
+
+            return options;
         }
 
         private Type GetSpecificOption()
         {
             // TODO udelat nejak lepe?
             var type = typeof(T);
+
             if (type == typeof(int))
             {
                 return typeof(IntOption);
@@ -74,10 +82,6 @@ namespace Config.Format.OptionSpecifiers
             if (type == typeof(float))
             {
                 return typeof(FloatOption);
-            }
-            if (type == typeof(List<>))
-            {
-                throw new ArgumentException("Value cannot contain List of List");
             }
             if (type == typeof(long))
             {

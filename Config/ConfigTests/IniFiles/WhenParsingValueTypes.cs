@@ -35,7 +35,11 @@ namespace ConfigTests.IniFiles
 				.AddOption(new ConstraintOptionSpecifier<Colors>("enum", x => x != Colors.Black, defaultValue: Colors.White))
 			.AddSection("Lists")
 				.AddOption(new ListOptionSpecifier<int>("ints", defaultValue: new[] { 6, 9, 42 }))
-			.FinishDefinition();
+                .AddOption(new ListOptionSpecifier<float>("floats", defaultValue: new[] { 6f, 9f, 42f }))
+                .AddOption(new ListOptionSpecifier<long>("longs", defaultValue: new[] { 6L, 9L, 42L }))
+                .AddOption(new ListOptionSpecifier<ulong>("ulong", defaultValue: new[] { 1ul }))  
+                .AddOption(new ListOptionSpecifier<Colors>("colors", defaultValue: new[] { Colors.Black }))
+            .FinishDefinition();
 
 		[TestMethod]
 		public void ParsingScalarsShouldWork()
@@ -95,6 +99,8 @@ enum = Green
 			const string configData = @"
 [Lists]
 ints = 40, 50
+floats = 1.2,3.5
+longs = 1:2:3
 enums = Green, Black, Black
 ";
 			var parser = GetTokenParser(configData);
