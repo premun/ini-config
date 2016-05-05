@@ -111,6 +111,28 @@ enums = Green, Black, Black
 			ints.ElementAt(1).ShouldBeEquivalentTo(50);
 		}
 
+		[TestMethod]
+		public void ParsingListsShouldWork2()
+		{
+			const string configData = @"
+[Lists]
+strings = foo, bar\;, xy\,z
+";
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
+
+			builder.Ok.Should().BeTrue();
+
+			config.Sections.Count().ShouldBeEquivalentTo(1);
+			var section = config["Lists"];
+
+			var strings = section["strings"].StringList;
+			strings.ElementAt(0).ShouldBeEquivalentTo("foo");
+			strings.ElementAt(1).ShouldBeEquivalentTo("bar;");
+			strings.ElementAt(2).ShouldBeEquivalentTo("xy,z");
+		}
+
 		private static ITokenParser GetTokenParser(string configData)
 		{
 			var parser = MockFactory.TokenParser(configData);

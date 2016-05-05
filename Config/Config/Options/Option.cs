@@ -23,7 +23,11 @@ namespace Config.Options
 
 		public IEnumerable<bool> BoolList
 		{
-			get { return (IEnumerable<bool>) Data; }
+			get
+			{
+				var list = ((ListOption<BoolOption>) Data).Get();
+				return list.Select(o => o.Bool);
+			}
 		}
 
 		public float Float
@@ -33,7 +37,11 @@ namespace Config.Options
 
 		public IEnumerable<float> FloatList
 		{
-			get { return (IEnumerable<float>) Data; }
+			get
+			{
+				var list = ((ListOption<FloatOption>) Data).Get();
+				return list.Select(o => o.Float);
+			}
 		}
 
 		public int Int
@@ -43,7 +51,11 @@ namespace Config.Options
 
 		public IEnumerable<int> IntList
 		{
-			get { return (IEnumerable<int>) Data; }
+			get
+			{
+				var list = ((ListOption<IntOption>) Data).Get();
+				return list.Select(o => o.Int);
+			}
 		}
 
 		public long Signed
@@ -53,7 +65,11 @@ namespace Config.Options
 
 		public IEnumerable<long> SignedList
 		{
-			get { return (IEnumerable<long>) Data; }
+			get
+			{
+				var list = ((ListOption<SignedOption>) Data).Get();
+				return list.Select(o => o.Signed);
+			}
 		}
 
 		public string String
@@ -63,7 +79,11 @@ namespace Config.Options
 
 		public IEnumerable<string> StringList
 		{
-			get { return (IEnumerable<string>) Data; }
+			get
+			{
+				var list = ((ListOption<StringOption>) Data).Get();
+				return list.Select(o => o.String);
+			}
 		}
 
 		public ulong Unsigned
@@ -73,7 +93,11 @@ namespace Config.Options
 
 		public IEnumerable<ulong> UnsignedList
 		{
-			get { return (IEnumerable<ulong>) Data; }
+			get
+			{
+				var list = ((ListOption<UnsignedOption>) Data).Get();
+				return list.Select(o => o.Unsigned);
+			}
 		}
 
 		#endregion

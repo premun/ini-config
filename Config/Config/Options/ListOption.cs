@@ -35,7 +35,6 @@ namespace Config.Options
 
 		public IEnumerable<T> Get()
 		{
-			// TODO: potrebujeme vubec tohle?
 			throw new NotImplementedException();
 		}
 

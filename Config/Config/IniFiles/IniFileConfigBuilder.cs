@@ -101,27 +101,8 @@ namespace Config.IniFiles
 				Token token;
 				while ((token = _parser.GetNextToken()) != null)
 				{
-					// TODO: Nevim, jestli to neni prasarna
+					// TODO: Okomentovat
 					ParseToken((dynamic) token);
-
-					/*
-					if (token is SectionHeaderToken)
-					{
-						ParseToken((SectionHeaderToken) token);
-					}
-					else if (token is OptionToken)
-					{
-						ParseToken((OptionToken) token);
-					}
-					else if (token is CommentToken)
-					{
-						ParseToken((CommentToken) token);
-					}
-					else
-					{
-						// ...
-					}
-					*/
 				}
 			}
 		}

@@ -11,12 +11,17 @@ namespace Config.Format.OptionSpecifiers
         public ListOptionSpecifier(string name, bool required = false, IEnumerable<T> defaultValue = null)
             : base(name, required, default(T))
         {
+	        if (typeof(T) == typeof(ListOption<>))
+	        {
+		        throw new InvalidOperationException("List of list is not allowed.");
+	        }
+
             DefaultValue = defaultValue;
         }
 
         internal override Option Parse(string value)
         {
-            var splitedValue = SplitListValues(value);
+            var values = SplitListValues(value);
 
             var subOptionType = GetSpecificOption();
 
@@ -25,10 +30,10 @@ namespace Config.Format.OptionSpecifiers
             // Prepares each Option from parsed input value
             Type genericList = typeof(List<>);
             Type specificList = genericList.MakeGenericType(subOptionType);
-            ConstructorInfo ciList = specificList.GetConstructor(Type.EmptyTypes);
-            dynamic options = ciList.Invoke(new object[] { });
+            ConstructorInfo ctor = specificList.GetConstructor(Type.EmptyTypes);
+            dynamic options = ctor.Invoke(new object[] { });
 
-            foreach (var simpleValue in splitedValue)
+            foreach (var simpleValue in values)
             {
                 dynamic option = Activator.CreateInstance(subOptionType, simpleValue);
                 options.Add(option);
@@ -68,7 +73,7 @@ namespace Config.Format.OptionSpecifiers
             }
             if (type == typeof(List<>))
             {
-                throw new ArgumentException("Value cannot contains List of List");
+                throw new ArgumentException("Value cannot contain List of List");
             }
             if (type == typeof(long))
             {
@@ -88,7 +93,7 @@ namespace Config.Format.OptionSpecifiers
 
         private IEnumerable<string> SplitListValues(string value)
         {
-            var delimiters = new[] { ':', ';', ',' };
+            var delimiters = new[] { ':', ',' };
 
             value = value.Replace("\\\\", "&quot;");
             bool quoted = false;
@@ -108,7 +113,6 @@ namespace Config.Format.OptionSpecifiers
                             value.Substring(currStartIndex, i - currStartIndex)
                                 .Trim()
                                 .Replace("\\,", ",")
-                                .Replace("\\;", ";")
                                 .Replace("\\:", ":")
                                 .Replace("&quot;", "\\");
                         currStartIndex = i + 1;
@@ -123,7 +127,6 @@ namespace Config.Format.OptionSpecifiers
             yield return value.Substring(currStartIndex, value.Length - currStartIndex)
                 .Trim()
                 .Replace("\\,", ",")
-                .Replace("\\;", ";")
                 .Replace("\\:", ":")
                 .Replace("&quot;", "\\");
         }
