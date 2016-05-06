@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Config.Format;
@@ -45,6 +46,10 @@ namespace Config
 
 			set
 			{
+                if (_options.ContainsKey(key) && _options[key].GetType() == typeof(ReferenceOption))
+			    {
+                    throw new InvalidOperationException("Cannot set value to reference option.");
+			    }
 				_options[key] = value;
 			}
 		}

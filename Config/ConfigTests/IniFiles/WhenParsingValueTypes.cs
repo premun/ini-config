@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Config.Format;
 using Config.Format.OptionSpecifiers;
@@ -187,8 +188,37 @@ reference=    ${Scalars#bool}";
             config.Sections.Count().ShouldBeEquivalentTo(2);
 
             var result = config["Refs"]["reference"].Bool;
-            result.ShouldBeEquivalentTo(false);
 	    }
+
+        [TestMethod]
+        [ExpectedException(typeof (InvalidOperationException))]
+        public void ParsingReference2()
+        {
+            const string configData = @"
+[Scalars]
+bool = f ; bool commentary
+float = 1.2
+enum = Black
+int=100
+signed=60
+string=  bar ;xyz
+unsigned = 70
+[Refs]
+reference=    ${Scalars#bool}";
+
+            var parser = GetTokenParser(configData);
+            var builder = new IniFileConfigBuilder(parser);
+            var config = builder.Build(_formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
+
+            config.Sections.Count().ShouldBeEquivalentTo(2);
+
+            var result = config["Refs"]["reference"].Bool;
+            result.ShouldBeEquivalentTo(false);
+
+            config["Refs"]["reference"] = true;
+        }
 
 		private static ITokenParser GetTokenParser(string configData)
 		{
