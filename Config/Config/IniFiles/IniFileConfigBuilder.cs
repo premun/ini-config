@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using Config.Format;
+using Config.Format.OptionSpecifiers;
 using Config.IniFiles.Errors;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
@@ -19,6 +20,10 @@ namespace Config.IniFiles
 	public class IniFileConfigBuilder : IConfigBuilder, IDisposable
 	{
 		private readonly string _path;
+
+	    private const string RegerencePattern =
+	        @"^\$\{([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)#([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)\}";
+
 
 		#region Parsing context related fields
 
@@ -89,7 +94,7 @@ namespace Config.IniFiles
 			}
 		}
 
-		/// <summary>
+	    /// <summary>
 		/// Reads the ini file and creates sections and options (with string values).
 		/// </summary>
 		private void ParseConfig()
@@ -174,7 +179,7 @@ namespace Config.IniFiles
 
 			try
 			{
-				var option = formatOption.Parse(token.Value);
+                var option = ParseToken(formatOption, token);
 				option.Comment = token.Comment;
 				return option;
 			}
@@ -184,6 +189,20 @@ namespace Config.IniFiles
 				return new StringOption(token);
 			}
 		}
+
+	    private Option ParseToken(OptionSpecifier specifier, OptionToken token)
+	    {
+            // Checks if string is reference
+            var regex = Regex.Match(token.Value, RegerencePattern);
+            if (regex.Success)
+	        {
+                Console.WriteLine(regex.Value);
+	            Console.WriteLine(regex.NextMatch().Value);
+                return new ReferenceOption(regex.Groups[1].Value, regex.Groups[2].Value, _config);
+	        }
+
+	        return specifier.Parse(token.Value);
+	    }
 
 		private void ValidateConfig()
 		{

@@ -40,6 +40,8 @@ namespace ConfigTests.IniFiles
                 .AddOption(new ListOptionSpecifier<ulong>("ulong", defaultValue: new[] { 1ul }))  
                 .AddOption(new ListOptionSpecifier<Colors>("colors", defaultValue: new[] { Colors.Black }))
                 .AddOption(new ListOptionSpecifier<string>("strings"))
+            .AddSection("Refs")
+                .AddOption(new BoolOptionSpecifier("reference"))
             .FinishDefinition();
 
 		[TestMethod]
@@ -160,6 +162,33 @@ strings = foo, bar\;: xy\,z
             strings.ElementAt(0).ShouldBeEquivalentTo("foo");
             strings.ElementAt(1).ShouldBeEquivalentTo("bar;: xy,z");
         }
+
+	    [TestMethod]
+	    public void ParsingReference()
+	    {
+	        const string configData = @"
+[Scalars]
+bool = f ; bool commentary
+float = 1.2
+enum = Black
+int=100
+signed=60
+string=  bar ;xyz
+unsigned = 70
+[Refs]
+reference=    ${Scalars#bool}";
+
+            var parser = GetTokenParser(configData);
+            var builder = new IniFileConfigBuilder(parser);
+            var config = builder.Build(_formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
+
+            config.Sections.Count().ShouldBeEquivalentTo(2);
+
+            var result = config["Refs"]["reference"].Bool;
+            result.ShouldBeEquivalentTo(false);
+	    }
 
 		private static ITokenParser GetTokenParser(string configData)
 		{
