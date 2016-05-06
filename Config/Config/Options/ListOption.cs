@@ -46,16 +46,6 @@ namespace Config.Options
         /// </summary>
         public ListOption() { }
 
-        public Option this[int index]
-        {
-            get
-            {
-                return _values[index];
-            }
-
-            set { _values[index] = (T) value; }
-        }
-
         public IEnumerable<T> Get()
         {
             return _values;
