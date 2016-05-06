@@ -8,6 +8,9 @@ namespace Config.Format.OptionSpecifiers
 {
     public class ListOptionSpecifier<T> : OptionSpecifier<T>
     {
+        private readonly char[] _possibleDelimiters = { ':', ',' };
+
+
         public ListOptionSpecifier(string name, bool required = false, IEnumerable<T> defaultValue = null)
             : base(name, required, default(T))
         {
@@ -104,7 +107,8 @@ namespace Config.Format.OptionSpecifiers
 
         private IEnumerable<string> SplitListValues(string value)
         {
-            var delimiters = new[] { ':', ',' };
+            // Selects default when string does not contains any delimiter
+            var delimiter = value.FirstOrDefault(x => _possibleDelimiters.Contains(x));
 
             value = value.Replace("\\\\", "&quot;");
             bool quoted = false;
@@ -116,7 +120,7 @@ namespace Config.Format.OptionSpecifiers
                 {
                     quoted = true;
                 }
-                else if (delimiters.Contains(currChar))
+                else if (delimiter == currChar)
                 {
                     if (!quoted)
                     {
