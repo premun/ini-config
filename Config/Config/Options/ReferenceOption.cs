@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Config.ConfigExceptions;
 
 namespace Config.Options
 {
@@ -23,6 +25,11 @@ namespace Config.Options
 	    {
 	        get
 	        {
+		        if (!_parrentConfig[Section].Keys().Contains(Option))
+		        {
+			        throw new MissingReferencedException(Section, Option);
+		        }
+
 	            return _parrentConfig[Section][Option].Data;
 	        }
 	        protected set

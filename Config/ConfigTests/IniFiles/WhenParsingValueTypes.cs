@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Config.ConfigExceptions;
 using Config.Format;
 using Config.Format.OptionSpecifiers;
 using Config.IniFiles;
@@ -165,7 +166,7 @@ strings = foo, bar\;: xy\,z
         }
 
 	    [TestMethod]
-	    public void ParsingReference()
+	    public void ParsingReferenceShouldWork()
 	    {
 	        const string configData = @"
 [Scalars]
@@ -177,7 +178,7 @@ signed=60
 string=  bar ;xyz
 unsigned = 70
 [Refs]
-reference=    ${Scalars#bool}";
+reference=    ${Scalars#int}";
 
             var parser = GetTokenParser(configData);
             var builder = new IniFileConfigBuilder(parser);
@@ -187,14 +188,15 @@ reference=    ${Scalars#bool}";
 
             config.Sections.Count().ShouldBeEquivalentTo(2);
 
-            var result = config["Refs"]["reference"].Bool;
-	    }
+			var result = config["Refs"]["reference"].Int;
+			result.ShouldBeEquivalentTo(100);
+		}
 
-        [TestMethod]
-        [ExpectedException(typeof (InvalidOperationException))]
-        public void ParsingReference2()
-        {
-            const string configData = @"
+		[TestMethod]
+		[ExpectedException(typeof(InvalidOperationException))]
+		public void AssignmentInsideReferenceShouldRaiseException()
+		{
+			const string configData = @"
 [Scalars]
 bool = f ; bool commentary
 float = 1.2
@@ -204,21 +206,37 @@ signed=60
 string=  bar ;xyz
 unsigned = 70
 [Refs]
-reference=    ${Scalars#bool}";
+reference=    ${Scalars#int}";
 
-            var parser = GetTokenParser(configData);
-            var builder = new IniFileConfigBuilder(parser);
-            var config = builder.Build(_formatSpecifier);
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
 
-            builder.Ok.Should().BeTrue();
+			builder.Ok.Should().BeTrue();
 
-            config.Sections.Count().ShouldBeEquivalentTo(2);
+			config.Sections.Count().ShouldBeEquivalentTo(2);
 
-            var result = config["Refs"]["reference"].Bool;
-            result.ShouldBeEquivalentTo(false);
+			config["Refs"]["reference"] = true;
+		}
 
-            config["Refs"]["reference"] = true;
-        }
+		[TestMethod]
+		[ExpectedException(typeof(MissingReferencedException))]
+		public void MissingReferenceShouldRaiseException()
+		{
+			const string configData = @"
+[Scalars]
+bool = f ; bool commentary
+[Refs]
+reference=    ${Scalars#int}";
+
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
+
+			builder.Ok.Should().BeTrue();
+
+			var x = config["Refs"]["reference"].Int;
+		}
 
 		private static ITokenParser GetTokenParser(string configData)
 		{

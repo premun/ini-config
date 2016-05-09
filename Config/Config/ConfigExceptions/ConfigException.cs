@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Config
+namespace Config.ConfigExceptions
 {
     public class ConfigException : Exception
     {

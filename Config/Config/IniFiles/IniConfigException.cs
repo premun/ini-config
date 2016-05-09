@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Config.ConfigExceptions;
 using Config.IniFiles.Errors;
 
 namespace Config.IniFiles
