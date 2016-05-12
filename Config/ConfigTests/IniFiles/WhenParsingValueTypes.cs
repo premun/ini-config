@@ -44,6 +44,9 @@ namespace ConfigTests.IniFiles
                 .AddOption(new ListOptionSpecifier<string>("strings"))
             .AddSection("Refs")
                 .AddOption(new BoolOptionSpecifier("reference"))
+                .AddOption(new StringOptionSpecifier("ref1"))
+                .AddOption(new StringOptionSpecifier("ref2"))
+                .AddOption(new StringOptionSpecifier("ref3"))
             .FinishDefinition();
 
 		[TestMethod]
@@ -255,6 +258,7 @@ ref3 = ${Refs#ref1}";
 			builder.Ok.Should().BeTrue();
 
 			var x = config["Refs"]["ref3"].String;
+		    Console.WriteLine(x);
 		}
 
 		private static ITokenParser GetTokenParser(string configData)

@@ -21,7 +21,7 @@ namespace Config.IniFiles
 	{
 		private readonly string _path;
 
-	    private const string RegerencePattern =
+	    private const string ReferencePattern =
 	        @"^\$\{([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)#([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)\}";
 
 
@@ -193,7 +193,7 @@ namespace Config.IniFiles
 	    private Option ParseToken(OptionSpecifier specifier, OptionToken token)
 	    {
             // Checks if string is reference
-            var regex = Regex.Match(token.Value, RegerencePattern);
+            var regex = Regex.Match(token.Value, ReferencePattern);
             if (regex.Success)
 	        {
                 return new ReferenceOption(regex.Groups[1].Value, regex.Groups[2].Value, _config);
