@@ -238,6 +238,25 @@ reference=    ${Scalars#int}";
 			var x = config["Refs"]["reference"].Int;
 		}
 
+		[TestMethod]
+		[ExpectedException(typeof(ReferenceCycleException))]
+		public void ReferenceCycleShouldRaiseException()
+		{
+			const string configData = @"
+[Refs]
+ref1 = ${Refs#ref2};
+ref2 = ${Refs#ref3};
+ref3 = ${Refs#ref1}";
+
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
+
+			builder.Ok.Should().BeTrue();
+
+			var x = config["Refs"]["ref3"].String;
+		}
+
 		private static ITokenParser GetTokenParser(string configData)
 		{
 			var parser = MockFactory.TokenParser(configData);

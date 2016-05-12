@@ -32,7 +32,7 @@ namespace Config.Options
 	        {
 	            if (_cycleIndicator)
 	            {
-	                throw new ReferenceCycleException();
+	                throw new ReferenceCycleException(Section, Option);
 	            }
 
 		        if (!_parrentConfig[Section].Keys().Contains(Option))

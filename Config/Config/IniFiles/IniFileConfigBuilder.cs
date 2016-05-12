@@ -196,8 +196,6 @@ namespace Config.IniFiles
             var regex = Regex.Match(token.Value, RegerencePattern);
             if (regex.Success)
 	        {
-                Console.WriteLine(regex.Value);
-	            Console.WriteLine(regex.NextMatch().Value);
                 return new ReferenceOption(regex.Groups[1].Value, regex.Groups[2].Value, _config);
 	        }
 
