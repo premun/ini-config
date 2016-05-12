@@ -12,11 +12,16 @@ namespace Config.Options
 
 	    private readonly IConfig _parrentConfig;
 
+	    private readonly object _lock;
+
+	    private bool _cycleIndicator;
+
 		public ReferenceOption(string sectionName, string optionName, IConfig config)
 		{
 		    _parrentConfig = config;
 		    Section = sectionName;
 		    Option = optionName;
+            _lock = new object();
 		}
 
 	    #region Overrides of Option
@@ -25,12 +30,26 @@ namespace Config.Options
 	    {
 	        get
 	        {
+	            if (_cycleIndicator)
+	            {
+	                throw new ReferenceCycleException();
+	            }
+
 		        if (!_parrentConfig[Section].Keys().Contains(Option))
 		        {
 			        throw new MissingReferencedException(Section, Option);
 		        }
 
-	            return _parrentConfig[Section][Option].Data;
+	            object result;
+
+	            lock (_lock)
+	            {
+                    _cycleIndicator = true;
+                    result = _parrentConfig[Section][Option].Data;
+                    _cycleIndicator = false;
+	            }
+
+                return result;
 	        }
 	        protected set
 	        {
