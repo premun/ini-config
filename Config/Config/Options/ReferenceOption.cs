@@ -12,8 +12,6 @@ namespace Config.Options
 
 	    private readonly IConfig _parrentConfig;
 
-	    private readonly object _lock;
-
 	    private bool _cycleIndicator;
 
 		public ReferenceOption(string sectionName, string optionName, IConfig config)
@@ -21,7 +19,6 @@ namespace Config.Options
 		    _parrentConfig = config;
 		    Section = sectionName;
 		    Option = optionName;
-            _lock = new object();
 		}
 
 	    #region Overrides of Option
@@ -40,14 +37,9 @@ namespace Config.Options
 			        throw new MissingReferencedException(Section, Option);
 		        }
 
-	            object result;
-
-	            lock (_lock)
-	            {
-                    _cycleIndicator = true;
-                    result = _parrentConfig[Section][Option].Data;
-                    _cycleIndicator = false;
-	            }
+	            _cycleIndicator = true;
+                var result = _parrentConfig[Section][Option].Data;
+                _cycleIndicator = false;
 
                 return result;
 	        }
