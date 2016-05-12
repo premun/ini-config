@@ -171,6 +171,13 @@ namespace Config.IniFiles
 				return new StringOption(token);
 			}
 
+            // Checks if string is reference
+            var regex = Regex.Match(token.Value, ReferencePattern);
+            if (regex.Success)
+            {
+                return new ReferenceOption(regex.Groups[1].Value, regex.Groups[2].Value, _config);
+            }
+
 			var formatOption = formatSection[token.Name];
 			if (formatOption == null)
 			{
@@ -192,13 +199,6 @@ namespace Config.IniFiles
 
 	    private Option ParseToken(OptionSpecifier specifier, OptionToken token)
 	    {
-            // Checks if string is reference
-            var regex = Regex.Match(token.Value, ReferencePattern);
-            if (regex.Success)
-	        {
-                return new ReferenceOption(regex.Groups[1].Value, regex.Groups[2].Value, _config);
-	        }
-
 	        return specifier.Parse(token.Value);
 	    }
 

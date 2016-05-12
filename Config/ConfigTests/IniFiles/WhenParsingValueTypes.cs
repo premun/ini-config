@@ -44,9 +44,6 @@ namespace ConfigTests.IniFiles
                 .AddOption(new ListOptionSpecifier<string>("strings"))
             .AddSection("Refs")
                 .AddOption(new BoolOptionSpecifier("reference"))
-                .AddOption(new StringOptionSpecifier("ref1"))
-                .AddOption(new StringOptionSpecifier("ref2"))
-                .AddOption(new StringOptionSpecifier("ref3"))
             .FinishDefinition();
 
 		[TestMethod]
