@@ -258,6 +258,78 @@ ref3 = ${Refs#ref1}";
 		    Console.WriteLine(x);
 		}
 
+	    [TestMethod]
+	    public void FormatHexadecimalShoulWorks()
+	    {
+            const string configData = @"
+[Scalars]
+signed=0x80C1
+unsigned = 0x80C1";
+
+            var parser = GetTokenParser(configData);
+            var builder = new IniFileConfigBuilder(parser);
+            var config = builder.Build(_formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
+
+            var integer = config["Scalars"]["signed"].Signed;
+	        integer.ShouldBeEquivalentTo(32961);
+	    }
+
+        [TestMethod]
+        public void FormatBinaryShoulWorks()
+        {
+            const string configData = @"
+[Scalars]
+signed=0b00001100
+unsigned = 0b00001100";
+
+            var parser = GetTokenParser(configData);
+            var builder = new IniFileConfigBuilder(parser);
+            var config = builder.Build(_formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
+
+            var integer = config["Scalars"]["signed"].Signed;
+            integer.ShouldBeEquivalentTo(12);
+        }
+
+        [TestMethod]
+        public void FormatOctalShoulWorks()
+        {
+            const string configData = @"
+[Scalars]
+signed=014
+unsigned = 014";
+
+            var parser = GetTokenParser(configData);
+            var builder = new IniFileConfigBuilder(parser);
+            var config = builder.Build(_formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
+
+            var integer = config["Scalars"]["signed"].Signed;
+            integer.ShouldBeEquivalentTo(12);
+        }
+
+        [TestMethod]
+        public void FormatZeroShoulWorks()
+        {
+            const string configData = @"
+[Scalars]
+signed=0
+unsigned = 0";
+
+            var parser = GetTokenParser(configData);
+            var builder = new IniFileConfigBuilder(parser);
+            var config = builder.Build(_formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
+
+            var integer = config["Scalars"]["signed"].Signed;
+            integer.ShouldBeEquivalentTo(0);
+        }
+
 		private static ITokenParser GetTokenParser(string configData)
 		{
 			var parser = MockFactory.TokenParser(configData);

@@ -1,6 +1,8 @@
-﻿namespace Config.Options
+﻿using System;
+
+namespace Config.Options
 {
-	public class UnsignedOption : Option<ulong>
+    public class UnsignedOption : NumericOption<ulong>
 	{
 		public UnsignedOption(ulong data)
 		{
@@ -9,7 +11,8 @@
 
 		public UnsignedOption(string value)
 		{
-			Data = ulong.Parse(value);
+            var preparedValue = ParseValueToNumeric(value);
+            Data = Convert.ToUInt64(preparedValue.StringValue, preparedValue.NumericSystem);
 		}
 
 		public static implicit operator UnsignedOption(ulong l)

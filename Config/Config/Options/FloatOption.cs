@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Config.Options
 {
-	public class FloatOption : Option<float>
+    public class FloatOption : NumericOption<float>
 	{
 		public FloatOption(float data)
 		{

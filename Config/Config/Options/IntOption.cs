@@ -1,6 +1,6 @@
 ﻿namespace Config.Options
 {
-	public class IntOption : Option<int>
+    public class IntOption : NumericOption<int>
 	{
 		public IntOption(int data)
 		{

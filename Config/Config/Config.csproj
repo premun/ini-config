@@ -86,6 +86,7 @@
     <Compile Include="Options\ConstraintOption.cs" />
     <Compile Include="Options\FloatOption.cs" />
     <Compile Include="Options\EnumOption.cs" />
+    <Compile Include="Options\NumericOption.cs" />
     <Compile Include="Options\Option.cs" />
     <Compile Include="IConfigSaver.cs" />
     <Compile Include="IConfigSection.cs" />
