@@ -2,7 +2,7 @@
 
 namespace Config.Options
 {
-    public class UnsignedOption : NumericOption<ulong>
+    public sealed class UnsignedOption : NumericOption<ulong>
 	{
 		public UnsignedOption(ulong data)
 		{

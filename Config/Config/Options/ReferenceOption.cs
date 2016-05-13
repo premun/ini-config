@@ -4,7 +4,7 @@ using Config.ConfigExceptions;
 
 namespace Config.Options
 {
-	public class ReferenceOption : Option
+	public sealed class ReferenceOption : Option
 	{
 		public string Section { get; set; }
 

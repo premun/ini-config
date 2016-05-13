@@ -2,7 +2,7 @@
 
 namespace Config.Options
 {
-    public class SignedOption : NumericOption<long>
+    public sealed class SignedOption : NumericOption<long>
     {
         public SignedOption(long data)
         {

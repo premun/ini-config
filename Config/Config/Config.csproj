@@ -82,11 +82,17 @@
     <Compile Include="IniFiles\Parser\Tokens\OptionToken.cs" />
     <Compile Include="IniFiles\Parser\Tokens\SectionHeaderToken.cs" />
     <Compile Include="IniFiles\Parser\Tokens\Token.cs" />
+    <Compile Include="Options\NumericValues\BinaryValue.cs" />
     <Compile Include="Options\CommentOption.cs" />
     <Compile Include="Options\ConstraintOption.cs" />
+    <Compile Include="Options\NumericValues\DecimalValue.cs" />
     <Compile Include="Options\FloatOption.cs" />
     <Compile Include="Options\EnumOption.cs" />
+    <Compile Include="Options\NumericValues\HexValue.cs" />
     <Compile Include="Options\NumericOption.cs" />
+    <Compile Include="Options\NumericValues\NumericPrefix.cs" />
+    <Compile Include="Options\NumericValues\NumericValue.cs" />
+    <Compile Include="Options\NumericValues\OctalValue.cs" />
     <Compile Include="Options\Option.cs" />
     <Compile Include="IConfigSaver.cs" />
     <Compile Include="IConfigSection.cs" />

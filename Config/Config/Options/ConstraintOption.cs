@@ -2,7 +2,7 @@
 
 namespace Config.Options
 {
-	public class ConstraintOption<T> : Option<T>
+	public sealed class ConstraintOption<T> : Option<T>
 	{
 		internal Predicate<T> Constraint { get; set; }
 

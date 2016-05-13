@@ -2,7 +2,7 @@
 
 namespace Config.Options
 {
-	public class BoolOption : Option<bool>
+	public sealed class BoolOption : Option<bool>
 	{
 		private readonly string _textValue;
 

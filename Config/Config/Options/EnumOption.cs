@@ -2,7 +2,7 @@ using System;
 
 namespace Config.Options
 {
-	public class EnumOption<T> : Option<T> where T : struct, IConvertible
+	public sealed class EnumOption<T> : Option<T> where T : struct, IConvertible
 	{
 		internal T Value;
 

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Config.Options
 {
-    public class ListOption<T> : Option<T> where T : Option
+    public sealed class ListOption<T> : Option<T> where T : Option
     {
         private IList<T> _values;
 

@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Config.Options
 {
-    public class FloatOption : NumericOption<float>
+    public sealed class FloatOption : NumericOption<float>
 	{
 		public FloatOption(float data)
 		{
@@ -12,6 +12,7 @@ namespace Config.Options
 
 		public FloatOption(string value)
 		{
+            // Float does not support binary/hex/... format
 			Data = float.Parse(value, CultureInfo.InvariantCulture);
 		}
 

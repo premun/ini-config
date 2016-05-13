@@ -1,6 +1,8 @@
-﻿namespace Config.Options
+﻿using System;
+
+namespace Config.Options
 {
-    public class IntOption : NumericOption<int>
+    public sealed class IntOption : NumericOption<int>
 	{
 		public IntOption(int data)
 		{
@@ -9,8 +11,9 @@
 
 		public IntOption(string value)
 		{
-			Data = int.Parse(value);
-		}
+            var preparedValue = ParseValueToNumeric(value);
+            Data = Convert.ToInt32(preparedValue.StringValue, preparedValue.NumericSystem);
+        }
 
 		public static implicit operator IntOption(int i)
 		{

@@ -263,6 +263,7 @@ ref3 = ${Refs#ref1}";
 	    {
             const string configData = @"
 [Scalars]
+int=0x80C1
 signed=0x80C1
 unsigned = 0x80C1";
 
@@ -272,15 +273,17 @@ unsigned = 0x80C1";
 
             builder.Ok.Should().BeTrue();
 
-            var integer = config["Scalars"]["signed"].Signed;
-	        integer.ShouldBeEquivalentTo(32961);
-	    }
+            config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(32961);
+            config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(32961);
+            config["Scalars"]["int"].Int.ShouldBeEquivalentTo(32961);
+        }
 
         [TestMethod]
         public void FormatBinaryShoulWorks()
         {
             const string configData = @"
 [Scalars]
+int= 0b00001100
 signed=0b00001100
 unsigned = 0b00001100";
 
@@ -290,8 +293,9 @@ unsigned = 0b00001100";
 
             builder.Ok.Should().BeTrue();
 
-            var integer = config["Scalars"]["signed"].Signed;
-            integer.ShouldBeEquivalentTo(12);
+            config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(12);
+            config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(12);
+            config["Scalars"]["int"].Int.ShouldBeEquivalentTo(12);
         }
 
         [TestMethod]
@@ -299,6 +303,7 @@ unsigned = 0b00001100";
         {
             const string configData = @"
 [Scalars]
+int=014
 signed=014
 unsigned = 014";
 
@@ -308,8 +313,9 @@ unsigned = 014";
 
             builder.Ok.Should().BeTrue();
 
-            var integer = config["Scalars"]["signed"].Signed;
-            integer.ShouldBeEquivalentTo(12);
+            config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(12);
+            config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(12);
+            config["Scalars"]["int"].Int.ShouldBeEquivalentTo(12);
         }
 
         [TestMethod]
@@ -317,6 +323,7 @@ unsigned = 014";
         {
             const string configData = @"
 [Scalars]
+int = 0
 signed=0
 unsigned = 0";
 
@@ -326,8 +333,9 @@ unsigned = 0";
 
             builder.Ok.Should().BeTrue();
 
-            var integer = config["Scalars"]["signed"].Signed;
-            integer.ShouldBeEquivalentTo(0);
+            config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(0);
+            config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(0);
+            config["Scalars"]["int"].Int.ShouldBeEquivalentTo(0);
         }
 
 		private static ITokenParser GetTokenParser(string configData)
