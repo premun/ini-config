@@ -17,7 +17,7 @@ namespace Config.Format.OptionSpecifiers
 		{
 			T val;
 
-			// TODO: tohle neni asi taky uplne vyborny
+            // Enum has to be parsed (cannot be converted)
 			if (default(T) is Enum)
 			{
 				val = (T) Enum.Parse(typeof(T), value);

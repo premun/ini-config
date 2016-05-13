@@ -3,7 +3,6 @@ using Config.Format;
 
 namespace Config
 {
-	// TODO: Jenom rychla implementace, aby mi bezely testy. Treba asi zchecknout.
 	public class Config : IConfig
 	{
 		private readonly Dictionary<string, IConfigSection> _sections;

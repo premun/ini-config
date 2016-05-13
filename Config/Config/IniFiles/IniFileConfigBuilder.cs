@@ -16,8 +16,7 @@ namespace Config.IniFiles
 	/// <summary>
 	/// Class that builds a config out of an ini file.
 	/// </summary>
-	/// TODO: Turn into internal?
-	public class IniFileConfigBuilder : IConfigBuilder, IDisposable
+	internal class IniFileConfigBuilder : IConfigBuilder, IDisposable
 	{
 		private readonly string _path;
 
@@ -106,7 +105,7 @@ namespace Config.IniFiles
 				Token token;
 				while ((token = _parser.GetNextToken()) != null)
 				{
-					// TODO: Okomentovat
+					// Casts token to dynamic so right method will be founded at runtime.
 					ParseToken((dynamic) token);
 				}
 			}

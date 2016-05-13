@@ -7,8 +7,7 @@ namespace Config.IniFiles
 	/// <summary>
 	/// Example stub of an object that will store config into an ini file.
 	/// </summary>
-	/// TODO: Turn into internal?
-	public class IniFileConfigSaver : IConfigSaver
+    internal class IniFileConfigSaver : IConfigSaver
 	{
 		private readonly string _path;
 
