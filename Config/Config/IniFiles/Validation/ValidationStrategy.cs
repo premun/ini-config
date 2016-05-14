@@ -27,7 +27,7 @@ namespace Config.IniFiles.Validation
         {
             var errors = new List<ConfigException>();
 
-            var foundedSection = new List<SectionSpecifier>();
+            var foundSection = new List<SectionSpecifier>();
 
             foreach (var section in congif.FormatSpecifier.Sections)
             {
@@ -37,10 +37,10 @@ namespace Config.IniFiles.Validation
                 }
                 else
                 {
-                    foundedSection.Add(section);
+                    foundSection.Add(section);
                     foreach (var requiredOption in section)
                     {
-                        if (congif[section.Name].Contain(requiredOption.Name))
+                        if (!congif[section.Name].Contain(requiredOption.Name))
                         {
                             errors.Add(new MissingOptionException(section.Name, requiredOption.Name));
                         }
