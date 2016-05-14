@@ -186,12 +186,15 @@ namespace ConfigTests.Format
 			builder.Build(formatSpecifier, BuildMode.Relaxed);
 			builder.Ok.Should().BeFalse();
 
-			var errors = builder.Errors.ToArray();
 
-			errors.Count().ShouldBeEquivalentTo(3);
-			errors[0].Should().BeOfType<MissingSectionException>();
-			errors[1].Should().BeOfType<MissingOptionException>();
-			errors[2].Should().BeOfType<MissingSectionException>();
+            builder.Errors.First().Should().BeOfType<MissingSectionOrOptionError>();
+            var error = (MissingSectionOrOptionError)builder.Errors.First();
+
+            var errors = error.ConfigExceptions.ToArray();
+
+            errors.Count().ShouldBeEquivalentTo(2);
+            errors[0].Should().BeOfType<MissingSectionException>();
+            errors[1].Should().BeOfType<MissingSectionException>();
 		}
 	}
 }
