@@ -47,6 +47,8 @@
     <Compile Include="BuildMode.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ConfigExceptions\ConfigException.cs" />
+    <Compile Include="ConfigExceptions\RedundantOptionException.cs" />
+    <Compile Include="ConfigExceptions\RedundantSectionException.cs" />
     <Compile Include="ConfigExceptions\ReferenceCycleException.cs" />
     <Compile Include="ConfigExceptions\MissingReferencedException.cs" />
     <Compile Include="ConfigSection.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="IniFiles\Parser\Tokens\OptionToken.cs" />
     <Compile Include="IniFiles\Parser\Tokens\SectionHeaderToken.cs" />
     <Compile Include="IniFiles\Parser\Tokens\Token.cs" />
+    <Compile Include="IniFiles\Validation\RelaxedStrategy.cs" />
     <Compile Include="IniFiles\Validation\ValidationFactory.cs" />
     <Compile Include="IniFiles\Validation\ValidationStrategy.cs" />
     <Compile Include="Options\NumericValues\BinaryValue.cs" />
