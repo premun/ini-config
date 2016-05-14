@@ -9,6 +9,7 @@ using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using Config.Options;
 
+
 [assembly: InternalsVisibleTo("ConfigTests")]
 
 namespace Config.IniFiles
@@ -20,8 +21,8 @@ namespace Config.IniFiles
 	{
 		private readonly string _path;
 
-	    private const string ReferencePattern =
-	        @"^\$\{([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)#([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)\}";
+		private const string ReferencePattern =
+			@"^\$\{([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)#([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)\}";
 
 
 		#region Parsing context related fields
@@ -46,10 +47,12 @@ namespace Config.IniFiles
 			_parser = new TokenParser();
 		}
 
+
 		internal IniFileConfigBuilder(ITokenParser tokenParser)
 		{
 			_parser = tokenParser;
 		}
+
 
 		public IConfig Build(ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
 		{
@@ -57,6 +60,7 @@ namespace Config.IniFiles
 			Build(config, formatSpecifier, buildMode);
 			return config;
 		}
+
 
 		public void Build(IConfig config, ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
 		{
@@ -93,7 +97,7 @@ namespace Config.IniFiles
 			}
 		}
 
-	    /// <summary>
+		/// <summary>
 		/// Reads the ini file and creates sections and options (with string values).
 		/// </summary>
 		private void ParseConfig()
@@ -147,7 +151,8 @@ namespace Config.IniFiles
 
 		private void ParseToken(CommentToken token)
 		{
-			// TODO: Opravdu tohle chovani?
+			// We will remember the last comment in the section as the only one
+			// Might not be the best solution, but not sure what is the right behaviour
 			if (_currentSection != null)
 			{
 				_currentSection.Comment = token.Content;
@@ -170,12 +175,12 @@ namespace Config.IniFiles
 				return new StringOption(token);
 			}
 
-            // Checks if string is reference
-            var regex = Regex.Match(token.Value, ReferencePattern);
-            if (regex.Success)
-            {
-                return new ReferenceOption(regex.Groups[1].Value, regex.Groups[2].Value, _config);
-            }
+			// Checks if string is reference
+			var regex = Regex.Match(token.Value, ReferencePattern);
+			if (regex.Success)
+			{
+				return new ReferenceOption(regex.Groups[1].Value, regex.Groups[2].Value, _config);
+			}
 
 			var formatOption = formatSection[token.Name];
 			if (formatOption == null)
@@ -185,7 +190,7 @@ namespace Config.IniFiles
 
 			try
 			{
-                var option = ParseToken(formatOption, token);
+				var option = ParseToken(formatOption, token);
 				option.Comment = token.Comment;
 				return option;
 			}
@@ -196,10 +201,10 @@ namespace Config.IniFiles
 			}
 		}
 
-	    private Option ParseToken(OptionSpecifier specifier, OptionToken token)
-	    {
-	        return specifier.Parse(token.Value);
-	    }
+		private Option ParseToken(OptionSpecifier specifier, OptionToken token)
+		{
+			return specifier.Parse(token.Value);
+		}
 
 		private void ValidateConfig()
 		{

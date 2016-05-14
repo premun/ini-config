@@ -2,6 +2,13 @@
 using Config.Format.OptionSpecifiers;
 using FluentAssertions;
 using NUnit.Framework;
+using Config.IniFiles.Parser.Tokens;
+using Config.IniFiles;
+using Config;
+using System;
+using System.Linq;
+using Config.IniFiles.Errors;
+using Config.ConfigExceptions;
 
 namespace ConfigTests.Format
 {
@@ -14,7 +21,6 @@ namespace ConfigTests.Format
 			Eu,
 			Fr
 		}
-
 
 		[Test]
 		public void SpecificationShouldBeSaved()
@@ -50,6 +56,136 @@ namespace ConfigTests.Format
 			httpSection["use_https"].Should().NotBeNull();
 			httpSection["use_https"].Required.Should().BeFalse();
 			((BoolOptionSpecifier) httpSection["use_https"]).DefaultValue.ShouldBeEquivalentTo(null);
+		}
+
+		[Test]
+		public void MissingSectionShouldRaise()
+		{
+			var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Foo" },
+				new OptionToken
+				{
+					Name = "foo",
+					Value = "bar"
+				}
+			});
+
+			var formatSpecifier = new ConfigFormatSpecifier()
+				.AddSection("Server", true)
+				.AddOption(new StringOptionSpecifier("hostname", true))
+				.FinishDefinition();
+
+			var builder = new IniFileConfigBuilder(parser);
+
+			Action build = () => {
+				builder.Build(formatSpecifier, BuildMode.Strict);
+			};
+
+			build.ShouldThrow<ConfigFormatException>();
+			builder.Ok.Should().BeFalse();
+			builder.Errors.First().Should().BeOfType<MissingSectionException>();
+		}
+
+		[Test]
+		public void MissingOptionShouldRaise()
+		{
+			var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Server" },
+				new OptionToken
+				{
+					Name = "foo",
+					Value = "bar"
+				}
+			});
+
+			var formatSpecifier = new ConfigFormatSpecifier()
+				.AddSection("Server", true)
+				.AddOption(new StringOptionSpecifier("hostname", true))
+				.FinishDefinition();
+
+			var builder = new IniFileConfigBuilder(parser);
+
+			Action build = () => {
+				builder.Build(formatSpecifier, BuildMode.Strict);
+			};
+
+			build.ShouldThrow<ConfigFormatException>();
+			builder.Ok.Should().BeFalse();
+			builder.Errors.First().Should().BeOfType<MissingOptionException>();
+		}
+
+		[Test]
+		public void MultipleMissingItemsShouldRaise()
+		{
+			var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Foo" },
+				new OptionToken
+				{
+					Name = "foo",
+					Value = "bar"
+				}
+			});
+
+			var formatSpecifier = new ConfigFormatSpecifier()
+				.AddSection("Server", true)
+				.AddOption(new StringOptionSpecifier("hostname", true))
+				.AddOption(new IntOptionSpecifier("port", true))
+				.AddSection("Server 2", true)
+				.AddOption(new StringOptionSpecifier("hostname", true))
+				.FinishDefinition();
+
+			var builder = new IniFileConfigBuilder(parser);
+
+			Action build = () => {
+				builder.Build(formatSpecifier, BuildMode.Strict);
+			};
+
+			build.ShouldThrow<ConfigFormatException>();
+			builder.Ok.Should().BeFalse();
+
+			var errors = builder.Errors.ToArray();
+
+			errors.Count().ShouldBeEquivalentTo(3);
+			errors[0].Should().BeOfType<MissingSectionException>();
+			errors[1].Should().BeOfType<MissingOptionException>();
+			errors[2].Should().BeOfType<MissingSectionException>();
+		}
+
+		[Test]
+		public void MissingItemsInRelaxedModeShouldBeReported()
+		{
+			var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Foo" },
+				new OptionToken
+				{
+					Name = "foo",
+					Value = "bar"
+				}
+			});
+
+			var formatSpecifier = new ConfigFormatSpecifier()
+				.AddSection("Server", true)
+				.AddOption(new StringOptionSpecifier("hostname", true))
+				.AddOption(new IntOptionSpecifier("port", true))
+				.AddSection("Server 2", true)
+				.AddOption(new StringOptionSpecifier("hostname", true))
+				.FinishDefinition();
+
+			var builder = new IniFileConfigBuilder(parser);
+
+			builder.Build(formatSpecifier, BuildMode.Relaxed);
+			builder.Ok.Should().BeFalse();
+
+			var errors = builder.Errors.ToArray();
+
+			errors.Count().ShouldBeEquivalentTo(3);
+			errors[0].Should().BeOfType<MissingSectionException>();
+			errors[1].Should().BeOfType<MissingOptionException>();
+			errors[2].Should().BeOfType<MissingSectionException>();
 		}
 	}
 }
