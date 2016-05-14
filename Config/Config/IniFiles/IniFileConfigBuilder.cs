@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using Config.ConfigExceptions;
 using Config.Format;
 using Config.Format.OptionSpecifiers;
 using Config.IniFiles.Errors;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
+using Config.IniFiles.Validation;
 using Config.Options;
 
 
@@ -27,7 +30,7 @@ namespace Config.IniFiles
 
 		#region Parsing context related fields
 
-		private IList<FormatError> _errors;
+		private List<FormatError> _errors;
 
 		private ConfigFormatSpecifier _formatSpecifier;
 
@@ -65,12 +68,14 @@ namespace Config.IniFiles
 		public void Build(IConfig config, ConfigFormatSpecifier formatSpecifier = null, BuildMode buildMode = BuildMode.Relaxed)
 		{
 			_config = config;
+		    _config.FormatSpecifier = formatSpecifier;
 			_errors = new List<FormatError>();
 			_formatSpecifier = formatSpecifier;
 			_buildMode = buildMode;
 
 			ParseConfig();
-			ValidateConfig();
+		    var strategy = ValidationFactory.GetValidationStrategy(buildMode);
+			ValidateConfig(strategy);
 		}
 
 		public IEnumerable<FormatError> Errors
@@ -206,10 +211,17 @@ namespace Config.IniFiles
 			return specifier.Parse(token.Value);
 		}
 
-		private void ValidateConfig()
-		{
-			// TODO: Zvalidovat chybejici options/sections a reportovat errory
-		}
+        /// <summary>
+        /// Validates the configuration.
+        /// </summary>
+        private void ValidateConfig(IValidation validation)
+        {
+            var errors = validation.ValidateConfig(_config);
+            if (errors.Any())
+            {
+                ReportValidationErrors(errors);
+            }
+        }
 
 		/// <summary>
 		/// Depending on BuildMode, either throws an exception (Strict) or adds error to the list of errors.
@@ -226,7 +238,20 @@ namespace Config.IniFiles
 			}
 		}
 
-		public void Dispose()
+        private void ReportValidationErrors(IList<ConfigException> errors)
+        {
+            var exception = new ConfigFormatException
+            {
+                ErrorList = errors
+            };
+            _errors.Add(new MissingSectionOrOptionError(exception));
+            if (_buildMode == BuildMode.Strict)
+            {
+                throw exception;
+            }
+        }
+
+        public void Dispose()
 		{
 			_parser.Dispose();
 		}

@@ -29,6 +29,11 @@ namespace Config.Format
 		    _sections = new Dictionary<string, SectionSpecifier>();
 	    }
 
+        internal IEnumerable<SectionSpecifier> Sections
+        {
+            get { return _sections.Values; }
+        } 
+
 	    public FluentSectionSpecifier AddSection(string name, bool required = false)
 	    {
 			var sectionSpecifier = new SectionSpecifier(name, required);

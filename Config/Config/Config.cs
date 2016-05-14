@@ -13,7 +13,7 @@ namespace Config
 			_sections = new Dictionary<string, IConfigSection>();
 		}
 
-        public ConfigFormatSpecifier FormatSpecifier { get; private set; }
+        public ConfigFormatSpecifier FormatSpecifier { get; set; }
 
 		public IConfigSection this[string name]
 		{
@@ -63,5 +63,10 @@ namespace Config
 		{
 			return _sections.Remove(name);
 		}
+
+	    public bool ContainSection(string name)
+	    {
+	        return _sections.ContainsKey(name);
+	    }
 	}
 }

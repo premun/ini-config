@@ -50,5 +50,7 @@ namespace Config
 		/// <param name="key">Item's key</param>
 		/// <returns>True, when item was present and removed, false otherwise.</returns>
 		bool Remove(string key);
+
+	    bool Contain(string key);
     }
 }

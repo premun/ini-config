@@ -11,7 +11,7 @@ namespace Config
 		/// <summary>
 		/// Format specifier that was used when config instance was built.
 		/// </summary>
-		ConfigFormatSpecifier FormatSpecifier { get; }
+		ConfigFormatSpecifier FormatSpecifier { get; set; }
 
         /// <summary>
         /// Retreive config section by its name.
@@ -52,5 +52,7 @@ namespace Config
         /// <param name="name">Section's name</param>
         /// <returns>True, if section was present.</returns>
         bool RemoveSection(string name);
+
+        bool ContainSection(string name);
     }
 }

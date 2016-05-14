@@ -82,7 +82,12 @@ namespace Config
 			return _options.Remove(key);
 		}
 
-		public IEnumerator<Option> GetEnumerator()
+	    public bool Contain(string key)
+	    {
+	        return _options.ContainsKey(key);
+	    }
+
+	    public IEnumerator<Option> GetEnumerator()
 		{
 			return _options.Values.GetEnumerator();
 		}

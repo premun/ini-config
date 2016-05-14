@@ -84,7 +84,9 @@ namespace ConfigTests.Format
 
 			build.ShouldThrow<ConfigFormatException>();
 			builder.Ok.Should().BeFalse();
-			builder.Errors.First().Should().BeOfType<MissingSectionException>();
+			builder.Errors.First().Should().BeOfType<MissingSectionOrOptionError>();
+		    var error = (MissingSectionOrOptionError) builder.Errors.First();
+		    error.ConfigExceptions.First().Should().BeOfType<MissingSectionException>();
 		}
 
 		[Test]

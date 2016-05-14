@@ -39,6 +39,11 @@ namespace Config.Format
 			_options[optionSpecifier.Name] = optionSpecifier;
 		}
 
+	    internal bool ContainsOption(string name)
+	    {
+	        return _options.ContainsKey(name);
+	    }
+
 		public IEnumerator<OptionSpecifier> GetEnumerator()
 		{
 			return _options.Values.GetEnumerator();
