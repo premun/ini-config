@@ -150,12 +150,14 @@ namespace ConfigTests.Format
 			build.ShouldThrow<ConfigFormatException>();
 			builder.Ok.Should().BeFalse();
 
-			var errors = builder.Errors.ToArray();
+            builder.Errors.First().Should().BeOfType<MissingSectionOrOptionError>();
+            var error = (MissingSectionOrOptionError)builder.Errors.First();
 
-			errors.Count().ShouldBeEquivalentTo(3);
+            var errors = error.ConfigExceptions.ToArray();
+
+			errors.Count().ShouldBeEquivalentTo(2);
 			errors[0].Should().BeOfType<MissingSectionException>();
-			errors[1].Should().BeOfType<MissingOptionException>();
-			errors[2].Should().BeOfType<MissingSectionException>();
+			errors[1].Should().BeOfType<MissingSectionException>();
 		}
 
 		[Test]
