@@ -4,62 +4,63 @@ using System.Linq;
 
 namespace Config.Options
 {
-    public sealed class ListOption<T> : Option<T> where T : Option
-    {
-        private IList<T> _values;
+	public sealed class ListOption<T> : Option<T> where T : Option
+	{
+		private IList<T> _values;
 
-        public IEnumerable<T> Values
-        {
-            get { return _values; }
-            set { _values = value.ToList(); }
-        }
+		public IEnumerable<T> Values
+		{
+			get { return _values; }
+			set { _values = value.ToList(); }
+		}
 
-        #region Overrides of Option
+		#region Overrides of Option
 
-        public override object Data
-        {
-            get
-            {
-                return Values;
-            }
-            protected set
-            {
-                Values = (IEnumerable<T>)value;
-            }
-        }
+		public override object Data
+		{
+			get
+			{
+				return Values;
+			}
+			protected set
+			{
+				Values = (IEnumerable<T>) value;
+			}
+		}
 
-        #endregion
+		#endregion
 
-        public ListOption(IEnumerable<T> values)
-        {
-            Values = values;
-        }
+		public ListOption(IEnumerable<T> values)
+		{
+			Values = values;
+		}
 
-        public ListOption(T[] values)
-        {
-            Values = values;
-        }
+		public ListOption(T[] values)
+		{
+			Values = values;
+		}
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ListOption{T}"/> class.
-        /// This constructor is used for runtime generic initialization.
-        /// </summary>
-        public ListOption() { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ListOption{T}"/> class.
+		/// This constructor is used for runtime generic initialization.
+		/// </summary>
+		public ListOption()
+		{
+		}
 
-        public IEnumerable<T> Get()
-        {
-            return _values;
-        }
+		public IEnumerable<T> Get()
+		{
+			return _values;
+		}
 
-        public override string Serialize()
-        {
-            // TODO
-            throw new NotImplementedException();
-        }
+		public override string Serialize()
+		{
+			return string.Join(", ", _values.Select(x => x.Serialize()));
+		}
 
-        public static implicit operator ListOption<T>(T[] t)
-        {
-            return new ListOption<T>(t);
-        }
-    }
+		public static implicit operator ListOption<T>(T[] t)
+		{
+			return new ListOption<T>(t);
+		}
+	}
 }

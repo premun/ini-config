@@ -17,8 +17,8 @@ namespace ConfigTests.IniFiles
 		{
 			var parser = MockFactory.TokenParser(new Token[]
 			{
-				new SectionHeaderToken {Name = "Foo"},
-				new SectionHeaderToken {Name = "Foo"}
+				new SectionHeaderToken { Name = "Foo" },
+				new SectionHeaderToken { Name = "Foo" }
 			});
 
 			var builder = new IniFileConfigBuilder(parser);
@@ -56,13 +56,13 @@ namespace ConfigTests.IniFiles
 		{
 			var parser = MockFactory.TokenParser(new Token[]
 			{
-				new SectionHeaderToken {Name = "Foo"},
+				new SectionHeaderToken { Name = "Foo" },
 				new OptionToken
 				{
 					Name = "foo",
 					Value = "bar"
 				},
-				new SectionHeaderToken {Name = "Foo"}
+				new SectionHeaderToken { Name = "Foo" }
 			});
 
 			var builder = new IniFileConfigBuilder(parser);
@@ -80,7 +80,7 @@ namespace ConfigTests.IniFiles
 		{
 			var parser = MockFactory.TokenParser(new Token[]
 			{
-				new SectionHeaderToken {Name = "Foo"},
+				new SectionHeaderToken { Name = "Foo" },
 				new OptionToken
 				{
 					Name = "foo!",
@@ -94,7 +94,9 @@ namespace ConfigTests.IniFiles
 				builder.Build(buildMode: BuildMode.Strict);
 			};
 
-			build.ShouldThrow<IniConfigException>().And.Errors.First().Should().BeOfType<InvalidIdentifierError>();
+			build
+				.ShouldThrow<IniConfigException>()
+				.And.Errors.First().Should().BeOfType<InvalidIdentifierError>();
 			builder.Ok.Should().BeFalse();
 		}
 
@@ -108,7 +110,7 @@ namespace ConfigTests.IniFiles
 					Name = "foo",
 					Value = "bar"
 				},
-				new SectionHeaderToken {Name = "Foo"}
+				new SectionHeaderToken { Name = "Foo" }
 			});
 
 			var builder = new IniFileConfigBuilder(parser);
