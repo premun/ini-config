@@ -29,6 +29,11 @@ namespace Config.Format
 		    _sections = new Dictionary<string, SectionSpecifier>();
 	    }
 
+        public bool Contain(string key)
+        {
+            return _sections.ContainsKey(key);
+        }
+
         internal IEnumerable<SectionSpecifier> Sections
         {
             get { return _sections.Values; }

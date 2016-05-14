@@ -17,7 +17,7 @@ namespace Config.IniFiles.Validation
 
         public abstract IList<ConfigException> ValidateConfig(IConfig config);
 
-        protected IList<ConfigException> FoundMissingMembers(IConfig config)
+        protected List<ConfigException> FoundMissingMembers(IConfig config)
         {
             var errors = new List<ConfigException>();
 
@@ -52,23 +52,34 @@ namespace Config.IniFiles.Validation
         public override IList<ConfigException> ValidateConfig(IConfig config)
         {
             var errors = FoundMissingMembers(config);
-            // TODO obracena validace na prvky, ktere jsou navic.
+            errors.AddRange(CheckRedundantMembers(config));
             return errors;
         }
 
         #endregion
-    }
 
-    public class RelaxedStrategy : ValidationStrategy
-    {
-        #region Overrides of ValidationStrategy
-
-        public override IList<ConfigException> ValidateConfig(IConfig config)
+        private IList<ConfigException> CheckRedundantMembers(IConfig config)
         {
-            var errors = FoundMissingMembers(config);
+            var errors = new List<ConfigException>();
+            foreach (var section in config.Sections)
+            {
+                if (!config.FormatSpecifier.Contain(section.Name))
+                {
+                    errors.Add(new RedundantSectionException(section.Name));
+                }
+                else
+                {
+                    foreach (var requiredOption in section.Keys())
+                    {
+                        if (!config[section.Name].Contain(requiredOption))
+                        {
+                            errors.Add(new RedundantOptionException(section.Name, requiredOption));
+                        }
+                    }
+                }
+            }
+
             return errors;
         }
-
-        #endregion
     }
 }
