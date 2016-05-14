@@ -5,14 +5,14 @@ using Config.IniFiles;
 using Config.IniFiles.Errors;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests.IniFiles
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenBuildingInvalidConfig
 	{
-		[TestMethod]
+		[Test]
 		public void RelaxedBuildModeShouldNotThrow()
 		{
 			var parser = MockFactory.TokenParser(new Token[]
@@ -28,7 +28,7 @@ namespace ConfigTests.IniFiles
 			builder.Errors.First().Should().BeOfType<DuplicateSectionError>();
 		}
 
-		[TestMethod]
+		[Test]
 		public void StrictBuildModeShouldNotThrow()
 		{
 			var parser = MockFactory.TokenParser(new Token[]
@@ -51,7 +51,7 @@ namespace ConfigTests.IniFiles
 			builder.Errors.First().Should().BeOfType<NoSectionError>();
 		}
 
-		[TestMethod]
+		[Test]
 		public void DuplicateSectionShouldRaiseError()
 		{
 			var parser = MockFactory.TokenParser(new Token[]
@@ -75,7 +75,7 @@ namespace ConfigTests.IniFiles
 			builder.Ok.Should().BeFalse();
 		}
 
-		[TestMethod]
+		[Test]
 		public void InvalidIdentifierShouldRaiseError()
 		{
 			var parser = MockFactory.TokenParser(new Token[]
@@ -98,7 +98,7 @@ namespace ConfigTests.IniFiles
 			builder.Ok.Should().BeFalse();
 		}
 
-		[TestMethod]
+		[Test]
 		public void NoSectionShouldRaiseError()
 		{
 			var parser = MockFactory.TokenParser(new Token[]

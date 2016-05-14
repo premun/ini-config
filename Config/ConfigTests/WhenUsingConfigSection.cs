@@ -2,14 +2,14 @@
 using Config.Format;
 using Config.Format.OptionSpecifiers;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenUsingConfigSection
 	{
-		[TestMethod]
+		[Test]
 		public void OptionOperationsShouldWork()
 		{
 			var specifier = new ConfigFormatSpecifier().AddSection("Foo").FinishDefinition();
@@ -35,7 +35,7 @@ namespace ConfigTests
 			section["foo"].Float.ShouldBeEquivalentTo(f);
 		}
 
-		[TestMethod]
+		[Test]
 		public void GettingOptionKeysShouldWork()
 		{
 			var config = new Config.Config();

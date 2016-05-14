@@ -6,14 +6,14 @@ using Config.Format;
 using Config.Format.OptionSpecifiers;
 using Config.IniFiles;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests.IniFiles
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenSavingConfig
 	{
-		[TestMethod]
+		[Test]
 		public void BasicCaseShouldWork()
 		{
 			var config = new Config.Config();
@@ -40,7 +40,7 @@ namespace ConfigTests.IniFiles
 			// TODO: test all types
 		}
 
-		[TestMethod]
+		[Test]
 		public void CommentsShouldBeSaved()
 		{
 			var config = new Config.Config();
@@ -58,7 +58,7 @@ namespace ConfigTests.IniFiles
 			lines[2].ShouldBeEquivalentTo("int = 123\t; foobar");
 		}
 
-		[TestMethod]
+		[Test]
 		public void DefaultsShouldBeSaved()
 		{
 			var formatSpecifier = new ConfigFormatSpecifier()

@@ -8,11 +8,11 @@ using Config.IniFiles;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests.IniFiles
 {
-	[TestClass]
+	[TestFixture]
 	// TODO: Add tests for 0x 0b and 0 signed
 	public class WhenParsingValueTypes
 	{
@@ -46,7 +46,7 @@ namespace ConfigTests.IniFiles
                 .AddOption(new BoolOptionSpecifier("reference"))
             .FinishDefinition();
 
-		[TestMethod]
+		[Test]
 		public void ParsingScalarsShouldWork()
 		{
 			const string configData = @"
@@ -77,7 +77,7 @@ unsigned = 70
 			section["unsigned"].Unsigned.ShouldBeEquivalentTo(70L);
 		}
 
-		[TestMethod]
+		[Test]
 		public void ParsingConstraintsShouldWork()
 		{
 			const string configData = @"
@@ -98,7 +98,7 @@ enum = Green
 			((Colors) section["enum"].Data).ShouldBeEquivalentTo(Colors.Green);
 		}
 
-		[TestMethod]
+		[Test]
 		public void ParsingListsShouldWork()
 		{
 			const string configData = @"
@@ -122,7 +122,7 @@ enums = Green, Black, Black
 			ints.ElementAt(1).ShouldBeEquivalentTo(50);
 		}
 
-		[TestMethod]
+		[Test]
 		public void ParsingListsShouldWork2()
 		{
 			const string configData = @"
@@ -144,7 +144,7 @@ strings = foo, bar\;, xy\,z
 			strings.ElementAt(2).ShouldBeEquivalentTo("xy,z");
 		}
 
-        [TestMethod]
+        [Test]
         public void ParsingListsShouldWorkDelimiters()
         {
             const string configData = @"
@@ -165,7 +165,7 @@ strings = foo, bar\;: xy\,z
             strings.ElementAt(1).ShouldBeEquivalentTo("bar;: xy,z");
         }
 
-	    [TestMethod]
+	    [Test]
 	    public void ParsingReferenceShouldWork()
 	    {
 	        const string configData = @"
@@ -192,7 +192,7 @@ reference=    ${Scalars#int}";
 			result.ShouldBeEquivalentTo(100);
 		}
 
-		[TestMethod]
+		[Test]
 		[ExpectedException(typeof(InvalidOperationException))]
 		public void AssignmentInsideReferenceShouldRaiseException()
 		{
@@ -219,7 +219,7 @@ reference=    ${Scalars#int}";
 			config["Refs"]["reference"] = true;
 		}
 
-		[TestMethod]
+		[Test]
 		[ExpectedException(typeof(MissingReferencedException))]
 		public void MissingReferenceShouldRaiseException()
 		{
@@ -238,7 +238,7 @@ reference=    ${Scalars#int}";
 			var x = config["Refs"]["reference"].Int;
 		}
 
-		[TestMethod]
+		[Test]
 		[ExpectedException(typeof(ReferenceCycleException))]
 		public void ReferenceCycleShouldRaiseException()
 		{
@@ -258,7 +258,7 @@ ref3 = ${Refs#ref1}";
 		    Console.WriteLine(x);
 		}
 
-	    [TestMethod]
+	    [Test]
 	    public void FormatHexadecimalShoulWorks()
 	    {
             const string configData = @"
@@ -278,7 +278,7 @@ unsigned = 0x80C1";
             config["Scalars"]["int"].Int.ShouldBeEquivalentTo(32961);
         }
 
-        [TestMethod]
+        [Test]
         public void FormatBinaryShoulWorks()
         {
             const string configData = @"
@@ -298,7 +298,7 @@ unsigned = 0b00001100";
             config["Scalars"]["int"].Int.ShouldBeEquivalentTo(12);
         }
 
-        [TestMethod]
+        [Test]
         public void FormatOctalShoulWorks()
         {
             const string configData = @"
@@ -318,7 +318,7 @@ unsigned = 014";
             config["Scalars"]["int"].Int.ShouldBeEquivalentTo(12);
         }
 
-        [TestMethod]
+        [Test]
         public void FormatZeroShoulWorks()
         {
             const string configData = @"

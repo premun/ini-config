@@ -6,14 +6,14 @@ using Config.IniFiles.Errors;
 using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests.IniFiles.Parser
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenParsingFile
 	{
-		[TestMethod]
+		[Test]
 		public void BasicCaseShouldBeParsedOk()
 		{
 			const string content = "[foo]\n" +
@@ -58,12 +58,13 @@ namespace ConfigTests.IniFiles.Parser
 			}
 		}
 
-		[TestMethod]
+
+		[Test]
 		[ExpectedException(typeof(FormatException))]
 		public void UnmatchedBracketsShouldNotBeParsedOk()
 		{
 			string content = "[foo\n" +
-							 "bar = 123 ; commentary\n";
+			                 "bar = 123 ; commentary\n";
 
 			using (var parser = MockFactory.TokenParser(content))
 			{
@@ -71,12 +72,13 @@ namespace ConfigTests.IniFiles.Parser
 			}
 		}
 
-		[TestMethod]
+
+		[Test]
 		[ExpectedException(typeof(FormatException))]
 		public void MissingEqualSignShouldNotBeParsedOk()
 		{
 			string content = "[foo] ;commentary\n" +
-							 "bar123\n";
+			                 "bar123\n";
 
 			using (var parser = MockFactory.TokenParser(content))
 			{

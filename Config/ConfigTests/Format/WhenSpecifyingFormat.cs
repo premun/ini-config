@@ -1,11 +1,11 @@
 ﻿using Config.Format;
 using Config.Format.OptionSpecifiers;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests.Format
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenSpecifyingFormat
 	{
 		private enum Domains
@@ -15,7 +15,8 @@ namespace ConfigTests.Format
 			Fr
 		}
 
-		[TestMethod]
+
+		[Test]
 		public void SpecificationShouldBeSaved()
 		{
 			var formatSpecifier = new ConfigFormatSpecifier()

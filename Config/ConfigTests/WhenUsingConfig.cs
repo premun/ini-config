@@ -2,14 +2,14 @@
 using Config;
 using Config.Format;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenUsingConfig
 	{
-		[TestMethod]
+		[Test]
 		public void SectionOperationsShouldWork()
 		{
 			var specifier = new ConfigFormatSpecifier().AddSection("Foo").FinishDefinition();

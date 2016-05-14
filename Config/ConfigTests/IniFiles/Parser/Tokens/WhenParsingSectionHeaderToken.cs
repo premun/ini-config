@@ -3,14 +3,14 @@ using System.IO;
 using System.Text;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests.IniFiles.Parser.Tokens
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenParsingSectionHeaderToken
 	{
-		[TestMethod]
+		[Test]
 		public void ValidValuesShouldBeParsedOk()
 		{
 			SectionHeaderToken token;
@@ -31,7 +31,7 @@ namespace ConfigTests.IniFiles.Parser.Tokens
 			token.Name.ShouldBeEquivalentTo("foo");
 		}
 
-		[TestMethod]
+		[Test]
 		public void CommentedPartShouldNotBeParsed()
 		{
 			SectionHeaderToken token;
@@ -43,14 +43,14 @@ namespace ConfigTests.IniFiles.Parser.Tokens
 			token.Name.ShouldBeEquivalentTo("foo");
 		}
 
-		[TestMethod]
+		[Test]
 		[ExpectedException(typeof(FormatException))]
 		public void UnmatchedBracketShouldNotBeParsedOk()
 		{
 			TokenFromString("[foo bar\n123 = 456");
 		}
 
-		[TestMethod]
+		[Test]
 		[ExpectedException(typeof(FormatException))]
 		public void EmptyNameShouldNotBeParsedOk()
 		{

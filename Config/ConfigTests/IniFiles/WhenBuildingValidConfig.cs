@@ -2,14 +2,14 @@
 using Config.IniFiles;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests.IniFiles
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenBuildingValidConfig
 	{
-		[TestMethod]
+		[Test]
 		public void BasicParsingShouldWork()
 		{
 			var parser = MockFactory.TokenParser(new Token[]

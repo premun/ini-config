@@ -1,11 +1,11 @@
 ﻿using Config.Format;
 using Config.Format.OptionSpecifiers;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenSpecifyingDefaults
 	{
 		private enum Colors
@@ -15,7 +15,8 @@ namespace ConfigTests
 			Green
 		}
 
-		[TestMethod]
+
+		[Test]
 		public void BoolDefaults()
 		{
 			const bool defaultValue = true;
@@ -33,11 +34,12 @@ namespace ConfigTests
 			section["null"].Should().BeNull();
 		}
 
+
 		/// <summary>
 		/// Currently it is not possible to initialize a constraint option without a default value.
 		/// When default value not specified, a default value of that type is used.
 		/// </summary>
-		[TestMethod]
+		[Test]
 		[Ignore]
 		public void ConstraintDefaults()
 		{
@@ -59,10 +61,11 @@ namespace ConfigTests
 			section["null"].Should().BeNull();
 		}
 
+
 		/// <summary>
 		/// Same as above
 		/// </summary>
-		[TestMethod]
+		[Test]
 		[Ignore]
 		public void EnumDefaults()
 		{
@@ -81,7 +84,8 @@ namespace ConfigTests
 			section["null"].Should().BeNull();
 		}
 
-		[TestMethod]
+
+		[Test]
 		public void FloatDefaults()
 		{
 			const float defaultValue = 0.4f;
@@ -99,7 +103,8 @@ namespace ConfigTests
 			section["null"].Should().BeNull();
 		}
 
-		[TestMethod]
+
+		[Test]
 		public void IntDefaults()
 		{
 			const int defaultValue = 4;
@@ -117,7 +122,8 @@ namespace ConfigTests
 			section["null"].Should().BeNull();
 		}
 
-		[TestMethod]
+
+		[Test]
 		public void SignedDefaults()
 		{
 			const long defaultValue = 100L;
@@ -135,7 +141,8 @@ namespace ConfigTests
 			section["null"].Should().BeNull();
 		}
 
-		[TestMethod]
+
+		[Test]
 		public void StringDefaults()
 		{
 			const string defaultValue = "bar";
@@ -153,7 +160,8 @@ namespace ConfigTests
 			section["null"].Should().BeNull();
 		}
 
-		[TestMethod]
+
+		[Test]
 		public void UnsignedDefaults()
 		{
 			const ulong defaultValue = 100L;
@@ -171,10 +179,11 @@ namespace ConfigTests
 			section["null"].Should().BeNull();
 		}
 
-		[TestMethod]
+
+		[Test]
 		public void ListDefaults()
 		{
-			var defaultValue = new[] {6, 9, 42};
+			var defaultValue = new[] { 6, 9, 42 };
 
 			var formatSpecifier = new ConfigFormatSpecifier()
 				.AddSection("Foo")
@@ -186,9 +195,9 @@ namespace ConfigTests
 
 			var section = config.AddSection("Foo");
 			var defs = section["default"].IntList;
-            defs[0].ShouldBeEquivalentTo(defaultValue[0]);
-            defs[1].ShouldBeEquivalentTo(defaultValue[1]);
-            defs[2].ShouldBeEquivalentTo(defaultValue[2]);
+			defs[0].ShouldBeEquivalentTo(defaultValue[0]);
+			defs[1].ShouldBeEquivalentTo(defaultValue[1]);
+			defs[2].ShouldBeEquivalentTo(defaultValue[2]);
 			section["null"].Should().BeNull();
 		}
 	}

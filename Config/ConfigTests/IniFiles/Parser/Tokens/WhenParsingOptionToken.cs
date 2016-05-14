@@ -3,14 +3,14 @@ using System.IO;
 using System.Text;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ConfigTests.IniFiles.Parser.Tokens
 {
-	[TestClass]
+	[TestFixture]
 	public class WhenParsingOptionToken
 	{
-		[TestMethod]
+		[Test]
 		public void ValidValuesShouldBeParsedOk()
 		{
 			OptionToken token;
@@ -32,7 +32,7 @@ namespace ConfigTests.IniFiles.Parser.Tokens
 			token.Value.ShouldBeEquivalentTo("=bar=");
 		}
 
-		[TestMethod]
+		[Test]
 		public void CommentedPartShouldNotBeParsed()
 		{
 			OptionToken token;
@@ -46,14 +46,14 @@ namespace ConfigTests.IniFiles.Parser.Tokens
 			token.Value.ShouldBeEquivalentTo("bar");
 		}
 
-		[TestMethod]
+		[Test]
 		[ExpectedException(typeof(FormatException))]
 		public void InValidValuesShouldNotBeParsedOk()
 		{
 			ItemTokenFromString("foo");
 		}
 
-		[TestMethod]
+		[Test]
 		public void EscapedSpaceShouldBeParsedOk()
 		{
 			OptionToken token;
@@ -79,7 +79,7 @@ namespace ConfigTests.IniFiles.Parser.Tokens
 			token.Value.ShouldBeEquivalentTo(@"bar  \");
 		}
 
-		[TestMethod]
+		[Test]
 		public void EscapedSemicolonShouldBeParsedOk()
 		{
 			OptionToken token;
