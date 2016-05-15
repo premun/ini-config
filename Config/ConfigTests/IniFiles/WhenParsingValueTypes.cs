@@ -13,7 +13,6 @@ using NUnit.Framework;
 namespace ConfigTests.IniFiles
 {
 	[TestFixture]
-	// TODO: Add tests for 0x 0b and 0 signed
 	public class WhenParsingValueTypes
 	{
 		private enum Colors
@@ -144,31 +143,31 @@ strings = foo, bar\;, xy\,z
 			strings.ElementAt(2).ShouldBeEquivalentTo("xy,z");
 		}
 
-        [Test]
-        public void ParsingListsShouldWorkDelimiters()
-        {
-            const string configData = @"
+		[Test]
+		public void ParsingListsShouldWorkDelimiters()
+		{
+			const string configData = @"
 [Lists]
 strings = foo, bar\;: xy\,z
 ";
-            var parser = GetTokenParser(configData);
-            var builder = new IniFileConfigBuilder(parser);
-            var config = builder.Build(_formatSpecifier);
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
 
-            builder.Ok.Should().BeTrue();
+			builder.Ok.Should().BeTrue();
 
-            config.Sections.Count().ShouldBeEquivalentTo(1);
-            var section = config["Lists"];
+			config.Sections.Count().ShouldBeEquivalentTo(1);
+			var section = config["Lists"];
 
-            var strings = section["strings"].StringList;
-            strings.ElementAt(0).ShouldBeEquivalentTo("foo");
-            strings.ElementAt(1).ShouldBeEquivalentTo("bar;: xy,z");
-        }
+			var strings = section["strings"].StringList;
+			strings.ElementAt(0).ShouldBeEquivalentTo("foo");
+			strings.ElementAt(1).ShouldBeEquivalentTo("bar;: xy,z");
+		}
 
-	    [Test]
-	    public void ParsingReferenceShouldWork()
-	    {
-	        const string configData = @"
+		[Test]
+		public void ParsingReferenceShouldWork()
+		{
+			const string configData = @"
 [Scalars]
 bool = f ; bool commentary
 float = 1.2
@@ -180,13 +179,13 @@ unsigned = 70
 [Refs]
 reference=    ${Scalars#int}";
 
-            var parser = GetTokenParser(configData);
-            var builder = new IniFileConfigBuilder(parser);
-            var config = builder.Build(_formatSpecifier);
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
 
-            builder.Ok.Should().BeTrue();
+			builder.Ok.Should().BeTrue();
 
-            config.Sections.Count().ShouldBeEquivalentTo(2);
+			config.Sections.Count().ShouldBeEquivalentTo(2);
 
 			var result = config["Refs"]["reference"].Int;
 			result.ShouldBeEquivalentTo(100);
@@ -255,88 +254,88 @@ ref3 = ${Refs#ref1}";
 			builder.Ok.Should().BeTrue();
 
 			var x = config["Refs"]["ref3"].String;
-		    Console.WriteLine(x);
+			Console.WriteLine(x);
 		}
 
-	    [Test]
-	    public void FormatHexadecimalShoulWorks()
-	    {
-            const string configData = @"
+		[Test]
+		public void FormatHexadecimalShoulWorks()
+		{
+			const string configData = @"
 [Scalars]
 int=0x80C1
 signed=0x80C1
 unsigned = 0x80C1";
 
-            var parser = GetTokenParser(configData);
-            var builder = new IniFileConfigBuilder(parser);
-            var config = builder.Build(_formatSpecifier);
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
 
-            builder.Ok.Should().BeTrue();
+			builder.Ok.Should().BeTrue();
 
-            config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(32961);
-            config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(32961);
-            config["Scalars"]["int"].Int.ShouldBeEquivalentTo(32961);
-        }
+			config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(32961);
+			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(32961);
+			config["Scalars"]["int"].Int.ShouldBeEquivalentTo(32961);
+		}
 
-        [Test]
-        public void FormatBinaryShoulWorks()
-        {
-            const string configData = @"
+		[Test]
+		public void FormatBinaryShoulWorks()
+		{
+			const string configData = @"
 [Scalars]
 int= 0b00001100
 signed=0b00001100
 unsigned = 0b00001100";
 
-            var parser = GetTokenParser(configData);
-            var builder = new IniFileConfigBuilder(parser);
-            var config = builder.Build(_formatSpecifier);
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
 
-            builder.Ok.Should().BeTrue();
+			builder.Ok.Should().BeTrue();
 
-            config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(12);
-            config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(12);
-            config["Scalars"]["int"].Int.ShouldBeEquivalentTo(12);
-        }
+			config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(12);
+			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(12);
+			config["Scalars"]["int"].Int.ShouldBeEquivalentTo(12);
+		}
 
-        [Test]
-        public void FormatOctalShoulWorks()
-        {
-            const string configData = @"
+		[Test]
+		public void FormatOctalShoulWorks()
+		{
+			const string configData = @"
 [Scalars]
 int=014
 signed=014
 unsigned = 014";
 
-            var parser = GetTokenParser(configData);
-            var builder = new IniFileConfigBuilder(parser);
-            var config = builder.Build(_formatSpecifier);
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
 
-            builder.Ok.Should().BeTrue();
+			builder.Ok.Should().BeTrue();
 
-            config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(12);
-            config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(12);
-            config["Scalars"]["int"].Int.ShouldBeEquivalentTo(12);
-        }
+			config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(12);
+			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(12);
+			config["Scalars"]["int"].Int.ShouldBeEquivalentTo(12);
+		}
 
-        [Test]
-        public void FormatZeroShoulWorks()
-        {
-            const string configData = @"
+		[Test]
+		public void FormatZeroShoulWorks()
+		{
+			const string configData = @"
 [Scalars]
 int = 0
 signed=0
 unsigned = 0";
 
-            var parser = GetTokenParser(configData);
-            var builder = new IniFileConfigBuilder(parser);
-            var config = builder.Build(_formatSpecifier);
+			var parser = GetTokenParser(configData);
+			var builder = new IniFileConfigBuilder(parser);
+			var config = builder.Build(_formatSpecifier);
 
-            builder.Ok.Should().BeTrue();
+			builder.Ok.Should().BeTrue();
 
-            config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(0);
-            config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(0);
-            config["Scalars"]["int"].Int.ShouldBeEquivalentTo(0);
-        }
+			config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(0);
+			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(0);
+			config["Scalars"]["int"].Int.ShouldBeEquivalentTo(0);
+		}
 
 		private static ITokenParser GetTokenParser(string configData)
 		{

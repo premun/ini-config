@@ -77,6 +77,22 @@ namespace ConfigTests.IniFiles
 			lines[2].ShouldBeEquivalentTo("int = 4");
 		}
 
+		[Test]
+		public void ListsShouldSerialize()
+		{
+			var config = new Config.Config();
+			var section = config.AddSection("Section 1");
+
+			section["strings"] = new[] { "foo", "bar", "xyz" };
+			section["floats"] = new[] { 3.14f, 42.69f, 1.10f };
+
+			var lines = SaveConfigToString(config, Verbosity.None);
+
+			lines[0].ShouldBeEquivalentTo("[Section 1]");
+			lines[1].ShouldBeEquivalentTo("strings = foo, bar, xyz");
+			lines[2].ShouldBeEquivalentTo("floats = 3.14, 42.69, 1.1");
+		}
+
 		private static string[] SaveConfigToString(IConfig config, Verbosity verbosity)
 		{
 			var stream = new MemoryStream();

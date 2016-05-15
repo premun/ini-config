@@ -24,9 +24,11 @@ namespace Config.IniFiles
 	{
 		private readonly string _path;
 
-		private const string ReferencePattern =
-			@"^\$\{([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)#([a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*)\}";
+		private const string IdentifierPattern = 
+			@"[a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*";
 
+		private const string ReferencePattern =
+			@"^\$\{(" + IdentifierPattern + ")#(" + IdentifierPattern + @")\}";
 
 		#region Parsing context related fields
 
@@ -140,10 +142,8 @@ namespace Config.IniFiles
 				return;
 			}
 
-			// TODO: Tahle kontrola by mozna mela bejt nekde niz (treba v OptionToken.Parse()), 
-			// TODO: vyhodit nejakou special vyjjimku a tady ji odchytit a pridat cislo radku atd.
-			// TODO: Pokud se to prenda jinam, tak treba zmenit InvalidIdentifierShouldRaiseError test
-			var identifierRegex = new Regex(@"^[a-zA-Z\.\$:][a-zA-Z0-9_ \-\.:\$]*$");
+			// Ini options have restricted identifier format
+			var identifierRegex = new Regex("^" + IdentifierPattern + "$");
 			if (!identifierRegex.IsMatch(token.Name))
 			{
 				ReportError(new InvalidIdentifierError(token.Name, _parser.GetLine()));
@@ -226,8 +226,7 @@ namespace Config.IniFiles
 		/// <summary>
 		/// Depending on BuildMode, either throws an exception (Strict) or adds error to the list of errors.
 		/// </summary>
-		/// <param name="error"></param>
-		// TODO overit, ze chceme tohle chovani vzhledem k build modum
+		/// <param name="error">Error to be reported</param>
 		private void ReportError(FormatError error)
 		{
 			_errors.Add(error);
