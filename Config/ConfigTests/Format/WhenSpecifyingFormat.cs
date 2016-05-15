@@ -84,8 +84,8 @@ namespace ConfigTests.Format
 
 			build.ShouldThrow<ConfigFormatException>();
 			builder.Ok.Should().BeFalse();
-			builder.Errors.First().Should().BeOfType<MissingSectionOrOptionError>();
-		    var error = (MissingSectionOrOptionError) builder.Errors.First();
+			builder.Errors.First().Should().BeOfType<InvalidSectionOrOptionError>();
+		    var error = (InvalidSectionOrOptionError) builder.Errors.First();
 		    error.ConfigExceptions.First().Should().BeOfType<MissingSectionException>();
 		}
 
@@ -115,8 +115,8 @@ namespace ConfigTests.Format
 
 			build.ShouldThrow<ConfigFormatException>();
 			builder.Ok.Should().BeFalse();
-            builder.Errors.First().Should().BeOfType<MissingSectionOrOptionError>();
-            var error = (MissingSectionOrOptionError)builder.Errors.First();
+            builder.Errors.First().Should().BeOfType<InvalidSectionOrOptionError>();
+            var error = (InvalidSectionOrOptionError)builder.Errors.First();
             error.ConfigExceptions.First().Should().BeOfType<MissingOptionException>();
 		}
 
@@ -139,6 +139,8 @@ namespace ConfigTests.Format
 				.AddOption(new IntOptionSpecifier("port", true))
 				.AddSection("Server 2", true)
 				.AddOption(new StringOptionSpecifier("hostname", true))
+                .AddSection("Foo", true)
+                .AddOption(new StringOptionSpecifier("foo", true))
 				.FinishDefinition();
 
 			var builder = new IniFileConfigBuilder(parser);
@@ -150,8 +152,8 @@ namespace ConfigTests.Format
 			build.ShouldThrow<ConfigFormatException>();
 			builder.Ok.Should().BeFalse();
 
-            builder.Errors.First().Should().BeOfType<MissingSectionOrOptionError>();
-            var error = (MissingSectionOrOptionError)builder.Errors.First();
+            builder.Errors.First().Should().BeOfType<InvalidSectionOrOptionError>();
+            var error = (InvalidSectionOrOptionError)builder.Errors.First();
 
             var errors = error.ConfigExceptions.ToArray();
 
@@ -187,8 +189,8 @@ namespace ConfigTests.Format
 			builder.Ok.Should().BeFalse();
 
 
-            builder.Errors.First().Should().BeOfType<MissingSectionOrOptionError>();
-            var error = (MissingSectionOrOptionError)builder.Errors.First();
+            builder.Errors.First().Should().BeOfType<InvalidSectionOrOptionError>();
+            var error = (InvalidSectionOrOptionError)builder.Errors.First();
 
             var errors = error.ConfigExceptions.ToArray();
 
@@ -196,5 +198,123 @@ namespace ConfigTests.Format
             errors[0].Should().BeOfType<MissingSectionException>();
             errors[1].Should().BeOfType<MissingSectionException>();
 		}
+
+        [Test]
+        public void RedundantItemsInRelaxedModeShouldNotBeReported()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Foo" },
+				new OptionToken
+				{
+					Name = "foo",
+					Value = "bar"
+				},
+                new OptionToken
+                {
+                    Name = "boo",
+                    Value = "car"
+                } 
+			});
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+                .AddSection("Foo", true)
+                .AddOption(new StringOptionSpecifier("foo", true))
+                .FinishDefinition();
+
+            var builder = new IniFileConfigBuilder(parser);
+
+            builder.Build(formatSpecifier, BuildMode.Relaxed);
+            builder.Ok.Should().BeTrue();
+        }
+
+        [Test]
+        public void RedundantItemsInStrictModeShouldBeReported()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Foo" },
+				new OptionToken
+				{
+					Name = "foo",
+					Value = "bar"
+				},
+                new OptionToken
+                {
+                    Name = "boo",
+                    Value = "car"
+                } 
+			});
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+                .AddSection("Foo", true)
+                .AddOption(new StringOptionSpecifier("foo", true))
+                .FinishDefinition();
+
+            var builder = new IniFileConfigBuilder(parser);
+
+            Action build = () =>
+            {
+                builder.Build(formatSpecifier, BuildMode.Strict);
+            };
+
+            build.ShouldThrow<ConfigFormatException>();
+
+            builder.Ok.Should().BeFalse();
+
+
+            builder.Errors.First().Should().BeOfType<InvalidSectionOrOptionError>();
+            var error = (InvalidSectionOrOptionError)builder.Errors.First();
+
+            var errors = error.ConfigExceptions.ToArray();
+
+            errors.Count().ShouldBeEquivalentTo(1);
+            errors[0].Should().BeOfType<RedundantOptionException>();
+        }
+
+        [Test]
+        public void RedundantSectionInStrictModeShouldBeReported()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Foo" },
+				new OptionToken
+				{
+					Name = "foo",
+					Value = "bar"
+				},
+                new SectionHeaderToken { Name = "Boo"}, 
+                new OptionToken
+                {
+                    Name = "boo",
+                    Value = "car"
+                } 
+			});
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+                .AddSection("Foo", true)
+                .AddOption(new StringOptionSpecifier("foo", true))
+                .FinishDefinition();
+
+            var builder = new IniFileConfigBuilder(parser);
+
+            Action build = () =>
+            {
+                builder.Build(formatSpecifier, BuildMode.Strict);
+            };
+
+            build.ShouldThrow<ConfigFormatException>();
+
+            builder.Ok.Should().BeFalse();
+
+
+            builder.Errors.First().Should().BeOfType<InvalidSectionOrOptionError>();
+            var error = (InvalidSectionOrOptionError)builder.Errors.First();
+
+            var errors = error.ConfigExceptions.ToArray();
+
+            errors.Count().ShouldBeEquivalentTo(1);
+            errors[0].Should().BeOfType<RedundantSectionException>();
+        }
 	}
 }

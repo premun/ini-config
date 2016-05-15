@@ -82,7 +82,7 @@ namespace Config
 			return _options.Remove(key);
 		}
 
-	    public bool Contain(string key)
+	    public bool Contains(string key)
 	    {
 	        return _options.ContainsKey(key);
 	    }

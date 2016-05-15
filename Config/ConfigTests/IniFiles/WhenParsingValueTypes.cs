@@ -22,29 +22,6 @@ namespace ConfigTests.IniFiles
 			Green
 		}
 
-		private readonly ConfigFormatSpecifier _formatSpecifier = new ConfigFormatSpecifier()
-			.AddSection("Scalars")
-				.AddOption(new BoolOptionSpecifier("bool", defaultValue: true))
-				.AddOption(new FloatOptionSpecifier("float", defaultValue: 0.75f))
-				.AddOption(new EnumOptionSpecifier<Colors>("enum", defaultValue: Colors.Green))
-				.AddOption(new IntOptionSpecifier("int", defaultValue: 4))
-				.AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
-				.AddOption(new StringOptionSpecifier("string", defaultValue: "foo"))
-				.AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
-			.AddSection("Constraints")
-				.AddOption(new ConstraintOptionSpecifier<int>("int", x => 0 < x && x < 50, defaultValue: 1))
-				.AddOption(new ConstraintOptionSpecifier<Colors>("enum", x => x != Colors.Black, defaultValue: Colors.White))
-			.AddSection("Lists")
-				.AddOption(new ListOptionSpecifier<int>("ints", defaultValue: new[] { 6, 9, 42 }))
-                .AddOption(new ListOptionSpecifier<float>("floats", defaultValue: new[] { 6f, 9f, 42f }))
-                .AddOption(new ListOptionSpecifier<long>("longs", defaultValue: new[] { 6L, 9L, 42L }))
-                .AddOption(new ListOptionSpecifier<ulong>("ulong", defaultValue: new[] { 1ul }))  
-                .AddOption(new ListOptionSpecifier<Colors>("colors", defaultValue: new[] { Colors.Black }))
-                .AddOption(new ListOptionSpecifier<string>("strings"))
-            .AddSection("Refs")
-                .AddOption(new BoolOptionSpecifier("reference"))
-            .FinishDefinition();
-
 		[Test]
 		public void ParsingScalarsShouldWork()
 		{
@@ -60,7 +37,19 @@ unsigned = 70
 ";
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new BoolOptionSpecifier("bool", defaultValue: true))
+                .AddOption(new FloatOptionSpecifier("float", defaultValue: 0.75f))
+                .AddOption(new EnumOptionSpecifier<Colors>("enum", defaultValue: Colors.Green))
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
+                .AddOption(new StringOptionSpecifier("string", defaultValue: "foo"))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+            .FinishDefinition();
+
+			var config = builder.Build(formatSpecifier);
 
 			builder.Ok.Should().BeTrue();
 
@@ -84,9 +73,16 @@ unsigned = 70
 int = 40
 enum = Green 
 ";
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Constraints")
+                .AddOption(new ConstraintOptionSpecifier<int>("int", x => 0 < x && x < 50, defaultValue: 1))
+                .AddOption(new ConstraintOptionSpecifier<Colors>("enum", x => x != Colors.Black, defaultValue: Colors.White))
+            .FinishDefinition();
+
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
+            var config = builder.Build(formatSpecifier);
 
 			builder.Ok.Should().BeTrue();
 
@@ -109,9 +105,21 @@ enums = Green, Black, Black
 ";
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            var formatSpecifier = new ConfigFormatSpecifier()
+           .AddSection("Lists")
+                .AddOption(new ListOptionSpecifier<int>("ints", defaultValue: new[] { 6, 9, 42 }))
+                .AddOption(new ListOptionSpecifier<float>("floats", defaultValue: new[] { 6f, 9f, 42f }))
+                .AddOption(new ListOptionSpecifier<long>("longs", defaultValue: new[] { 6L, 9L, 42L }))
+                .AddOption(new ListOptionSpecifier<ulong>("ulong", defaultValue: new[] { 1ul }))
+                .AddOption(new ListOptionSpecifier<Colors>("colors", defaultValue: new[] { Colors.Black }))
+                .AddOption(new ListOptionSpecifier<string>("strings"))
+            .FinishDefinition();
+
+            var config = builder.Build(formatSpecifier);
+
+            // The are missing sections 
+            builder.Ok.Should().BeFalse();
 
 			config.Sections.Count().ShouldBeEquivalentTo(1);
 			var section = config["Lists"];
@@ -130,9 +138,15 @@ strings = foo, bar\;, xy\,z
 ";
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Lists")
+                .AddOption(new ListOptionSpecifier<string>("strings"))
+            .FinishDefinition();
+
+            var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			config.Sections.Count().ShouldBeEquivalentTo(1);
 			var section = config["Lists"];
@@ -152,9 +166,15 @@ strings = foo, bar\;: xy\,z
 ";
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Lists")
+                .AddOption(new ListOptionSpecifier<string>("strings"))
+            .FinishDefinition();
+
+            var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			config.Sections.Count().ShouldBeEquivalentTo(1);
 			var section = config["Lists"];
@@ -181,9 +201,23 @@ reference=    ${Scalars#int}";
 
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new BoolOptionSpecifier("bool", defaultValue: true))
+                .AddOption(new FloatOptionSpecifier("float", defaultValue: 0.75f))
+                .AddOption(new EnumOptionSpecifier<Colors>("enum", defaultValue: Colors.Green))
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
+                .AddOption(new StringOptionSpecifier("string", defaultValue: "foo"))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+            .AddSection("Refs")
+                .AddOption(new BoolOptionSpecifier("reference"))
+            .FinishDefinition();
+
+            var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			config.Sections.Count().ShouldBeEquivalentTo(2);
 
@@ -209,9 +243,23 @@ reference=    ${Scalars#int}";
 
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new BoolOptionSpecifier("bool", defaultValue: true))
+                .AddOption(new FloatOptionSpecifier("float", defaultValue: 0.75f))
+                .AddOption(new EnumOptionSpecifier<Colors>("enum", defaultValue: Colors.Green))
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
+                .AddOption(new StringOptionSpecifier("string", defaultValue: "foo"))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+            .AddSection("Refs")
+                .AddOption(new BoolOptionSpecifier("reference"))
+            .FinishDefinition();
+
+            var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			config.Sections.Count().ShouldBeEquivalentTo(2);
 
@@ -230,9 +278,17 @@ reference=    ${Scalars#int}";
 
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new BoolOptionSpecifier("bool"))
+            .AddSection("Refs")
+                .AddOption(new BoolOptionSpecifier("reference"))
+            .FinishDefinition();
+
+            var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			var x = config["Refs"]["reference"].Int;
 		}
@@ -249,9 +305,17 @@ ref3 = ${Refs#ref1}";
 
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Refs")
+                .AddOption(new IntOptionSpecifier("ref1", defaultValue: 4))
+                .AddOption(new SignedOptionSpecifier("ref2", defaultValue: 40L))
+                .AddOption(new UnsignedOptionSpecifier("ref3", defaultValue: 50L))
+            .FinishDefinition();
+
+            var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			var x = config["Refs"]["ref3"].String;
 			Console.WriteLine(x);
@@ -268,9 +332,17 @@ unsigned = 0x80C1";
 
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+            .FinishDefinition();
+
+			var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(32961);
 			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(32961);
@@ -288,9 +360,18 @@ unsigned = 0b00001100";
 
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+            .FinishDefinition();
+
+            var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(12);
 			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(12);
@@ -308,9 +389,18 @@ unsigned = 014";
 
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+            .FinishDefinition();
+
+			var config = builder.Build(formatSpecifier);
+
+            builder.Ok.Should().BeTrue();
 
 			config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(12);
 			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(12);
@@ -326,11 +416,18 @@ int = 0
 signed=0
 unsigned = 0";
 
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+            .FinishDefinition();
+
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
-			var config = builder.Build(_formatSpecifier);
+            var config = builder.Build(formatSpecifier);
 
-			builder.Ok.Should().BeTrue();
+            builder.Ok.Should().BeTrue();
 
 			config["Scalars"]["signed"].Signed.ShouldBeEquivalentTo(0);
 			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(0);

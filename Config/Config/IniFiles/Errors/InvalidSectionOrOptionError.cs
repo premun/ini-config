@@ -4,11 +4,11 @@ using Config.Format;
 
 namespace Config.IniFiles.Errors
 {
-    public class MissingSectionOrOptionError : FormatError
+    public class InvalidSectionOrOptionError : FormatError
     {
-        public IEnumerable<ConfigException> ConfigExceptions { get; } 
+        public IEnumerable<ConfigException> ConfigExceptions { get; private set; } 
 
-        public MissingSectionOrOptionError(ConfigFormatException configException) 
+        public InvalidSectionOrOptionError(ConfigFormatException configException) 
             : base(
                   string.Format(
                       "Config does not contain all requred members. See exception errirs `{1}` and message: `{0}`", 

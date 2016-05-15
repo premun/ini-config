@@ -29,7 +29,7 @@ namespace Config.Format
 		    _sections = new Dictionary<string, SectionSpecifier>();
 	    }
 
-        public bool Contain(string key)
+        public bool Contains(string key)
         {
             return _sections.ContainsKey(key);
         }

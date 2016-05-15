@@ -21,6 +21,11 @@ namespace Config.IniFiles.Validation
         {
             var errors = new List<ConfigException>();
 
+            if (config.FormatSpecifier == null)
+            {
+                return errors;
+            }
+
             foreach (var section in config.FormatSpecifier.Sections)
             {
                 if (!config.ContainSection(section.Name))
@@ -31,7 +36,7 @@ namespace Config.IniFiles.Validation
                 {
                     foreach (var requiredOption in section)
                     {
-                        if (!config[section.Name].Contain(requiredOption.Name))
+                        if (!config[section.Name].Contains(requiredOption.Name))
                         {
                             errors.Add(new MissingOptionException(section.Name, requiredOption.Name));
                         }
@@ -43,43 +48,5 @@ namespace Config.IniFiles.Validation
         }
 
         #endregion
-    }
-
-    public class StrictStrategy : ValidationStrategy
-    {
-        #region Overrides of ValidationStrategy
-
-        public override IList<ConfigException> ValidateConfig(IConfig config)
-        {
-            var errors = FoundMissingMembers(config);
-            errors.AddRange(CheckRedundantMembers(config));
-            return errors;
-        }
-
-        #endregion
-
-        private IList<ConfigException> CheckRedundantMembers(IConfig config)
-        {
-            var errors = new List<ConfigException>();
-            foreach (var section in config.Sections)
-            {
-                if (!config.FormatSpecifier.Contain(section.Name))
-                {
-                    errors.Add(new RedundantSectionException(section.Name));
-                }
-                else
-                {
-                    foreach (var requiredOption in section.Keys())
-                    {
-                        if (!config[section.Name].Contain(requiredOption))
-                        {
-                            errors.Add(new RedundantOptionException(section.Name, requiredOption));
-                        }
-                    }
-                }
-            }
-
-            return errors;
-        }
     }
 }

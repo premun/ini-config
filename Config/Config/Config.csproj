@@ -72,7 +72,7 @@
     <Compile Include="IniFiles\Errors\DuplicateSectionError.cs" />
     <Compile Include="IniFiles\Errors\FormatError.cs" />
     <Compile Include="IniFiles\Errors\InvalidIdentifierError.cs" />
-    <Compile Include="IniFiles\Errors\MissingSectionOrOptionError.cs" />
+    <Compile Include="IniFiles\Errors\InvalidSectionOrOptionError.cs" />
     <Compile Include="IniFiles\Errors\NoSectionError.cs" />
     <Compile Include="IniFiles\Errors\InvalidValueError.cs" />
     <Compile Include="IniFiles\IniConfig.cs" />
@@ -86,6 +86,7 @@
     <Compile Include="IniFiles\Parser\Tokens\SectionHeaderToken.cs" />
     <Compile Include="IniFiles\Parser\Tokens\Token.cs" />
     <Compile Include="IniFiles\Validation\RelaxedStrategy.cs" />
+    <Compile Include="IniFiles\Validation\StrictStrategy.cs" />
     <Compile Include="IniFiles\Validation\ValidationFactory.cs" />
     <Compile Include="IniFiles\Validation\ValidationStrategy.cs" />
     <Compile Include="Options\NumericValues\BinaryValue.cs" />

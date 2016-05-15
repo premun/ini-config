@@ -51,6 +51,6 @@ namespace Config
 		/// <returns>True, when item was present and removed, false otherwise.</returns>
 		bool Remove(string key);
 
-	    bool Contain(string key);
+	    bool Contains(string key);
     }
 }

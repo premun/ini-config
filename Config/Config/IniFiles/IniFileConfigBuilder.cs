@@ -243,7 +243,7 @@ namespace Config.IniFiles
             {
                 ErrorList = errors
             };
-            _errors.Add(new MissingSectionOrOptionError(exception));
+            _errors.Add(new InvalidSectionOrOptionError(exception));
             if (_buildMode == BuildMode.Strict)
             {
                 throw exception;
