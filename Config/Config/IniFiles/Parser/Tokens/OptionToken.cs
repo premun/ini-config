@@ -43,7 +43,6 @@ namespace Config.IniFiles.Parser.Tokens
 			}
 
 			value = value.Replace("\\ ", " ");
-			value = value.Replace("\\" + CommentToken.CommentSymbol, CommentToken.CommentSymbol + "");
 
 			token.Name = parts[0].Trim();
 			token.Value = value;

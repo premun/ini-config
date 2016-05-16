@@ -40,14 +40,6 @@ namespace Config.Options
 			Values = values;
 		}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ListOption{T}"/> class.
-		/// This constructor is used for runtime generic initialization.
-		/// </summary>
-		public ListOption()
-		{
-		}
-
 		public IEnumerable<T> Get()
 		{
 			return _values;

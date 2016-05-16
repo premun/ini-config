@@ -32,7 +32,7 @@ float = 1.2
 enum = Black
 int=100
 signed=60
-string=  bar ;xyz
+string=  bar\  ;xyz
 unsigned = 70 
 ";
 			var parser = GetTokenParser(configData);
@@ -61,7 +61,7 @@ unsigned = 70
 			((Colors) section["enum"].Data).ShouldBeEquivalentTo(Colors.Black);
 			section["int"].Int.ShouldBeEquivalentTo(100);
 			section["signed"].Signed.ShouldBeEquivalentTo(60L);
-			section["string"].String.ShouldBeEquivalentTo("bar");
+			section["string"].String.ShouldBeEquivalentTo("bar ");
 			section["unsigned"].Unsigned.ShouldBeEquivalentTo(70L);
 		}
 
@@ -101,7 +101,7 @@ enum = Green
 ints = 40, 50
 floats = 1.2,3.5
 longs = 1:2:3
-enums = Green, Black, Black
+colors = Green, Black, Black
 ";
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);
@@ -111,15 +111,12 @@ enums = Green, Black, Black
                 .AddOption(new ListOptionSpecifier<int>("ints", defaultValue: new[] { 6, 9, 42 }))
                 .AddOption(new ListOptionSpecifier<float>("floats", defaultValue: new[] { 6f, 9f, 42f }))
                 .AddOption(new ListOptionSpecifier<long>("longs", defaultValue: new[] { 6L, 9L, 42L }))
-                .AddOption(new ListOptionSpecifier<ulong>("ulong", defaultValue: new[] { 1ul }))
                 .AddOption(new ListOptionSpecifier<Colors>("colors", defaultValue: new[] { Colors.Black }))
-                .AddOption(new ListOptionSpecifier<string>("strings"))
             .FinishDefinition();
 
             var config = builder.Build(formatSpecifier);
 
-            // The are missing sections 
-            builder.Ok.Should().BeFalse();
+            builder.Ok.Should().BeTrue();
 
 			config.Sections.Count().ShouldBeEquivalentTo(1);
 			var section = config["Lists"];
@@ -162,7 +159,7 @@ strings = foo, bar\;, xy\,z
 		{
 			const string configData = @"
 [Lists]
-strings = foo, bar\;: xy\,z
+strings = foo, bar\;\: xy\,z
 ";
 			var parser = GetTokenParser(configData);
 			var builder = new IniFileConfigBuilder(parser);

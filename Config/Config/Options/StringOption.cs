@@ -10,14 +10,14 @@ namespace Config.Options
 
         public StringOption(string data)
         {
-            ValidateStringFormat(data);
-            Data = data;
+            var value = ValidateStringFormat(data);
+            Data = value;
         }
 
         internal StringOption(OptionToken token)
         {
-            ValidateStringFormat(token.Value);
-            Data = token.Value;
+            var value = ValidateStringFormat(token.Value);
+            Data = value;
             Comment = token.Comment;
         }
 
@@ -26,7 +26,7 @@ namespace Config.Options
             return new StringOption(s);
         }
 
-        private void ValidateStringFormat(string value)
+        private string ValidateStringFormat(string value)
         {
             value = value.Replace("\\\\", "&quot;");
             bool quoted = false;
@@ -47,6 +47,11 @@ namespace Config.Options
                     quoted = false;
                 }
             }
+
+            return value
+                .Replace("\\,", ",")
+                .Replace("\\:", ":")
+                .Replace("\\;", ";");
         }
     }
 }
