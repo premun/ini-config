@@ -58,7 +58,7 @@ unsigned = 70
 			
 			section["bool"].Bool.ShouldBeEquivalentTo(false);
 			section["float"].Float.ShouldBeEquivalentTo(1.2f);
-			((Colors) section["enum"].Data).ShouldBeEquivalentTo(Colors.Black); // TODO: ziskavani enumu asi neni uplne dobry
+			((Colors) section["enum"].Data).ShouldBeEquivalentTo(Colors.Black);
 			section["int"].Int.ShouldBeEquivalentTo(100);
 			section["signed"].Signed.ShouldBeEquivalentTo(60L);
 			section["string"].String.ShouldBeEquivalentTo("bar");
@@ -366,7 +366,7 @@ unsigned = 0b00001100";
             .AddSection("Scalars")
                 .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
                 .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
-                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50UL))
             .FinishDefinition();
 
             var config = builder.Build(formatSpecifier);
@@ -395,7 +395,7 @@ unsigned = 014";
             .AddSection("Scalars")
                 .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
                 .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
-                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50UL))
             .FinishDefinition();
 
 			var config = builder.Build(formatSpecifier);
@@ -420,7 +420,7 @@ unsigned = 0";
             .AddSection("Scalars")
                 .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
                 .AddOption(new SignedOptionSpecifier("signed", defaultValue: 40L))
-                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50L))
+                .AddOption(new UnsignedOptionSpecifier("unsigned", defaultValue: 50UL))
             .FinishDefinition();
 
 			var parser = GetTokenParser(configData);
@@ -433,6 +433,32 @@ unsigned = 0";
 			config["Scalars"]["unsigned"].Unsigned.ShouldBeEquivalentTo(0);
 			config["Scalars"]["int"].Int.ShouldBeEquivalentTo(0);
 		}
+
+        [Test]
+        public void InvalidStringFormatShoulNotWorks()
+        {
+            const string configData = @"
+[Scalars]
+invalidString = this,is:invalidString
+";
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+            .AddSection("Scalars")
+                .AddOption(new StringOptionSpecifier("invalidString"))
+            .FinishDefinition();
+
+            var parser = GetTokenParser(configData);
+            var builder = new IniFileConfigBuilder(parser);
+
+            Action build = () =>
+            {
+                builder.Build(formatSpecifier);
+            };
+
+            build.ShouldThrow<ConfigException>();
+
+            builder.Ok.Should().BeFalse();
+        }
 
 		private static ITokenParser GetTokenParser(string configData)
 		{

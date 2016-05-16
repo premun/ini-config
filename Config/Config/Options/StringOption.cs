@@ -1,24 +1,52 @@
-﻿using Config.IniFiles.Parser.Tokens;
+﻿using System.Linq;
+using Config.ConfigExceptions;
+using Config.IniFiles.Parser.Tokens;
 
 namespace Config.Options
 {
-	// TODO: element typu string může obsahovat libovolné znaky s výjimkou ',', ':' a ';', kde je třeba je uvést znakem '\'
-	public sealed class StringOption : Option<string>
-	{
-		public StringOption(string data)
-		{
-			Data = data;
-		}
+    public sealed class StringOption : Option<string>
+    {
+        private readonly char[] _forbiddenChars = { ',', ':', ';' };
 
-		internal StringOption(OptionToken token)
-		{
-			Data = token.Value;
-			Comment = token.Comment;
-		}
+        public StringOption(string data)
+        {
+            ValidateStringFormat(data);
+            Data = data;
+        }
 
-		public static implicit operator StringOption(string s)
-		{
-			return new StringOption(s);
-		}
-	}
+        internal StringOption(OptionToken token)
+        {
+            ValidateStringFormat(token.Value);
+            Data = token.Value;
+            Comment = token.Comment;
+        }
+
+        public static implicit operator StringOption(string s)
+        {
+            return new StringOption(s);
+        }
+
+        private void ValidateStringFormat(string value)
+        {
+            value = value.Replace("\\\\", "&quot;");
+            bool quoted = false;
+            foreach (char currChar in value)
+            {
+                if (currChar == '\\')
+                {
+                    quoted = true;
+                }
+                else if (_forbiddenChars.Contains(currChar))
+                {
+                    if (!quoted)
+                    {
+                        throw new ConfigException(string.Format("String option `{0}` cannot contains forbidden char `{1}`.", value, currChar));
+                    }
+
+                    // char is escaped, now looks for other delimiter
+                    quoted = false;
+                }
+            }
+        }
+    }
 }

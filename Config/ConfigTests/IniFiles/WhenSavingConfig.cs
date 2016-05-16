@@ -10,101 +10,108 @@ using NUnit.Framework;
 
 namespace ConfigTests.IniFiles
 {
-	[TestFixture]
-	public class WhenSavingConfig
-	{
-		[Test]
-		public void BasicCaseShouldWork()
-		{
-			var config = new Config.Config();
-			var section = config.AddSection("Section 1");
+    [TestFixture]
+    public class WhenSavingConfig
+    {
+        [Test]
+        public void BasicCaseShouldWork()
+        {
+            var config = new Config.Config();
+            var section = config.AddSection("Section 1");
 
-			section["int"] = 123;
-			section["bool"] = true;
+            section["int"] = 123;
+            section["bool"] = true;
 
-			section = config.AddSection("Section 2");
+            section = config.AddSection("Section 2");
 
-			section["float"] = 0.4f;
-			section["signed"] = 100L;
+            section["float"] = 0.4f;
+            section["signed"] = 100L;
 
-			var lines = SaveConfigToString(config, Verbosity.None);
+            section = config.AddSection("Section #3");
 
-			lines[0].ShouldBeEquivalentTo("[Section 1]");
-			lines[1].ShouldBeEquivalentTo("int = 123");
-			lines[2].ShouldBeEquivalentTo("bool = false");
+            section["unsigned"] = 11ul;
+            section["longs"] = new[] { 1L, 2L, 3L };
 
-			lines[4].ShouldBeEquivalentTo("[Section 2]");
-			lines[5].ShouldBeEquivalentTo("float = 0.4");
-			lines[6].ShouldBeEquivalentTo("signed = 100");
+            var lines = SaveConfigToString(config, Verbosity.None);
 
-			// TODO: test all types
-		}
+            lines[0].ShouldBeEquivalentTo("[Section 1]");
+            lines[1].ShouldBeEquivalentTo("int = 123");
+            lines[2].ShouldBeEquivalentTo("bool = false");
 
-		[Test]
-		public void CommentsShouldBeSaved()
-		{
-			var config = new Config.Config();
-			var section = config.AddSection("Section 1");
+            lines[4].ShouldBeEquivalentTo("[Section 2]");
+            lines[5].ShouldBeEquivalentTo("float = 0.4");
+            lines[6].ShouldBeEquivalentTo("signed = 100");
 
-			section.Comment = "section comment";
+            lines[8].ShouldBeEquivalentTo("[Section #3]");
+            lines[9].ShouldBeEquivalentTo("unsigned = 11");
+            lines[10].ShouldBeEquivalentTo("longs = 1, 2, 3");
+        }
 
-			section["int"] = 123;
-			section["int"].Comment = "foobar";
+        [Test]
+        public void CommentsShouldBeSaved()
+        {
+            var config = new Config.Config();
+            var section = config.AddSection("Section 1");
 
-			var lines = SaveConfigToString(config, Verbosity.Comments);
+            section.Comment = "section comment";
 
-			lines[0].ShouldBeEquivalentTo("[Section 1]");
-			lines[1].ShouldBeEquivalentTo("; " + section.Comment);
-			lines[2].ShouldBeEquivalentTo("int = 123\t; foobar");
-		}
+            section["int"] = 123;
+            section["int"].Comment = "foobar";
 
-		[Test]
-		public void DefaultsShouldBeSaved()
-		{
-			var formatSpecifier = new ConfigFormatSpecifier()
-				.AddSection("Section 1")
-					.AddOption(new FloatOptionSpecifier("float", defaultValue: 0.4f))
-					.AddOption(new IntOptionSpecifier("int", defaultValue: 4))
-				.FinishDefinition();
+            var lines = SaveConfigToString(config, Verbosity.Comments);
 
-			var config = new Config.Config(formatSpecifier);
-			config.AddSection("Section 1");
+            lines[0].ShouldBeEquivalentTo("[Section 1]");
+            lines[1].ShouldBeEquivalentTo("; " + section.Comment);
+            lines[2].ShouldBeEquivalentTo("int = 123\t; foobar");
+        }
 
-			var lines = SaveConfigToString(config, Verbosity.Defaults);
+        [Test]
+        public void DefaultsShouldBeSaved()
+        {
+            var formatSpecifier = new ConfigFormatSpecifier()
+                .AddSection("Section 1")
+                    .AddOption(new FloatOptionSpecifier("float", defaultValue: 0.4f))
+                    .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .FinishDefinition();
 
-			lines[0].ShouldBeEquivalentTo("[Section 1]");
-			lines[1].ShouldBeEquivalentTo("float = 0.4");
-			lines[2].ShouldBeEquivalentTo("int = 4");
-		}
+            var config = new Config.Config(formatSpecifier);
+            config.AddSection("Section 1");
 
-		[Test]
-		public void ListsShouldSerialize()
-		{
-			var config = new Config.Config();
-			var section = config.AddSection("Section 1");
+            var lines = SaveConfigToString(config, Verbosity.Defaults);
 
-			section["strings"] = new[] { "foo", "bar", "xyz" };
-			section["floats"] = new[] { 3.14f, 42.69f, 1.10f };
+            lines[0].ShouldBeEquivalentTo("[Section 1]");
+            lines[1].ShouldBeEquivalentTo("float = 0.4");
+            lines[2].ShouldBeEquivalentTo("int = 4");
+        }
 
-			var lines = SaveConfigToString(config, Verbosity.None);
+        [Test]
+        public void ListsShouldSerialize()
+        {
+            var config = new Config.Config();
+            var section = config.AddSection("Section 1");
 
-			lines[0].ShouldBeEquivalentTo("[Section 1]");
-			lines[1].ShouldBeEquivalentTo("strings = foo, bar, xyz");
-			lines[2].ShouldBeEquivalentTo("floats = 3.14, 42.69, 1.1");
-		}
+            section["strings"] = new[] { "foo", "bar", "xyz" };
+            section["floats"] = new[] { 3.14f, 42.69f, 1.10f };
 
-		private static string[] SaveConfigToString(IConfig config, Verbosity verbosity)
-		{
-			var stream = new MemoryStream();
-			var writer = new StreamWriter(stream);
+            var lines = SaveConfigToString(config, Verbosity.None);
 
-			new IniFileConfigSaver().SaveConfig(writer, config, verbosity);
+            lines[0].ShouldBeEquivalentTo("[Section 1]");
+            lines[1].ShouldBeEquivalentTo("strings = foo, bar, xyz");
+            lines[2].ShouldBeEquivalentTo("floats = 3.14, 42.69, 1.1");
+        }
 
-			writer.Flush();
+        private static string[] SaveConfigToString(IConfig config, Verbosity verbosity)
+        {
+            var stream = new MemoryStream();
+            var writer = new StreamWriter(stream);
 
-			return Encoding.UTF8
-				.GetString(stream.GetBuffer(), 0, (int) stream.Length)
-				.Split(new [] { Environment.NewLine }, StringSplitOptions.None);
-		}
-	}
+            new IniFileConfigSaver().SaveConfig(writer, config, verbosity);
+
+            writer.Flush();
+
+            return Encoding.UTF8
+                .GetString(stream.GetBuffer(), 0, (int)stream.Length)
+                .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+        }
+    }
 }
