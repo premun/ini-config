@@ -5,28 +5,27 @@ using System.Runtime.CompilerServices;
 
 namespace Config.IniFiles.Parser.Tokens
 {
-	/// <summary>
-	/// Represents a commented section that the parser read.
-	/// </summary>
-	internal class CommentToken : Token
-	{
-		internal string Content { get; private set; }
+    /// <summary>
+    ///     Represents a commented section that the parser read.
+    /// </summary>
+    internal sealed class CommentToken : Token
+    {
+        internal const char CommentSymbol = ';';
+        internal string Content { get; private set; }
 
-		internal static readonly char CommentSymbol = ';';
+        internal static CommentToken FromStream(StreamReader stream)
+        {
+            var content = stream.ReadLine();
 
-		internal static CommentToken FromStream(StreamReader stream)
-		{
-			var content = stream.ReadLine();
+            if (content.StartsWith(";"))
+            {
+                content = content.Substring(1).Trim();
+            }
 
-			if (content.StartsWith(";"))
-			{
-				content = content.Substring(1).Trim();
-			}
-
-			return new CommentToken
-			{
-				Content = content
-			};
-		}
-	}
+            return new CommentToken
+            {
+                Content = content
+            };
+        }
+    }
 }
