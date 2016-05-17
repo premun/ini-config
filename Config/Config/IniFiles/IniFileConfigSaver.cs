@@ -20,6 +20,11 @@ namespace Config.IniFiles
 			_path = path;
 		}
 
+        /// <summary>
+        /// Saves given IConfig data. Target is dependent on implementation (ini file, database...).
+        /// </summary>
+        /// <param name="config">Config data object</param>
+        /// <param name="verbosity">Verbosity of saver</param>
 		public void SaveConfig(IConfig config, Verbosity verbosity)
 		{
 			using (var writer = new StreamWriter(_path))
@@ -28,6 +33,12 @@ namespace Config.IniFiles
 			}
 		}
 
+        /// <summary>
+        /// Saves all section of the configuration to the given writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="config">The configuration.</param>
+        /// <param name="verbosity">The verbosity.</param>
 		public void SaveConfig(TextWriter writer, IConfig config, Verbosity verbosity)
 		{
 			_verbosity = verbosity;
