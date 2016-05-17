@@ -120,6 +120,44 @@ namespace ConfigTests.Format
             error.ConfigExceptions.First().Should().BeOfType<MissingOptionException>();
 		}
 
+        [Test]
+        public void MissingOptionalOptionShouldNotRaise()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Server" }
+			});
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+                .AddSection("Server", true)
+                .AddOption(new StringOptionSpecifier("hostname", false))
+                .FinishDefinition();
+
+            var builder = new IniFileConfigBuilder(parser);
+
+            builder.Build(formatSpecifier, BuildMode.Strict);
+            builder.Ok.Should().BeTrue();
+        }
+
+        [Test]
+        public void MissingOptionalSectionShouldNotRaise()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+			{
+				new SectionHeaderToken { Name = "Server" }
+			});
+
+            var formatSpecifier = new ConfigFormatSpecifier()
+                .AddSection("Server", false)
+                .AddOption(new StringOptionSpecifier("hostname", false))
+                .FinishDefinition();
+
+            var builder = new IniFileConfigBuilder(parser);
+
+            builder.Build(formatSpecifier, BuildMode.Strict);
+            builder.Ok.Should().BeTrue();
+        }
+
 		[Test]
 		public void MultipleMissingItemsShouldRaise()
 		{
