@@ -85,6 +85,7 @@
     <Compile Include="IniFiles\Parser\Tokens\OptionToken.cs" />
     <Compile Include="IniFiles\Parser\Tokens\SectionHeaderToken.cs" />
     <Compile Include="IniFiles\Parser\Tokens\Token.cs" />
+    <Compile Include="IniFiles\Validation\IValidation.cs" />
     <Compile Include="IniFiles\Validation\RelaxedStrategy.cs" />
     <Compile Include="IniFiles\Validation\StrictStrategy.cs" />
     <Compile Include="IniFiles\Validation\ValidationFactory.cs" />

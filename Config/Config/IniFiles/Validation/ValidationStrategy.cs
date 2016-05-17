@@ -10,7 +10,7 @@ namespace Config.IniFiles.Validation
         public abstract IList<ConfigException> ValidateConfig(IConfig config);
 
         /// <summary>
-        /// Founds the missing members at validating config.
+        ///     Founds the missing members at validating config.
         /// </summary>
         /// <param name="config">The configuration.</param>
         /// <returns>List of errors.</returns>
@@ -37,9 +37,12 @@ namespace Config.IniFiles.Validation
                     foreach (var requiredOption in section)
                     {
                         // Missing option
-                        if (!config[section.Name].Contains(requiredOption.Name) && requiredOption.Required)
+                        if (
+                            !config[section.Name].Contains(requiredOption.Name) &&
+                            requiredOption.Required)
                         {
-                            errors.Add(new MissingOptionException(section.Name, requiredOption.Name));
+                            errors.Add(new MissingOptionException(section.Name,
+                                requiredOption.Name));
                         }
                     }
                 }
