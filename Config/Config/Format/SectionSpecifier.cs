@@ -4,54 +4,88 @@ using Config.Format.OptionSpecifiers;
 
 namespace Config.Format
 {
-	internal class SectionSpecifier : IEnumerable<OptionSpecifier>
-	{
-		private readonly IDictionary<string, OptionSpecifier> _options;
+    /// <summary>
+    ///     Contains a specification of one config section. Each option of the section is represents by a OptionSpecifier.
+    /// </summary>
+    /// <seealso cref="System.Collections.Generic.IEnumerable{Config.Format.OptionSpecifiers.OptionSpecifier}" />
+    internal class SectionSpecifier : IEnumerable<OptionSpecifier>
+    {
+        private readonly IDictionary<string, OptionSpecifier> _options;
 
-		internal string Name { get; set; }
+        internal SectionSpecifier(string name, bool required = false)
+        {
+            Name = name;
+            Required = required;
+            _options = new Dictionary<string, OptionSpecifier>();
+        }
 
-		internal bool Required { get; set; }
+        /// <summary>
+        ///     Gets or sets the name.
+        /// </summary>
+        /// <value>
+        ///     The name.
+        /// </value>
+        internal string Name { get; set; }
 
-		internal OptionSpecifier this[string key]
-		{
-			get
-			{
-				if (_options.ContainsKey(key))
-				{
-					return _options[key];
-				}
+        /// <summary>
+        ///     Gets or sets a value indicating whether this <see cref="SectionSpecifier" /> is required.
+        /// </summary>
+        /// <value>
+        ///     <c>true</c> if required; otherwise, <c>false</c>.
+        /// </value>
+        internal bool Required { get; set; }
 
-				return null;
-			}
+        /// <summary>
+        ///     Gets or sets the <see cref="OptionSpecifier" /> with the specified key.
+        ///     Get: If does not contains the option returns <c>null</c>.
+        /// </summary>
+        /// <value>
+        ///     The <see cref="OptionSpecifier" />.
+        /// </value>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
+        internal OptionSpecifier this[string key]
+        {
+            get
+            {
+                if (_options.ContainsKey(key))
+                {
+                    return _options[key];
+                }
 
-			set { _options[key] = value; }
-		}
+                return null;
+            }
 
-		internal SectionSpecifier(string name, bool required = false)
-		{
-			Name = name;
-			Required = required;
-			_options = new Dictionary<string, OptionSpecifier>();
-		}
+            set { _options[key] = value; }
+        }
 
-		internal void AddOption(OptionSpecifier optionSpecifier)
-		{
-			_options[optionSpecifier.Name] = optionSpecifier;
-		}
+        public IEnumerator<OptionSpecifier> GetEnumerator()
+        {
+            return _options.Values.GetEnumerator();
+        }
 
-	    internal bool ContainsOption(string name)
-	    {
-	        return _options.ContainsKey(name);
-	    }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
 
-		public IEnumerator<OptionSpecifier> GetEnumerator()
-		{
-			return _options.Values.GetEnumerator();
-		}
+        /// <summary>
+        ///     Adds the option.
+        /// </summary>
+        /// <param name="optionSpecifier">The option specifier.</param>
+        internal void AddOption(OptionSpecifier optionSpecifier)
+        {
+            _options[optionSpecifier.Name] = optionSpecifier;
+        }
 
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return GetEnumerator();
-		}
-	}
+        /// <summary>
+        ///     Determines whether [contains] [the specified name] an option.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        internal bool Contains(string name)
+        {
+            return _options.ContainsKey(name);
+        }
+    }
 }

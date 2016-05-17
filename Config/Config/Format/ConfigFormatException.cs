@@ -9,6 +9,12 @@ namespace Config.Format
     /// </summary>
     public class ConfigFormatException : ConfigException
 	{
+        /// <summary>
+        /// Gets or sets the list of errors.
+        /// </summary>
+        /// <value>
+        /// The error list.
+        /// </value>
         public IEnumerable<ConfigException> ErrorList { get; set; }
     }
 }

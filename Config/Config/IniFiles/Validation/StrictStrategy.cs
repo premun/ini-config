@@ -35,7 +35,7 @@ namespace Config.IniFiles.Validation
                 {
                     foreach (var requiredOption in section.Keys())
                     {
-                        if (!config.FormatSpecifier[section.Name].ContainsOption(requiredOption))
+                        if (!config.FormatSpecifier[section.Name].Contains(requiredOption))
                         {
                             errors.Add(new RedundantOptionException(section.Name, requiredOption));
                         }
