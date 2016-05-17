@@ -6,21 +6,46 @@ using Config.Options;
 
 namespace Config.Format.OptionSpecifiers
 {
-    public class ListOptionSpecifier<T> : OptionSpecifier<T>
+    /// <summary>
+    ///     Represents the format specification for a list of option.
+    /// </summary>
+    /// <typeparam name="T">The type of the list options.</typeparam>
+    /// <seealso cref="Config.Format.OptionSpecifiers.OptionSpecifier{T}" />
+    public sealed class ListOptionSpecifier<T> : OptionSpecifier<T>
     {
-        private readonly char[] _possibleDelimiters = { ':', ',' };
+        private readonly char[] _possibleDelimiters = {':', ','};
 
-        public ListOptionSpecifier(string name, bool required = false, IEnumerable<T> defaultValue = null)
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="ListOptionSpecifier{T}" /> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="required">if set to <c>true</c> [required].</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <exception cref="System.InvalidOperationException">Lists of lists are not allowed.</exception>
+        public ListOptionSpecifier(string name, bool required = false,
+            IEnumerable<T> defaultValue = null)
             : base(name, required, default(T))
         {
-            if (typeof(T) == typeof(ListOption<>))
+            if (typeof (T) == typeof (ListOption<>))
             {
-                throw new InvalidOperationException("Lists of lists are not allowed.");
+                throw new InvalidOperationException(
+                    "Lists of lists are not allowed.");
             }
 
-            DefaultValue = defaultValue == null ? null : string.Join(",", defaultValue);
+            DefaultValue = defaultValue == null
+                ? null
+                : string.Join(",", defaultValue);
         }
 
+        /// <summary>
+        ///     Parses the specified value to the boolean option (creates new instance of
+        ///     <seealso cref="Config.Options.ListOption{T}" />). Generic type of the ListOption and each option are resolved at
+        ///     the run-time.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        ///     Parsed option value.
+        /// </returns>
         internal override Option Parse(string value)
         {
             var optionType = GetSpecificOption();
@@ -29,19 +54,23 @@ namespace Config.Format.OptionSpecifiers
             return listOption;
         }
 
-        private dynamic CreateListOption(Type innerGenericType, string inputValue)
+        private dynamic CreateListOption(Type innerGenericType,
+            string inputValue)
         {
             // Prepares ListOption<T> object
-            var genericListType = typeof(ListOption<>);
-            dynamic values =  CreateGenericOptions(innerGenericType, inputValue);
+            var genericListType = typeof (ListOption<>);
+            dynamic values = CreateGenericOptions(innerGenericType, inputValue);
             Type specific = genericListType.MakeGenericType(innerGenericType);
-            ConstructorInfo ctor = specific.GetConstructor(new[] {typeof(IEnumerable<>).MakeGenericType(innerGenericType)});
-            dynamic parsedListOption = ctor.Invoke(new object[] { values });
+            ConstructorInfo ctor =
+                specific.GetConstructor(new[]
+                {typeof (IEnumerable<>).MakeGenericType(innerGenericType)});
+            dynamic parsedListOption = ctor.Invoke(new object[] {values});
 
             return parsedListOption;
         }
 
-        private dynamic CreateGenericOptions(Type innerGenericType, string inputValue)
+        private dynamic CreateGenericOptions(Type innerGenericType,
+            string inputValue)
         {
             if (inputValue == null)
             {
@@ -49,10 +78,10 @@ namespace Config.Format.OptionSpecifiers
             }
 
             // Prepares each Option from parsed input value
-            Type genericList = typeof(List<>);
+            Type genericList = typeof (List<>);
             Type specificList = genericList.MakeGenericType(innerGenericType);
             ConstructorInfo ctor = specificList.GetConstructor(Type.EmptyTypes);
-            dynamic options = ctor.Invoke(new object[] { });
+            dynamic options = ctor.Invoke(new object[] {});
             var add = options.GetType().GetMethod("Add");
 
             var splitListValues = SplitListValues(inputValue);
@@ -60,57 +89,69 @@ namespace Config.Format.OptionSpecifiers
             // Creates instance of each parsed option
             foreach (var simpleValue in splitListValues)
             {
-                dynamic option = Activator.CreateInstance(innerGenericType, simpleValue);
-                add.Invoke(options, new object[] { option });
+                dynamic option = Activator.CreateInstance(innerGenericType,
+                    simpleValue);
+                add.Invoke(options, new object[] {option});
             }
 
             return options;
         }
 
+        /// <summary>
+        ///     Gets the specific option based on generic T type.
+        /// </summary>
+        /// <returns>The relevant type.</returns>
+        /// <exception cref="System.ArgumentException">Thrown when type is not supported.</exception>
         private Type GetSpecificOption()
         {
-            var type = typeof(T);
+            var type = typeof (T);
 
-            if (type == typeof(int))
+            if (type == typeof (int))
             {
-                return typeof(IntOption);
+                return typeof (IntOption);
             }
-            if (type == typeof(bool))
+            if (type == typeof (bool))
             {
-                return typeof(BoolOption);
+                return typeof (BoolOption);
             }
-            if (type == typeof(Enum))
+            if (type == typeof (Enum))
             {
-                return typeof(EnumOption<>);
+                return typeof (EnumOption<>);
             }
-            if (type == typeof(float))
+            if (type == typeof (float))
             {
-                return typeof(FloatOption);
+                return typeof (FloatOption);
             }
-            if (type == typeof(long))
+            if (type == typeof (long))
             {
-                return typeof(SignedOption);
+                return typeof (SignedOption);
             }
-            if (type == typeof(string))
+            if (type == typeof (string))
             {
-                return typeof(StringOption);
+                return typeof (StringOption);
             }
-            if (type == typeof(ulong))
+            if (type == typeof (ulong))
             {
-                return typeof(UnsignedOption);
+                return typeof (UnsignedOption);
             }
             if (type.IsEnum)
             {
-                return typeof(EnumOption<>).MakeGenericType(type);
+                return typeof (EnumOption<>).MakeGenericType(type);
             }
 
             throw new ArgumentException(string.Format("Unknown type {0}.", type));
         }
 
+        /// <summary>
+        ///     Splits the list values. Looks for the first delimiter (':' or ',') and split the given value with it.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>Spitted input value.</returns>
         private IEnumerable<string> SplitListValues(string value)
         {
             // Selects default when string does not contains any delimiter
-            var delimiter = value.FirstOrDefault(x => _possibleDelimiters.Contains(x));
+            var delimiter =
+                value.FirstOrDefault(x => _possibleDelimiters.Contains(x));
 
             value = value.Replace("\\\\", "&quot;");
             bool quoted = false;
@@ -139,9 +180,10 @@ namespace Config.Format.OptionSpecifiers
                     quoted = false;
                 }
             }
-            yield return value.Substring(currStartIndex, value.Length - currStartIndex)
-                .Trim()
-                .Replace("&quot;", "\\");
+            yield return
+                value.Substring(currStartIndex, value.Length - currStartIndex)
+                    .Trim()
+                    .Replace("&quot;", "\\");
         }
     }
 }
