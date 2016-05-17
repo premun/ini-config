@@ -6,67 +6,68 @@ using NUnit.Framework;
 
 namespace ConfigTests
 {
-	[TestFixture]
-	public class WhenUsingConfigSection
-	{
-		[Test]
-		public void OptionOperationsShouldWork()
-		{
-			var specifier = new ConfigFormatSpecifier().AddSection("Foo").FinishDefinition();
-			var config = new Config.Config(specifier);
+    [TestFixture]
+    public class WhenUsingConfigSection
+    {
+        [Test]
+        public void GettingOptionKeysShouldWork()
+        {
+            var config = new Config.Config();
 
-			var section = config.AddSection("Foo");
-			section
-				.Set("foo", 3)
-				.Set("bar", "xyz");
+            var section = config.AddSection("Foo");
+            section
+                .Set("foo", 3)
+                .Set("bar", "xyz");
 
-			section.Count().ShouldBeEquivalentTo(2);
-			section["foo"].Int.ShouldBeEquivalentTo(3);
-			section["bar"].String.ShouldBeEquivalentTo("xyz");
+            var keys = section.Keys();
+            keys.ShouldBeEquivalentTo(new[] {"foo", "bar"});
 
-			const float f = 4.2f;
-			section["foo"] = f;
-			section["foo"].Float.ShouldBeEquivalentTo(f);
+            var formatSpecifier = new ConfigFormatSpecifier()
+                .AddSection("Foo")
+                .AddOption(new FloatOptionSpecifier("float", defaultValue: 0.4f))
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new BoolOptionSpecifier("bool"))
+                .FinishDefinition();
 
-			section.Remove("123").Should().BeFalse();
-			section.Count().ShouldBeEquivalentTo(2);
-			section.Remove("bar").Should().BeTrue();
-			section.Count().ShouldBeEquivalentTo(1);
-			section["foo"].Float.ShouldBeEquivalentTo(f);
-		}
+            config = new Config.Config(formatSpecifier);
 
-		[Test]
-		public void GettingOptionKeysShouldWork()
-		{
-			var config = new Config.Config();
+            section = config.AddSection("Foo");
+            section
+                .Set("foo", 3)
+                .Set("bar", "xyz");
 
-			var section = config.AddSection("Foo");
-			section
-				.Set("foo", 3)
-				.Set("bar", "xyz");
+            keys = section.Keys(true);
+            keys.ShouldBeEquivalentTo(new[] {"foo", "bar", "float", "int"});
 
-			var keys = section.Keys();
-			keys.ShouldBeEquivalentTo(new[] { "foo", "bar" });
+            keys = section.Keys(false);
+            keys.ShouldBeEquivalentTo(new[] {"foo", "bar"});
+        }
 
-			var formatSpecifier = new ConfigFormatSpecifier()
-				.AddSection("Foo")
-					.AddOption(new FloatOptionSpecifier("float", defaultValue: 0.4f))
-					.AddOption(new IntOptionSpecifier("int", defaultValue: 4))
-					.AddOption(new BoolOptionSpecifier("bool"))
-				.FinishDefinition();
+        [Test]
+        public void OptionOperationsShouldWork()
+        {
+            var specifier =
+                new ConfigFormatSpecifier().AddSection("Foo").FinishDefinition();
+            var config = new Config.Config(specifier);
 
-			config = new Config.Config(formatSpecifier);
+            var section = config.AddSection("Foo");
+            section
+                .Set("foo", 3)
+                .Set("bar", "xyz");
 
-			section = config.AddSection("Foo");
-			section
-				.Set("foo", 3)
-				.Set("bar", "xyz");
+            section.Count().ShouldBeEquivalentTo(2);
+            section["foo"].Int.ShouldBeEquivalentTo(3);
+            section["bar"].String.ShouldBeEquivalentTo("xyz");
 
-			keys = section.Keys(true);
-			keys.ShouldBeEquivalentTo(new[] { "foo", "bar", "float", "int" });
+            const float f = 4.2f;
+            section["foo"] = f;
+            section["foo"].Float.ShouldBeEquivalentTo(f);
 
-			keys = section.Keys(false);
-			keys.ShouldBeEquivalentTo(new[] { "foo", "bar" });
-		}
-	}
+            section.Remove("123").Should().BeFalse();
+            section.Count().ShouldBeEquivalentTo(2);
+            section.Remove("bar").Should().BeTrue();
+            section.Count().ShouldBeEquivalentTo(1);
+            section["foo"].Float.ShouldBeEquivalentTo(f);
+        }
+    }
 }

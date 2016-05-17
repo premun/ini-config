@@ -9,119 +9,114 @@ using NUnit.Framework;
 
 namespace ConfigTests.IniFiles
 {
-	[TestFixture]
-	public class WhenBuildingInvalidConfig
-	{
-		[Test]
-		public void RelaxedBuildModeShouldNotThrow()
-		{
-			var parser = MockFactory.TokenParser(new Token[]
-			{
-				new SectionHeaderToken { Name = "Foo" },
-				new SectionHeaderToken { Name = "Foo" }
-			});
+    [TestFixture]
+    public class WhenBuildingInvalidConfig
+    {
+        [Test]
+        public void DuplicateSectionShouldRaiseError()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+            {
+                new SectionHeaderToken {Name = "Foo"},
+                new OptionToken
+                {
+                    Name = "foo",
+                    Value = "bar"
+                },
+                new SectionHeaderToken {Name = "Foo"}
+            });
 
-			var builder = new IniFileConfigBuilder(parser);
-			builder.Build();
+            var builder = new IniFileConfigBuilder(parser);
 
-			builder.Ok.Should().BeFalse();
-			builder.Errors.First().Should().BeOfType<DuplicateSectionError>();
-		}
+            Action build = () => { builder.Build(buildMode: BuildMode.Strict); };
 
-		[Test]
-		public void StrictBuildModeShouldNotThrow()
-		{
-			var parser = MockFactory.TokenParser(new Token[]
-			{
-				new OptionToken
-				{
-					Name = "foo",
-					Value = "bar"
-				}
-			});
+            build.ShouldThrow<IniConfigException>()
+                .And.Errors.First()
+                .Should()
+                .BeOfType<DuplicateSectionError>();
+            builder.Ok.Should().BeFalse();
+        }
 
-			var builder = new IniFileConfigBuilder(parser);
-			Action build = () => {
-				builder.Build(buildMode: BuildMode.Strict);
-			};
+        [Test]
+        public void InvalidIdentifierShouldRaiseError()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+            {
+                new SectionHeaderToken {Name = "Foo"},
+                new OptionToken
+                {
+                    Name = "foo!",
+                    Value = "bar"
+                }
+            });
 
-			build.ShouldThrow<IniConfigException>();
+            var builder = new IniFileConfigBuilder(parser);
 
-			builder.Ok.Should().BeFalse();
-			builder.Errors.First().Should().BeOfType<NoSectionError>();
-		}
+            Action build = () => { builder.Build(buildMode: BuildMode.Strict); };
 
-		[Test]
-		public void DuplicateSectionShouldRaiseError()
-		{
-			var parser = MockFactory.TokenParser(new Token[]
-			{
-				new SectionHeaderToken { Name = "Foo" },
-				new OptionToken
-				{
-					Name = "foo",
-					Value = "bar"
-				},
-				new SectionHeaderToken { Name = "Foo" }
-			});
+            build
+                .ShouldThrow<IniConfigException>()
+                .And.Errors.First().Should().BeOfType<InvalidIdentifierError>();
+            builder.Ok.Should().BeFalse();
+        }
 
-			var builder = new IniFileConfigBuilder(parser);
+        [Test]
+        public void NoSectionShouldRaiseError()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+            {
+                new OptionToken
+                {
+                    Name = "foo",
+                    Value = "bar"
+                },
+                new SectionHeaderToken {Name = "Foo"}
+            });
 
-			Action build = () => {
-				builder.Build(buildMode: BuildMode.Strict);
-			};
+            var builder = new IniFileConfigBuilder(parser);
 
-			build.ShouldThrow<IniConfigException>().And.Errors.First().Should().BeOfType<DuplicateSectionError>();
-			builder.Ok.Should().BeFalse();
-		}
+            Action build = () => { builder.Build(buildMode: BuildMode.Strict); };
 
-		[Test]
-		public void InvalidIdentifierShouldRaiseError()
-		{
-			var parser = MockFactory.TokenParser(new Token[]
-			{
-				new SectionHeaderToken { Name = "Foo" },
-				new OptionToken
-				{
-					Name = "foo!",
-					Value = "bar"
-				}
-			});
+            build.ShouldThrow<IniConfigException>();
+            builder.Ok.Should().BeFalse();
+            builder.Errors.First().Should().BeOfType<NoSectionError>();
+        }
 
-			var builder = new IniFileConfigBuilder(parser);
+        [Test]
+        public void RelaxedBuildModeShouldNotThrow()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+            {
+                new SectionHeaderToken {Name = "Foo"},
+                new SectionHeaderToken {Name = "Foo"}
+            });
 
-			Action build = () => {
-				builder.Build(buildMode: BuildMode.Strict);
-			};
+            var builder = new IniFileConfigBuilder(parser);
+            builder.Build();
 
-			build
-				.ShouldThrow<IniConfigException>()
-				.And.Errors.First().Should().BeOfType<InvalidIdentifierError>();
-			builder.Ok.Should().BeFalse();
-		}
+            builder.Ok.Should().BeFalse();
+            builder.Errors.First().Should().BeOfType<DuplicateSectionError>();
+        }
 
-		[Test]
-		public void NoSectionShouldRaiseError()
-		{
-			var parser = MockFactory.TokenParser(new Token[]
-			{
-				new OptionToken
-				{
-					Name = "foo",
-					Value = "bar"
-				},
-				new SectionHeaderToken { Name = "Foo" }
-			});
+        [Test]
+        public void StrictBuildModeShouldNotThrow()
+        {
+            var parser = MockFactory.TokenParser(new Token[]
+            {
+                new OptionToken
+                {
+                    Name = "foo",
+                    Value = "bar"
+                }
+            });
 
-			var builder = new IniFileConfigBuilder(parser);
+            var builder = new IniFileConfigBuilder(parser);
+            Action build = () => { builder.Build(buildMode: BuildMode.Strict); };
 
-			Action build = () => {
-				builder.Build(buildMode: BuildMode.Strict);
-			};
+            build.ShouldThrow<IniConfigException>();
 
-			build.ShouldThrow<IniConfigException>();
-			builder.Ok.Should().BeFalse();
-			builder.Errors.First().Should().BeOfType<NoSectionError>();
-		}
-	}
+            builder.Ok.Should().BeFalse();
+            builder.Errors.First().Should().BeOfType<NoSectionError>();
+        }
+    }
 }

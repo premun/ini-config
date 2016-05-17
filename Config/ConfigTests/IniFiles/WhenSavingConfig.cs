@@ -13,6 +13,21 @@ namespace ConfigTests.IniFiles
     [TestFixture]
     public class WhenSavingConfig
     {
+        private static string[] SaveConfigToString(IConfig config,
+            Verbosity verbosity)
+        {
+            var stream = new MemoryStream();
+            var writer = new StreamWriter(stream);
+
+            new IniFileConfigSaver().SaveConfig(writer, config, verbosity);
+
+            writer.Flush();
+
+            return Encoding.UTF8
+                .GetString(stream.GetBuffer(), 0, (int) stream.Length)
+                .Split(new[] {Environment.NewLine}, StringSplitOptions.None);
+        }
+
         [Test]
         public void BasicCaseShouldWork()
         {
@@ -30,7 +45,7 @@ namespace ConfigTests.IniFiles
             section = config.AddSection("Section #3");
 
             section["unsigned"] = 11ul;
-            section["longs"] = new[] { 1L, 2L, 3L };
+            section["longs"] = new[] {1L, 2L, 3L};
 
             var lines = SaveConfigToString(config, Verbosity.None);
 
@@ -70,8 +85,8 @@ namespace ConfigTests.IniFiles
         {
             var formatSpecifier = new ConfigFormatSpecifier()
                 .AddSection("Section 1")
-                    .AddOption(new FloatOptionSpecifier("float", defaultValue: 0.4f))
-                    .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
+                .AddOption(new FloatOptionSpecifier("float", defaultValue: 0.4f))
+                .AddOption(new IntOptionSpecifier("int", defaultValue: 4))
                 .FinishDefinition();
 
             var config = new Config.Config(formatSpecifier);
@@ -90,28 +105,14 @@ namespace ConfigTests.IniFiles
             var config = new Config.Config();
             var section = config.AddSection("Section 1");
 
-            section["strings"] = new[] { "foo", "bar", "xyz" };
-            section["floats"] = new[] { 3.14f, 42.69f, 1.10f };
+            section["strings"] = new[] {"foo", "bar", "xyz"};
+            section["floats"] = new[] {3.14f, 42.69f, 1.10f};
 
             var lines = SaveConfigToString(config, Verbosity.None);
 
             lines[0].ShouldBeEquivalentTo("[Section 1]");
             lines[1].ShouldBeEquivalentTo("strings = foo, bar, xyz");
             lines[2].ShouldBeEquivalentTo("floats = 3.14, 42.69, 1.1");
-        }
-
-        private static string[] SaveConfigToString(IConfig config, Verbosity verbosity)
-        {
-            var stream = new MemoryStream();
-            var writer = new StreamWriter(stream);
-
-            new IniFileConfigSaver().SaveConfig(writer, config, verbosity);
-
-            writer.Flush();
-
-            return Encoding.UTF8
-                .GetString(stream.GetBuffer(), 0, (int)stream.Length)
-                .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
         }
     }
 }
