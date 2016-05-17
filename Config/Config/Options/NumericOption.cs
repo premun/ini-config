@@ -1,7 +1,19 @@
+using Config.Options.NumericValues;
+
 namespace Config.Options
 {
     public abstract class NumericOption<T> : Option<T>
     {
+        /// <summary>
+        /// Parses the string value to numeric. Numeric formats are:
+        ///     <list type="number">
+        ///         <item>0x... - Hexadecimal</item>
+        ///         <item>0b - Binary</item>
+        ///         <item>0 - Octal</item>
+        ///     </list>
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
         public NumericValue ParseValueToNumeric(string value)
         {
             if (value.Length > 1 && value.StartsWith("0"))

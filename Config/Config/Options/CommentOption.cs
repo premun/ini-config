@@ -1,9 +1,9 @@
 ﻿namespace Config.Options
 {
-	/// <summary>
-	/// Represents an empty line containing only comment.
-	/// </summary>
-	public class CommentOption : Option
-	{
-	}
+    /// <summary>
+    ///     Represents an empty line containing only comment.
+    /// </summary>
+    public sealed class CommentOption : Option
+    {
+    }
 }

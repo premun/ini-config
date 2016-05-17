@@ -1,6 +1,6 @@
 using System;
 
-namespace Config.Options
+namespace Config.Options.NumericValues
 {
     public class OctalValue : NumericValue
     {
