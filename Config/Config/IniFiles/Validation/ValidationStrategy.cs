@@ -25,7 +25,7 @@ namespace Config.IniFiles.Validation
 
             foreach (var section in config.FormatSpecifier.Sections)
             {
-                if (!config.ContainSection(section.Name))
+                if (!config.ContainSection(section.Name) && section.Required)
                 {
                     errors.Add(new MissingSectionException(section.Name));
                 }
@@ -33,7 +33,7 @@ namespace Config.IniFiles.Validation
                 {
                     foreach (var requiredOption in section)
                     {
-                        if (!config[section.Name].Contains(requiredOption.Name))
+                        if (!config[section.Name].Contains(requiredOption.Name) && requiredOption.Required)
                         {
                             errors.Add(new MissingOptionException(section.Name, requiredOption.Name));
                         }
