@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Linq;
-using Config;
-using Config.IniFiles;
-using Config.IniFiles.Errors;
-using Config.IniFiles.Parser;
 using Config.IniFiles.Parser.Tokens;
 using FluentAssertions;
 using NUnit.Framework;
