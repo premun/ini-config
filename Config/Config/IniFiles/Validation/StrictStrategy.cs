@@ -3,10 +3,15 @@ using Config.ConfigExceptions;
 
 namespace Config.IniFiles.Validation
 {
-    public class StrictStrategy : ValidationStrategy
+    internal sealed class StrictStrategy : ValidationStrategy
     {
         #region Overrides of ValidationStrategy
 
+        /// <summary>
+        ///     Validates the configuration if contains all required members and does not contain anything else.
+        /// </summary>
+        /// <param name="config">The configuration.</param>
+        /// <returns>List of errors.</returns>
         public override IList<ConfigException> ValidateConfig(IConfig config)
         {
             var errors = FoundMissingMembers(config);
@@ -25,19 +30,26 @@ namespace Config.IniFiles.Validation
                 return errors;
             }
 
+            // Checks all config sections
             foreach (var section in config.Sections)
             {
+                // Section is redundant
                 if (!config.FormatSpecifier.Contains(section.Name))
                 {
                     errors.Add(new RedundantSectionException(section.Name));
                 }
                 else
                 {
+                    // Checks all section options
                     foreach (var requiredOption in section.Keys())
                     {
-                        if (!config.FormatSpecifier[section.Name].Contains(requiredOption))
+                        // Option is redundant
+                        if (
+                            !config.FormatSpecifier[section.Name].Contains(
+                                requiredOption))
                         {
-                            errors.Add(new RedundantOptionException(section.Name, requiredOption));
+                            errors.Add(new RedundantOptionException(
+                                section.Name, requiredOption));
                         }
                     }
                 }
