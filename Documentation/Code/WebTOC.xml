@@ -1,526 +1,721 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="92bbde43-5eeb-40c1-8b53-4067e0822742" Title="Config" Url="html/cc3d4930-8a29-4ebe-b95e-683012217500.htm">
-    <HelpTOCNode Title="BuildMode Enumeration" Url="html/9da3f46a-02e1-f7b7-1e21-13af4f41ead1.htm" />
-    <HelpTOCNode Id="6d6684d6-df22-41d3-adf3-78b125609be7" Title="Config Class" Url="html/0cae754f-818c-f91c-dedb-851c8052cd6e.htm">
-      <HelpTOCNode Id="d0705b7c-d531-46a2-863b-bb607c61e7fc" Title="Config Methods" Url="html/ae15288f-9599-8ca6-9131-be51c2f4029f.htm">
-        <HelpTOCNode Id="badc4b52-544e-4517-9951-a8899f110eb9" Title="AddSection Method " Url="html/12367501-9473-7229-921f-345f8010074b.htm">
-          <HelpTOCNode Title="AddSection Method (String)" Url="html/22f4c08c-7d1e-cbfd-b605-64ae46d1bb6e.htm" />
-          <HelpTOCNode Title="AddSection Method (IConfigSection)" Url="html/382f651a-3484-60f6-f702-4093c09cab87.htm" />
+  <HelpTOCNode Id="61c10e62-b152-4338-b80e-ea714dbf2f26" Title="Config" Url="html/349905f8-00b2-a7ab-c9a8-1575f0962fca.htm">
+    <HelpTOCNode Id="4aeac0a8-adeb-4c20-bcad-f35b6dbc71cf" Title="Config" Url="html/cc3d4930-8a29-4ebe-b95e-683012217500.htm">
+      <HelpTOCNode Title="BuildMode Enumeration" Url="html/9da3f46a-02e1-f7b7-1e21-13af4f41ead1.htm" />
+      <HelpTOCNode Id="3c94da71-ceaf-4a07-afae-e8ab03cb336f" Title="Config Class" Url="html/0cae754f-818c-f91c-dedb-851c8052cd6e.htm">
+        <HelpTOCNode Title="Config Constructor " Url="html/6c51ebcc-8472-8a58-6a1e-b757b0178db9.htm" />
+        <HelpTOCNode Id="321ac8ea-f30b-416a-a974-eb8a19a9d48d" Title="Config Methods" Url="html/ae15288f-9599-8ca6-9131-be51c2f4029f.htm">
+          <HelpTOCNode Id="8f2fec4e-23d6-4f8a-9c0d-2bf1ff417402" Title="AddSection Method " Url="html/12367501-9473-7229-921f-345f8010074b.htm">
+            <HelpTOCNode Title="AddSection Method (String)" Url="html/22f4c08c-7d1e-cbfd-b605-64ae46d1bb6e.htm" />
+            <HelpTOCNode Title="AddSection Method (IConfigSection)" Url="html/382f651a-3484-60f6-f702-4093c09cab87.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="ContainSection Method " Url="html/b3768fa8-1f2a-1ace-a90f-10d5e2176435.htm" />
+          <HelpTOCNode Id="cf9a3e60-70f0-4728-b221-31d2970bf814" Title="RemoveSection Method " Url="html/ef9987e4-73fe-1808-d6db-3fbec343b7a7.htm">
+            <HelpTOCNode Title="RemoveSection Method (String)" Url="html/15d4bff8-254e-fc51-edb6-8db09d9b981f.htm" />
+            <HelpTOCNode Title="RemoveSection Method (IConfigSection)" Url="html/0cf667ef-90b6-f016-edce-56571caaaf6d.htm" />
+          </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Title="ContainSection Method " Url="html/b3768fa8-1f2a-1ace-a90f-10d5e2176435.htm" />
-        <HelpTOCNode Id="1904a924-4139-4666-8f7c-454d6303ba96" Title="RemoveSection Method " Url="html/ef9987e4-73fe-1808-d6db-3fbec343b7a7.htm">
-          <HelpTOCNode Title="RemoveSection Method (String)" Url="html/15d4bff8-254e-fc51-edb6-8db09d9b981f.htm" />
-          <HelpTOCNode Title="RemoveSection Method (IConfigSection)" Url="html/0cf667ef-90b6-f016-edce-56571caaaf6d.htm" />
-        </HelpTOCNode>
-      </HelpTOCNode>
-      <HelpTOCNode Id="ebe92268-f615-4779-95cb-50d9bb7dd9ac" Title="Config Properties" Url="html/866ae674-5ae8-016c-3f7a-d0e12a68f278.htm">
-        <HelpTOCNode Title="FormatSpecifier Property " Url="html/b74ed21f-62e4-c1bf-e263-d390a1a80f1d.htm" />
-        <HelpTOCNode Title="Item Property " Url="html/ff6f0689-4008-e83b-6856-6459e593370e.htm" />
-        <HelpTOCNode Title="Sections Property " Url="html/9f5dfe98-46ba-5637-e3ae-ea5981460224.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="34b27136-1c8c-45e3-b4cf-2dce651debbf" Title="ConfigSection Class" Url="html/de805ca6-fb36-838c-3073-f93a3eb326a2.htm">
-      <HelpTOCNode Title="ConfigSection Constructor " Url="html/a24ca3a2-3049-4aee-09df-c2a655315fe9.htm" />
-      <HelpTOCNode Id="788e06c8-809e-4bde-85a6-918d21c7b919" Title="ConfigSection Methods" Url="html/d1ddc27b-5e93-b9b8-9c77-2f2a40adfba5.htm">
-        <HelpTOCNode Title="Contains Method " Url="html/109ff564-f1ca-dee2-9cca-790b57233c6d.htm" />
-        <HelpTOCNode Title="GetEnumerator Method " Url="html/c87cbc6d-6ede-9a79-9eb6-f2a2db7b3157.htm" />
-        <HelpTOCNode Title="Keys Method " Url="html/71b357ac-63d8-e745-0b22-d13bfa52acb4.htm" />
-        <HelpTOCNode Title="Remove Method " Url="html/28eba5eb-7a96-cf30-41c2-209b9e4d888a.htm" />
-        <HelpTOCNode Title="Set Method " Url="html/5a838f23-b327-cedf-d9f2-1b86b5775df6.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="95d44371-2447-4486-94da-c0bd3a5b3405" Title="ConfigSection Properties" Url="html/a77ec968-8457-7ec9-2e19-894755e28210.htm">
-        <HelpTOCNode Title="Comment Property " Url="html/a0c08a00-d362-2f29-9574-9d29b04328fc.htm" />
-        <HelpTOCNode Title="Item Property " Url="html/7a7e3015-1f28-d3d3-ca90-44d121e7f54d.htm" />
-        <HelpTOCNode Title="Name Property " Url="html/029762d4-b5fe-ed5c-7a60-ef3035218563.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="9234913b-1b8d-4770-9d4c-0776b75fbbb3" Title="IConfig Interface" Url="html/6a8a820d-6f6d-1b75-3b53-6772f17cbe7a.htm">
-      <HelpTOCNode Id="da15b274-dfbd-4972-be8d-edefc6961247" Title="IConfig Methods" Url="html/f6e60de4-ac8b-b615-054a-8e2af3740596.htm">
-        <HelpTOCNode Id="8e4d9249-22f1-4e3a-a94c-46de30fc18ed" Title="AddSection Method " Url="html/d92a302d-a923-5f5a-24a8-e43d9109e8c8.htm">
-          <HelpTOCNode Title="AddSection Method (String)" Url="html/708d4246-a1b2-d412-6bb0-8fe7522fc69a.htm" />
-          <HelpTOCNode Title="AddSection Method (IConfigSection)" Url="html/4e40375b-d12a-afaf-5cc7-1197fef6626e.htm" />
-        </HelpTOCNode>
-        <HelpTOCNode Title="ContainSection Method " Url="html/eb83f2a5-62d7-52af-57dd-ae68d6ccfc5a.htm" />
-        <HelpTOCNode Id="43f551cb-e3be-4840-9c28-15614cdf3f54" Title="RemoveSection Method " Url="html/4466557a-6bb5-3391-472d-2c04f4d2c251.htm">
-          <HelpTOCNode Title="RemoveSection Method (String)" Url="html/b04ab26f-0ef1-37c4-2ece-ffb7afaeb6a5.htm" />
-          <HelpTOCNode Title="RemoveSection Method (IConfigSection)" Url="html/372f0340-60d5-e0b3-6639-2cf890e79d38.htm" />
+        <HelpTOCNode Id="9c284bb0-0b7e-47fa-93fa-016fa043a253" Title="Config Properties" Url="html/866ae674-5ae8-016c-3f7a-d0e12a68f278.htm">
+          <HelpTOCNode Title="FormatSpecifier Property " Url="html/b74ed21f-62e4-c1bf-e263-d390a1a80f1d.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/ff6f0689-4008-e83b-6856-6459e593370e.htm" />
+          <HelpTOCNode Title="Sections Property " Url="html/9f5dfe98-46ba-5637-e3ae-ea5981460224.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="5a3ec566-0598-4bfa-aaeb-8eb5f35e2f3c" Title="IConfig Properties" Url="html/38c9cab7-c66e-efca-b3b4-57fbde064920.htm">
-        <HelpTOCNode Title="FormatSpecifier Property " Url="html/eaa40d63-0c0d-e58f-8d9f-2cc3a93cb53d.htm" />
-        <HelpTOCNode Title="Item Property " Url="html/5e809b6f-6e77-94e3-1404-03a036515249.htm" />
-        <HelpTOCNode Title="Sections Property " Url="html/2d80cd12-5c61-84ba-5bf9-46c8644ece7a.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="11d1cf18-f004-45ff-a311-259391a8073f" Title="IConfigBuilder Interface" Url="html/b53add3b-7f91-17e1-1f47-f0c8ec2eb964.htm">
-      <HelpTOCNode Id="f003977a-2e18-4f02-8ec9-1f76f001f75d" Title="IConfigBuilder Methods" Url="html/25b4f782-bde8-0920-59cd-489bebf5f8e5.htm">
-        <HelpTOCNode Id="2229c9d9-97f1-4a63-87d3-003a5daa5654" Title="Build Method " Url="html/f018ef4a-a08b-a252-d560-98433a74bf7c.htm">
-          <HelpTOCNode Title="Build Method (ConfigFormatSpecifier, BuildMode)" Url="html/9480924a-8d42-01e1-4026-776620434c8b.htm" />
-          <HelpTOCNode Title="Build Method (IConfig, ConfigFormatSpecifier, BuildMode)" Url="html/7e9c97e5-c15d-fb46-9d0d-166a2cd34e2f.htm" />
+      <HelpTOCNode Id="e72a18cd-a100-4a61-86e7-e0883c59e7f7" Title="ConfigSection Class" Url="html/de805ca6-fb36-838c-3073-f93a3eb326a2.htm">
+        <HelpTOCNode Title="ConfigSection Constructor " Url="html/a24ca3a2-3049-4aee-09df-c2a655315fe9.htm" />
+        <HelpTOCNode Id="b7de46f0-af6b-4c82-82cd-3261aeba7aa4" Title="ConfigSection Methods" Url="html/d1ddc27b-5e93-b9b8-9c77-2f2a40adfba5.htm">
+          <HelpTOCNode Title="IEnumerable.GetEnumerator Method " Url="html/11bd8a09-3476-21ab-c2d2-2ab4a9c01663.htm" />
+          <HelpTOCNode Title="Contains Method " Url="html/109ff564-f1ca-dee2-9cca-790b57233c6d.htm" />
+          <HelpTOCNode Title="GetEnumerator Method " Url="html/c87cbc6d-6ede-9a79-9eb6-f2a2db7b3157.htm" />
+          <HelpTOCNode Title="Keys Method " Url="html/71b357ac-63d8-e745-0b22-d13bfa52acb4.htm" />
+          <HelpTOCNode Title="Remove Method " Url="html/28eba5eb-7a96-cf30-41c2-209b9e4d888a.htm" />
+          <HelpTOCNode Title="Set Method " Url="html/5a838f23-b327-cedf-d9f2-1b86b5775df6.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0fde3cf3-49e3-4eea-82e6-9764d3d7ee46" Title="ConfigSection Properties" Url="html/a77ec968-8457-7ec9-2e19-894755e28210.htm">
+          <HelpTOCNode Title="Comment Property " Url="html/a0c08a00-d362-2f29-9574-9d29b04328fc.htm" />
+          <HelpTOCNode Title="FormatSpecifier Property " Url="html/965c3c95-b3e9-f7b7-88e4-38937a350e6b.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/7a7e3015-1f28-d3d3-ca90-44d121e7f54d.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/029762d4-b5fe-ed5c-7a60-ef3035218563.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="a4b81c9d-b6a0-4286-acc8-c438f0f2183b" Title="IConfigBuilder Properties" Url="html/5e3d7f85-d583-79e8-3298-fc018db9950a.htm">
-        <HelpTOCNode Title="Errors Property " Url="html/2a25ebdc-4fee-6298-5072-b8c531992f6e.htm" />
-        <HelpTOCNode Title="Ok Property " Url="html/038d6972-d52d-d1e8-09c9-af8519201e9a.htm" />
+      <HelpTOCNode Id="ba784707-154b-4d40-8b3e-6df823b25be6" Title="IConfig Interface" Url="html/6a8a820d-6f6d-1b75-3b53-6772f17cbe7a.htm">
+        <HelpTOCNode Id="ad9797ff-91a9-4a64-97c5-a85d204e8a80" Title="IConfig Methods" Url="html/f6e60de4-ac8b-b615-054a-8e2af3740596.htm">
+          <HelpTOCNode Id="bad4b808-f637-4532-82f6-19199fab4252" Title="AddSection Method " Url="html/d92a302d-a923-5f5a-24a8-e43d9109e8c8.htm">
+            <HelpTOCNode Title="AddSection Method (String)" Url="html/708d4246-a1b2-d412-6bb0-8fe7522fc69a.htm" />
+            <HelpTOCNode Title="AddSection Method (IConfigSection)" Url="html/4e40375b-d12a-afaf-5cc7-1197fef6626e.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="ContainSection Method " Url="html/eb83f2a5-62d7-52af-57dd-ae68d6ccfc5a.htm" />
+          <HelpTOCNode Id="4c40a9aa-5312-43ed-b5b6-0699f4751ca5" Title="RemoveSection Method " Url="html/4466557a-6bb5-3391-472d-2c04f4d2c251.htm">
+            <HelpTOCNode Title="RemoveSection Method (String)" Url="html/b04ab26f-0ef1-37c4-2ece-ffb7afaeb6a5.htm" />
+            <HelpTOCNode Title="RemoveSection Method (IConfigSection)" Url="html/372f0340-60d5-e0b3-6639-2cf890e79d38.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="57fe4368-6081-41e7-89bd-29a14e70e260" Title="IConfig Properties" Url="html/38c9cab7-c66e-efca-b3b4-57fbde064920.htm">
+          <HelpTOCNode Title="FormatSpecifier Property " Url="html/eaa40d63-0c0d-e58f-8d9f-2cc3a93cb53d.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/5e809b6f-6e77-94e3-1404-03a036515249.htm" />
+          <HelpTOCNode Title="Sections Property " Url="html/2d80cd12-5c61-84ba-5bf9-46c8644ece7a.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f241a617-34fe-4619-9189-34751dadc9d8" Title="IConfigBuilder Interface" Url="html/b53add3b-7f91-17e1-1f47-f0c8ec2eb964.htm">
+        <HelpTOCNode Id="855bb161-56cf-432f-a83e-40b8fd675122" Title="IConfigBuilder Methods" Url="html/25b4f782-bde8-0920-59cd-489bebf5f8e5.htm">
+          <HelpTOCNode Id="f4c5fe25-9183-4452-b380-4acb449d5468" Title="Build Method " Url="html/f018ef4a-a08b-a252-d560-98433a74bf7c.htm">
+            <HelpTOCNode Title="Build Method (ConfigFormatSpecifier, BuildMode)" Url="html/9480924a-8d42-01e1-4026-776620434c8b.htm" />
+            <HelpTOCNode Title="Build Method (IConfig, ConfigFormatSpecifier, BuildMode)" Url="html/7e9c97e5-c15d-fb46-9d0d-166a2cd34e2f.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="bf4563bd-b6a9-4279-9b44-b1b5c34bb953" Title="IConfigBuilder Properties" Url="html/5e3d7f85-d583-79e8-3298-fc018db9950a.htm">
+          <HelpTOCNode Title="Errors Property " Url="html/2a25ebdc-4fee-6298-5072-b8c531992f6e.htm" />
+          <HelpTOCNode Title="Ok Property " Url="html/038d6972-d52d-d1e8-09c9-af8519201e9a.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f380ffe5-a3bb-4c17-aba2-4c727d0cc82c" Title="IConfigSaver Interface" Url="html/d8e81d6c-2ba5-af5c-81b7-a5ca13210ae5.htm">
+        <HelpTOCNode Id="b850cdb2-9c8b-42d3-b224-3cc7e3bafdd4" Title="IConfigSaver Methods" Url="html/bc8638e1-74a2-58fd-4ee7-e5ed26484c31.htm">
+          <HelpTOCNode Title="SaveConfig Method " Url="html/b612bf7e-56f0-4533-acf5-ea0d0adf0610.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="395cc810-81d6-48c7-a758-4c0b5e4af0c0" Title="IConfigSection Interface" Url="html/707678b0-0670-9b08-9342-7e63874e0377.htm">
+        <HelpTOCNode Id="f7337593-77be-4027-ba42-6c14a2ee3f86" Title="IConfigSection Methods" Url="html/93b0494d-d69b-8e4d-e27f-d9c88977e2e3.htm">
+          <HelpTOCNode Title="Contains Method " Url="html/8994176c-c746-e972-2c5d-f37d463e497f.htm" />
+          <HelpTOCNode Title="Keys Method " Url="html/743fa296-819b-ed39-f017-d0eb346f4876.htm" />
+          <HelpTOCNode Title="Remove Method " Url="html/798155f8-ddb5-4c31-787f-2ac6b38a0401.htm" />
+          <HelpTOCNode Title="Set Method " Url="html/3d323107-4f0c-3f11-82c7-48d344af14c4.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="cdf412e9-4b46-49d5-9039-004c4a835fa5" Title="IConfigSection Properties" Url="html/0853b981-b6f4-41e8-be64-e12f40213cd4.htm">
+          <HelpTOCNode Title="Comment Property " Url="html/3c4452d2-197d-375a-1180-2d7ad83e2051.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/8256733a-c5c5-7e43-e87c-bcb456f614f8.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/5197a571-8dba-ccbd-417b-eaca755ff131.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="Verbosity Enumeration" Url="html/da56f52e-8da3-cc9a-8edc-d0e353da7a8b.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="da838076-d03e-478f-a2e1-0d90af1b20c8" Title="Config.Attribute" Url="html/1711fe5a-3905-92e4-de8e-f849e13dee12.htm">
+      <HelpTOCNode Id="029a2426-041a-4141-b8a7-abfa75723746" Title="ConfigAttribute Class" Url="html/48586413-242f-64b4-3441-c25cf03c48ed.htm">
+        <HelpTOCNode Title="ConfigAttribute Constructor " Url="html/1fe2bae7-0212-f7a6-bea7-1cf52ebcda3f.htm" />
+        <HelpTOCNode Title="ConfigAttribute Methods" Url="html/b856f630-6ca8-b1ef-41b4-1c87e06c12b8.htm" />
+        <HelpTOCNode Title="ConfigAttribute Properties" Url="html/d1e0566a-5c79-5b10-621a-a3e47b77073a.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="50985c66-e0c1-4673-9bdf-b8124299b297" Title="ConfigFactory Class" Url="html/8b8ab6fb-a6c4-48a4-9436-90e0766025f6.htm">
+        <HelpTOCNode Id="32570452-a6a8-480b-b7d6-4ccecb6f1b72" Title="ConfigFactory Methods" Url="html/dc6bd4e3-5039-ab29-94a7-38e0f69eb2ee.htm">
+          <HelpTOCNode Title="Create(T) Method " Url="html/485c9d7f-c386-aa92-4448-62ff10f5df03.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a969d673-ff70-4db5-964f-ceffd8f9aff5" Title="ConfigOptionAttribute Class" Url="html/01a98d5c-a2fd-3687-7013-2d17e81d4ae6.htm">
+        <HelpTOCNode Title="ConfigOptionAttribute Constructor " Url="html/4fa3d0ee-a1d2-60c5-6ac6-444874ff2a30.htm" />
+        <HelpTOCNode Title="ConfigOptionAttribute Methods" Url="html/67eb6bf3-4c16-a7fa-f61b-9d3112f3d8f7.htm" />
+        <HelpTOCNode Title="ConfigOptionAttribute Properties" Url="html/5de24d91-4a1c-c4b3-7365-e9e18d56a684.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6cf58dbd-d458-40fe-be07-eb691486411a" Title="IConfigSaver Interface" Url="html/d8e81d6c-2ba5-af5c-81b7-a5ca13210ae5.htm">
-      <HelpTOCNode Id="671f4c14-1506-4435-9bdf-fdad2d894fa9" Title="IConfigSaver Methods" Url="html/bc8638e1-74a2-58fd-4ee7-e5ed26484c31.htm">
-        <HelpTOCNode Title="SaveConfig Method " Url="html/b612bf7e-56f0-4533-acf5-ea0d0adf0610.htm" />
+    <HelpTOCNode Id="18b6f5db-3b2f-47e3-b78f-d1ddd17699f6" Title="Config.ConfigExceptions" Url="html/8a221dec-0035-05e0-32d4-09c4e964c63d.htm">
+      <HelpTOCNode Id="b47c33cc-c33d-46dd-b700-0063884562ca" Title="ConfigException Class" Url="html/dd928bee-8265-3aae-d337-e7ffedf6931d.htm">
+        <HelpTOCNode Id="8599a2fa-e725-4727-b35a-4940dbd7a892" Title="ConfigException Constructor " Url="html/da04c49d-cc99-b859-64e1-82d388672af0.htm">
+          <HelpTOCNode Title="ConfigException Constructor " Url="html/bfdc1945-cad0-8e19-c3cb-37bc76e7e93c.htm" />
+          <HelpTOCNode Title="ConfigException Constructor (String)" Url="html/80a10399-55d3-0662-b029-7173cd4f0e16.htm" />
+          <HelpTOCNode Title="ConfigException Constructor (String, Exception)" Url="html/25a66419-5f6f-4f0a-a4c1-07ae4f40301d.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ConfigException Fields" Url="html/886f1458-a1ce-e9b6-c691-5ef2cbe8602d.htm" />
+        <HelpTOCNode Title="ConfigException Methods" Url="html/bde7297a-e246-94c9-58a0-137111f2eaed.htm" />
+        <HelpTOCNode Title="ConfigException Properties" Url="html/0d8be127-2ce0-3e87-f17b-f2b57895103b.htm" />
+        <HelpTOCNode Title="ConfigException Events" Url="html/ff01f696-38a0-2857-4e0d-aba3c39b77da.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="422229ad-6168-4be7-9565-59f66e015036" Title="MissingOptionException Class" Url="html/de8a91db-7085-5c4c-6982-4b29b17fb42f.htm">
+        <HelpTOCNode Title="MissingOptionException Constructor " Url="html/61967a28-e963-9054-defd-cb5ee3d18622.htm" />
+        <HelpTOCNode Title="MissingOptionException Fields" Url="html/98c5ceca-844a-2ac5-26e6-05f8179cfc5f.htm" />
+        <HelpTOCNode Title="MissingOptionException Methods" Url="html/fda8e571-5f9a-fcf6-ea9d-bf85749e4ea0.htm" />
+        <HelpTOCNode Title="MissingOptionException Properties" Url="html/159c6027-db36-ce94-fa4c-bcdde925d80d.htm" />
+        <HelpTOCNode Title="MissingOptionException Events" Url="html/2ab61d84-e685-2baa-5ffc-f1546af4d857.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5c8db67f-6bb8-400d-8765-032ae3b32a83" Title="MissingReferencedException Class" Url="html/83399cdb-aae8-39a1-312d-5a956c27060e.htm">
+        <HelpTOCNode Title="MissingReferencedException Constructor " Url="html/294defe3-9be5-5857-137a-ca56abe1c4a8.htm" />
+        <HelpTOCNode Title="MissingReferencedException Fields" Url="html/590e16fe-9a97-c466-b839-dcf665e643f6.htm" />
+        <HelpTOCNode Title="MissingReferencedException Methods" Url="html/25045be6-059a-593c-adbc-ca3df0bec5c7.htm" />
+        <HelpTOCNode Title="MissingReferencedException Properties" Url="html/0b1bf0bd-a413-7148-4957-be732e2fcb43.htm" />
+        <HelpTOCNode Title="MissingReferencedException Events" Url="html/fa752f69-ca9a-068a-36fb-7f5a9290f8fc.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="fb23e713-8b77-47ac-9308-e42403207244" Title="MissingSectionException Class" Url="html/3a131211-e5f5-ed16-24bd-040dfb07fd2d.htm">
+        <HelpTOCNode Title="MissingSectionException Constructor " Url="html/4d48428e-96da-8dd0-16d2-1a5e0cd3141e.htm" />
+        <HelpTOCNode Title="MissingSectionException Fields" Url="html/59a211ae-39a6-de36-9b50-8d364485a24a.htm" />
+        <HelpTOCNode Title="MissingSectionException Methods" Url="html/e9af40cc-9a9f-6cc6-fe1a-0cceae6c4690.htm" />
+        <HelpTOCNode Title="MissingSectionException Properties" Url="html/d8cd8e15-5e86-ebbf-c9fa-75599d08fc8c.htm" />
+        <HelpTOCNode Title="MissingSectionException Events" Url="html/4dfaefca-dc80-6016-6c58-18dbfcf3ca4a.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="65ed26dd-a04c-4d45-ada1-13d865ac4940" Title="RedundantOptionException Class" Url="html/26453ecb-eb18-85f6-681c-944a65c73393.htm">
+        <HelpTOCNode Title="RedundantOptionException Constructor " Url="html/4c2b1ca1-4205-422d-3312-c9eb62a951bf.htm" />
+        <HelpTOCNode Title="RedundantOptionException Fields" Url="html/5e8f2241-9ec7-ad24-030d-bc6bf009d229.htm" />
+        <HelpTOCNode Title="RedundantOptionException Methods" Url="html/073d5750-6b7b-a84c-a286-6a8d0f2977aa.htm" />
+        <HelpTOCNode Title="RedundantOptionException Properties" Url="html/1044cb78-7f0e-6bfc-242f-053128b06e82.htm" />
+        <HelpTOCNode Title="RedundantOptionException Events" Url="html/b72d8f98-66e8-852c-4dec-ebf77859dac0.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bd9bc717-006b-4fa2-b72b-9ea4a3f30fe4" Title="RedundantSectionException Class" Url="html/561b2ea6-8f60-e471-2101-bc022eb435c6.htm">
+        <HelpTOCNode Title="RedundantSectionException Constructor " Url="html/3499c19b-180a-a547-fe2d-44cbb9d54fbe.htm" />
+        <HelpTOCNode Title="RedundantSectionException Fields" Url="html/e93e2cb4-cfa0-d58d-1fe2-917f233622f0.htm" />
+        <HelpTOCNode Title="RedundantSectionException Methods" Url="html/dace80c1-1d5a-83bf-890a-732dfc81b8b5.htm" />
+        <HelpTOCNode Title="RedundantSectionException Properties" Url="html/faca777c-8989-9e1b-2ee2-1739b2091810.htm" />
+        <HelpTOCNode Title="RedundantSectionException Events" Url="html/c1ae47c0-b9b0-135c-dc7d-85abfcf32c88.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e6f595d4-3e7f-4447-ae18-1596e82fca3d" Title="ReferenceCycleException Class" Url="html/471abed8-3bfc-d15f-fecb-3f90192c3e09.htm">
+        <HelpTOCNode Title="ReferenceCycleException Constructor " Url="html/b5ff777e-a3bc-b411-d848-efe27d5de547.htm" />
+        <HelpTOCNode Title="ReferenceCycleException Fields" Url="html/3f8bcdd7-75a3-66e2-bb81-d405b95549c4.htm" />
+        <HelpTOCNode Title="ReferenceCycleException Methods" Url="html/3b423a32-e311-9b44-746d-4343e13da6e9.htm" />
+        <HelpTOCNode Title="ReferenceCycleException Properties" Url="html/e7d8abbc-a1b8-8df4-0788-8c1aaf871226.htm" />
+        <HelpTOCNode Title="ReferenceCycleException Events" Url="html/2d7c81c9-a5df-5b94-cc65-5a868d31bb24.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e8bc664f-c2d1-4337-aa17-df4d3dc0efdb" Title="IConfigSection Interface" Url="html/707678b0-0670-9b08-9342-7e63874e0377.htm">
-      <HelpTOCNode Id="9cc0530c-13bf-49ac-afef-bcc06556dfc5" Title="IConfigSection Methods" Url="html/93b0494d-d69b-8e4d-e27f-d9c88977e2e3.htm">
-        <HelpTOCNode Title="Contains Method " Url="html/8994176c-c746-e972-2c5d-f37d463e497f.htm" />
-        <HelpTOCNode Title="Keys Method " Url="html/743fa296-819b-ed39-f017-d0eb346f4876.htm" />
-        <HelpTOCNode Title="Remove Method " Url="html/798155f8-ddb5-4c31-787f-2ac6b38a0401.htm" />
-        <HelpTOCNode Title="Set Method " Url="html/3d323107-4f0c-3f11-82c7-48d344af14c4.htm" />
+    <HelpTOCNode Id="30703086-f1d5-4ae9-8724-2f0eab08dc35" Title="Config.Format" Url="html/b3a868a9-c3d1-2812-81ef-52110a3300e7.htm">
+      <HelpTOCNode Id="abe74385-3e4c-403c-ad57-fb948c6c22db" Title="ConfigFormatException Class" Url="html/6e09986c-4214-7653-b00f-2af7fa4184e2.htm">
+        <HelpTOCNode Title="ConfigFormatException Constructor " Url="html/405a8bb5-ad5a-8940-17f9-a0d952ce495b.htm" />
+        <HelpTOCNode Title="ConfigFormatException Fields" Url="html/5639e4fa-18d2-2d6f-b6c7-84943def47e6.htm" />
+        <HelpTOCNode Title="ConfigFormatException Methods" Url="html/c95a2b83-ec7a-5db7-a160-2270e05421c1.htm" />
+        <HelpTOCNode Id="e973d46a-a23b-4dce-b25a-2716912fe2ba" Title="ConfigFormatException Properties" Url="html/6262c4d0-07ec-007b-7494-c6b43ac84786.htm">
+          <HelpTOCNode Title="ErrorList Property " Url="html/b825343f-81c7-e1f2-b6a1-84e7b48b6a45.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ConfigFormatException Events" Url="html/99403c7e-ac9a-1ded-6660-5e8f2ca5f302.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="b905957c-4744-4977-99cc-6d1c8d8dce70" Title="IConfigSection Properties" Url="html/0853b981-b6f4-41e8-be64-e12f40213cd4.htm">
-        <HelpTOCNode Title="Comment Property " Url="html/3c4452d2-197d-375a-1180-2d7ad83e2051.htm" />
-        <HelpTOCNode Title="Item Property " Url="html/8256733a-c5c5-7e43-e87c-bcb456f614f8.htm" />
-        <HelpTOCNode Title="Name Property " Url="html/5197a571-8dba-ccbd-417b-eaca755ff131.htm" />
+      <HelpTOCNode Id="fa8342e7-5e61-4cea-9f88-18fae63645ef" Title="ConfigFormatSpecifier Class" Url="html/8e751f5a-8b0d-df3b-4e68-e9892e8bec78.htm">
+        <HelpTOCNode Title="ConfigFormatSpecifier Constructor " Url="html/005738ad-76d6-ac58-4be9-70b15bedcf46.htm" />
+        <HelpTOCNode Id="079167d3-8091-4b01-81bf-8dd69164ebf2" Title="ConfigFormatSpecifier Methods" Url="html/ad0849fd-5a45-7dc9-4f75-8c9799407d1e.htm">
+          <HelpTOCNode Title="AddSection Method " Url="html/3f7deb4e-3f2f-24a6-d308-a1595ef0a597.htm" />
+          <HelpTOCNode Title="Contains Method " Url="html/febd7c47-032b-8f04-174a-76fdd9d465c6.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ac398efd-caae-4ca9-b69b-ed39317e1e54" Title="ConfigFormatSpecifier Properties" Url="html/a5087e29-32cb-8109-fbc6-3cf54d9689fe.htm">
+          <HelpTOCNode Title="Item Property " Url="html/1a26b70e-9191-ec06-02ff-210cf2a928e0.htm" />
+          <HelpTOCNode Title="Sections Property " Url="html/501b4d62-7fe2-4411-a0e3-067a31a2a26c.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Title="Verbosity Enumeration" Url="html/da56f52e-8da3-cc9a-8edc-d0e353da7a8b.htm" />
-  </HelpTOCNode>
-  <HelpTOCNode Id="8cff27ef-79d8-4535-bfbc-c634b02ed248" Title="Config.Attribute" Url="html/1711fe5a-3905-92e4-de8e-f849e13dee12.htm">
-    <HelpTOCNode Id="9cc87095-35df-439f-9af6-4ce5a91726d2" Title="ConfigAttribute Class" Url="html/48586413-242f-64b4-3441-c25cf03c48ed.htm">
-      <HelpTOCNode Title="ConfigAttribute Constructor " Url="html/1fe2bae7-0212-f7a6-bea7-1cf52ebcda3f.htm" />
-      <HelpTOCNode Title="ConfigAttribute Methods" Url="html/b856f630-6ca8-b1ef-41b4-1c87e06c12b8.htm" />
-      <HelpTOCNode Title="ConfigAttribute Properties" Url="html/d1e0566a-5c79-5b10-621a-a3e47b77073a.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="c5df4330-49b2-4886-a924-6fb2353564db" Title="ConfigFactory Class" Url="html/8b8ab6fb-a6c4-48a4-9436-90e0766025f6.htm">
-      <HelpTOCNode Id="931a7b9c-2b33-4198-8be2-d5a2619906a6" Title="ConfigFactory Methods" Url="html/dc6bd4e3-5039-ab29-94a7-38e0f69eb2ee.htm">
-        <HelpTOCNode Title="Create(T) Method " Url="html/485c9d7f-c386-aa92-4448-62ff10f5df03.htm" />
+      <HelpTOCNode Id="d640a853-f0fc-43cb-b858-e8b56e986c7b" Title="FluentSectionSpecifier Class" Url="html/0bddc9fb-0f53-f848-6e29-4784c27ccf82.htm">
+        <HelpTOCNode Title="FluentSectionSpecifier Constructor " Url="html/cc97915c-2484-4862-4521-64160ff8deda.htm" />
+        <HelpTOCNode Id="06047cd1-7f65-4391-94e6-6c990a6514ae" Title="FluentSectionSpecifier Methods" Url="html/50740e29-e002-27b6-f3e3-3ea50a3c979c.htm">
+          <HelpTOCNode Title="AddOption Method " Url="html/83961e53-a729-9960-4d7e-af7cc07cca85.htm" />
+          <HelpTOCNode Title="AddSection Method " Url="html/9170026d-01ec-0918-3cbe-ce7cf6f6cb58.htm" />
+          <HelpTOCNode Title="FinishDefinition Method " Url="html/71cb674a-e58c-4ae8-38cf-d552c3acb627.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="b445a779-e871-4808-9438-3b04d6f2d632" Title="ConfigOptionAttribute Class" Url="html/01a98d5c-a2fd-3687-7013-2d17e81d4ae6.htm">
-      <HelpTOCNode Title="ConfigOptionAttribute Constructor " Url="html/4fa3d0ee-a1d2-60c5-6ac6-444874ff2a30.htm" />
-      <HelpTOCNode Title="ConfigOptionAttribute Methods" Url="html/67eb6bf3-4c16-a7fa-f61b-9d3112f3d8f7.htm" />
-      <HelpTOCNode Title="ConfigOptionAttribute Properties" Url="html/5de24d91-4a1c-c4b3-7365-e9e18d56a684.htm" />
-    </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="08c0f33b-b173-4272-b351-21b54852a19c" Title="Config.ConfigExceptions" Url="html/8a221dec-0035-05e0-32d4-09c4e964c63d.htm">
-    <HelpTOCNode Id="add3bfe2-c5c0-4240-93e9-3ae86a1e31b9" Title="ConfigException Class" Url="html/dd928bee-8265-3aae-d337-e7ffedf6931d.htm">
-      <HelpTOCNode Id="51592c22-1ce0-404d-8ebb-d74480630330" Title="ConfigException Constructor " Url="html/da04c49d-cc99-b859-64e1-82d388672af0.htm">
-        <HelpTOCNode Title="ConfigException Constructor " Url="html/bfdc1945-cad0-8e19-c3cb-37bc76e7e93c.htm" />
-        <HelpTOCNode Title="ConfigException Constructor (String)" Url="html/80a10399-55d3-0662-b029-7173cd4f0e16.htm" />
-        <HelpTOCNode Title="ConfigException Constructor (String, Exception)" Url="html/25a66419-5f6f-4f0a-a4c1-07ae4f40301d.htm" />
+      <HelpTOCNode Id="d592bdfe-7fd1-4f67-8c23-f312ccb0315f" Title="IConfigFormatSpecifier Interface" Url="html/d3c11140-4c45-ee3c-3048-dd165ca9f34f.htm">
+        <HelpTOCNode Id="e3d95ad5-da35-421f-800d-797a819e2a3c" Title="IConfigFormatSpecifier Methods" Url="html/cbda556e-05db-ee64-9dd0-73fb6cd3261f.htm">
+          <HelpTOCNode Title="GetFormatSpecifier Method " Url="html/b368d44e-499f-0056-e5cd-308e1e68f072.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Title="ConfigException Methods" Url="html/bde7297a-e246-94c9-58a0-137111f2eaed.htm" />
-      <HelpTOCNode Title="ConfigException Properties" Url="html/0d8be127-2ce0-3e87-f17b-f2b57895103b.htm" />
-      <HelpTOCNode Title="ConfigException Events" Url="html/ff01f696-38a0-2857-4e0d-aba3c39b77da.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="c261affb-c2b1-4c70-806a-f0b80845bf90" Title="MissingOptionException Class" Url="html/de8a91db-7085-5c4c-6982-4b29b17fb42f.htm">
-      <HelpTOCNode Title="MissingOptionException Constructor " Url="html/61967a28-e963-9054-defd-cb5ee3d18622.htm" />
-      <HelpTOCNode Title="MissingOptionException Methods" Url="html/fda8e571-5f9a-fcf6-ea9d-bf85749e4ea0.htm" />
-      <HelpTOCNode Title="MissingOptionException Properties" Url="html/159c6027-db36-ce94-fa4c-bcdde925d80d.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="f51e6012-971e-4284-b9f0-8022c1194f4f" Title="MissingReferencedException Class" Url="html/83399cdb-aae8-39a1-312d-5a956c27060e.htm">
-      <HelpTOCNode Title="MissingReferencedException Constructor " Url="html/294defe3-9be5-5857-137a-ca56abe1c4a8.htm" />
-      <HelpTOCNode Title="MissingReferencedException Methods" Url="html/25045be6-059a-593c-adbc-ca3df0bec5c7.htm" />
-      <HelpTOCNode Title="MissingReferencedException Properties" Url="html/0b1bf0bd-a413-7148-4957-be732e2fcb43.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="4819a094-bc69-4762-9a72-785c18d01934" Title="MissingSectionException Class" Url="html/3a131211-e5f5-ed16-24bd-040dfb07fd2d.htm">
-      <HelpTOCNode Title="MissingSectionException Constructor " Url="html/4d48428e-96da-8dd0-16d2-1a5e0cd3141e.htm" />
-      <HelpTOCNode Title="MissingSectionException Methods" Url="html/e9af40cc-9a9f-6cc6-fe1a-0cceae6c4690.htm" />
-      <HelpTOCNode Title="MissingSectionException Properties" Url="html/d8cd8e15-5e86-ebbf-c9fa-75599d08fc8c.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="65d85586-5ba8-4418-93fa-96a754bab6d1" Title="RedundantOptionException Class" Url="html/26453ecb-eb18-85f6-681c-944a65c73393.htm">
-      <HelpTOCNode Title="RedundantOptionException Constructor " Url="html/4c2b1ca1-4205-422d-3312-c9eb62a951bf.htm" />
-      <HelpTOCNode Title="RedundantOptionException Methods" Url="html/073d5750-6b7b-a84c-a286-6a8d0f2977aa.htm" />
-      <HelpTOCNode Title="RedundantOptionException Properties" Url="html/1044cb78-7f0e-6bfc-242f-053128b06e82.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="398fd41f-8599-43ae-83c2-d75d7dadc8bc" Title="RedundantSectionException Class" Url="html/561b2ea6-8f60-e471-2101-bc022eb435c6.htm">
-      <HelpTOCNode Title="RedundantSectionException Constructor " Url="html/3499c19b-180a-a547-fe2d-44cbb9d54fbe.htm" />
-      <HelpTOCNode Title="RedundantSectionException Methods" Url="html/dace80c1-1d5a-83bf-890a-732dfc81b8b5.htm" />
-      <HelpTOCNode Title="RedundantSectionException Properties" Url="html/faca777c-8989-9e1b-2ee2-1739b2091810.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="393f5f40-e5b9-48d4-a45e-3add8c6aa2a6" Title="ReferenceCycleException Class" Url="html/471abed8-3bfc-d15f-fecb-3f90192c3e09.htm">
-      <HelpTOCNode Title="ReferenceCycleException Constructor " Url="html/b5ff777e-a3bc-b411-d848-efe27d5de547.htm" />
-      <HelpTOCNode Title="ReferenceCycleException Methods" Url="html/3b423a32-e311-9b44-746d-4343e13da6e9.htm" />
-      <HelpTOCNode Title="ReferenceCycleException Properties" Url="html/e7d8abbc-a1b8-8df4-0788-8c1aaf871226.htm" />
-    </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="e8f34a07-a9b0-463c-b178-1d729e06c445" Title="Config.Format" Url="html/b3a868a9-c3d1-2812-81ef-52110a3300e7.htm">
-    <HelpTOCNode Id="29a3e28d-ec50-4aec-b41f-bbb6ab8c7b3d" Title="ConfigFormatException Class" Url="html/6e09986c-4214-7653-b00f-2af7fa4184e2.htm">
-      <HelpTOCNode Title="ConfigFormatException Constructor " Url="html/405a8bb5-ad5a-8940-17f9-a0d952ce495b.htm" />
-      <HelpTOCNode Title="ConfigFormatException Methods" Url="html/c95a2b83-ec7a-5db7-a160-2270e05421c1.htm" />
-      <HelpTOCNode Id="7bae85ae-8b31-43a7-8695-7b87f05cb93a" Title="ConfigFormatException Properties" Url="html/6262c4d0-07ec-007b-7494-c6b43ac84786.htm">
-        <HelpTOCNode Title="ErrorList Property " Url="html/b825343f-81c7-e1f2-b6a1-84e7b48b6a45.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Title="ConfigFormatException Events" Url="html/99403c7e-ac9a-1ded-6660-5e8f2ca5f302.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="4895d044-5947-4f36-a1ae-37b0dc816588" Title="ConfigFormatSpecifier Class" Url="html/8e751f5a-8b0d-df3b-4e68-e9892e8bec78.htm">
-      <HelpTOCNode Title="ConfigFormatSpecifier Constructor " Url="html/005738ad-76d6-ac58-4be9-70b15bedcf46.htm" />
-      <HelpTOCNode Id="1c6ed660-0f74-4560-9d1f-60b817557238" Title="ConfigFormatSpecifier Methods" Url="html/ad0849fd-5a45-7dc9-4f75-8c9799407d1e.htm">
-        <HelpTOCNode Title="AddSection Method " Url="html/3f7deb4e-3f2f-24a6-d308-a1595ef0a597.htm" />
-        <HelpTOCNode Title="Contains Method " Url="html/febd7c47-032b-8f04-174a-76fdd9d465c6.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="80d1635e-40b7-4d7a-9035-f129eaf15ad8" Title="FluentSectionSpecifier Class" Url="html/0bddc9fb-0f53-f848-6e29-4784c27ccf82.htm">
-      <HelpTOCNode Id="0884656a-53d5-4133-b0f3-3fa2164b9b5c" Title="FluentSectionSpecifier Methods" Url="html/50740e29-e002-27b6-f3e3-3ea50a3c979c.htm">
-        <HelpTOCNode Title="AddOption Method " Url="html/83961e53-a729-9960-4d7e-af7cc07cca85.htm" />
-        <HelpTOCNode Title="AddSection Method " Url="html/9170026d-01ec-0918-3cbe-ce7cf6f6cb58.htm" />
-        <HelpTOCNode Title="FinishDefinition Method " Url="html/71cb674a-e58c-4ae8-38cf-d552c3acb627.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="09d519ab-313f-45ca-87e1-36fa93a21bc4" Title="IConfigFormatSpecifier Interface" Url="html/d3c11140-4c45-ee3c-3048-dd165ca9f34f.htm">
-      <HelpTOCNode Id="a9d3791b-e933-4772-937b-71ec2e1245bd" Title="IConfigFormatSpecifier Methods" Url="html/cbda556e-05db-ee64-9dd0-73fb6cd3261f.htm">
-        <HelpTOCNode Title="GetFormatSpecifier Method " Url="html/b368d44e-499f-0056-e5cd-308e1e68f072.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="79942036-a513-441c-8062-f5c842e3c1d2" Title="Config.Format.OptionSpecifiers" Url="html/98a4d6cc-e303-9874-ed52-bf7173f2aba8.htm">
-    <HelpTOCNode Id="65a6a9da-6a1a-4dd9-a0bb-6a69869204ed" Title="BoolOptionSpecifier Class" Url="html/54c72f3a-0c2e-e647-d8b6-84201e4fae10.htm">
-      <HelpTOCNode Title="BoolOptionSpecifier Constructor " Url="html/d40480c6-ccd9-9b03-c081-ea3f633b4aed.htm" />
-      <HelpTOCNode Title="BoolOptionSpecifier Methods" Url="html/22fb2946-4bc8-fbf6-b04f-2cd6cdc2a5a7.htm" />
-      <HelpTOCNode Title="BoolOptionSpecifier Properties" Url="html/f35319df-93ce-4bbe-b236-3037d8d7dfeb.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="e5360a94-f87b-4bbd-90e8-088831695d25" Title="ConstraintOptionSpecifier(T) Class" Url="html/ff3d4224-b82e-05ea-b9b1-9a0ce07a951c.htm">
-      <HelpTOCNode Title="ConstraintOptionSpecifier(T) Constructor " Url="html/314fb64a-9e4b-04f9-cb16-a9bb4be4bb4c.htm" />
-      <HelpTOCNode Title="ConstraintOptionSpecifier(T) Methods" Url="html/bd414bc0-effa-f7d2-d8d7-841c305c7b86.htm" />
-      <HelpTOCNode Title="ConstraintOptionSpecifier(T) Properties" Url="html/c5613aa7-d8df-cdd7-eb99-87407a557c43.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="c9c7a8f6-ad4b-4dd7-b93f-3b9ecc32df48" Title="EnumOptionSpecifier(T) Class" Url="html/9ae194a2-a655-6edb-5726-ebfba1b160ba.htm">
-      <HelpTOCNode Title="EnumOptionSpecifier(T) Constructor " Url="html/cb6e7423-6e18-baad-9913-97361b89a71e.htm" />
-      <HelpTOCNode Title="EnumOptionSpecifier(T) Methods" Url="html/a7e0ddbe-d03a-d4b2-9f1d-1e8f172df78a.htm" />
-      <HelpTOCNode Title="EnumOptionSpecifier(T) Properties" Url="html/41d68617-c9c1-a581-8a6f-6dd71edc474d.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="dc44305c-0688-46da-a342-b9edad06df8d" Title="FloatOptionSpecifier Class" Url="html/855bc9e8-5c33-f73f-c098-05c6cd528e7d.htm">
-      <HelpTOCNode Title="FloatOptionSpecifier Constructor " Url="html/b4504e05-4907-8fc8-2473-a5a02e6a3351.htm" />
-      <HelpTOCNode Title="FloatOptionSpecifier Methods" Url="html/acb9f898-12bb-751d-be00-b1fcb7635549.htm" />
-      <HelpTOCNode Title="FloatOptionSpecifier Properties" Url="html/f47e1318-04c1-d6b1-ec1c-dfdc5d5644d7.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="7ed97704-8102-4ca9-a0c3-94af1215a782" Title="IntOptionSpecifier Class" Url="html/6977aefb-8677-86a7-0ad2-6a438c8e8d14.htm">
-      <HelpTOCNode Title="IntOptionSpecifier Constructor " Url="html/35ea97f8-a616-3e2c-db84-8ed9bf45f5c6.htm" />
-      <HelpTOCNode Title="IntOptionSpecifier Methods" Url="html/948b8bb4-d42d-cd53-35e4-bc085c2e42c0.htm" />
-      <HelpTOCNode Title="IntOptionSpecifier Properties" Url="html/9841535b-6dd6-6fec-6bec-92766d1a0034.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="038cdfc9-0be7-410a-9a3d-0428f506663d" Title="ListOptionSpecifier(T) Class" Url="html/1e016588-bf5b-f80c-342d-fd28e573528e.htm">
-      <HelpTOCNode Title="ListOptionSpecifier(T) Constructor " Url="html/7a3ba0f6-8207-12c9-4cfd-428532179ec9.htm" />
-      <HelpTOCNode Title="ListOptionSpecifier(T) Methods" Url="html/a2f2377d-851e-5682-e6a1-7b869da3b819.htm" />
-      <HelpTOCNode Title="ListOptionSpecifier(T) Properties" Url="html/835f4d7c-a1b3-5d47-0968-8f4a55b687ed.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="c5479909-1456-4d69-99c0-15f86d4dee78" Title="OptionSpecifier Class" Url="html/18d0efd4-9e84-f4ee-f319-605fc4a1f2d4.htm">
-      <HelpTOCNode Title="OptionSpecifier Constructor " Url="html/e4d0419b-4b9d-4602-28d4-39d384c7688d.htm" />
-      <HelpTOCNode Title="OptionSpecifier Methods" Url="html/7645fe6b-ee01-04f7-a0be-361aee65de69.htm" />
-      <HelpTOCNode Id="3fe3cfa5-0f54-45bf-82b3-200cc06756ce" Title="OptionSpecifier Properties" Url="html/e12c2f43-4d2b-c2c7-b05c-cf61eaa2e86a.htm">
-        <HelpTOCNode Title="DefaultValue Property " Url="html/2ff4de79-4267-4e22-3971-c0860bf90ff2.htm" />
-        <HelpTOCNode Title="Name Property " Url="html/18457072-6e8a-9f49-996a-d21a38d2c5b0.htm" />
-        <HelpTOCNode Title="Required Property " Url="html/eceb246b-2ce1-502e-f1a5-42c4c7495fe9.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="54fdd0d2-6e9b-4e17-a4f9-7dd67967cc81" Title="OptionSpecifier(T) Class" Url="html/a4abdaed-3e6e-653a-0a4c-78e35d3071bd.htm">
-      <HelpTOCNode Title="OptionSpecifier(T) Constructor " Url="html/72e8ee05-eebb-a06c-84c6-ca5560831610.htm" />
-      <HelpTOCNode Title="OptionSpecifier(T) Methods" Url="html/d0eff3da-4a80-82f1-0ba7-3effc26c8dd0.htm" />
-      <HelpTOCNode Title="OptionSpecifier(T) Properties" Url="html/3357dd5f-8d1d-8eb0-07a2-bd542e1ae9cb.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="71aaa6df-bac5-43a9-b30a-90b52f68d3db" Title="SignedOptionSpecifier Class" Url="html/483a3fec-755d-d87b-e8a7-5d96a53077d0.htm">
-      <HelpTOCNode Title="SignedOptionSpecifier Constructor " Url="html/ab6e62ef-19a2-d1d4-c974-d98e17dc0044.htm" />
-      <HelpTOCNode Title="SignedOptionSpecifier Methods" Url="html/8d0a6259-423e-0657-b5e5-fe759a767e48.htm" />
-      <HelpTOCNode Title="SignedOptionSpecifier Properties" Url="html/4e9efb0d-68d2-4e7f-1bad-f980832e1796.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="e6440c19-f5e7-4e3b-96cc-b0b9667169c6" Title="StringOptionSpecifier Class" Url="html/ddafab85-fc5b-f840-2da9-4f4d48ee5b39.htm">
-      <HelpTOCNode Title="StringOptionSpecifier Constructor " Url="html/9562f99a-e7e7-1051-8663-fc97c2c1001b.htm" />
-      <HelpTOCNode Title="StringOptionSpecifier Methods" Url="html/127f4dc0-c457-fcfa-1efd-f5524f624731.htm" />
-      <HelpTOCNode Title="StringOptionSpecifier Properties" Url="html/ff88268a-342e-1fad-9ad8-90d8665b1b69.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="f8994f2a-3ef0-4d32-a4d6-c0fe00b72687" Title="UnsignedOptionSpecifier Class" Url="html/daaba545-dc34-ddd4-9126-9068c8e6abcc.htm">
-      <HelpTOCNode Title="UnsignedOptionSpecifier Constructor " Url="html/2d45a578-2a57-163b-f180-09cf446d6654.htm" />
-      <HelpTOCNode Title="UnsignedOptionSpecifier Methods" Url="html/a58a4bd7-24c3-5441-1708-bdb76ece087d.htm" />
-      <HelpTOCNode Title="UnsignedOptionSpecifier Properties" Url="html/bd1f098f-176e-a22d-9daf-91b6e6132500.htm" />
-    </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="6d9c27eb-f532-4fae-bfe6-559e56f86061" Title="Config.IniFiles" Url="html/1b585e35-f701-9f04-c39b-0694b20e3470.htm">
-    <HelpTOCNode Id="496db401-1bc7-4bd1-bdce-bcd0fa76213b" Title="IniConfig Class" Url="html/c94f059d-396a-168d-6bb1-c2d747cc91fc.htm">
-      <HelpTOCNode Id="4a8cef1b-e08d-4762-a9d0-014481ca6fc6" Title="IniConfig Methods" Url="html/bd48bfe6-37e4-ffe1-7e44-239603e2a82f.htm">
-        <HelpTOCNode Title="FromFile Method " Url="html/acc2e229-bc5a-b0ce-e855-95aecdbbdf2f.htm" />
-        <HelpTOCNode Id="7dabf477-6876-4f19-8e4b-525ecb5409a9" Title="SaveToFile Method " Url="html/24cdc8eb-607c-adb9-61df-1e516470abd0.htm">
-          <HelpTOCNode Title="SaveToFile Method (IConfig, Verbosity)" Url="html/dab5fb46-d437-8fc5-ab2f-9c0a39581e81.htm" />
-          <HelpTOCNode Title="SaveToFile Method (IConfig, String, Verbosity)" Url="html/6131b7de-224d-51b5-ca99-a3d1920dac32.htm" />
+      <HelpTOCNode Id="556f37cc-1a37-48a2-993b-ea5074d73002" Title="SectionSpecifier Class" Url="html/80398e57-821c-739e-ce68-d0c8b922001b.htm">
+        <HelpTOCNode Title="SectionSpecifier Constructor " Url="html/e6b482be-1a01-c200-d535-13a718824f28.htm" />
+        <HelpTOCNode Id="2c941cf8-9666-4338-8b76-41611b9ac0a3" Title="SectionSpecifier Methods" Url="html/1a6fff19-5c24-84ce-8887-5734ad17782b.htm">
+          <HelpTOCNode Title="IEnumerable.GetEnumerator Method " Url="html/545eef16-cd5c-f3b4-782f-02bd1c483acf.htm" />
+          <HelpTOCNode Title="AddOption Method " Url="html/a1c9cdf6-9ab7-4451-00e1-2cba171cf467.htm" />
+          <HelpTOCNode Title="Contains Method " Url="html/26aa9c3c-9a1f-ea5f-9747-54d31e336462.htm" />
+          <HelpTOCNode Title="GetEnumerator Method " Url="html/7759c795-8dbc-7042-d760-2bac7c565bb7.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1fa3df17-986c-4ee3-88b2-7d1d1c4b13f6" Title="SectionSpecifier Properties" Url="html/321cd738-b690-0c8c-bc1b-e07cee43756b.htm">
+          <HelpTOCNode Title="Item Property " Url="html/372c46ba-7bf0-21d2-f16e-ae032eabf0c6.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/6a4dc874-0869-27fc-b734-7f1ef8658dde.htm" />
+          <HelpTOCNode Title="Required Property " Url="html/ab6f0226-e48a-1749-2ecd-82de277df31f.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="725e3fcf-4b72-43fd-91fb-741d6bf1c8f5" Title="IniConfigException Class" Url="html/a5ff9cf2-7497-4ee6-0ada-7a70078c65bc.htm">
-      <HelpTOCNode Id="53752328-1a42-4641-8f77-33fdeeb78fc3" Title="IniConfigException Constructor " Url="html/06def105-a2d4-510c-5e62-1887c51428f6.htm">
-        <HelpTOCNode Title="IniConfigException Constructor (FormatError)" Url="html/4277ca62-1a6b-3ef1-68ad-b5d00a37cac6.htm" />
-        <HelpTOCNode Title="IniConfigException Constructor (IEnumerable(FormatError))" Url="html/3dd45e03-1526-2b49-e613-7526a9854ec3.htm" />
+    <HelpTOCNode Id="7c66bb52-8cd9-4dd3-b621-cdd4ab374400" Title="Config.Format.OptionSpecifiers" Url="html/98a4d6cc-e303-9874-ed52-bf7173f2aba8.htm">
+      <HelpTOCNode Id="1b4062b7-7d52-406a-93fd-faf5be774f30" Title="BoolOptionSpecifier Class" Url="html/54c72f3a-0c2e-e647-d8b6-84201e4fae10.htm">
+        <HelpTOCNode Title="BoolOptionSpecifier Constructor " Url="html/d40480c6-ccd9-9b03-c081-ea3f633b4aed.htm" />
+        <HelpTOCNode Id="a17d0613-13a6-4336-a1fe-d461ce463d3f" Title="BoolOptionSpecifier Methods" Url="html/22fb2946-4bc8-fbf6-b04f-2cd6cdc2a5a7.htm">
+          <HelpTOCNode Id="3b76af79-017f-42a6-908c-4d130e421d08" Title="Parse Method " Url="html/c8bf36d0-4208-4c6c-3c57-a2fefa407c71.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/7e1c5fee-3bbd-2dae-1f85-94ccc81d05b8.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="BoolOptionSpecifier Properties" Url="html/f35319df-93ce-4bbe-b236-3037d8d7dfeb.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Title="IniConfigException Methods" Url="html/fc80b2f7-372d-240e-b1e2-7d614027648a.htm" />
-      <HelpTOCNode Id="646b21a8-42bd-45fc-889c-b778d2cba365" Title="IniConfigException Properties" Url="html/99a6f6e6-1ecf-9101-5997-e8c3bbcbaaaf.htm">
-        <HelpTOCNode Title="Errors Property " Url="html/911e5b5a-a2ef-c33f-f9e5-f5cc4749e33d.htm" />
+      <HelpTOCNode Id="75f68656-f2b3-48ab-be12-16b844437590" Title="ConstraintOptionSpecifier(T) Class" Url="html/ff3d4224-b82e-05ea-b9b1-9a0ce07a951c.htm">
+        <HelpTOCNode Title="ConstraintOptionSpecifier(T) Constructor " Url="html/314fb64a-9e4b-04f9-cb16-a9bb4be4bb4c.htm" />
+        <HelpTOCNode Id="f34bdb0d-d633-44ee-b827-61de15c686c4" Title="ConstraintOptionSpecifier(T) Methods" Url="html/bd414bc0-effa-f7d2-d8d7-841c305c7b86.htm">
+          <HelpTOCNode Id="13f05a74-72b5-4064-94b1-76fde1acf53c" Title="Parse Method " Url="html/2e167729-f2e8-0352-7d1e-09729e4d9a17.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/24745320-7b2e-3dad-78a1-ff1b50682e9d.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="ConstraintOptionSpecifier(T) Properties" Url="html/c5613aa7-d8df-cdd7-eb99-87407a557c43.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Title="IniConfigException Events" Url="html/26a12ad2-2e19-a281-a6c8-7a15551f0246.htm" />
-    </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="355f89e8-dce7-4f91-8e63-377e7b7a1754" Title="Config.IniFiles.Errors" Url="html/61bccbb1-faf4-daad-cc69-c4cbfdb103cc.htm">
-    <HelpTOCNode Id="465e3e94-58d8-4c92-8105-eaa7ac3c3dc0" Title="DuplicateSectionError Class" Url="html/8cb65faa-2e7f-cc1a-a3c0-5f97cffe14eb.htm">
-      <HelpTOCNode Title="DuplicateSectionError Constructor " Url="html/faac6b28-e022-bb6b-77bb-2dbd646706e9.htm" />
-      <HelpTOCNode Title="DuplicateSectionError Methods" Url="html/16fbd591-8381-763c-0cb4-b8d736f9a983.htm" />
-      <HelpTOCNode Title="DuplicateSectionError Properties" Url="html/c4904e66-43d3-fff5-43f3-42c57e0fa980.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="bd25de8f-58a7-4f73-9294-7f4ed152fcf0" Title="FormatError Class" Url="html/1f2d6e92-ee51-2965-bf7c-8036f0569d11.htm">
-      <HelpTOCNode Title="FormatError Constructor " Url="html/73130247-82c1-1336-2b47-b40eff25ba74.htm" />
-      <HelpTOCNode Title="FormatError Methods" Url="html/a9e59c97-3831-40dd-c6bf-a49436b52cac.htm" />
-      <HelpTOCNode Id="23c8c5a1-8456-428e-b7c9-7641012b256b" Title="FormatError Properties" Url="html/16c18025-78f5-7966-b8f0-76cfe7723a6d.htm">
-        <HelpTOCNode Title="Line Property " Url="html/877201ec-e781-e397-7cae-4d16c5437138.htm" />
-        <HelpTOCNode Title="Message Property " Url="html/cba42fb9-a77b-4256-86b4-7f1b2365a5e8.htm" />
+      <HelpTOCNode Id="d6a31eba-f731-4073-8190-cd7040f06c97" Title="EnumOptionSpecifier(T) Class" Url="html/9ae194a2-a655-6edb-5726-ebfba1b160ba.htm">
+        <HelpTOCNode Title="EnumOptionSpecifier(T) Constructor " Url="html/cb6e7423-6e18-baad-9913-97361b89a71e.htm" />
+        <HelpTOCNode Id="e9d7e1e3-d12a-43d7-8658-d20fc29555e4" Title="EnumOptionSpecifier(T) Methods" Url="html/a7e0ddbe-d03a-d4b2-9f1d-1e8f172df78a.htm">
+          <HelpTOCNode Id="35d1553a-5644-4ce1-b5db-ccc6a73c8837" Title="Parse Method " Url="html/206c20a6-41fb-0688-d764-12d4ad062a81.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/ea49080d-14db-c4c6-0234-0a1e16277093.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="EnumOptionSpecifier(T) Properties" Url="html/41d68617-c9c1-a581-8a6f-6dd71edc474d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3bb9901b-cda9-4817-a778-4d9eec8b7390" Title="FloatOptionSpecifier Class" Url="html/855bc9e8-5c33-f73f-c098-05c6cd528e7d.htm">
+        <HelpTOCNode Title="FloatOptionSpecifier Constructor " Url="html/b4504e05-4907-8fc8-2473-a5a02e6a3351.htm" />
+        <HelpTOCNode Id="3e5edec2-22fe-443c-95b2-3ce148699b74" Title="FloatOptionSpecifier Methods" Url="html/acb9f898-12bb-751d-be00-b1fcb7635549.htm">
+          <HelpTOCNode Id="0cabbca2-097a-4537-b61b-7469bbf502a3" Title="Parse Method " Url="html/727288f1-10cb-74fb-2e91-247889c53098.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/0604af20-435c-c61a-deb1-69139917292a.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="FloatOptionSpecifier Properties" Url="html/f47e1318-04c1-d6b1-ec1c-dfdc5d5644d7.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c2bf8d9a-ac21-4eb9-967d-6d688156a59b" Title="IntOptionSpecifier Class" Url="html/6977aefb-8677-86a7-0ad2-6a438c8e8d14.htm">
+        <HelpTOCNode Title="IntOptionSpecifier Constructor " Url="html/35ea97f8-a616-3e2c-db84-8ed9bf45f5c6.htm" />
+        <HelpTOCNode Id="ff4ea097-b95f-40dc-a892-9030cafe5034" Title="IntOptionSpecifier Methods" Url="html/948b8bb4-d42d-cd53-35e4-bc085c2e42c0.htm">
+          <HelpTOCNode Id="95b36115-138b-4224-bfa4-248500813830" Title="Parse Method " Url="html/3bc1f78c-0637-ab87-5ac3-5414eb46f316.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/c6df1e9e-07d4-e9ab-d26e-b0c510a9d4fd.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="IntOptionSpecifier Properties" Url="html/9841535b-6dd6-6fec-6bec-92766d1a0034.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e51fe61f-34ac-4783-9a6c-e78ce02d9abf" Title="ListOptionSpecifier(T) Class" Url="html/1e016588-bf5b-f80c-342d-fd28e573528e.htm">
+        <HelpTOCNode Title="ListOptionSpecifier(T) Constructor " Url="html/7a3ba0f6-8207-12c9-4cfd-428532179ec9.htm" />
+        <HelpTOCNode Id="58a6ff7f-82d9-4cf2-9d1b-306a36359cbd" Title="ListOptionSpecifier(T) Methods" Url="html/a2f2377d-851e-5682-e6a1-7b869da3b819.htm">
+          <HelpTOCNode Id="4f310869-76d0-454a-9208-e6bc512bc7f0" Title="Parse Method " Url="html/4d38aab7-cd55-51ac-44ad-a6c3ee08dd8c.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/ad253c74-4800-2122-ff0f-9640574a94c9.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="ListOptionSpecifier(T) Properties" Url="html/835f4d7c-a1b3-5d47-0968-8f4a55b687ed.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ac7dbf12-5fbe-4a3c-9ba1-ec0235c8bb19" Title="OptionSpecifier Class" Url="html/18d0efd4-9e84-f4ee-f319-605fc4a1f2d4.htm">
+        <HelpTOCNode Title="OptionSpecifier Constructor " Url="html/e4d0419b-4b9d-4602-28d4-39d384c7688d.htm" />
+        <HelpTOCNode Id="db54495b-429f-4ba4-9a2d-0f4225f9f077" Title="OptionSpecifier Methods" Url="html/7645fe6b-ee01-04f7-a0be-361aee65de69.htm">
+          <HelpTOCNode Id="28d7f236-725a-4ff1-b538-9bce1da3426e" Title="Parse Method " Url="html/944d5229-ac6e-d068-4528-b02723da1c2c.htm">
+            <HelpTOCNode Title="Parse Method (Object)" Url="html/e160fcd0-4ebb-f847-a000-5674694e50d4.htm" />
+            <HelpTOCNode Title="Parse Method (String)" Url="html/504d3af1-c380-80a8-1f30-ff3d77e0443f.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="c44f7abf-821a-48e3-b636-61b3e5352a6c" Title="OptionSpecifier Properties" Url="html/e12c2f43-4d2b-c2c7-b05c-cf61eaa2e86a.htm">
+          <HelpTOCNode Title="DefaultValue Property " Url="html/2ff4de79-4267-4e22-3971-c0860bf90ff2.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/18457072-6e8a-9f49-996a-d21a38d2c5b0.htm" />
+          <HelpTOCNode Title="Required Property " Url="html/eceb246b-2ce1-502e-f1a5-42c4c7495fe9.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c5d31e30-3b66-4d5d-8541-3ea9893bf5fe" Title="OptionSpecifier(T) Class" Url="html/a4abdaed-3e6e-653a-0a4c-78e35d3071bd.htm">
+        <HelpTOCNode Title="OptionSpecifier(T) Constructor " Url="html/72e8ee05-eebb-a06c-84c6-ca5560831610.htm" />
+        <HelpTOCNode Title="OptionSpecifier(T) Methods" Url="html/d0eff3da-4a80-82f1-0ba7-3effc26c8dd0.htm" />
+        <HelpTOCNode Title="OptionSpecifier(T) Properties" Url="html/3357dd5f-8d1d-8eb0-07a2-bd542e1ae9cb.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="29518285-738f-42bf-a29e-3dfa473a4da3" Title="SignedOptionSpecifier Class" Url="html/483a3fec-755d-d87b-e8a7-5d96a53077d0.htm">
+        <HelpTOCNode Title="SignedOptionSpecifier Constructor " Url="html/ab6e62ef-19a2-d1d4-c974-d98e17dc0044.htm" />
+        <HelpTOCNode Id="a0797eef-f19c-4734-bda2-69bee1e4a695" Title="SignedOptionSpecifier Methods" Url="html/8d0a6259-423e-0657-b5e5-fe759a767e48.htm">
+          <HelpTOCNode Id="25f5f0f5-2b81-454a-a26a-3ff7e894d7f3" Title="Parse Method " Url="html/8e8c9774-74b4-a74d-45fa-48d8a59be2e2.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/c4533793-f7f1-e8bc-2039-b72c357ee76f.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="SignedOptionSpecifier Properties" Url="html/4e9efb0d-68d2-4e7f-1bad-f980832e1796.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1ed877b6-ce32-44b5-8cce-3147353a0c35" Title="StringOptionSpecifier Class" Url="html/ddafab85-fc5b-f840-2da9-4f4d48ee5b39.htm">
+        <HelpTOCNode Title="StringOptionSpecifier Constructor " Url="html/9562f99a-e7e7-1051-8663-fc97c2c1001b.htm" />
+        <HelpTOCNode Id="91121c74-553b-429b-9688-29fb8516b8ae" Title="StringOptionSpecifier Methods" Url="html/127f4dc0-c457-fcfa-1efd-f5524f624731.htm">
+          <HelpTOCNode Id="f86b150d-a392-4209-a171-36032899d393" Title="Parse Method " Url="html/a01621ec-7cda-e01f-e0b0-c1629f22827f.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/a649651d-c191-921d-1f1c-8076240fdaa4.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="StringOptionSpecifier Properties" Url="html/ff88268a-342e-1fad-9ad8-90d8665b1b69.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="8f55264a-c912-4d0b-9b8f-abb8c3cdf7fd" Title="UnsignedOptionSpecifier Class" Url="html/daaba545-dc34-ddd4-9126-9068c8e6abcc.htm">
+        <HelpTOCNode Title="UnsignedOptionSpecifier Constructor " Url="html/2d45a578-2a57-163b-f180-09cf446d6654.htm" />
+        <HelpTOCNode Id="22d440e8-d5d9-4017-a803-f4e4c363323f" Title="UnsignedOptionSpecifier Methods" Url="html/a58a4bd7-24c3-5441-1708-bdb76ece087d.htm">
+          <HelpTOCNode Id="cff627e7-db03-4ee8-b8e0-40577e1cc028" Title="Parse Method " Url="html/7bcc2e06-e123-32ab-7712-61dd7dd17cd9.htm">
+            <HelpTOCNode Title="Parse Method (String)" Url="html/9544997a-d496-43e7-9a17-db31f19da46b.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="UnsignedOptionSpecifier Properties" Url="html/bd1f098f-176e-a22d-9daf-91b6e6132500.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="db19b8c9-0218-4ab9-9d60-9baff327b851" Title="InvalidIdentifierError Class" Url="html/6caf2f4d-90a3-ea9a-51bd-a096db709ddb.htm">
-      <HelpTOCNode Title="InvalidIdentifierError Constructor " Url="html/682fb8e9-8101-404a-534d-bebd12ccf54e.htm" />
-      <HelpTOCNode Title="InvalidIdentifierError Methods" Url="html/ed594515-5e84-5e32-4bd9-8591f941491a.htm" />
-      <HelpTOCNode Title="InvalidIdentifierError Properties" Url="html/6c77dc6d-b5d8-660e-4239-c21cfaadeb37.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="d3ebfdad-9e6c-448f-94ae-cba5dba85fd2" Title="InvalidSectionOrOptionError Class" Url="html/8ebcfbd8-7a52-4bdd-5442-4748ba92fbb1.htm">
-      <HelpTOCNode Title="InvalidSectionOrOptionError Constructor " Url="html/49534155-399e-162d-b2c2-b83877090202.htm" />
-      <HelpTOCNode Title="InvalidSectionOrOptionError Methods" Url="html/1b94b9f6-1bf8-779d-7cde-ff3e9ce6538a.htm" />
-      <HelpTOCNode Id="3c69a505-4fd2-40d2-aed6-dc1599eb51f4" Title="InvalidSectionOrOptionError Properties" Url="html/b910a8aa-2a5a-d206-d095-4876687fae97.htm">
-        <HelpTOCNode Title="ConfigExceptions Property " Url="html/6f63b823-a7e0-a02a-37c4-e4f683e93315.htm" />
+    <HelpTOCNode Id="8a08053f-c543-46c2-aa8d-119a1837b830" Title="Config.IniFiles Namespaces" Url="html/f3fe5828-8174-5348-b19c-4061892c00db.htm">
+      <HelpTOCNode Id="5d66f48d-1209-4481-aea7-1092b708e628" Title="Config.IniFiles" Url="html/1b585e35-f701-9f04-c39b-0694b20e3470.htm">
+        <HelpTOCNode Id="1dfabb74-b1e8-4828-87b8-aa8dbccd1089" Title="IniConfig Class" Url="html/c94f059d-396a-168d-6bb1-c2d747cc91fc.htm">
+          <HelpTOCNode Id="861455f6-0f0f-4f0c-a2fe-53c8cddb227e" Title="IniConfig Methods" Url="html/bd48bfe6-37e4-ffe1-7e44-239603e2a82f.htm">
+            <HelpTOCNode Title="FromFile Method " Url="html/acc2e229-bc5a-b0ce-e855-95aecdbbdf2f.htm" />
+            <HelpTOCNode Id="5ad4593f-298d-4abd-8be6-70aa83ab3e92" Title="SaveToFile Method " Url="html/24cdc8eb-607c-adb9-61df-1e516470abd0.htm">
+              <HelpTOCNode Title="SaveToFile Method (IConfig, Verbosity)" Url="html/dab5fb46-d437-8fc5-ab2f-9c0a39581e81.htm" />
+              <HelpTOCNode Title="SaveToFile Method (IConfig, String, Verbosity)" Url="html/6131b7de-224d-51b5-ca99-a3d1920dac32.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="4e204be2-371b-4a00-a2e8-df7bdd8cb87b" Title="IniConfigException Class" Url="html/a5ff9cf2-7497-4ee6-0ada-7a70078c65bc.htm">
+          <HelpTOCNode Id="c8f8db02-636b-4d45-8b25-26d02925a050" Title="IniConfigException Constructor " Url="html/06def105-a2d4-510c-5e62-1887c51428f6.htm">
+            <HelpTOCNode Title="IniConfigException Constructor (FormatError)" Url="html/4277ca62-1a6b-3ef1-68ad-b5d00a37cac6.htm" />
+            <HelpTOCNode Title="IniConfigException Constructor (IEnumerable(FormatError))" Url="html/3dd45e03-1526-2b49-e613-7526a9854ec3.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="IniConfigException Fields" Url="html/8aec42d4-f73a-2c50-2ac9-822919b5cb40.htm" />
+          <HelpTOCNode Title="IniConfigException Methods" Url="html/fc80b2f7-372d-240e-b1e2-7d614027648a.htm" />
+          <HelpTOCNode Id="64ec12e2-63b7-48e8-946f-25cc36fef165" Title="IniConfigException Properties" Url="html/99a6f6e6-1ecf-9101-5997-e8c3bbcbaaaf.htm">
+            <HelpTOCNode Title="Errors Property " Url="html/911e5b5a-a2ef-c33f-f9e5-f5cc4749e33d.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="IniConfigException Events" Url="html/26a12ad2-2e19-a281-a6c8-7a15551f0246.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="48911b94-e156-46b2-ac99-dfd6efa20d46" Title="IniFileConfigBuilder Class" Url="html/b28d4b83-b110-027f-daca-6dd16174dd50.htm">
+          <HelpTOCNode Id="4c5a818d-6fe1-4cdc-a1b1-f2044f1f8c48" Title="IniFileConfigBuilder Constructor " Url="html/86d4a069-ef55-fcdf-e81b-e3663124637d.htm">
+            <HelpTOCNode Title="IniFileConfigBuilder Constructor (String)" Url="html/8feed842-7abd-a8fc-ac26-2fece4225b66.htm" />
+            <HelpTOCNode Title="IniFileConfigBuilder Constructor (ITokenParser)" Url="html/58ddb4a8-e3d1-60fa-615e-a34358c7127b.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="ca3653fe-b962-4860-a6bf-82b5a003e6b8" Title="IniFileConfigBuilder Methods" Url="html/e8a05384-5587-996c-3ebb-9f7166043f25.htm">
+            <HelpTOCNode Id="5983126e-9d1b-4563-a363-c4e1168bd894" Title="Build Method " Url="html/7dfcc226-012a-3409-479b-c6cd5a4ac0cf.htm">
+              <HelpTOCNode Title="Build Method (ConfigFormatSpecifier, BuildMode)" Url="html/7690b547-d14e-9f8e-e196-b541c77914ce.htm" />
+              <HelpTOCNode Title="Build Method (IConfig, ConfigFormatSpecifier, BuildMode)" Url="html/1bbe5a6c-60c2-5b44-5f2a-f923cb390df3.htm" />
+            </HelpTOCNode>
+            <HelpTOCNode Title="Dispose Method " Url="html/beebf4b5-1377-ed24-d7fb-44bb5f0b798f.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="014a86c6-7f16-4e88-8425-340aeb2957a8" Title="IniFileConfigBuilder Properties" Url="html/5abe2e2d-56a0-fe56-8ca5-defdf77c2b9c.htm">
+            <HelpTOCNode Title="Errors Property " Url="html/715a42ca-be15-6fa4-f7d5-ca3bebe3fed4.htm" />
+            <HelpTOCNode Title="Ok Property " Url="html/f2bf93fc-eedf-1b53-35bb-1c8363a3ac4d.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="d5b3ca55-e12b-46a7-a2e5-516025196250" Title="IniFileConfigSaver Class" Url="html/423ed7a7-0743-2074-c705-a3f6c3f6a3fb.htm">
+          <HelpTOCNode Title="IniFileConfigSaver Constructor " Url="html/1765c610-b35f-652f-8bae-14c53206837b.htm" />
+          <HelpTOCNode Id="290d8a28-d05e-4cdd-a498-db9f8ceb70a0" Title="IniFileConfigSaver Methods" Url="html/e0763e65-ffa3-4b03-5fae-ca24941870b8.htm">
+            <HelpTOCNode Id="60a2592d-2645-4082-b4e3-4c5bcfab8e9d" Title="SaveConfig Method " Url="html/c8892271-bc50-7f2b-f517-cbafe2b8eca5.htm">
+              <HelpTOCNode Title="SaveConfig Method (IConfig, Verbosity)" Url="html/599dfab0-be1e-2e87-7968-0738d97821c4.htm" />
+              <HelpTOCNode Title="SaveConfig Method (TextWriter, IConfig, Verbosity)" Url="html/9dffe3f6-2673-a0d8-316e-70885823a2bc.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+        </HelpTOCNode>
       </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="77c2ce78-d898-4752-b147-f0dbea7dbd7a" Title="InvalidValueError Class" Url="html/1c33bd58-a945-5ac5-651e-06ca53fcb37f.htm">
-      <HelpTOCNode Title="InvalidValueError Constructor " Url="html/57b9fcfc-108c-3172-6370-d10503d5296b.htm" />
-      <HelpTOCNode Title="InvalidValueError Methods" Url="html/35acfd78-bf2e-7633-dd5f-9aa0f0d4c88e.htm" />
-      <HelpTOCNode Title="InvalidValueError Properties" Url="html/5e9a5ce9-a09c-264b-33f6-57ef4c729e11.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="eb4853d1-5af7-402d-bde4-5e254f9c6692" Title="NoSectionError Class" Url="html/b5ad785c-7140-d4b5-33d6-c05912b0ac34.htm">
-      <HelpTOCNode Title="NoSectionError Constructor " Url="html/88f41f8c-4f42-9f62-24a7-a3607e6c6dd3.htm" />
-      <HelpTOCNode Title="NoSectionError Methods" Url="html/81a78b67-5fb2-dc49-a010-a998c971a1c7.htm" />
-      <HelpTOCNode Title="NoSectionError Properties" Url="html/612e1910-01f7-46cc-5a0d-dc739be73e3a.htm" />
-    </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="dfb0c3b2-2987-49be-bbaf-83b3b60ef1e8" Title="Config.IniFiles.Parser" Url="html/82a892de-3787-4459-fe32-6f213d3c6dc2.htm">
-    <HelpTOCNode Id="a9a3ea19-130e-4ec0-96b9-a9bde0e6e887" Title="ITokenParser Interface" Url="html/dcc2cd88-c3a6-9842-5188-dfbf3f243c57.htm">
-      <HelpTOCNode Id="945a9fad-1152-4ca9-8a31-3f9f12d6d7e5" Title="ITokenParser Methods" Url="html/63d9d1bd-9089-1b8d-0895-f5b89edf82c9.htm">
-        <HelpTOCNode Title="GetLine Method " Url="html/bf58ab78-ad78-7257-ba9c-e41bf6a24d0b.htm" />
-        <HelpTOCNode Title="GetNextToken Method " Url="html/8c4d392c-24d4-80be-3884-5b8cf481b89e.htm" />
-        <HelpTOCNode Id="3d86d4a6-81e9-4efa-9bf5-4e355387a4ba" Title="Open Method " Url="html/3cfb7792-4183-de0c-6435-bf0ac0fe96a2.htm">
-          <HelpTOCNode Title="Open Method (StreamReader)" Url="html/43d9ffb3-8814-c1ef-d123-e013b7838f4c.htm" />
-          <HelpTOCNode Title="Open Method (String)" Url="html/4dbf994b-1a7b-977a-8e72-589d59785d55.htm" />
+      <HelpTOCNode Id="34f120ee-a1de-45a3-9556-e6f445f08834" Title="Config.IniFiles.Errors" Url="html/61bccbb1-faf4-daad-cc69-c4cbfdb103cc.htm">
+        <HelpTOCNode Id="846b7437-2aa9-4fa6-b276-ff4364c86f9f" Title="DuplicateSectionError Class" Url="html/8cb65faa-2e7f-cc1a-a3c0-5f97cffe14eb.htm">
+          <HelpTOCNode Title="DuplicateSectionError Constructor " Url="html/faac6b28-e022-bb6b-77bb-2dbd646706e9.htm" />
+          <HelpTOCNode Title="DuplicateSectionError Methods" Url="html/16fbd591-8381-763c-0cb4-b8d736f9a983.htm" />
+          <HelpTOCNode Title="DuplicateSectionError Properties" Url="html/c4904e66-43d3-fff5-43f3-42c57e0fa980.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a7ebdf2b-9da9-4f5d-9641-5b2715017d86" Title="FormatError Class" Url="html/1f2d6e92-ee51-2965-bf7c-8036f0569d11.htm">
+          <HelpTOCNode Title="FormatError Constructor " Url="html/73130247-82c1-1336-2b47-b40eff25ba74.htm" />
+          <HelpTOCNode Title="FormatError Methods" Url="html/a9e59c97-3831-40dd-c6bf-a49436b52cac.htm" />
+          <HelpTOCNode Id="0fb30821-cf87-46d4-ba10-b879fdba4f70" Title="FormatError Properties" Url="html/16c18025-78f5-7966-b8f0-76cfe7723a6d.htm">
+            <HelpTOCNode Title="Line Property " Url="html/877201ec-e781-e397-7cae-4d16c5437138.htm" />
+            <HelpTOCNode Title="Message Property " Url="html/cba42fb9-a77b-4256-86b4-7f1b2365a5e8.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="4c66685c-f20d-4ed3-8b0e-926b68d1c3b4" Title="InvalidIdentifierError Class" Url="html/6caf2f4d-90a3-ea9a-51bd-a096db709ddb.htm">
+          <HelpTOCNode Title="InvalidIdentifierError Constructor " Url="html/682fb8e9-8101-404a-534d-bebd12ccf54e.htm" />
+          <HelpTOCNode Title="InvalidIdentifierError Methods" Url="html/ed594515-5e84-5e32-4bd9-8591f941491a.htm" />
+          <HelpTOCNode Title="InvalidIdentifierError Properties" Url="html/6c77dc6d-b5d8-660e-4239-c21cfaadeb37.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5d07a399-50e3-44f0-8d22-f2c863f980b0" Title="InvalidSectionOrOptionError Class" Url="html/8ebcfbd8-7a52-4bdd-5442-4748ba92fbb1.htm">
+          <HelpTOCNode Title="InvalidSectionOrOptionError Constructor " Url="html/49534155-399e-162d-b2c2-b83877090202.htm" />
+          <HelpTOCNode Title="InvalidSectionOrOptionError Methods" Url="html/1b94b9f6-1bf8-779d-7cde-ff3e9ce6538a.htm" />
+          <HelpTOCNode Id="0a185878-2621-495b-9259-85e8f2e01db6" Title="InvalidSectionOrOptionError Properties" Url="html/b910a8aa-2a5a-d206-d095-4876687fae97.htm">
+            <HelpTOCNode Title="ConfigExceptions Property " Url="html/6f63b823-a7e0-a02a-37c4-e4f683e93315.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="f0123138-44ae-45dc-a4e7-a4a3ef7b9218" Title="InvalidValueError Class" Url="html/1c33bd58-a945-5ac5-651e-06ca53fcb37f.htm">
+          <HelpTOCNode Title="InvalidValueError Constructor " Url="html/57b9fcfc-108c-3172-6370-d10503d5296b.htm" />
+          <HelpTOCNode Title="InvalidValueError Methods" Url="html/35acfd78-bf2e-7633-dd5f-9aa0f0d4c88e.htm" />
+          <HelpTOCNode Title="InvalidValueError Properties" Url="html/5e9a5ce9-a09c-264b-33f6-57ef4c729e11.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b6bd9102-c796-464c-a19b-2ed478d0851f" Title="NoSectionError Class" Url="html/b5ad785c-7140-d4b5-33d6-c05912b0ac34.htm">
+          <HelpTOCNode Title="NoSectionError Constructor " Url="html/88f41f8c-4f42-9f62-24a7-a3607e6c6dd3.htm" />
+          <HelpTOCNode Title="NoSectionError Methods" Url="html/81a78b67-5fb2-dc49-a010-a998c971a1c7.htm" />
+          <HelpTOCNode Title="NoSectionError Properties" Url="html/612e1910-01f7-46cc-5a0d-dc739be73e3a.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f52a7497-08e0-4a0d-9cce-0ff17726c6c8" Title="Config.IniFiles.Parser" Url="html/82a892de-3787-4459-fe32-6f213d3c6dc2.htm">
+        <HelpTOCNode Id="fb5f2cf1-998e-4d12-9821-64477b996f08" Title="ITokenParser Interface" Url="html/dcc2cd88-c3a6-9842-5188-dfbf3f243c57.htm">
+          <HelpTOCNode Id="31061566-7c21-4fa7-86fc-fb57c72d21d9" Title="ITokenParser Methods" Url="html/63d9d1bd-9089-1b8d-0895-f5b89edf82c9.htm">
+            <HelpTOCNode Title="GetLine Method " Url="html/bf58ab78-ad78-7257-ba9c-e41bf6a24d0b.htm" />
+            <HelpTOCNode Title="GetNextToken Method " Url="html/8c4d392c-24d4-80be-3884-5b8cf481b89e.htm" />
+            <HelpTOCNode Id="b9403d4a-bbe6-45fb-9ffc-f2461d8aa523" Title="Open Method " Url="html/3cfb7792-4183-de0c-6435-bf0ac0fe96a2.htm">
+              <HelpTOCNode Title="Open Method (StreamReader)" Url="html/43d9ffb3-8814-c1ef-d123-e013b7838f4c.htm" />
+              <HelpTOCNode Title="Open Method (String)" Url="html/4dbf994b-1a7b-977a-8e72-589d59785d55.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="5f16b73e-6872-4d0f-a14f-632cec5bc453" Title="TokenParser Class" Url="html/6abf7210-147e-c3b2-67c2-0072771d9544.htm">
+          <HelpTOCNode Id="6dfa11c8-8a93-4b56-9b19-9aeffa71d8cb" Title="TokenParser Constructor " Url="html/9c0ce7e4-b706-71c2-a162-8fc131a20fbd.htm">
+            <HelpTOCNode Title="TokenParser Constructor " Url="html/7c1589ee-8a6b-8d9e-da81-10dfc435d6b8.htm" />
+            <HelpTOCNode Title="TokenParser Constructor (StreamReader)" Url="html/6b167964-4f67-bcc3-e220-2b83a445cd62.htm" />
+            <HelpTOCNode Title="TokenParser Constructor (String)" Url="html/2f98cedc-3cc9-246d-c894-ada6be428658.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="f6893c8d-97c5-47da-bcf0-13c06a971170" Title="TokenParser Methods" Url="html/45fcd091-f458-3008-f433-8f3909c39f69.htm">
+            <HelpTOCNode Title="Dispose Method " Url="html/96507f62-9e45-a9e7-700f-fca89d1f9797.htm" />
+            <HelpTOCNode Title="GetLine Method " Url="html/8adf00a1-7cd6-9eb5-b624-689c59e09c53.htm" />
+            <HelpTOCNode Title="GetNextToken Method " Url="html/61c75648-2f31-4a1b-9971-c83bf1efe507.htm" />
+            <HelpTOCNode Id="93a56826-164d-4793-b014-9815847165cb" Title="Open Method " Url="html/cf15d017-f628-cd7e-b0f1-23057bc092fe.htm">
+              <HelpTOCNode Title="Open Method (StreamReader)" Url="html/062b7eea-60f5-e4f5-4604-745b8438a648.htm" />
+              <HelpTOCNode Title="Open Method (String)" Url="html/30c4e53f-c92e-8218-8a8a-49a9865ae5b7.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="55abe746-f143-4fd0-a42b-78e686136bdc" Title="Config.IniFiles.Parser.Tokens" Url="html/1b064f79-8379-4d32-9b28-de8ddd373eaf.htm">
+        <HelpTOCNode Id="513ae37c-0443-4782-bd21-83ab1ad1f3c1" Title="CommentToken Class" Url="html/8fb41fac-22c7-bc7f-127a-c673ddf9864f.htm">
+          <HelpTOCNode Title="CommentToken Constructor " Url="html/4da1e674-66cf-77ec-c923-916f60a25658.htm" />
+          <HelpTOCNode Id="8ec0ee2a-e935-4e72-a46e-b1aec8928adf" Title="CommentToken Fields" Url="html/43888885-278e-4a6a-420d-f63ed4b21344.htm">
+            <HelpTOCNode Title="CommentSymbol Field" Url="html/b63127ac-c77f-40fc-422d-e743160b89f6.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="316ad5f4-6575-499b-8d7e-8c2eabffc309" Title="CommentToken Methods" Url="html/b58cb42a-cf59-82e2-cfcd-26fd0478c6ca.htm">
+            <HelpTOCNode Title="FromStream Method " Url="html/71dd3d02-a26b-e5b0-1a55-34257d1f5c82.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="57e317fa-2898-4afa-8a3f-72b39902d429" Title="CommentToken Properties" Url="html/a38e992d-fcb6-47ae-8cf3-e2f0008a19d2.htm">
+            <HelpTOCNode Title="Content Property " Url="html/e3739f81-016a-7878-0933-5e33743804c6.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="bf31ae58-d074-4315-be9f-07cef9c6b28d" Title="OptionToken Class" Url="html/9f3f86eb-b81a-f9ce-3744-a1aa15ee79c5.htm">
+          <HelpTOCNode Title="OptionToken Constructor " Url="html/5f96afc6-ad46-8f52-f508-2fa3128b89dd.htm" />
+          <HelpTOCNode Id="4ffbd1c4-5660-46ec-b11c-d5e1fc375ca6" Title="OptionToken Methods" Url="html/2a9c9772-0871-2108-c1ff-6afabcba869f.htm">
+            <HelpTOCNode Title="FromStream Method " Url="html/0ef262b6-123f-89ba-591c-431a69f4aeb3.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="74b454b5-0ffb-477f-944d-484f9eb639c7" Title="OptionToken Properties" Url="html/20452972-f48a-a6ea-63a6-b14410b4289a.htm">
+            <HelpTOCNode Title="Comment Property " Url="html/e5390527-e155-8ded-0de8-d9a22ea02314.htm" />
+            <HelpTOCNode Title="Name Property " Url="html/b72c5334-6153-808a-bddc-f57a7d410e5f.htm" />
+            <HelpTOCNode Title="Value Property " Url="html/eb518488-c000-3fa4-2356-f78260c06d02.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="3dd02220-919c-49bb-8e6f-4e65b852639c" Title="SectionHeaderToken Class" Url="html/3688db00-8741-d74a-7eb7-fe5c0cf85487.htm">
+          <HelpTOCNode Title="SectionHeaderToken Constructor " Url="html/23652b7d-ec52-c93d-61e3-79b6cb79e26f.htm" />
+          <HelpTOCNode Id="bd44e013-1863-4c42-bf79-746b6d25e774" Title="SectionHeaderToken Methods" Url="html/651a9811-5146-d607-9d2c-0691b8f98af2.htm">
+            <HelpTOCNode Title="FromStream Method " Url="html/66f0027b-72f2-bcc7-b56d-5755e1e0c892.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="fed2620c-71a4-4bda-937e-da60a2ddcdea" Title="SectionHeaderToken Properties" Url="html/d780c715-7900-5454-c296-97a3958f5387.htm">
+            <HelpTOCNode Title="Name Property " Url="html/adb65a05-c7db-c159-1abf-66abb4f40c36.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="a98cad51-4e91-4d4a-8ae8-a1645d1eaf8e" Title="Token Class" Url="html/62c6eab3-afcf-7b35-77f9-cf58f87e4aac.htm">
+          <HelpTOCNode Title="Token Constructor " Url="html/11309c71-fa66-f517-fc38-290fb797b45f.htm" />
+          <HelpTOCNode Title="Token Methods" Url="html/84f8c39c-c3b9-ae84-a404-428b1090d8f7.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="85fc308a-3512-4a3b-9cc9-38a4ad49754a" Title="Config.IniFiles.Validation" Url="html/d1c3091e-19fe-5e76-3f67-de04807499fe.htm">
+        <HelpTOCNode Id="7b2bb4e6-4ec5-4f55-bd9d-45bc7dd1ad4b" Title="IValidation Interface" Url="html/d9ec6b75-f6ee-8dbb-c5db-03ce9a7926cb.htm">
+          <HelpTOCNode Id="92eaeab0-fe9e-4766-b236-e26fc125e76b" Title="IValidation Methods" Url="html/fa20745b-4372-8b35-53e8-2f16145d7688.htm">
+            <HelpTOCNode Title="ValidateConfig Method " Url="html/c17fa8fd-9b2c-279d-c348-648dbec8b22d.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="157d8a7b-d837-4171-8955-c3f1a4fc9b7b" Title="RelaxedStrategy Class" Url="html/e3ff2675-5d5f-f23f-e213-e4a02676b13b.htm">
+          <HelpTOCNode Title="RelaxedStrategy Constructor " Url="html/77ce7763-13c3-8c63-1b35-86ef7d541bdc.htm" />
+          <HelpTOCNode Id="f4362e3b-e30a-4641-86c0-d4d31d411fa5" Title="RelaxedStrategy Methods" Url="html/8aeff036-cd21-2ff0-809f-7fc602587a80.htm">
+            <HelpTOCNode Title="ValidateConfig Method " Url="html/ff30f046-9924-28e9-5b1a-1fa7bf735e89.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="c6cbdaf5-f68e-4cc4-932a-c2a117878d37" Title="StrictStrategy Class" Url="html/9f7b29f7-d98d-e252-d0dd-3cef43254914.htm">
+          <HelpTOCNode Title="StrictStrategy Constructor " Url="html/6fa52bee-c1eb-dd78-9431-79607c276867.htm" />
+          <HelpTOCNode Id="0a273ca0-d7ad-4e79-9940-5cc7cc9ac196" Title="StrictStrategy Methods" Url="html/908de7eb-b21d-2794-d08c-a487788bc4a9.htm">
+            <HelpTOCNode Title="ValidateConfig Method " Url="html/83495611-5b03-09db-6363-c4bffcba4acc.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="c0d05aa4-7561-4ae5-abd6-b403c18a2e7f" Title="ValidationFactory Class" Url="html/ec8f733f-011a-c44c-b9de-fb08bf2819cd.htm">
+          <HelpTOCNode Id="b927af69-d519-4c12-bf1c-37ba5f73d878" Title="ValidationFactory Methods" Url="html/308ba520-1f44-2abd-a20e-0b97552a5971.htm">
+            <HelpTOCNode Title="GetValidationStrategy Method " Url="html/94713695-00b3-3eaf-2604-25c7555d99fe.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="054b28b8-6082-415c-bc3a-4ce5fd13208e" Title="ValidationStrategy Class" Url="html/f4b0e64e-acf9-bfac-4011-0912298b5466.htm">
+          <HelpTOCNode Title="ValidationStrategy Constructor " Url="html/0efd1ec6-80fd-514e-77f9-2b3631dfe4b0.htm" />
+          <HelpTOCNode Id="c8902bcc-4437-4a72-9355-f6c3d1dadf82" Title="ValidationStrategy Methods" Url="html/72545fb0-0cd5-9424-c29b-48d5f517cd66.htm">
+            <HelpTOCNode Title="FoundMissingMembers Method " Url="html/3051eefd-2506-02b0-d84c-1a83148b160b.htm" />
+            <HelpTOCNode Title="ValidateConfig Method " Url="html/1d507fc9-ee95-3843-f7fb-8f0668e8170f.htm" />
+          </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="3d12a82e-6d9b-4762-9220-5707472f3c7b" Title="Config.IniFiles.Parser.Tokens" Url="html/1b064f79-8379-4d32-9b28-de8ddd373eaf.htm">
-    <HelpTOCNode Id="66854d86-0e64-47d8-a2c4-ca5fa7a64596" Title="Token Class" Url="html/62c6eab3-afcf-7b35-77f9-cf58f87e4aac.htm">
-      <HelpTOCNode Title="Token Constructor " Url="html/11309c71-fa66-f517-fc38-290fb797b45f.htm" />
-      <HelpTOCNode Title="Token Methods" Url="html/84f8c39c-c3b9-ae84-a404-428b1090d8f7.htm" />
-    </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="c8c704cc-5752-4bc7-a676-b2f09ba572dd" Title="Config.Options" Url="html/c065aa74-2c0e-6515-6e43-0b709a64d4c2.htm">
-    <HelpTOCNode Id="e8460dce-bb67-4165-93e2-5b2202d01f5c" Title="BoolOption Class" Url="html/42e9c898-cb0d-eef4-501e-94cd2e2c90ca.htm">
-      <HelpTOCNode Id="936cab9a-a146-48b7-bbb6-04b344159ae8" Title="BoolOption Constructor " Url="html/faa7bda2-5487-d15f-ef9c-216ebccce862.htm">
-        <HelpTOCNode Title="BoolOption Constructor (Boolean)" Url="html/856bcf01-0937-8d87-83d0-c78d3e277e6f.htm" />
-        <HelpTOCNode Title="BoolOption Constructor (String)" Url="html/b03116e7-55f7-74d4-f0d2-22f50487a942.htm" />
+    <HelpTOCNode Id="d0f95504-e192-49e7-84ec-53fe36da5443" Title="Config.Options" Url="html/c065aa74-2c0e-6515-6e43-0b709a64d4c2.htm">
+      <HelpTOCNode Id="cc29b8b2-6a81-42b3-994d-e45b3733b18e" Title="BoolOption Class" Url="html/42e9c898-cb0d-eef4-501e-94cd2e2c90ca.htm">
+        <HelpTOCNode Id="5735068f-244e-48b0-8f77-d14ba9a532c6" Title="BoolOption Constructor " Url="html/faa7bda2-5487-d15f-ef9c-216ebccce862.htm">
+          <HelpTOCNode Title="BoolOption Constructor (Boolean)" Url="html/856bcf01-0937-8d87-83d0-c78d3e277e6f.htm" />
+          <HelpTOCNode Title="BoolOption Constructor (String)" Url="html/b03116e7-55f7-74d4-f0d2-22f50487a942.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="572f40e0-200e-4584-aff2-96c4f3c985bd" Title="BoolOption Methods" Url="html/ac36c5a6-ce3e-800c-b12c-d0761e968551.htm">
+          <HelpTOCNode Title="Serialize Method " Url="html/6e5f6615-653a-6697-06f2-764a3d974dda.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9bffe8e1-6d7e-4113-8d89-96c6345f13f4" Title="BoolOption Type Conversions" Url="html/2af119db-befc-6fa0-96f7-3c44372cce06.htm">
+          <HelpTOCNode Title="Implicit Conversion (Boolean to BoolOption)" Url="html/89aa5fd4-c493-62c2-80d3-70f32eed334e.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="BoolOption Properties" Url="html/984afaa3-bb7f-cba8-6ca4-7f97ac2a9e66.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5af9f024-6bfc-44ff-a61c-82d439c8b713" Title="BoolOption Methods" Url="html/ac36c5a6-ce3e-800c-b12c-d0761e968551.htm">
-        <HelpTOCNode Title="Serialize Method " Url="html/6e5f6615-653a-6697-06f2-764a3d974dda.htm" />
+      <HelpTOCNode Id="7db7fbc6-76c9-4f67-bffe-9466c093b54d" Title="CommentOption Class" Url="html/028d2a4c-4063-3d75-fcb0-4d19d0c8db0d.htm">
+        <HelpTOCNode Title="CommentOption Constructor " Url="html/46668dfa-0d6b-a993-7498-2853e2b805b5.htm" />
+        <HelpTOCNode Title="CommentOption Methods" Url="html/e80ec736-4840-defa-b417-47865fdadf4a.htm" />
+        <HelpTOCNode Title="CommentOption Properties" Url="html/15707d30-4f79-4dc5-476d-c2c210502caa.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="1e6d17b2-7cf7-45e5-ad86-a5cb476d2e9e" Title="BoolOption Type Conversions" Url="html/2af119db-befc-6fa0-96f7-3c44372cce06.htm">
-        <HelpTOCNode Title="Implicit Conversion (Boolean to BoolOption)" Url="html/89aa5fd4-c493-62c2-80d3-70f32eed334e.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Title="BoolOption Properties" Url="html/984afaa3-bb7f-cba8-6ca4-7f97ac2a9e66.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="9ceec902-5e56-4360-bbb0-9d94e24d8c91" Title="CommentOption Class" Url="html/028d2a4c-4063-3d75-fcb0-4d19d0c8db0d.htm">
-      <HelpTOCNode Title="CommentOption Constructor " Url="html/46668dfa-0d6b-a993-7498-2853e2b805b5.htm" />
-      <HelpTOCNode Title="CommentOption Methods" Url="html/e80ec736-4840-defa-b417-47865fdadf4a.htm" />
-      <HelpTOCNode Title="CommentOption Properties" Url="html/15707d30-4f79-4dc5-476d-c2c210502caa.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="985bacb3-86aa-4998-8c9c-7a06531ca9c8" Title="ConstraintOption(T) Class" Url="html/b46811fb-2723-7f22-dfc3-52013dd629a3.htm">
-      <HelpTOCNode Title="ConstraintOption(T) Constructor " Url="html/5c0eb1aa-9d56-b868-8fd8-6aeb3af9cd53.htm" />
-      <HelpTOCNode Title="ConstraintOption(T) Methods" Url="html/625791a8-fe0b-8052-f549-ca7d705ae6c1.htm" />
-      <HelpTOCNode Title="ConstraintOption(T) Properties" Url="html/911c2f1e-6c96-f239-c976-5133d9ce7180.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="8280844f-7f35-48cb-9a80-9da122e99834" Title="EnumOption(T) Class" Url="html/4b9f6c8c-85a0-a494-1efc-fe065fa56ee6.htm">
-      <HelpTOCNode Id="0945a03d-d166-49f4-9b9b-347a672af8af" Title="EnumOption(T) Constructor " Url="html/739fac59-5896-1bf5-be7c-318a1f6bd2e8.htm">
-        <HelpTOCNode Title="EnumOption(T) Constructor (String)" Url="html/401c21ba-237a-7bf7-de00-0885a28f6808.htm" />
-        <HelpTOCNode Title="EnumOption(T) Constructor (T)" Url="html/471c6b91-0b94-9b13-529e-dcf4fe5fc858.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Title="EnumOption(T) Methods" Url="html/3737b948-def6-5adb-1aa6-0664d7898a50.htm" />
-      <HelpTOCNode Title="EnumOption(T) Properties" Url="html/9b9a99a9-34cc-a4c5-6767-0d9acace9de3.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="0a69bcbf-5a5b-4429-9d49-de80504285db" Title="FloatOption Class" Url="html/d9b4f989-623b-e927-4cc7-4235d493d858.htm">
-      <HelpTOCNode Id="e0d5ca65-3086-4324-bd75-71c66d5563bf" Title="FloatOption Constructor " Url="html/083ae317-cd23-4783-9795-c379010a1a72.htm">
-        <HelpTOCNode Title="FloatOption Constructor (Single)" Url="html/f7ef3062-51b1-2df3-0532-d8c92446a4c6.htm" />
-        <HelpTOCNode Title="FloatOption Constructor (String)" Url="html/23252cc8-aafe-d6f8-4875-89c52dcd0367.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="66869099-02b7-46e4-985b-730a7100bf14" Title="FloatOption Methods" Url="html/cc602f69-ac87-e812-d9f5-fd252d6e3025.htm">
-        <HelpTOCNode Title="Serialize Method " Url="html/c13cab31-d935-3487-d429-adf7bf985da5.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="39a2d106-03f5-4bdf-9170-4140fd1ce71e" Title="FloatOption Type Conversions" Url="html/069b6e0e-fd37-df8e-22ea-a30b95537071.htm">
-        <HelpTOCNode Title="Implicit Conversion (Single to FloatOption)" Url="html/db497af0-9b98-9190-1453-937a15e7b890.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Title="FloatOption Properties" Url="html/512bd9f1-b1b8-9f89-1b8a-e66403f8356a.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="2edad853-e8cf-48be-baf3-37e137699c3e" Title="IntOption Class" Url="html/9815b19f-b88e-7b60-f098-7cf4504afab1.htm">
-      <HelpTOCNode Id="370dffab-fb21-422c-848e-fde7457b0501" Title="IntOption Constructor " Url="html/d8f97303-f113-b895-9d90-91baf552b52d.htm">
-        <HelpTOCNode Title="IntOption Constructor (Int32)" Url="html/a162bdb1-e4cf-b7f8-85ed-52ee42aab6cf.htm" />
-        <HelpTOCNode Title="IntOption Constructor (String)" Url="html/b6c26d24-36bf-7690-c6e6-2208600e008f.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Title="IntOption Methods" Url="html/d9280efe-4d04-4955-187b-a5d353f0ee77.htm" />
-      <HelpTOCNode Id="ae6c3548-8901-44d1-8ce1-39b2c457933f" Title="IntOption Type Conversions" Url="html/db6ba75c-c691-664e-86d5-3c7438edcfe0.htm">
-        <HelpTOCNode Title="Implicit Conversion (Int32 to IntOption)" Url="html/c9412d46-f855-b293-6dc2-df81be85b81c.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Title="IntOption Properties" Url="html/b6c2b509-9cb0-3b8a-8911-724523487e1b.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="8bc3d647-4e8d-48a9-a6b9-f6ffdbe61b5d" Title="ListOption(T) Class" Url="html/eba24562-0e9c-6c39-8fe7-311a1d333663.htm">
-      <HelpTOCNode Id="24e61935-b1ba-4590-81d3-690f900bb354" Title="ListOption(T) Constructor " Url="html/6ecc1e0c-0776-7f40-df49-5ac785c204f6.htm">
-        <HelpTOCNode Title="ListOption(T) Constructor (IEnumerable(T))" Url="html/fb0e14cf-6c1e-aef5-447f-268c7f4f9929.htm" />
-        <HelpTOCNode Title="ListOption(T) Constructor (T[])" Url="html/2b81b776-dcb7-4991-d8d5-3951ac5a6f83.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="b8424c17-7f08-49ec-a8c8-74b83b7bba77" Title="ListOption(T) Methods" Url="html/aaef698a-d1ee-0afe-2b6e-c825d44ebdb3.htm">
-        <HelpTOCNode Title="Get Method " Url="html/963e9b6f-0588-f6cc-7e53-e6824c1090ad.htm" />
-        <HelpTOCNode Title="Serialize Method " Url="html/e33530df-2f87-4b7e-5e68-86d30cba73fa.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="388ca93b-2a0e-4896-bd30-8eb36764926e" Title="ListOption(T) Type Conversions" Url="html/7803e093-1bba-aff5-b55c-20641282f0d2.htm">
-        <HelpTOCNode Title="Implicit Conversion (T[] to ListOption(T))" Url="html/dd2cb04f-7aef-dc59-8e3a-fd16e8aec091.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="2e4de705-186b-4f5d-834e-10d366aa630e" Title="ListOption(T) Properties" Url="html/cc6837c8-7aaf-630a-6698-f2e7ab0118bd.htm">
-        <HelpTOCNode Title="Data Property " Url="html/07eeb652-b7c6-694b-f786-eba2d2052056.htm" />
-        <HelpTOCNode Title="Values Property " Url="html/ca3cb0bf-3ae8-4187-9d2d-364adbb7e62f.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="9a5cd66a-095d-4fac-9f2b-f2bd13bc4fe8" Title="NumericOption(T) Class" Url="html/8a93952a-dfce-0a90-01a2-e3bfe2adb8e2.htm">
-      <HelpTOCNode Title="NumericOption(T) Constructor " Url="html/8e1aabf3-1d1c-bf2e-82fa-6f5eb2922a4e.htm" />
-      <HelpTOCNode Id="32206d23-c4e7-46ea-9785-24d36214dc85" Title="NumericOption(T) Methods" Url="html/a5f73d1d-fda4-5ce4-cba1-6e25c85c6efa.htm">
-        <HelpTOCNode Title="ParseValueToNumeric Method " Url="html/669344d1-b8c5-ac9d-4e95-d9b431d95b22.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Title="NumericOption(T) Properties" Url="html/c2472b8a-d5cf-c73d-416b-43052ceeae85.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="31b99a40-9369-41fb-8a66-db7aaf23edf1" Title="Option Class" Url="html/39574dea-079b-ae11-cb59-e3072a9045a3.htm">
-      <HelpTOCNode Title="Option Constructor " Url="html/41fe5c8f-f483-fd1d-3c16-19ea3bb033a3.htm" />
-      <HelpTOCNode Id="ef4855d4-46df-405f-9f65-4f60e79d3702" Title="Option Methods" Url="html/d2d7c304-95db-62d3-b3d9-b63dfd756264.htm">
-        <HelpTOCNode Title="Serialize Method " Url="html/c0291909-2931-a533-50e6-96e42104b82e.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Id="66080914-e4e3-4874-9a34-2ed8bc86805e" Title="Option Type Conversions" Url="html/ca01cd5b-5071-7288-8218-dd3317b31aa6.htm">
-        <HelpTOCNode Id="ff619249-004d-45be-a3fa-b715dee3e040" Title="Implicit Conversion Operators" Url="html/4bcae2f3-10eb-2a14-eb8f-fb9dc23a5fe3.htm">
-          <HelpTOCNode Title="Implicit Conversion (Boolean to Option)" Url="html/09af9233-8320-b62a-3f64-c6cf6a39e359.htm" />
-          <HelpTOCNode Title="Implicit Conversion (Boolean[] to Option)" Url="html/b64938ed-94eb-4f22-22b0-f883a42a29da.htm" />
-          <HelpTOCNode Title="Implicit Conversion (Int32 to Option)" Url="html/73c78ccf-1d11-e370-5f29-fe08e17fb8c0.htm" />
-          <HelpTOCNode Title="Implicit Conversion (Int32[] to Option)" Url="html/4a2394ba-3949-d343-3025-82b31d003270.htm" />
-          <HelpTOCNode Title="Implicit Conversion (Int64 to Option)" Url="html/b43ecdc0-befa-c09a-633c-bf41bc46bf54.htm" />
-          <HelpTOCNode Title="Implicit Conversion (Int64[] to Option)" Url="html/3dce272d-2e22-ec56-227c-598591e1b537.htm" />
-          <HelpTOCNode Title="Implicit Conversion (Single to Option)" Url="html/45e8a46f-c3ad-c22f-5bf0-e1e1e3a1b19d.htm" />
-          <HelpTOCNode Title="Implicit Conversion (Single[] to Option)" Url="html/e8eec063-e91c-256a-4910-7ca85197cfb6.htm" />
-          <HelpTOCNode Title="Implicit Conversion (String to Option)" Url="html/7c3e97ca-b8c8-d1a5-975c-0a117c2c6b5e.htm" />
-          <HelpTOCNode Title="Implicit Conversion (String[] to Option)" Url="html/805c83c3-0cee-251d-d11b-a1f44b58297b.htm" />
-          <HelpTOCNode Title="Implicit Conversion (UInt64 to Option)" Url="html/f20a83a0-230b-cce6-b099-ac15f3fb8669.htm" />
-          <HelpTOCNode Title="Implicit Conversion (UInt64[] to Option)" Url="html/fb4ca22d-541d-c19f-2bc8-01a8b87cab80.htm" />
+      <HelpTOCNode Id="c5c57a5e-9f15-4ad5-907d-92913827a6fe" Title="ConstraintOption(T) Class" Url="html/b46811fb-2723-7f22-dfc3-52013dd629a3.htm">
+        <HelpTOCNode Title="ConstraintOption(T) Constructor " Url="html/5c0eb1aa-9d56-b868-8fd8-6aeb3af9cd53.htm" />
+        <HelpTOCNode Title="ConstraintOption(T) Methods" Url="html/625791a8-fe0b-8052-f549-ca7d705ae6c1.htm" />
+        <HelpTOCNode Id="b8bb826f-9eaa-4a13-ac86-a1f1388422c3" Title="ConstraintOption(T) Properties" Url="html/911c2f1e-6c96-f239-c976-5133d9ce7180.htm">
+          <HelpTOCNode Title="Constraint Property " Url="html/a3059be9-2187-8b33-128e-f994d2669bed.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="aad3c247-7499-46fe-ad15-bd9b5b952dd4" Title="Option Properties" Url="html/3f2c5c55-136b-b96c-06fd-63eb19d31c72.htm">
-        <HelpTOCNode Title="Bool Property " Url="html/d0336b82-658c-52f6-b9c6-0b8fec6583cd.htm" />
-        <HelpTOCNode Title="BoolList Property " Url="html/ab669e53-22e9-e4a4-9859-da7eb130e20c.htm" />
-        <HelpTOCNode Title="Comment Property " Url="html/bf7770a8-cdfc-205e-07cd-04fb20ce40fe.htm" />
-        <HelpTOCNode Title="Data Property " Url="html/173871fa-7813-27c6-c22c-21f9eb2ff71f.htm" />
-        <HelpTOCNode Title="Float Property " Url="html/6e10d11e-1d0f-9b50-e066-e8bf13857bea.htm" />
-        <HelpTOCNode Title="FloatList Property " Url="html/79ea1716-3f3d-97e3-a622-bdd28eee7145.htm" />
-        <HelpTOCNode Title="Int Property " Url="html/069d9bd4-696e-6536-6733-a83d7b4f902d.htm" />
-        <HelpTOCNode Title="IntList Property " Url="html/b5961bc5-9236-c3eb-281d-8434f8c372a0.htm" />
-        <HelpTOCNode Title="Signed Property " Url="html/174088c8-457d-6364-b4db-3f44e6b06027.htm" />
-        <HelpTOCNode Title="SignedList Property " Url="html/c062f391-530b-442c-3547-f9a6853f7a82.htm" />
-        <HelpTOCNode Title="String Property " Url="html/fd235a9f-b87a-1575-0b2b-4810a8fc18ba.htm" />
-        <HelpTOCNode Title="StringList Property " Url="html/6c20fc68-7ca5-8427-3ba3-27162120f47f.htm" />
-        <HelpTOCNode Title="Unsigned Property " Url="html/e78e457b-3924-343d-e3f2-cdf0af76d468.htm" />
-        <HelpTOCNode Title="UnsignedList Property " Url="html/7f441599-16ff-833e-b654-a5fbdd6602cc.htm" />
+      <HelpTOCNode Id="0133da98-d4a0-409c-ac37-8fee8b20ba31" Title="EnumOption(T) Class" Url="html/4b9f6c8c-85a0-a494-1efc-fe065fa56ee6.htm">
+        <HelpTOCNode Id="18c53da5-8cf4-4c90-a42b-366ba0004dc7" Title="EnumOption(T) Constructor " Url="html/739fac59-5896-1bf5-be7c-318a1f6bd2e8.htm">
+          <HelpTOCNode Title="EnumOption(T) Constructor (String)" Url="html/401c21ba-237a-7bf7-de00-0885a28f6808.htm" />
+          <HelpTOCNode Title="EnumOption(T) Constructor (T)" Url="html/471c6b91-0b94-9b13-529e-dcf4fe5fc858.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a2610d04-e65a-48b0-acf2-626f22c6f042" Title="EnumOption(T) Fields" Url="html/6cb44ef6-ec6a-d43a-6810-38b8eba4518d.htm">
+          <HelpTOCNode Title="Value Field" Url="html/44324b09-94fe-2103-58a1-871b787c4ec2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="EnumOption(T) Methods" Url="html/3737b948-def6-5adb-1aa6-0664d7898a50.htm" />
+        <HelpTOCNode Title="EnumOption(T) Properties" Url="html/9b9a99a9-34cc-a4c5-6767-0d9acace9de3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7eeebfdc-c0d0-4f01-8ea8-74aa325df16b" Title="FloatOption Class" Url="html/d9b4f989-623b-e927-4cc7-4235d493d858.htm">
+        <HelpTOCNode Id="0662555b-7ee7-4bda-8739-836100af408a" Title="FloatOption Constructor " Url="html/083ae317-cd23-4783-9795-c379010a1a72.htm">
+          <HelpTOCNode Title="FloatOption Constructor (Single)" Url="html/f7ef3062-51b1-2df3-0532-d8c92446a4c6.htm" />
+          <HelpTOCNode Title="FloatOption Constructor (String)" Url="html/23252cc8-aafe-d6f8-4875-89c52dcd0367.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="16ea8026-20d1-4159-ad46-75f6b5d07de6" Title="FloatOption Methods" Url="html/cc602f69-ac87-e812-d9f5-fd252d6e3025.htm">
+          <HelpTOCNode Title="Serialize Method " Url="html/c13cab31-d935-3487-d429-adf7bf985da5.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="3ca09503-a341-4de2-9d0f-39280ca8abb1" Title="FloatOption Type Conversions" Url="html/069b6e0e-fd37-df8e-22ea-a30b95537071.htm">
+          <HelpTOCNode Title="Implicit Conversion (Single to FloatOption)" Url="html/db497af0-9b98-9190-1453-937a15e7b890.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="FloatOption Properties" Url="html/512bd9f1-b1b8-9f89-1b8a-e66403f8356a.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="670607cd-43d0-4b90-89e0-bb7be0169135" Title="IntOption Class" Url="html/9815b19f-b88e-7b60-f098-7cf4504afab1.htm">
+        <HelpTOCNode Id="6ccfac07-505d-47f9-af04-e04f52111dcd" Title="IntOption Constructor " Url="html/d8f97303-f113-b895-9d90-91baf552b52d.htm">
+          <HelpTOCNode Title="IntOption Constructor (Int32)" Url="html/a162bdb1-e4cf-b7f8-85ed-52ee42aab6cf.htm" />
+          <HelpTOCNode Title="IntOption Constructor (String)" Url="html/b6c26d24-36bf-7690-c6e6-2208600e008f.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="IntOption Methods" Url="html/d9280efe-4d04-4955-187b-a5d353f0ee77.htm" />
+        <HelpTOCNode Id="2e2b0ab3-6a8b-41ec-8b7a-b93f5a9fc386" Title="IntOption Type Conversions" Url="html/db6ba75c-c691-664e-86d5-3c7438edcfe0.htm">
+          <HelpTOCNode Title="Implicit Conversion (Int32 to IntOption)" Url="html/c9412d46-f855-b293-6dc2-df81be85b81c.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="IntOption Properties" Url="html/b6c2b509-9cb0-3b8a-8911-724523487e1b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="020fc3c6-2d8d-4d42-a2bd-68c843271db1" Title="ListOption(T) Class" Url="html/eba24562-0e9c-6c39-8fe7-311a1d333663.htm">
+        <HelpTOCNode Id="2278ee4a-39f1-4529-b8d0-7f1fa7404555" Title="ListOption(T) Constructor " Url="html/6ecc1e0c-0776-7f40-df49-5ac785c204f6.htm">
+          <HelpTOCNode Title="ListOption(T) Constructor (IEnumerable(T))" Url="html/fb0e14cf-6c1e-aef5-447f-268c7f4f9929.htm" />
+          <HelpTOCNode Title="ListOption(T) Constructor (T[])" Url="html/2b81b776-dcb7-4991-d8d5-3951ac5a6f83.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="714cd64a-bfaf-44cc-b4c0-c83ddac51e26" Title="ListOption(T) Methods" Url="html/aaef698a-d1ee-0afe-2b6e-c825d44ebdb3.htm">
+          <HelpTOCNode Title="Get Method " Url="html/963e9b6f-0588-f6cc-7e53-e6824c1090ad.htm" />
+          <HelpTOCNode Title="Serialize Method " Url="html/e33530df-2f87-4b7e-5e68-86d30cba73fa.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1ee6cce4-0135-4a86-bf7a-900ba245ade4" Title="ListOption(T) Type Conversions" Url="html/7803e093-1bba-aff5-b55c-20641282f0d2.htm">
+          <HelpTOCNode Title="Implicit Conversion (T[] to ListOption(T))" Url="html/dd2cb04f-7aef-dc59-8e3a-fd16e8aec091.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="68ccd12a-26b0-4c75-8161-ba48ced061ad" Title="ListOption(T) Properties" Url="html/cc6837c8-7aaf-630a-6698-f2e7ab0118bd.htm">
+          <HelpTOCNode Title="Data Property " Url="html/07eeb652-b7c6-694b-f786-eba2d2052056.htm" />
+          <HelpTOCNode Title="Values Property " Url="html/ca3cb0bf-3ae8-4187-9d2d-364adbb7e62f.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="eb2e04b1-ba08-4637-9d2f-dfb18fc5c320" Title="NumericOption(T) Class" Url="html/8a93952a-dfce-0a90-01a2-e3bfe2adb8e2.htm">
+        <HelpTOCNode Title="NumericOption(T) Constructor " Url="html/8e1aabf3-1d1c-bf2e-82fa-6f5eb2922a4e.htm" />
+        <HelpTOCNode Id="0902b6b2-6687-45f3-a445-c09588e02baf" Title="NumericOption(T) Methods" Url="html/a5f73d1d-fda4-5ce4-cba1-6e25c85c6efa.htm">
+          <HelpTOCNode Title="ParseValueToNumeric Method " Url="html/669344d1-b8c5-ac9d-4e95-d9b431d95b22.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="NumericOption(T) Properties" Url="html/c2472b8a-d5cf-c73d-416b-43052ceeae85.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3f690c76-bde2-40a5-a664-b0dcd980418c" Title="Option Class" Url="html/39574dea-079b-ae11-cb59-e3072a9045a3.htm">
+        <HelpTOCNode Title="Option Constructor " Url="html/41fe5c8f-f483-fd1d-3c16-19ea3bb033a3.htm" />
+        <HelpTOCNode Id="95e9d72a-b5cf-4821-9143-51d39be1f269" Title="Option Methods" Url="html/d2d7c304-95db-62d3-b3d9-b63dfd756264.htm">
+          <HelpTOCNode Title="Serialize Method " Url="html/c0291909-2931-a533-50e6-96e42104b82e.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a3122c33-d925-437d-9eb7-aeb2ad916e96" Title="Option Type Conversions" Url="html/ca01cd5b-5071-7288-8218-dd3317b31aa6.htm">
+          <HelpTOCNode Id="7d5335c0-5638-482c-991a-efcd12f9e0f3" Title="Implicit Conversion Operators" Url="html/4bcae2f3-10eb-2a14-eb8f-fb9dc23a5fe3.htm">
+            <HelpTOCNode Title="Implicit Conversion (Boolean to Option)" Url="html/09af9233-8320-b62a-3f64-c6cf6a39e359.htm" />
+            <HelpTOCNode Title="Implicit Conversion (Boolean[] to Option)" Url="html/b64938ed-94eb-4f22-22b0-f883a42a29da.htm" />
+            <HelpTOCNode Title="Implicit Conversion (Int32 to Option)" Url="html/73c78ccf-1d11-e370-5f29-fe08e17fb8c0.htm" />
+            <HelpTOCNode Title="Implicit Conversion (Int32[] to Option)" Url="html/4a2394ba-3949-d343-3025-82b31d003270.htm" />
+            <HelpTOCNode Title="Implicit Conversion (Int64 to Option)" Url="html/b43ecdc0-befa-c09a-633c-bf41bc46bf54.htm" />
+            <HelpTOCNode Title="Implicit Conversion (Int64[] to Option)" Url="html/3dce272d-2e22-ec56-227c-598591e1b537.htm" />
+            <HelpTOCNode Title="Implicit Conversion (Single to Option)" Url="html/45e8a46f-c3ad-c22f-5bf0-e1e1e3a1b19d.htm" />
+            <HelpTOCNode Title="Implicit Conversion (Single[] to Option)" Url="html/e8eec063-e91c-256a-4910-7ca85197cfb6.htm" />
+            <HelpTOCNode Title="Implicit Conversion (String to Option)" Url="html/7c3e97ca-b8c8-d1a5-975c-0a117c2c6b5e.htm" />
+            <HelpTOCNode Title="Implicit Conversion (String[] to Option)" Url="html/805c83c3-0cee-251d-d11b-a1f44b58297b.htm" />
+            <HelpTOCNode Title="Implicit Conversion (UInt64 to Option)" Url="html/f20a83a0-230b-cce6-b099-ac15f3fb8669.htm" />
+            <HelpTOCNode Title="Implicit Conversion (UInt64[] to Option)" Url="html/fb4ca22d-541d-c19f-2bc8-01a8b87cab80.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="54bfafe3-4b15-4e72-9430-e7701e29d1b2" Title="Option Properties" Url="html/3f2c5c55-136b-b96c-06fd-63eb19d31c72.htm">
+          <HelpTOCNode Title="Bool Property " Url="html/d0336b82-658c-52f6-b9c6-0b8fec6583cd.htm" />
+          <HelpTOCNode Title="BoolList Property " Url="html/ab669e53-22e9-e4a4-9859-da7eb130e20c.htm" />
+          <HelpTOCNode Title="Comment Property " Url="html/bf7770a8-cdfc-205e-07cd-04fb20ce40fe.htm" />
+          <HelpTOCNode Title="Data Property " Url="html/173871fa-7813-27c6-c22c-21f9eb2ff71f.htm" />
+          <HelpTOCNode Title="Float Property " Url="html/6e10d11e-1d0f-9b50-e066-e8bf13857bea.htm" />
+          <HelpTOCNode Title="FloatList Property " Url="html/79ea1716-3f3d-97e3-a622-bdd28eee7145.htm" />
+          <HelpTOCNode Title="Int Property " Url="html/069d9bd4-696e-6536-6733-a83d7b4f902d.htm" />
+          <HelpTOCNode Title="IntList Property " Url="html/b5961bc5-9236-c3eb-281d-8434f8c372a0.htm" />
+          <HelpTOCNode Title="Signed Property " Url="html/174088c8-457d-6364-b4db-3f44e6b06027.htm" />
+          <HelpTOCNode Title="SignedList Property " Url="html/c062f391-530b-442c-3547-f9a6853f7a82.htm" />
+          <HelpTOCNode Title="String Property " Url="html/fd235a9f-b87a-1575-0b2b-4810a8fc18ba.htm" />
+          <HelpTOCNode Title="StringList Property " Url="html/6c20fc68-7ca5-8427-3ba3-27162120f47f.htm" />
+          <HelpTOCNode Title="Unsigned Property " Url="html/e78e457b-3924-343d-e3f2-cdf0af76d468.htm" />
+          <HelpTOCNode Title="UnsignedList Property " Url="html/7f441599-16ff-833e-b654-a5fbdd6602cc.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="5c4eca1b-fdaa-4b9f-b58d-f31f6682c297" Title="Option(T) Class" Url="html/a9e4eee9-fe0d-b177-9e6f-d2383facefac.htm">
+        <HelpTOCNode Title="Option(T) Constructor " Url="html/75ba191e-e4cd-c2d4-9735-7968459546d2.htm" />
+        <HelpTOCNode Title="Option(T) Methods" Url="html/317fc08d-e9b1-a6ac-0b3f-eea352446af3.htm" />
+        <HelpTOCNode Title="Option(T) Properties" Url="html/9434fdc7-1a2e-6b92-a204-1c0642cbd757.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d6d67bfe-2946-4422-a726-245eb6659c8e" Title="ReferenceOption Class" Url="html/8a414128-6227-a20a-01fb-6f0c8c2a4104.htm">
+        <HelpTOCNode Title="ReferenceOption Constructor " Url="html/aafae55a-f6ba-f328-b5f1-a1b9367fc47a.htm" />
+        <HelpTOCNode Title="ReferenceOption Methods" Url="html/4a240d63-a72f-0050-b222-a00d04f8ee0a.htm" />
+        <HelpTOCNode Id="04b06393-6ba2-4aa7-9835-a5cf1771c345" Title="ReferenceOption Properties" Url="html/4c843b6b-fe9a-47b4-c71a-a0aa959c9ca7.htm">
+          <HelpTOCNode Title="Data Property " Url="html/b976da1a-f86d-dd6a-25e9-21588751e01d.htm" />
+          <HelpTOCNode Title="Option Property " Url="html/f3993ab6-2e9e-11c4-8b04-4aab1b737d82.htm" />
+          <HelpTOCNode Title="Section Property " Url="html/62c68998-2335-c7cb-e585-cec5831c2731.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="55468217-c7fb-4fe5-ad3f-35ab26808ca7" Title="SignedOption Class" Url="html/e0c72cac-6d41-71a8-6ae6-bcc988f23143.htm">
+        <HelpTOCNode Id="9eb572e9-7339-45c3-be8b-80f324d22136" Title="SignedOption Constructor " Url="html/b9801d16-e3b8-dfb5-c65f-c04ebbdfe97a.htm">
+          <HelpTOCNode Title="SignedOption Constructor (Int64)" Url="html/cd826038-4107-7251-30b6-c7f0274eddc8.htm" />
+          <HelpTOCNode Title="SignedOption Constructor (String)" Url="html/5ccb906e-0f91-c513-3221-04d0a3db11d4.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SignedOption Methods" Url="html/0cbacc41-6b16-b9bf-a967-1ae90ae94dc5.htm" />
+        <HelpTOCNode Id="e6e17785-dd30-48bd-ac61-273a2e969e55" Title="SignedOption Type Conversions" Url="html/af8e20ba-9cf4-6182-8a0b-d3dbac6126c2.htm">
+          <HelpTOCNode Title="Implicit Conversion (Int64 to SignedOption)" Url="html/71222c4f-b9ac-4fda-7178-fed6000c3a54.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SignedOption Properties" Url="html/aae797bc-71d8-3db7-8852-e9bda9961a42.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a61c2cff-7cd8-4898-812d-6e0a9d6b6b94" Title="StringOption Class" Url="html/55f4370f-59ef-1e7a-c125-5a9abc8720f0.htm">
+        <HelpTOCNode Id="2b9abec2-5908-4ebb-b147-bbae2cf87459" Title="StringOption Constructor " Url="html/612afbb9-9dfd-922f-8809-acc3f1b1e9f1.htm">
+          <HelpTOCNode Title="StringOption Constructor (String)" Url="html/fcc77cda-e5b3-a2b3-a82a-73bd40888e24.htm" />
+          <HelpTOCNode Title="StringOption Constructor (OptionToken)" Url="html/213404a0-4bf5-962b-e8d0-6cd6c3ee8c31.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="StringOption Methods" Url="html/4fb8d41d-096d-c856-7a9f-e4238b5e5d87.htm" />
+        <HelpTOCNode Id="d1ad8902-e006-406c-9727-3a5e763c5570" Title="StringOption Type Conversions" Url="html/3be8c894-d565-b6e0-cdaa-28f172276bc5.htm">
+          <HelpTOCNode Title="Implicit Conversion (String to StringOption)" Url="html/184dacc3-44d0-c309-1b16-729417602c75.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="StringOption Properties" Url="html/bffaa99a-959a-8caa-267c-bbc7d3adccfb.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="87317600-a6b8-418e-83df-27aa5315af33" Title="UnsignedOption Class" Url="html/d5912abf-e544-c0d8-3546-b8180f21dfe5.htm">
+        <HelpTOCNode Id="0ed22391-6762-4d95-ab7f-188a1934cd67" Title="UnsignedOption Constructor " Url="html/ec20688c-a43b-703d-647e-e5393df3fbfa.htm">
+          <HelpTOCNode Title="UnsignedOption Constructor (String)" Url="html/5fceeacf-c079-d0f8-c47d-ffcb63b9f078.htm" />
+          <HelpTOCNode Title="UnsignedOption Constructor (UInt64)" Url="html/39332f66-4b73-5e59-4fab-f071485abd02.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="UnsignedOption Methods" Url="html/03b57ef7-5026-9dfa-b6b7-977fd77aa833.htm" />
+        <HelpTOCNode Id="94d924bd-8bf2-4013-ab4a-346dcf839fba" Title="UnsignedOption Type Conversions" Url="html/4a49899a-b765-ffab-1d1d-c221c170d8a0.htm">
+          <HelpTOCNode Title="Implicit Conversion (UInt64 to UnsignedOption)" Url="html/bd1c41e7-c261-283c-35ef-971acfba47a7.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="UnsignedOption Properties" Url="html/6157b71a-6516-0aaf-0126-6ee7d23e63ab.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="df3b99d0-b36a-4898-b12f-90ed365fd55a" Title="Option(T) Class" Url="html/a9e4eee9-fe0d-b177-9e6f-d2383facefac.htm">
-      <HelpTOCNode Title="Option(T) Constructor " Url="html/75ba191e-e4cd-c2d4-9735-7968459546d2.htm" />
-      <HelpTOCNode Title="Option(T) Methods" Url="html/317fc08d-e9b1-a6ac-0b3f-eea352446af3.htm" />
-      <HelpTOCNode Title="Option(T) Properties" Url="html/9434fdc7-1a2e-6b92-a204-1c0642cbd757.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="37ed202a-3dfa-4871-bc8b-e38026fc35f5" Title="ReferenceOption Class" Url="html/8a414128-6227-a20a-01fb-6f0c8c2a4104.htm">
-      <HelpTOCNode Title="ReferenceOption Constructor " Url="html/aafae55a-f6ba-f328-b5f1-a1b9367fc47a.htm" />
-      <HelpTOCNode Title="ReferenceOption Methods" Url="html/4a240d63-a72f-0050-b222-a00d04f8ee0a.htm" />
-      <HelpTOCNode Id="d1da5657-be35-4c60-bafd-5671c2f33656" Title="ReferenceOption Properties" Url="html/4c843b6b-fe9a-47b4-c71a-a0aa959c9ca7.htm">
-        <HelpTOCNode Title="Data Property " Url="html/b976da1a-f86d-dd6a-25e9-21588751e01d.htm" />
-        <HelpTOCNode Title="Option Property " Url="html/f3993ab6-2e9e-11c4-8b04-4aab1b737d82.htm" />
-        <HelpTOCNode Title="Section Property " Url="html/62c68998-2335-c7cb-e585-cec5831c2731.htm" />
+    <HelpTOCNode Id="0ceb92de-490b-4594-b6c9-cf01493f8ffb" Title="Config.Options.NumericValues" Url="html/d72c8a27-26c3-3169-c986-8d771e97bb27.htm">
+      <HelpTOCNode Id="fa77fdf4-68f2-4838-a1ba-5c9fe86d7c8f" Title="BinaryValue Class" Url="html/948b28ca-f2cb-1273-49d6-2806edbfd3b3.htm">
+        <HelpTOCNode Title="BinaryValue Constructor " Url="html/cd757f32-8638-0c24-1bf7-9e7f7e70ee1d.htm" />
+        <HelpTOCNode Title="BinaryValue Methods" Url="html/60962596-88cb-aa7b-0f11-f8ac38041df4.htm" />
+        <HelpTOCNode Id="acdf210b-0837-4fbe-9630-f949a7c209d3" Title="BinaryValue Properties" Url="html/8a25f809-402c-ae97-6194-7f9b71b36b6a.htm">
+          <HelpTOCNode Title="NumericSystem Property " Url="html/e276f203-8679-b95a-eee4-a9c28ad9e8c7.htm" />
+          <HelpTOCNode Title="StringValue Property " Url="html/508d1703-2270-f653-f9c8-ff99b28eecfd.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="5bcf39fa-2b2d-4053-b4b6-63cb7963be71" Title="SignedOption Class" Url="html/e0c72cac-6d41-71a8-6ae6-bcc988f23143.htm">
-      <HelpTOCNode Id="f027b6dd-a1a7-400d-8437-e1a7bbfeeedf" Title="SignedOption Constructor " Url="html/b9801d16-e3b8-dfb5-c65f-c04ebbdfe97a.htm">
-        <HelpTOCNode Title="SignedOption Constructor (Int64)" Url="html/cd826038-4107-7251-30b6-c7f0274eddc8.htm" />
-        <HelpTOCNode Title="SignedOption Constructor (String)" Url="html/5ccb906e-0f91-c513-3221-04d0a3db11d4.htm" />
+      <HelpTOCNode Id="eb2e1f8a-4b39-4120-8888-001a9eb90c87" Title="DecimalValue Class" Url="html/a72abed1-8374-75d0-60db-176b54c0f662.htm">
+        <HelpTOCNode Title="DecimalValue Constructor " Url="html/376502f7-62b1-3afb-0b0a-98d4a3eef052.htm" />
+        <HelpTOCNode Title="DecimalValue Methods" Url="html/7090cbba-0857-22e3-f369-a991b2438c1b.htm" />
+        <HelpTOCNode Id="ef4d4945-3a17-4cfd-9be1-ae96e4bfc1fc" Title="DecimalValue Properties" Url="html/9640b3da-c8fc-a658-1cf3-e402e2a587d6.htm">
+          <HelpTOCNode Title="NumericSystem Property " Url="html/35f04574-32e6-f6e1-046a-f911a6b36971.htm" />
+          <HelpTOCNode Title="StringValue Property " Url="html/4539e2cc-7592-6a07-4943-45d8daa4eaad.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Title="SignedOption Methods" Url="html/0cbacc41-6b16-b9bf-a967-1ae90ae94dc5.htm" />
-      <HelpTOCNode Id="253c4354-d9b8-4bd9-bfeb-2b60d631a4fd" Title="SignedOption Type Conversions" Url="html/af8e20ba-9cf4-6182-8a0b-d3dbac6126c2.htm">
-        <HelpTOCNode Title="Implicit Conversion (Int64 to SignedOption)" Url="html/71222c4f-b9ac-4fda-7178-fed6000c3a54.htm" />
+      <HelpTOCNode Id="7a0575dd-21ee-4793-8295-85aa06381b09" Title="HexValue Class" Url="html/68d96d4c-4f63-0519-d6eb-cdccfb2c241a.htm">
+        <HelpTOCNode Title="HexValue Constructor " Url="html/42547de5-a2e7-654c-40e5-d1abed3a75d4.htm" />
+        <HelpTOCNode Title="HexValue Methods" Url="html/10706ced-ca14-4eab-6636-fbb18fae8977.htm" />
+        <HelpTOCNode Id="7aa78d5d-594c-4263-9437-c947137ba11d" Title="HexValue Properties" Url="html/31010994-694e-470d-79ac-492af2b21b24.htm">
+          <HelpTOCNode Title="NumericSystem Property " Url="html/d24fecd7-8faa-64d2-89dd-f5029d146c97.htm" />
+          <HelpTOCNode Title="StringValue Property " Url="html/a32e2af9-21db-f9b0-05e2-d3fffc27b821.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Title="SignedOption Properties" Url="html/aae797bc-71d8-3db7-8852-e9bda9961a42.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="f3c6df6c-ce72-4daf-a7cf-1722b9efb53b" Title="StringOption Class" Url="html/55f4370f-59ef-1e7a-c125-5a9abc8720f0.htm">
-      <HelpTOCNode Title="StringOption Constructor " Url="html/fcc77cda-e5b3-a2b3-a82a-73bd40888e24.htm" />
-      <HelpTOCNode Title="StringOption Methods" Url="html/4fb8d41d-096d-c856-7a9f-e4238b5e5d87.htm" />
-      <HelpTOCNode Id="316a25be-b61a-4d67-b6ff-75f1bcc5b47a" Title="StringOption Type Conversions" Url="html/3be8c894-d565-b6e0-cdaa-28f172276bc5.htm">
-        <HelpTOCNode Title="Implicit Conversion (String to StringOption)" Url="html/184dacc3-44d0-c309-1b16-729417602c75.htm" />
+      <HelpTOCNode Id="64969409-4c2c-4275-a359-333d0c6249a3" Title="NumericPrefix Class" Url="html/60d321e2-6d43-95be-090b-b42e85716420.htm">
+        <HelpTOCNode Id="d5330044-53b1-4232-bed4-f722d415b6c1" Title="NumericPrefix Fields" Url="html/a07f6784-ae02-fed4-6ef1-3e0df673bb80.htm">
+          <HelpTOCNode Title="Binary Field" Url="html/cf306bc4-7888-d0ef-cd2c-dbe7ff626553.htm" />
+          <HelpTOCNode Title="Hex Field" Url="html/e0a3085f-9cfd-089c-0701-542beec0b574.htm" />
+          <HelpTOCNode Title="Octal Field" Url="html/68911b60-48b3-0b83-6c3d-51756b649a90.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Title="StringOption Properties" Url="html/bffaa99a-959a-8caa-267c-bbc7d3adccfb.htm" />
-    </HelpTOCNode>
-    <HelpTOCNode Id="f379558c-e744-4018-9b9f-f2f83136c5d3" Title="UnsignedOption Class" Url="html/d5912abf-e544-c0d8-3546-b8180f21dfe5.htm">
-      <HelpTOCNode Id="2e1e8ddf-c0a2-4b52-a7a2-2bc04657b5be" Title="UnsignedOption Constructor " Url="html/ec20688c-a43b-703d-647e-e5393df3fbfa.htm">
-        <HelpTOCNode Title="UnsignedOption Constructor (String)" Url="html/5fceeacf-c079-d0f8-c47d-ffcb63b9f078.htm" />
-        <HelpTOCNode Title="UnsignedOption Constructor (UInt64)" Url="html/39332f66-4b73-5e59-4fab-f071485abd02.htm" />
+      <HelpTOCNode Id="f8964dc5-a760-4ad1-9dfb-fee187439d9f" Title="NumericValue Class" Url="html/d1a20fb8-cf40-8e23-bf04-9837652cc98a.htm">
+        <HelpTOCNode Title="NumericValue Constructor " Url="html/7ad640b4-82cc-8489-d800-3690d956eea2.htm" />
+        <HelpTOCNode Title="NumericValue Methods" Url="html/a6540f1d-dec5-0fe4-c87a-eca975688df5.htm" />
+        <HelpTOCNode Id="8630e53d-5f5c-4b63-aeac-856d2af30bb8" Title="NumericValue Properties" Url="html/956c3e3c-ac97-62e5-153d-a19e29774c2d.htm">
+          <HelpTOCNode Title="NumericSystem Property " Url="html/3327b643-e225-93a8-98e9-e3f014d7d46f.htm" />
+          <HelpTOCNode Title="StringValue Property " Url="html/9fd2e9ef-a90b-ee50-f80e-d8369aafeceb.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Title="UnsignedOption Methods" Url="html/03b57ef7-5026-9dfa-b6b7-977fd77aa833.htm" />
-      <HelpTOCNode Id="726c1829-e88d-4b91-a3df-98038cacd92d" Title="UnsignedOption Type Conversions" Url="html/4a49899a-b765-ffab-1d1d-c221c170d8a0.htm">
-        <HelpTOCNode Title="Implicit Conversion (UInt64 to UnsignedOption)" Url="html/bd1c41e7-c261-283c-35ef-971acfba47a7.htm" />
-      </HelpTOCNode>
-      <HelpTOCNode Title="UnsignedOption Properties" Url="html/6157b71a-6516-0aaf-0126-6ee7d23e63ab.htm" />
-    </HelpTOCNode>
-  </HelpTOCNode>
-  <HelpTOCNode Id="48c1b047-69a7-4539-967a-ad438ea32c38" Title="Config.Options.NumericValues" Url="html/d72c8a27-26c3-3169-c986-8d771e97bb27.htm">
-    <HelpTOCNode Id="a1860a6c-c14d-4c86-88e4-24b203e82056" Title="BinaryValue Class" Url="html/948b28ca-f2cb-1273-49d6-2806edbfd3b3.htm">
-      <HelpTOCNode Title="BinaryValue Constructor " Url="html/cd757f32-8638-0c24-1bf7-9e7f7e70ee1d.htm" />
-      <HelpTOCNode Title="BinaryValue Methods" Url="html/60962596-88cb-aa7b-0f11-f8ac38041df4.htm" />
-      <HelpTOCNode Id="32e64423-02c4-4e02-9422-ebac74c3e527" Title="BinaryValue Properties" Url="html/8a25f809-402c-ae97-6194-7f9b71b36b6a.htm">
-        <HelpTOCNode Title="NumericSystem Property " Url="html/e276f203-8679-b95a-eee4-a9c28ad9e8c7.htm" />
-        <HelpTOCNode Title="StringValue Property " Url="html/508d1703-2270-f653-f9c8-ff99b28eecfd.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="2d20572d-952e-43bb-98f4-ecc55d6ce053" Title="DecimalValue Class" Url="html/a72abed1-8374-75d0-60db-176b54c0f662.htm">
-      <HelpTOCNode Title="DecimalValue Constructor " Url="html/376502f7-62b1-3afb-0b0a-98d4a3eef052.htm" />
-      <HelpTOCNode Title="DecimalValue Methods" Url="html/7090cbba-0857-22e3-f369-a991b2438c1b.htm" />
-      <HelpTOCNode Id="bbf03cb6-79ae-41f0-93e8-c93ac162be76" Title="DecimalValue Properties" Url="html/9640b3da-c8fc-a658-1cf3-e402e2a587d6.htm">
-        <HelpTOCNode Title="NumericSystem Property " Url="html/35f04574-32e6-f6e1-046a-f911a6b36971.htm" />
-        <HelpTOCNode Title="StringValue Property " Url="html/4539e2cc-7592-6a07-4943-45d8daa4eaad.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="e2a64246-ef0b-4dbc-85dd-22345b7fc931" Title="HexValue Class" Url="html/68d96d4c-4f63-0519-d6eb-cdccfb2c241a.htm">
-      <HelpTOCNode Title="HexValue Constructor " Url="html/42547de5-a2e7-654c-40e5-d1abed3a75d4.htm" />
-      <HelpTOCNode Title="HexValue Methods" Url="html/10706ced-ca14-4eab-6636-fbb18fae8977.htm" />
-      <HelpTOCNode Id="e1f4c7dc-0f1c-45aa-9c30-97d7a9fc261d" Title="HexValue Properties" Url="html/31010994-694e-470d-79ac-492af2b21b24.htm">
-        <HelpTOCNode Title="NumericSystem Property " Url="html/d24fecd7-8faa-64d2-89dd-f5029d146c97.htm" />
-        <HelpTOCNode Title="StringValue Property " Url="html/a32e2af9-21db-f9b0-05e2-d3fffc27b821.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="c79bd07f-7fa7-4fa0-86af-ca1b6ce1af96" Title="NumericPrefix Class" Url="html/60d321e2-6d43-95be-090b-b42e85716420.htm">
-      <HelpTOCNode Id="887272c5-6c4c-496c-b3e8-9ec627e1ee1b" Title="NumericPrefix Fields" Url="html/a07f6784-ae02-fed4-6ef1-3e0df673bb80.htm">
-        <HelpTOCNode Title="Binary Field" Url="html/cf306bc4-7888-d0ef-cd2c-dbe7ff626553.htm" />
-        <HelpTOCNode Title="Hex Field" Url="html/e0a3085f-9cfd-089c-0701-542beec0b574.htm" />
-        <HelpTOCNode Title="Octal Field" Url="html/68911b60-48b3-0b83-6c3d-51756b649a90.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="3818eae0-7c2e-4ce5-a01b-2d0cb8269b66" Title="NumericValue Class" Url="html/d1a20fb8-cf40-8e23-bf04-9837652cc98a.htm">
-      <HelpTOCNode Title="NumericValue Constructor " Url="html/7ad640b4-82cc-8489-d800-3690d956eea2.htm" />
-      <HelpTOCNode Title="NumericValue Methods" Url="html/a6540f1d-dec5-0fe4-c87a-eca975688df5.htm" />
-      <HelpTOCNode Id="d2163881-a0b7-4bb3-a8be-cd34023af4c6" Title="NumericValue Properties" Url="html/956c3e3c-ac97-62e5-153d-a19e29774c2d.htm">
-        <HelpTOCNode Title="NumericSystem Property " Url="html/3327b643-e225-93a8-98e9-e3f014d7d46f.htm" />
-        <HelpTOCNode Title="StringValue Property " Url="html/9fd2e9ef-a90b-ee50-f80e-d8369aafeceb.htm" />
-      </HelpTOCNode>
-    </HelpTOCNode>
-    <HelpTOCNode Id="01542124-37c9-490c-b415-e6d6bc0a1bf3" Title="OctalValue Class" Url="html/700540e0-0341-cdd5-14e0-94756ed3ef24.htm">
-      <HelpTOCNode Title="OctalValue Constructor " Url="html/c8a7d60d-e289-8deb-f904-2147cad5988d.htm" />
-      <HelpTOCNode Title="OctalValue Methods" Url="html/95f5a609-f47c-19fa-8846-8ffe1b2e9fed.htm" />
-      <HelpTOCNode Id="734e2f07-0948-4cd3-96a6-8de63d7a5a40" Title="OctalValue Properties" Url="html/a277d070-a132-96a2-b6fc-dc94ddb470f4.htm">
-        <HelpTOCNode Title="NumericSystem Property " Url="html/092984ec-6637-4e4f-9fd2-b554b90c4533.htm" />
-        <HelpTOCNode Title="StringValue Property " Url="html/4fd29045-9bad-42ae-ba14-67a34eb630f9.htm" />
+      <HelpTOCNode Id="1000492b-c71f-4226-a361-6be5b4fb76a0" Title="OctalValue Class" Url="html/700540e0-0341-cdd5-14e0-94756ed3ef24.htm">
+        <HelpTOCNode Title="OctalValue Constructor " Url="html/c8a7d60d-e289-8deb-f904-2147cad5988d.htm" />
+        <HelpTOCNode Title="OctalValue Methods" Url="html/95f5a609-f47c-19fa-8846-8ffe1b2e9fed.htm" />
+        <HelpTOCNode Id="71fc1cef-ce0c-42b8-9208-5a509e1e92e1" Title="OctalValue Properties" Url="html/a277d070-a132-96a2-b6fc-dc94ddb470f4.htm">
+          <HelpTOCNode Title="NumericSystem Property " Url="html/092984ec-6637-4e4f-9fd2-b554b90c4533.htm" />
+          <HelpTOCNode Title="StringValue Property " Url="html/4fd29045-9bad-42ae-ba14-67a34eb630f9.htm" />
+        </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
