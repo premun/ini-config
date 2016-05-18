@@ -53,6 +53,11 @@ namespace Config
         /// <returns>True, if section was present.</returns>
         bool RemoveSection(string name);
 
+        /// <summary>
+        ///     Contains the section.
+        /// </summary>
+        /// <param name="name">Section's name.</param>
+        /// <returns>True, if section was present.</returns>
         bool ContainSection(string name);
     }
 }
