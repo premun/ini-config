@@ -23,10 +23,13 @@ An example:
 # Connection string
 host = mydb.example.com
 port = 3306
+username = root
+password = ${Passwords#mysql} # A reference
 use_https = true
-
-# Restrictions
 allowedIPs = 10.0.0.138, 192.168.0.1
+
+[Passwords]
+mysql = anfvoqerO3208fuasnd
 ```
 
 # Examples
@@ -35,14 +38,14 @@ allowedIPs = 10.0.0.138, 192.168.0.1
 
 ```c#
 var formatSpecifier = new ConfigFormatSpecifier()
-			.AddSection("Server", true)
-				.AddOption(new StringOptionSpecifier("hostname", true))
-				.AddOption(new ConstraintOptionSpecifier<int>("port", x => x > 0 && x < 65536, defaultValue: 3306))
-				.AddOption(new EnumOptionSpecifier<Domains>("domain", defaultValue: Domains.Eu))
-			.AddSection("HTTP", true)
-				.AddOption(new IntOptionSpecifier("timeout", defaultValue: 5000))
-				.AddOption(new BoolOptionSpecifier("use_https"))
-			.FinishDefinition();
+	.AddSection("Server", true)
+		.AddOption(new StringOptionSpecifier("hostname", true))
+		.AddOption(new ConstraintOptionSpecifier<int>("port", x => x > 0 && x < 65536, defaultValue: 3306))
+		.AddOption(new EnumOptionSpecifier<Domains>("domain", defaultValue: Domains.Eu))
+	.AddSection("HTTP", true)
+		.AddOption(new IntOptionSpecifier("timeout", defaultValue: 5000))
+		.AddOption(new BoolOptionSpecifier("use_https"))
+	.FinishDefinition();
 ```
 ## Read config from file
 
